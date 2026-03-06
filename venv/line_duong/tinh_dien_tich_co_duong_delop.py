@@ -1,44 +1,37 @@
 import streamlit as st
 import geopandas as gpd
 import pandas as pd
-import time
 import tempfile
-import os
+import time
 
-st.title("Tính diện tích vùng có đường theo phường/xã")
+st.title("Tính diện tích vùng có đường")
 
-road_file = st.file_uploader("Upload file GeoJSON đường", type=["geojson","shp"])
+buffer_dist = st.number_input("Buffer đường (m)", value=10)
+
 polygon_files = st.file_uploader(
-    "Upload các file polygon phường/xã",
+    "Upload polygon phường/xã",
     type=["geojson","shp"],
     accept_multiple_files=True
 )
 
-buffer_dist = st.number_input("Buffer đường (m)", value=10)
-
 if st.button("Bắt đầu xử lý"):
-
-    if road_file is None or len(polygon_files) == 0:
-        st.warning("Vui lòng upload dữ liệu")
-        st.stop()
 
     start_total = time.time()
 
-    with tempfile.NamedTemporaryFile(delete=False) as tmp:
-        tmp.write(road_file.read())
-        road_path = tmp.name
-
     st.write("Đang đọc dữ liệu đường...")
-    roads = gpd.read_file(road_path)
+
+    roads = gpd.read_parquet("data/roads.parquet")
 
     if roads.crs.is_geographic:
         roads = roads.to_crs(3857)
 
     roads_sindex = roads.sindex
 
-    results = []
-
     progress = st.progress(0)
+    console = st.empty()
+
+    logs = []
+    results = []
 
     for i, poly_file in enumerate(polygon_files):
 
@@ -55,10 +48,10 @@ if st.button("Bắt đầu xử lý"):
 
         poly_geom = polygon.geometry.union_all()
 
-        possible_index = list(roads_sindex.intersection(poly_geom.bounds))
-        candidate_roads = roads.iloc[possible_index]
+        idx = list(roads_sindex.intersection(poly_geom.bounds))
+        candidate = roads.iloc[idx]
 
-        roads_clip = candidate_roads.clip(poly_geom)
+        roads_clip = candidate.clip(poly_geom)
 
         if len(roads_clip) == 0:
             road_area = 0
@@ -67,23 +60,22 @@ if st.button("Bắt đầu xử lý"):
 
         poly_area = poly_geom.area
 
+        elapsed = round(time.time()-start,2)
+
         results.append({
             "phuong_xa": poly_file.name,
             "polygon_area": poly_area,
             "road_area": road_area,
-            "road_ratio": road_area/poly_area if poly_area>0 else 0
+            "ratio": road_area/poly_area if poly_area>0 else 0
         })
 
-        st.write(
-            f"✔ {poly_file.name} | roads: {len(roads_clip)} | "
-            f"time: {round(time.time()-start,2)}s"
-        )
+        logs.append(f"{i+1}/{len(polygon_files)} {poly_file.name} {elapsed}s")
+
+        console.text("\n".join(logs))
 
         progress.progress((i+1)/len(polygon_files))
 
     df = pd.DataFrame(results)
-
-    st.success("Hoàn thành!")
 
     st.dataframe(df)
 
@@ -92,7 +84,7 @@ if st.button("Bắt đầu xử lý"):
     st.download_button(
         "Download CSV",
         csv,
-        "thong_ke_duong.csv",
+        "result.csv",
         "text/csv"
     )
 

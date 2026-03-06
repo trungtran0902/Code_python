@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="742fed14-b0a4-4b6c-8171-bafea0de1179" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Code_python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Code_python.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/line_duong/tinh_dien_tich_co_duong_delop.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/line_duong/tinh_dien_tich_co_duong_delop.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

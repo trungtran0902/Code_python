@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.1623693,
+                    11.5526694
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Trung tâm thương mại và chợ Tân Châu ",
+                "Lĩnh vực": "Lĩnh vực thương mại dịch vụ",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Thị trấn Tân Châu, huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Tân Châu, Tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.5526694,106.1623693",
+                "Toạ độ khu đất trên google map": "11,5519388 106,1619502",
+                "Diện tích (ha)": "0,72",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Đầu tư khu thương mại, dịch vụ, chợ",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp Quy hoạch sử dụng đất (đất thương mại - dịch vụ)",
+                "Tổng vốn đầu tư (dự kiến)": "36 tỷ đồng (tính theo suất đầu tư của công trình thương mại - dịch vụ: 50 tỷ đồng/ha)",
+                "Hình thức đầu tư": "Xã Hội hoá ",
+                "Thời gian dự kiến triển khai": "2026-2030",
+                "Thời gian hoạt dộng dự án": "50 năm ",
+                "Hiệu quả kinh tế": "Tăng nguồn thu ngân sách, phát triển thương mại - dịch vụ tại địa phương",
+                "Hiện trạng": "Đất trống",
+                "Nguồn gốc đất": "UBND huyện quản lý",
+                "Quy mô/công suất dự án": "Mật độ xây dựng tối đa 80%; 01 đến 05 tầng",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "TMD",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "TMD",
+                "Quy hoạch chung": "Phù hợp QĐ số 1546/QĐ-UBND ngày 18/7/2019 của UBND tỉnh Tây Ninh về phê duyệt đồ án điều chỉnh quy hoạch chung thị trấn Tân Châu, huyện Tân Châu, tỉnh Tây Ninh đến năm 2030",
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,2165 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TBVP Trường Học Đại Phước Lợi",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1191321,
+          10.706501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TBVP Trường Học Đại Phước Lợi",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1191616,
+          10.7065327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học & In Yên Bái",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9238941,
+          21.7262098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học",
+        "class": "publisher",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6795903,
+          20.8616616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH SGK & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6822055,
+          20.8601101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH SGK & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.058852,
+          12.6897279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH SGK & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6711521,
+          20.8457302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH SGK & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6387591,
+          10.4579472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6788849,
+          20.8553454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.682632,
+          20.8548742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4406404,
+          10.3842503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6353714,
+          10.7906203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Nam Cường",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6804433,
+          20.8572904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SGK & TB Trường Học Hải Phòng",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6804808,
+          20.8572979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VPP TB Trường Học Xuân Thủy",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6800651,
+          20.9216646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7649087,
+          10.8418888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7615533,
+          10.863392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.2726028,
+          21.2813718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7283717,
+          10.7875007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Yên Thành",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4716066,
+          18.9988467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH SGK TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0032283,
+          12.6331304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học Duy Hòa",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0033007,
+          12.6329237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học Trí Đức",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0047411,
+          12.6346877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học Kon Tum",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9997897,
+          14.3608174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đ.Lý Sách & Các TB Trường Học Ngọc Lý",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3459719,
+          10.8082438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S.Thị Sách TB Trường Học VPP",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3384724,
+          20.8292006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chuyên Doanh Thiết Bị Trường Học",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8969969,
+          18.3489222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Máy Tính TB Trường Học Tây Ninh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1011586,
+          11.3105798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Phát Hành Sách & TB Trường Học Hưng Yên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0594314,
+          20.6698524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Hậu Giang",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4647803,
+          9.7797604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Esp",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7317084,
+          21.1949604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & Trang TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0796258,
+          21.7546819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học Hải Hằng",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6976979,
+          20.8030687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Trường Học Quốc Tế",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6896674,
+          10.794114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CN Cty Sách & TB Trường Học TP.HCM",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6981754,
+          10.7925621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học Bình Thạnh",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6964158,
+          10.8096586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học Bình Thạnh",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6964775,
+          10.8095137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học TP.HCM",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.696499,
+          10.8094663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học TP.HCM",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6967645,
+          11.0289991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TB Trường Học Tân Văn",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.689603,
+          10.7279481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TTHT Trang TB Trường Học & GD Nhân Đạo Huế",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5993359,
+          16.4761056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TTHT Trang TB Trường Học & GD Nhân Đạo Huế",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5889128,
+          16.4660691
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sách TB Trường Học Cao Toàn",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5952724,
+          12.2897356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sách TB Trường Học Anh Đức",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5953126,
+          12.2876337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0377993,
+          12.6824037
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0526561,
+          12.6940455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0495501,
+          12.6786068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu TDTC Trường Học PT BC Buôn Ma Thuột",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0393952,
+          12.6756628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6841314,
+          18.6763151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8375189,
+          22.1453091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Mẫu Giáo 30-4",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0041565,
+          9.5922341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học T.",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5835752,
+          16.4740634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TB Trường Học",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5816146,
+          16.4727567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S.Thị Sách GD & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8310708,
+          21.5902299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Thái Nguyên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8310708,
+          21.5902299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TB Trường Học Nam Anh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.826951,
+          21.0300027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TB Trường Học Nam Anh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6393733,
+          10.8004663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TB Trường Học Việt Nam",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8313659,
+          21.0267005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "N.Sách & Trang TB Trường Học Minh Đức",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.478481,
+          20.6898397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách-TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0527768,
+          12.6884117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VPP & TB Trường Học Ngọc Hiền",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0549118,
+          12.6991426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VPĐD Cty TB Trường Học Nam Anh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6271049,
+          10.8081147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Phát Hành Sách & TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3567569,
+          11.2005147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB GD Cty TB Trường Học BRVT",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0767719,
+          10.3714175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học BRVT",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0767719,
+          10.3714175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trang TB Trường Học Đồ Chơi GD Minh Hảo",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0764983,
+          10.3696656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Quảng Ninh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0797867,
+          20.9502807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học CS 2",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0776463,
+          20.9514054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học Việt Hùng",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3047917,
+          13.1051721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Phú Yên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3117279,
+          13.1030247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Lấu Ngày",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.5592613,
+          21.1789121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty CP Sách Và Thiết Bị Trường Học Hà Giang",
+        "class": "publisher",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9825969,
+          22.8293247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học T. Hà Giang",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9827284,
+          22.8293519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH SGK-TB Trường Học Số 7",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6733703,
+          20.9179767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học Dinh Đào",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6717422,
+          20.9657301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "N.Sách & TB Trường Học Thanh Thùy",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8724626,
+          12.1558183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Tiểu Học Lộc Nam B",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8642336,
+          11.410299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH TB Trường Học Lê Hồng Phong",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0413049,
+          12.6823069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH TB Trường Học",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0437887,
+          12.6798602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tổng Kho Sách TB Trường Học",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0403447,
+          12.6735772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Showroom TB Trường Học Nội Thất VP",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2211444,
+          16.0059993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TT Sách VPP TB Trường Học",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2881487,
+          21.0105463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quà Tặng Doanh Nghiệp Trường Học Decogi",
+        "class": "services",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7291898,
+          10.8270597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Mẫu Giáo Ngọc Minh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7249331,
+          10.8928245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tổ Chức Sự Kiện Trường Học Nhân Quý",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7294124,
+          10.87848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trà Sữa Trường Học",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.343759,
+          10.4472961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Đồ Chơi & TB Trường Học Hồng Phúc",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8363226,
+          21.0171013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học Thái Nguyên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8326802,
+          21.6000959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học Thái Nguyên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.87176,
+          21.4156331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học Đức Trí",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7001924,
+          10.7879565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Hà Tây",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7822788,
+          20.967824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sách & TB GD Trường Học Nụ Ngọc",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.644314,
+          18.6685345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Đồ Dùng TB Trường Học VP Long Hà",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.662663,
+          18.6748058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty M.Thuật TM & SX TB Trường Học Đạo Dự",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4560578,
+          21.4173236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH TB Trường Học Quà Lưu Niệm Bảo Long",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.7520931,
+          12.5142053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty SX DV-TM TB Trường Học Tân Thuận Thành",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5971848,
+          10.7921063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Bảo An",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5966082,
+          17.4690152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách-TB Trường Học H. Sapa",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8463247,
+          22.3362898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Cty Sách TB Trường Học T. Điện Biên",
+        "class": "hostel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0155131,
+          21.3842897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S.Thị Sách GD TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0155453,
+          21.3842148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty SX TM DV TB Trường Học Đại Phú Tân",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0903413,
+          9.9959825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học HP",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7114228,
+          20.8246003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Bàu Cạn",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0680466,
+          10.7241506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kho Sách TB Trường Học",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4091083,
+          10.5297701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Long An",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.41215,
+          10.536708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Trưng Bày TB Trường Học",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3622367,
+          10.3602965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Tiền Giang",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3644147,
+          10.3584601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "N.Sách TB Trường Học H. Lắk",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1721592,
+          12.4066418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học TP. Cần Thơ",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7626504,
+          10.0148052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học Hòa Huệ",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0710936,
+          12.6884458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Saigon Inserco",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7409566,
+          10.8047108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Mẫu Giáo Tiên Hà",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2483661,
+          15.5499346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8210769,
+          10.9447733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.195033,
+          12.238558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sách & TB Trường Học Tuấn Tú",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2893127,
+          13.2662151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học Kiên Giang",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0830242,
+          10.0107111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Công Nghệ MindX",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9047082,
+          21.0428153
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học Hà Tĩnh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.899899,
+          18.3390339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nội Thất Gia Đình VP Trường Học",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9023908,
+          18.3435097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nội Thất Gia Đình VP Trường Học Hà Sơn",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9026912,
+          18.3431151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Nội Thất Gia Đình Trường Học Thuận Phát",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9029004,
+          18.3399581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH TB Trường Học Thành Nam",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.4398142,
+          11.2715831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Lái Xe Ô Tô Thủ Đức",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8049246,
+          10.8717896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Lan Lời",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2098712,
+          21.8246097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S.Thị Sách-TB Trường Học",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2136424,
+          21.8230958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách TB Trường Học Hoàng Bình",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2116334,
+          21.7991724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CS Nội Thất VP Trường Học Gia Đình Thái Quyên",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1162164,
+          16.8090704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Gia Lai",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0181468,
+          13.9711714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Bản Hịa",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.5804051,
+          21.204413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Hà Nội",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.850203,
+          21.0233631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB & XD Trường Học Hà Nội",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8436128,
+          21.0465903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách TB Trường Học Hà Nội CS 2",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8433956,
+          21.04635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH SGK & TB Trường Học Liên",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.5402226,
+          12.8073943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Đồ Chơi & TB Trường Học Ngân An",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1759546,
+          20.4301648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bàn Ghế Trường Học Quang Bách",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1806968,
+          20.4346186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TT Phát Hành Sách & TB Trường Học Bình Dương",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7741088,
+          20.9660482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TB Trường Học Nghi Gia",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4377034,
+          10.5907245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty KD VPP & Máy Móc TB Trường Học Xưa & Nay",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6440994,
+          10.7364206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sách TB Trường Học Hồng Nguyệt",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2497287,
+          12.7135178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VPP TB Trường Học Hùng Xuân",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8614199,
+          12.4639858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sách & TB Trường Học Tân Phú",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6364953,
+          10.7904464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Sách & TB Trường Học Yên Bái",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.8945454,
+          21.7165917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Học Công Nghệ Mindx",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7932114,
+          10.844963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công Ty Thiết Kế Trường Học Vschool",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7939678,
+          10.809569
+        ]
+      }
+    }
+  ]
+}

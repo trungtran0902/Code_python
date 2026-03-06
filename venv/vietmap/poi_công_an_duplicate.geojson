@@ -1,0 +1,2915 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TX Công An Tỉnh Hải Dương",
+        "class": "gas_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3052022,
+          20.9372297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điện Máy Công Anh",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3049957,
+          21.1131675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Xnc Công An Tp Hải Phòng",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6881144,
+          20.8587015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Uốn Tóc Bồ Công Anh",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6823906,
+          10.7475306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NXB Công An Nhân Dân CN HCM",
+        "class": "publisher",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6857889,
+          10.7786581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shop Công Anh",
+        "class": "clothes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6853195,
+          20.8549418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6873634,
+          10.766432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Cty Trực Thuộc Bộ Công An",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6869906,
+          10.7633833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Khách Bộ Công An 333 Nguyễn Trãi",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6863281,
+          10.7620342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S.Chữa Xe Máy Công Anh",
+        "class": "motorcycle_repair",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7635247,
+          10.8700195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công An Phường Thạnh Mỹ Lợi Mới",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7622399,
+          10.7804103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Xe Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.754145,
+          10.8776003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Xe Máy Công Anh",
+        "class": "motorcycle",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7565322,
+          21.8542994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Báo Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0008197,
+          13.9919569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Petrolimex TX Số 8 Công An",
+        "class": "gas_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.340232,
+          20.8305267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Xăng Dầu Công An",
+        "class": "gas_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3403768,
+          20.8304966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Xe Công An Thành Phố Bắc Giang",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1911601,
+          21.2971041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Nhà Ở Công An Quận Hoàng Mai",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8877566,
+          20.9928378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Bồ Công Anh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7684063,
+          10.8870457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Bồ Công Anh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7683044,
+          10.8869482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Bồ Công Anh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6579556,
+          11.0050224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Bồ Công Anh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2217318,
+          16.0838955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công Anh Mobile",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1345655,
+          21.2506096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công An Quản Lý Hành Chính Phường 4",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4600033,
+          9.7817323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bồ Công Anh Shop",
+        "class": "cosmetics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3829514,
+          10.2570147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bồ Công Anh Coffee",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8960124,
+          12.5917611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bồ Công Anh Coffee",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4488586,
+          11.9410266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Giày Công An-Công Ty 19/5",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6916066,
+          10.8283269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cơ Quan Công An Điều Tra CA TP.HCM",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6975746,
+          10.8025688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Công Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6983363,
+          10.8984056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Công Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4492287,
+          11.9401632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bồ Công Anh Coffee And Cookies",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0358976,
+          12.676843
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Khách Công An Nghệ An",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.682978,
+          18.6664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công Anh Coffee",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.259366,
+          21.4302699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Dưỡng Lăng Cô-Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0773994,
+          16.2430856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Tư Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.6895924,
+          21.8802496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công An Giao Thông Quận Gò Vấp",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6622767,
+          10.835532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Bán Công An Thượng",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7051653,
+          20.9936441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tiệm Cắt Tóc Công Anh",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3067256,
+          15.8841436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quầy Thuốc Bệnh Xá Công An",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1536494,
+          9.1816521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bồ Công Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3712837,
+          11.7429112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bồ Công Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0537906,
+          12.6897907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bồ Công Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1520238,
+          13.7939058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thi Đấu CA Nhân Dân-Bộ Công An",
+        "class": "stadium",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8208221,
+          20.9704162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SVĐ Bộ Công An",
+        "class": "stadium",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8203661,
+          20.969775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Báo Công An Nhân Dân",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8225709,
+          20.9711901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đ.Lý VLXD Công Anh Minh",
+        "class": "construction_materials",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8308911,
+          21.0274966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Khách Bộ Công An",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8256179,
+          21.0188039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Công Vụ Bộ Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8257467,
+          21.0187363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Công Vụ Bộ Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7956308,
+          20.9743608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Chung Cư Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8274955,
+          21.0184709
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tập Thể Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8259961,
+          21.0176271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Thời Trang Nữ Bồ Công Anh",
+        "class": "clothes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8243787,
+          21.596375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DV Cầm Đồ Công Anh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6330755,
+          10.7931655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DV Cầm Đồ Công Anh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.880241,
+          10.9725835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Bán Công An Đồng",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6308814,
+          20.8575711
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH VTNN Công Anh",
+        "class": "fertilizer",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.302426,
+          11.6969537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Khách 1-5 Công An Tỉnh Lào Cai",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0074101,
+          22.4501392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trà Sữa Bồ Công Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0761013,
+          10.3490616
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng CS Ma Túy Công An T.Quảng Bình",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6214561,
+          17.4730039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Công An Thị Trấn",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6278239,
+          22.3193661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Tạp Hóa Công Anh",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2101205,
+          16.0672331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Tạp Hóa Công Anh",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7585198,
+          21.5453679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kho Xăng Dầu Công An TP.Đà Nẵng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.21372,
+          16.0359406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bồ Công Anh Shop",
+        "class": "clothes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.207854,
+          16.0652278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bồ Công Anh Shop",
+        "class": "clothes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2079962,
+          16.0651015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bồ Công Anh Shop",
+        "class": "clothes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1820753,
+          16.0703105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Dưỡng Công An TP.HCM",
+        "class": "hostel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0894828,
+          10.3333169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường THPT Bán Công An Khê",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.6673996,
+          13.9600439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Máy Tính Công Anh",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9423717,
+          21.5342707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Công Anh",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.011082,
+          8.9434576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Công Anh",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7410237,
+          21.0273864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Bồ Công Anh Sài Gòn",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6719219,
+          10.7948227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "P.Kiện ĐT Công Anh",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6703045,
+          10.7699471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TM DV Bồ Công Anh Trong Gió",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6671476,
+          10.7625849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0573179,
+          21.3484604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Báo Công An TP.Đà Nẵng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.220152,
+          16.0671094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TT HL-BD Công An Quảng Ngãi",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8168389,
+          15.121943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TX Công An",
+        "class": "gas_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1705849,
+          20.4267087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu DTLS Công An Nhân Dân",
+        "class": "relics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4070458,
+          21.7784134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thiết Kế Thi Công An Thịnh Phát",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3381317,
+          20.9338728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công An Phường Bắc Lý",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5846938,
+          17.4792848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hair Salon Phí Công Anh",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8007699,
+          20.9816312
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Viện Khoa Học Hình Sự Bộ Công An",
+        "class": "institute",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.804981,
+          20.9962234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Công Anh Thái Nguyên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8356038,
+          21.5776345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Auto Công Anh",
+        "class": "car",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8368403,
+          21.5784302
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cục QL Trại Giam Bộ Công An",
+        "class": "prison",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8373928,
+          20.9818541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Thể Dục Thể Thao Bộ Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8340186,
+          21.0264826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tập Thể B42 Bộ Công An",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8365238,
+          21.0174669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Chí Công An Nhân Dân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8415341,
+          21.0211549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Báo Công An Nhân Dân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8424005,
+          21.0196501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trụ Sở Công An Quân Sự Ngọc Hồi",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8412847,
+          20.9243905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Cảnh Sát BV Công An TP. Hồ Chí Minh",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7003936,
+          10.7876351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vật Tư Ngành Nước Công Anh",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4148537,
+          21.3052157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pcsgt Đường Bộ Công An Cần Thơ",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7857066,
+          10.0110492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Công An Hà Nội",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7867339,
+          20.9773737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tòa CT4 Chung Cư Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7773837,
+          21.0581325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tòa CT3 Chung Cư Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7774884,
+          21.0575818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tòa CT2 Chung Cư Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7775527,
+          21.0569961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tòa CT1 Chung Cư Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7776198,
+          21.0563853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tòa HH Chung Cư Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7776654,
+          21.0557996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Khách Công An Tỉnh Hòa Bình",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3340924,
+          20.8167006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shop Thời Trang Công Anh",
+        "class": "clothes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3448076,
+          11.5458437
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công An Hậu Cần Tỉnh Đồng Tháp",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6361467,
+          10.4607061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CLB Quần Vợt Công An Tỉnh Ninh Thuận",
+        "class": "tennis",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9722568,
+          11.5823486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Công An Đà Nẵng",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1635091,
+          16.0048829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Cắt Sắt Chấn Gia Công Anh Khôi",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5997142,
+          10.8108389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quầy Thuốc Thanh Công An",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.7666842,
+          12.9794572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Bộ Công An",
+        "class": "hostel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2967721,
+          18.0678636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Công An Phường An Hưng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7516104,
+          19.8023635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tiệm Cắt Tóc Nam Công Anh",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1557227,
+          20.408781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường THPT Bán Công An Phú",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0930637,
+          10.8142165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Công Anh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7161864,
+          10.9399462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VPĐD Báo Công An TP.Đà Nẵng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.710822,
+          10.8104068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lớp Vẽ Bồ Công Anh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7176509,
+          10.8095717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Công Anh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7113504,
+          10.9182483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shop Bồ Công Anh",
+        "class": "clothes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3616896,
+          10.3617239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Công Anh",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7567924,
+          10.3089501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Nhà Ở Cán Bộ C22-Bộ Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7552314,
+          21.0487156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tr.Cấp Công An Nhân Dân",
+        "class": "college",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7610035,
+          10.0624832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.4466487,
+          10.3861736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bán Chè Lá Dung Chè Vốn Bồ Công Anh",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1012443,
+          10.3790951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TC Sự Kiện Công Anh",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7388859,
+          10.8715683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kho Xăng Dầu H26 Bộ Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7364478,
+          10.7950335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Bộ Công An-Lô B Lô C",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7366168,
+          10.7950072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Bộ Công An-Lô C Lô C",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7366838,
+          10.795326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hồ Bơi Chung Cư Bộ Công An",
+        "class": "services",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7368823,
+          10.7953181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Bộ Công An Lô A",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7363244,
+          10.7944828
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Highlands Coffee Chung Cư Bộ Công An",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7369199,
+          10.7948491
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.736944,
+          10.794359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty SX Gia Công Anh Kiệt",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7378291,
+          10.8558109
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Công An Xã Trung Thành",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0878816,
+          20.3815989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Tình Công An",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8962108,
+          12.985926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "P.Khám CK Nhi BS Phạm Công Anh Vũ",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4152452,
+          10.5363257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VP Nhà Đất Công Anh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9666135,
+          10.7266673
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vườn Nướng Bồ Công Anh",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4501407,
+          11.9402026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CS Lưu Trú DL Ngôi Nhà Bồ Công Anh",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4473404,
+          11.9280104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Công An Quận Long Biên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8997113,
+          21.0694059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shop Mỹ Phẩm Bồ Công Anh",
+        "class": "cosmetics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3273625,
+          15.8818166
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hair Stylist Bồ Công Anh",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0347738,
+          20.9707418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường Công An Nhân Dân",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9262893,
+          20.6080245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Định Vị Công Anh",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4780973,
+          11.9688413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư C17 Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8703706,
+          21.0535793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CS Công Anh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7439365,
+          10.8727852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Hoa Bồ Công Anh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7479169,
+          10.7906045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TX Công Anh Tỉnh Trà Vinh",
+        "class": "gas_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3215154,
+          9.9188682
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "K.Giữ Vật Chứng Công An Cẩm Phả",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2631586,
+          20.9995463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Hoa Bồ Công Anh",
+        "class": "florist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.7919855,
+          11.7449779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VP Luật Sư Công Anh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.7880158,
+          15.1183463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cảnh Sát 113 Công An Tỉnh Quảng Bình",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6041371,
+          17.4722722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Garage Công Anh",
+        "class": "car_repair",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6007844,
+          10.788826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thôn Công An Hoàng Văn Thụ Trương Mỹ",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6521434,
+          20.8694035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đình Làng Công An",
+        "class": "temple",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6540638,
+          20.8717368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TX Công An Tỉnh",
+        "class": "gas_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6130743,
+          21.3123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Giấy Dán Tường Công Anh",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.298612,
+          21.0061093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Công An CT9",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8146316,
+          20.9816237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Chung Cư A15 Bộ Công An",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8138242,
+          20.9804666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S.Chữa Ô Tô Thành Công An",
+        "class": "car_repair",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8134434,
+          21.0410955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Dưỡng Công An 378",
+        "class": "hostel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1977367,
+          12.2572966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bảo Tàng Công An Khánh Hòa",
+        "class": "museum",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.196983,
+          12.2319051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Công An",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.8367706,
+          22.385047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thư Viện Công An Nhân Dân",
+        "class": "library",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.843055,
+          21.0215454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Xuất Bản Công An Nhân Dân",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8425963,
+          21.0203862
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bảo Tàng Công An Nhân Dân",
+        "class": "museum",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8454931,
+          21.0225644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Oto VinFast Bộ Công An A01",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.845587,
+          21.0210397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NXB Công An Nhân Dân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8507851,
+          21.0097125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Dương Công Anh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0678375,
+          21.1849595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Dương Công Anh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0683069,
+          21.1781392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tổ Công An Chợ Rồng",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1729479,
+          20.4283148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Hóa Công Anh",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1731866,
+          19.9953747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Giải Khát Bồ Công Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7735723,
+          10.0340151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shop Bồ Công Anh",
+        "class": "shoes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7736474,
+          10.0338884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Tập Thể Công An Nhân Dân",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7755116,
+          21.0741738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Học Viện Chính Trị Công An Nhân Dân",
+        "class": "academy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7751387,
+          21.0732103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TH Công An Nhân Dân",
+        "class": "television",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7715231,
+          21.0370025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tòa Soạn Báo Công An Nhân Dân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7704234,
+          10.0267492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mỹ Phẩm Bồ Công Anh",
+        "class": "cosmetics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8545884,
+          20.9987225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Xe Vi Phạm Công An Đông Anh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8608568,
+          21.1366509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "XN Đóng Tàu Nam Triệu Bộ Công An",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.654914,
+          20.8420279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CN Cty DV Mỹ Phẩm Bồ Công Anh",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6502282,
+          10.7957449
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Bồ Công Anh Việt Nam",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6547316,
+          10.7742394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mộ Đại Tá Trần Công An",
+        "class": "cemetery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.782327,
+          10.9824841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KDC Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7915512,
+          10.006263
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Công Anh",
+        "class": "hostel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7922485,
+          21.0184684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Tập Thể H26-Bộ Công An",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.788134,
+          20.9966942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cục Kho Vận Bộ Công An",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7941878,
+          20.9924271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shop Hoa Bồ Công Anh",
+        "class": "florist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.794566,
+          21.0454788
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SX Gia Công Anh Quân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7913098,
+          20.9238293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Công Anh",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9813792,
+          21.3587674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Cảnh Sát Cơ Động-Công An Tỉnh Ninh Bình",
+        "class": "police",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9790108,
+          20.2571721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trường MN Công An",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3223575,
+          12.4971689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trà Dược Thảo Bồ Công Anh",
+        "class": "food",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3243155,
+          11.6770651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MN Bồ Công Anh",
+        "class": "kindergarten",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8666556,
+          10.9306394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Bồ Công Anh",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4412867,
+          11.9550839
+        ]
+      }
+    }
+  ]
+}

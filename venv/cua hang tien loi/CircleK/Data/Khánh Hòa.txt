@@ -1,0 +1,68 @@
+[
+  {
+    "title": "96B/3 Trần Phú, Phường Nha Trang, Tỉnh Khánh Hòa",
+    "lat": "12.2277169",
+    "lng": "109.1990397",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>96B/3 Trần Phú, Phường Nha Trang, Tỉnh Khánh Hòa</p><p></p> <div class=\"list-ser liss-all\"><div class=\"list-ser-24h\"><img title=\"Thanh Toán Hóa Đơn\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2018/03/bill-pyment-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thanh Toán Bằng Thẻ\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2018/10/credit-card100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thẻ Điện Thoại\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/phonecard-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thẻ Game\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/gamecard-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Cửa hàng có ghế ngồi\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/seat.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thức Ăn &#038; Thức Uống\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/1.png\" alt=\"\"></div></div>"
+  },
+  {
+    "title": "19 Lê Thánh Tôn, P. Lộc Thọ, Nha Trang",
+    "lat": "12.2438262",
+    "lng": "109.1931779",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>19 Lê Thánh Tôn, P. Lộc Thọ, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "L-01 Vinpearl Harbour, Nha Trang",
+    "lat": "12.2173132",
+    "lng": "109.2405233",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>L-01 Vinpearl Harbour, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "6 Tháp Bà, Phường Vĩnh Thọ, Nha Trang",
+    "lat": "12.2654992",
+    "lng": "109.1977373",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>6 Tháp Bà, Phường Vĩnh Thọ, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "90 Hồng Bàng, Phường Tân Lập, Nha Trang",
+    "lat": "12.2401086",
+    "lng": "109.1900178",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>90 Hồng Bàng, Phường Tân Lập, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "C-02 Vinpearl Harbour, Nha Trang",
+    "lat": "12.2173132",
+    "lng": "109.2405233",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>C-02 Vinpearl Harbour, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "18 Trần Phú, P. Lộc Thọ, Nha Trang",
+    "lat": "12.2491123",
+    "lng": "109.1960881",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>18 Trần Phú, P. Lộc Thọ, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "4C Biệt Thự, P. Lộc Thọ, Nha Trang",
+    "lat": "12.2358418",
+    "lng": "109.1959279",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>4C Biệt Thự, P. Lộc Thọ, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "6A Nguyễn Chánh, Lộc Thọ, Nha Trang",
+    "lat": "12.2462047",
+    "lng": "109.1958006",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>6A Nguyễn Chánh, Lộc Thọ, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "15 Đường Trần Hữu Duyệt, Khu Đô Thị Vĩnh Điềm Trung, Vĩnh Hiệp, Nha Trang",
+    "lat": "12.2558801",
+    "lng": "109.1676723",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>15 Đường Trần Hữu Duyệt, Khu Đô Thị Vĩnh Điềm Trung, Vĩnh Hiệp, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "78 Nguyễn Đình Chiểu, Vĩnh Phước, Nha Trang",
+    "lat": "12.2689512",
+    "lng": "109.2005824",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>78 Nguyễn Đình Chiểu, Vĩnh Phước, Nha Trang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  }
+]

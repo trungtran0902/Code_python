@@ -1,0 +1,4040 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công Ty TNHH Nhà Hàng Khách Sạn Ly Na-Long Tỵ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1609424,
+          9.1835295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Ngỗng 9 Món Cơm Dân Tộc",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6775894,
+          20.9205522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chum Nhà Hàng Sân Vườn",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6785148,
+          10.7410797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Thái Quán Ăn Thái Đồ Ăn Thái Lan",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.679298,
+          10.7724292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Quý Lâm-Nhà Hàng The Elchies",
+        "class": "food_court",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6860196,
+          20.8292507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Cơm Lẩu Bảo Việt",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9604821,
+          19.638288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Món Huế",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7621729,
+          10.8267357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Món Huế",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7625752,
+          10.784468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Món Huế",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7155239,
+          10.8371759
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tiệc Cưới Cầu Treo Convention Center",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7603517,
+          10.8506109
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cơm Niêu Bình Dương-Nhà Hàng Cơm Mẹ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7549577,
+          10.9424032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tiệc Cưới Thanh Long",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7632324,
+          10.8626676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Quán Nhậu Chú Ba",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9980302,
+          13.9758591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Gỗ Phương Nam",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1564952,
+          10.4103181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Thu Cúc Garden Đền Hùng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3407121,
+          21.3594319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Beer Hải Âu 2",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9635879,
+          21.5359847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Paris Palace Nhà Hàng Tiệc Cưới",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6756635,
+          16.4056026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Roll Story-Nhà Hàng Nướng Đá-Vincom Bắc Giang",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1923134,
+          21.2761032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Nhà Hàng Chen 2",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1834165,
+          20.4401631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dê Núi Trâu Tươi Tuấn Dung",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8919355,
+          21.027767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cơm Ngon Hà Tĩnh-Nhà Hàng Cơm Việt",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8913454,
+          18.3378017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Siêu Thị Tất Thắng",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8987724,
+          12.5909941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Karaoke Nice Vip",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7654318,
+          10.845669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cung Cấp Thực Phẩm Nhà Hàng Quán Ăn",
+        "class": "food",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7757824,
+          10.8740917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hồ Câu Tôm Bống",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7693317,
+          10.7878248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tuyển Nhân Viên Phục Vụ Nhà Hàng Tại Thủ Đức",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7736286,
+          10.8863925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Gạo Nếp Q9",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7714855,
+          10.8130572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Gạo Nếp Q9",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7817637,
+          10.8130362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tàu Nhà Hàng Sông Tiền",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9686011,
+          10.2567561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Hằng-Hải Sản Tươi Sống Cửa Lò",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7245308,
+          18.803542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Phở Tráng Tay Trần Gia",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.731239,
+          21.0091166
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Thịt Nướng Nhật Bản No Meat No Life",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7214785,
+          21.0622425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Coffee Vietview",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7244155,
+          18.6411165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bãi Biển Bình Hiền",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7298362,
+          19.1742417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Phượng Hoàng",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0748059,
+          21.1721141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Beer Thu Hường",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0766512,
+          21.1805728
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Ô Tô VinFast BĐX Nhà Hàng Đỗ Kiên",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0806611,
+          20.7473552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Đỗ Kiên",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0806611,
+          20.7473552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn Hải Đăng Mũi Dinh",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.866972,
+          11.333645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Le Ho Ma",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6896325,
+          10.7768638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty DV Nhà Hàng Xưa",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6893563,
+          10.8024423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bánh Gánh",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5958329,
+          16.4702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Ngọc Hải",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.5277745,
+          11.7806216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngói Nhà Hàng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0379575,
+          10.835345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NH Nhà Hàng Thanh Trí",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0327192,
+          12.6838063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tiệc Cưới Biển Cầu Tàu Phan Thiết",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0765331,
+          10.9055301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dê Sơn Anh 3-Đặc Sản Dê Hương Sơn",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5354243,
+          17.5788621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bia Tươi Đức Babarina",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9503675,
+          21.1130399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Biển Ngọc",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6055157,
+          16.4607806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cà Phê Nhà Hàng Suối Ngựa",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.604416,
+          11.4099467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Sân Vườn Tư Trì Nhà Hàng Tiệc Cưới",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6560218,
+          10.8503765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Máy Nhà Hàng Văn Hoa",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6641515,
+          10.7530512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Cây Sứ",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6656509,
+          10.7989566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Cà Phê Homestay Đồi Xưa",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4580719,
+          11.9330359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TS Oto VinFast Nhà Hàng Mái Lá",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7014611,
+          21.2353574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Mái Lá",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7014611,
+          21.2353574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Thành Anhà Hàng",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1495911,
+          16.0779163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Thu Còng Lòng Lợn Tiết Canh Bún Phở",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3740466,
+          21.2288595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Chuyên Lẩu Đính Dung",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0045561,
+          20.1617043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Cà Phê Đăng Phát",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5817192,
+          12.2075389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hoa Viên Brauhaus Nhà Hàng Nấu Beer",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1883195,
+          10.9373812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Vua Lẩu Nướng Bbq Lục Yên",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.7644985,
+          22.111846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Số 5 Vua Gà Tươi",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5757916,
+          21.2410874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Ẩm Thực Sinh Thái Lụm Bistro",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.574016,
+          9.6857274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jeju Nhà Hàng Lẩu&Nướng Bbq",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6247392,
+          21.3047984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thanh Lịch Nhà Hàng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1653866,
+          12.260054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Điểm Hẹn Quế Võ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1117774,
+          21.1488239
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Thịt Chó Đức Thắng",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8239952,
+          21.5855186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Nướng Lẩu Hàn Quốc Sasinin",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8253282,
+          21.5934297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bia Hơi HN Nhà Hàng 47",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8201623,
+          21.0083303
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điểm Dừng Chân Nhà Hàng Hương Ngãi",
+        "class": "reststop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9740192,
+          22.678426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dimsum Chi Tao Bao",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6265872,
+          10.7386289
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trà Sữa Nhà Hàng",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6302189,
+          10.7772116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Mực Nhảy Qb",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6302001,
+          17.4729706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Xuân Tóc Đỏ 2 Nhà Hàng Hải Sản",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6322413,
+          17.4674418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điểm Hẹn Hồ Bản Mòn Homestay-Nhà Hàng",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.6306267,
+          20.8494926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Sản Bè Biển-Làng Chài Hàm Ninh",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0517578,
+          10.1906969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Câu Cá Giải Trí Vui",
+        "class": "video_games",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1346029,
+          10.952784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Ô Tô VinFast Nhà Hàng Sáu Lục",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1369069,
+          12.158818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Sáu Lục",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1369069,
+          12.158818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cinnamon Restaurant-Nhà Hàng Quế",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.840059,
+          22.338091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Cơm Niêu Thuận Long",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.620158,
+          17.4764834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hàn Quốc K-Chicken",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6159576,
+          10.7811876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hồ Bơi Nhân Ái Bình An",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6153783,
+          10.5133409
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Festina Lente Nhà Hàng Á Âu Hiện Đại",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2126203,
+          13.7549861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dịnhà Hàng Tiệc Cuới Trắng Hồng",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2130762,
+          12.962222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ốc 19-Lẩu Ốc-Nhà Hàng Tú Thúy",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5050108,
+          21.1316098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Lẩu Nướng Bbq",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5027282,
+          21.1452492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tiệc Cưới-Khách Sạn Sun Rise",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6987815,
+          11.9980516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hệ Thống Nhà Hàng Dê Nghĩa",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.20761,
+          16.0124551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Xe Nhà Hàng Hương Rừng",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0939782,
+          10.3561066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phố Ốc-Nhà Hàng Hải Sản Tươi Sống Đông Hà",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0897725,
+          16.8114172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dê Gà Cá Thành Công",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2800164,
+          21.1690126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Mạnh Năm",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2768326,
+          21.2181432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Nem Tung",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2750596,
+          20.1239823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Cây Dừa",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8092644,
+          10.953021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Cây Dừa",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4993996,
+          19.2602513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Cảng Fansipan",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.7743369,
+          22.3062496
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tokbokki Yên Dũng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2472129,
+          21.1977137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hội Nghị Tiệc Cưới Thu Bồn Cầu Mống",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2687858,
+          15.8674929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Nhà Hàng Baoz Dimsum",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6701195,
+          10.7537442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Hoàng Hà Hotel-Nhà Hàng Sushi House",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.67274,
+          10.7965248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Tiệc Cưới Thái Phát Đạt",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3009966,
+          18.4583127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Góc Phố Hanoi Bold And Light",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7382557,
+          21.0406349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thủy Trí Nhà Hàng Bia Số 1",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7343289,
+          21.6865768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Dừng Chân-Nhà Hàng Trường My",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.864652,
+          11.5313424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Dừng Chân Nhà Hàng Trường My",
+        "class": "reststop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8650758,
+          11.5313766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Đặc Sản Tây Nguyên Cây Bàng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8687987,
+          11.5312057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hoa Kim Garden Nhà Hàng Sân Vườn",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0401731,
+          12.6426807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gradeli Beer-Nhà Hàng Bia Tươi Đà Nẵng",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2172015,
+          16.0400805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hẹn Quán Cafe Nhà Hàng",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2203612,
+          16.0496078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mr.Bò To Beer-Nhà Hàng Bia Đức Đà Nẵng",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2186472,
+          16.0333112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beer Hub-Nhà Hàng Bia Tươi Đức",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2198113,
+          16.0607585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Mỳ Kéo Lan Châu Xiên Nướng Trung Hoa",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3354066,
+          20.4448705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "262-Nhà Hàng Hải Sản Ngon Tại Vinh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6897399,
+          18.6598514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Gà Vịt Hạ Giới",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.691655,
+          18.6783987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Nhà Hàng Ba Vì",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4412949,
+          21.1846068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Ăn-Nghỉ Đức Thắng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3789818,
+          21.1401933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Bãi Đỗ Xe Nhà Hàng Hoa Mai",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.370911,
+          20.5911474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Ô Tô VinFast Nhà Hàng Phương Nam 2",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2544549,
+          17.5781001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Phương Nam 2",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2544549,
+          17.5781001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Gió Đồng",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7137242,
+          21.7186997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Sản Tươi Sống Ngọc Hạnh Cửa Hội",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7182088,
+          18.8149165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Ẩm Thực Buffet Chay Thành Việt Pháp",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1613768,
+          20.4338721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hoa Viên",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.164051,
+          20.4340179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bia Hải Sản F18",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1621198,
+          20.4319669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bún Phở Lẩu 12 Hàn Thuyên",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1404262,
+          21.5006992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Ô Tô VinFast Nhà Hàng Hòa Hiệp",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3784049,
+          12.9948879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Hòa Hiệp",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3784049,
+          12.9948879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "An-Nhà Hàng Chay & Cafe-Quận 7",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.731188,
+          10.7198048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Sản Ẩm Thực Phố Đêm-Bình Dương",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7253086,
+          10.9423031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Quán Ăn Gia Đình",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7305979,
+          10.6300324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bạch Tuộc Bốc Lửa",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7312738,
+          10.8050585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Cá Chị Hai",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3407013,
+          20.4653497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Uyên Ương",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3436732,
+          9.9372119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Văn Hóa Giáy",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8900581,
+          22.3030881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Gió Biển",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8060136,
+          19.4982634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Nhà Hàng Xóm",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8074754,
+          21.0323961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mr Tuktuk Nhà Hàng Thái",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8071804,
+          21.0231853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bia Lẩu Nướng Lòng Bò Seoul",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8081111,
+          21.059001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn Vườn Dừa Quảng Thái",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8336431,
+          19.6627346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn Vườn Dừa Quảng Thái",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.836218,
+          19.6627296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tại Gia Số 10",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8404398,
+          20.9924221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn-Spa Le Jardin",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.838455,
+          22.1428049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Lẩu Cá Kèo Anh Ba",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8421537,
+          21.0479596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "An Vui Nhà Nghỉ-Nhà Hàng-Karaoke",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.4386986,
+          21.6542996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TNHH Nhà Hàng Ẩm Thực Bông Sen",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7091107,
+          10.8428529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Ramen Mutahiro",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7049077,
+          10.7797384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Tiệc Cưới Khoa Trí",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4163316,
+          10.394703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vado Canteen-Nhà Hàng Nhỏ Vui Vẻ",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7828099,
+          10.0338329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dímum Hao Chi",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7837942,
+          20.9857308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Gà Nướng Hàn Quốc Dagit",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7863209,
+          20.9851272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kaffir Lime Thanh Hóa-Nhà Hàng Thái Hiện Đại",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.780082,
+          19.8046524
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Bia Nhà Hàng Mơ Liêm",
+        "class": "bar",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7779229,
+          19.4485325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Bia Nhà Hàng Mơ Liêm",
+        "class": "bar",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7753319,
+          19.4488082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Vua Gà Mạnh Hoạch",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7809296,
+          19.7436032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Bãi Đỗ Xe Nhà Hàng Sake",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7792452,
+          19.7491369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Ăn Nhà Hàng Nam Bộ Quán",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7801491,
+          10.0581758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Cá Tầm Ngọc Minh Anh",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8765959,
+          11.5340283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Cơm Phở Kỳ Anh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4855835,
+          20.2117335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Taka Yaki-Quán Lẩu Nướng Nhật Bản",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6074712,
+          19.8180747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Ếch Phúc Long Hải",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6091154,
+          21.3895619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Quán Lá",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.2982475,
+          22.5445715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Cà Phê-Điểm Tâm Tí Lùn",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8026608,
+          11.5498355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Sản Ven Biển Anh Dương Phú Quốc",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9590687,
+          10.2126759
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tiệc Cưới Rồng Vàng Coffee Rồng Vàng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9611739,
+          14.8060881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Tuyên Hùng",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4476169,
+          18.7450522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TS Oto VinFast Bài Đỗ Xe Nhà Hàng Tuyên Hùng",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4476169,
+          18.7450522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dừng Nghỉ Phúc Lộc Thọ",
+        "class": "reststop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.7534637,
+          10.8305609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thắng Cố A Quỳnh-Nhà Hàng Khám Phá Việt",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8441575,
+          22.3360268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Hầm Rượu Tít Tót Cần Thơ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7527852,
+          10.0301009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Nhà Sàn Hoa Ban-Điện Biên",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0102775,
+          21.3921418
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điểm Dừng Chân Nhà Hàng Dân Tộc Quán",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0111358,
+          21.3832657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Nhà Hàng 68 Tòng Đậu",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0718233,
+          20.7046108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Biển Hải Tiến-Nhà Hàng Sự Hoà",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9359801,
+          19.8418504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàngngân Đức 68",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.937635,
+          20.53939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Biển Nắng Chuyên Hải Sản Tươi Sống",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3867978,
+          21.3196712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TNHH Nhà Hàng Ẩm Thực Trâu Núi Gà Đồi",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7195123,
+          10.8245649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Chay Mộc Nhiên Thủ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7178252,
+          10.8479081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Truyền Thống Sarangchae",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7132521,
+          10.9211584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Suntorini Nhà Hàng & Khách Sạn",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.072145,
+          10.3340003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Nhà Hàng Gành Hào 2",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0716166,
+          10.339465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Gia Hân Phún Phở Nhà Hàng Cơm",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.6808028,
+          22.7392883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bbq Jeju",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3621107,
+          10.2301451
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Ẩm Thực-Nhà Hàng Tiệc Cưới Phú Ông",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3523151,
+          15.7385985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Nhà Hàng Quỳnh Anh",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2235556,
+          12.6870144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Biển Vĩnh Hảo 2",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8478962,
+          11.3331532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Nem Bà Năm",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1326502,
+          12.48721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Ăn-Nhà Hàng Vua Biển",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1009547,
+          10.3544126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ.Nhà Hàng Tiệc Cưới Minh Trang",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7393339,
+          10.9084298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Nhà Bếp Khuê Mỹ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2482722,
+          16.0419391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Xe Nhà Hàng Cường Trang",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0869107,
+          21.2055783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Xe Nhà Hàng Hương Quê",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8989495,
+          21.0572364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "French House Restaurant-Nhà Hàng Hội An",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3315682,
+          15.8784344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Cơm Niêu Món Huế Đèn Dầu",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3357364,
+          15.8782203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phụ Tùng Honda Sáu Bìnhà Hàng",
+        "class": "motorcycle_parts",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9916894,
+          11.574061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "198X Beer Club Nhà Hàng Hải Sản Số 01 Hạ Long",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0309168,
+          20.9425605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Nhà Hàng Mỹ Cảnh",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1789184,
+          10.4987279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kinh Thanh Nhà Hàng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8690402,
+          20.8714737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Cá Tầm Cá Hồi Tùng Trang",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8727551,
+          22.1014909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tiệm Cocoru-Nhà Hàng View Sông Hồng",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8680558,
+          21.010063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Vượng Thân Phục Vụ Xuyên Màn Đêm",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2240762,
+          21.401764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dừng Nghỉ Nhà Hàng Hải Yến Ql6",
+        "class": "reststop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2195969,
+          20.6327366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Coffee Tân Hạnh",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9613698,
+          11.8210152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Sản Hầm Rượu Biển Đông",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9535914,
+          10.7920431
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Lẩu Nướng Hải Sản Oneking Cơ Sở 2",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7457148,
+          10.8534822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Chay-Cafe Nhoàn",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7536086,
+          10.8089921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Đồ Ăn Thai Market Restaurant Tam Kỳ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.485291,
+          15.5728486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Tiệc Cưới Sự Kiện-Vườn Bia Olala",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4879974,
+          15.5632807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Nhà Hàng Tuấn Năm 1",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9135863,
+          19.7584064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Sinh Thái Nhà Hàng Kim Long",
+        "class": "tourist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.916416,
+          21.0719488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Đại Lâm Mộc Cơm Quê-Hải Sản Phú Quốc",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9704412,
+          10.2169047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Thỏ Đế Vương Cơm Lẩu Các Món Nhậu",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9698645,
+          22.4932956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hai Lúa: Nhà Hàng-Khách Sạn-Vườn Táo Cổ Thụ",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6547183,
+          10.3709267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Linh Vân-Trạm Dừng Nghỉ Chân 117+500",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.8790047,
+          21.6754131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Phố Bia Phố Bia Vân Đồn",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.4267572,
+          21.0642248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Ô Tô VinFast Nhà Hàng Miền Đông Hương Sen",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8078402,
+          11.3087913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bún Riêu Cua Cty TNHH Phạm Thiện",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7987394,
+          10.8618063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Lẩu Ốc 123-Vĩnh Yên",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6141686,
+          21.30111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Biển Dương-15 Trần Văn Ơn-Nha Trang",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1933003,
+          12.2489091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bê Thui Gà Ta Vinh Béo",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8820623,
+          11.4709113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đỉnh Đèo Gió-Nhà Hàng Quang Xuyến",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9546402,
+          22.4205351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Dừng Nghỉ Nhà Hàng 86",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9552974,
+          20.5370591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Phố Nhậu Lai Châu",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.4646678,
+          22.3907214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Suika Yakiniku-Nhà Hàng Sushi Nướng Nhật Bản",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1681118,
+          10.4936458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nơi Để Xe Nhà Hàng Chí Beo",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1700403,
+          10.4955868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Tiệc Lưu Động Tiến Hương",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6746927,
+          19.6765957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Pha Trộn Mix",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1957814,
+          12.2348489
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Lung Vinh Phở Lý Quốc Sư Thuận Châu",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.6871007,
+          21.4372707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cơm Phở Bình Dân-Nhà Hàng Tinh Oanh",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.2506999,
+          22.3575128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bbq Garden",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8518285,
+          21.0138364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dê Tươi Lẩu Nướng OK",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8460698,
+          21.0077594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Nướng Lẩu 123 Zô Tp Hưng Yên",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0622478,
+          20.649117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bia Nướng 102",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1574392,
+          11.9259319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vườn Ẩm Thực Nhà Hàng Đại Long",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1234422,
+          11.9069653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Bia Đen Phú Cương",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3662252,
+          21.1169357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Coffee Linh Chi",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3624755,
+          23.2769837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phở Bát Đá-Nhà Hàng Tình Yến",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7730868,
+          19.7951837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Và Nhà Hàng Cao Sơn Ninh Binh",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8621684,
+          20.2858705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Cơm Lẩu Tuyết Nhung",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4427379,
+          22.691292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Sam Nhà Hàng Ăn Vặt",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5136716,
+          19.0078471
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Buffet Lẩu Nướng July 79",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8025293,
+          15.1193743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sam Garden-Nhà Hàng Ngon Quảng Ngãi",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8025293,
+          15.1040421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phố Lẩu Nhà Hàng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6526905,
+          20.8646366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Hải Sản Và Hầm Rượu Yumi",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6479242,
+          10.9983269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bàn Ghế Nhà Hàng Nội Thất Inox Hòa Phát",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7803341,
+          10.8335852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tổ Chức Hội Họp",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7857388,
+          10.8338197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bia Tây Bắc-Nhà Hàng Đồ Rừng Uông Bí",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7767158,
+          21.0361588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chợ Hải Sản-Nhà Hàng Biển Đông 36",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7919267,
+          19.8060883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dê Ré Song Dương-39 Trần Kim Xuyến",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7938445,
+          21.0191293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Sinh Thái Nhà Hàng Hiền Hoa",
+        "class": "tourist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7888529,
+          19.7935508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Và Shop Chương Ngân",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0861222,
+          22.5990353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Quán Bia-Quán Nhậu Duy Tiến",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0870127,
+          22.5703795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điểm Dừng Nghỉ Nhà Hàng Hoàng Linh",
+        "class": "reststop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3450571,
+          21.124667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Đặc Sản Thịt Chó Huy Cao",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.027084,
+          20.9394993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Gà Đông Tảo 9 Món 286",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9811673,
+          20.8921836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Đặc Sản Gà Sáu Cường",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2573569,
+          16.0146413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hey Heo Nhà Hàng Nướng Vinhome Grand Park",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8376851,
+          10.8449393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Tiệc Cưới Ánh Sáng",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1118041,
+          15.5789125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tắm Suối Vườn Mít",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1102082,
+          16.1550656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Dừng Chân Và Nhà Hàng Chay Lắc Chuông",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2257069,
+          11.1196201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Dê Quay Hương Sơn",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8696517,
+          11.4440638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Và Nhà Nghỉ Hưng Tâm",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.1731626,
+          22.1882246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Trà Sữa Club Bi-A Đảm Thương",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5572172,
+          20.4871251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Dừng Chân Nhà Hàng Sao Mai",
+        "class": "reststop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0379736,
+          14.5335309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lộc Lộc Phát Nhà Hàng Ven",
+        "class": "tourist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3584737,
+          19.9531729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chiang Rai Nhà Hàng Thái",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6379249,
+          10.7904938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TNHH Dv Nhà Hàng Khách Sạn Lúa Việt",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7931229,
+          10.7686138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Thủy Lộc-Căng Tin Nhà Khách Hải Sơn",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7924604,
+          20.6976532
+        ]
+      }
+    }
+  ]
+}

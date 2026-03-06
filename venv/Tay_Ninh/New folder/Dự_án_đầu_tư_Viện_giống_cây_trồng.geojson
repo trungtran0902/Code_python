@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.232021,
+                    11.564775
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Dự án đầu tư Viện giống cây trồng",
+                "Lĩnh vực": "Lĩnh vực Nông nghiệp",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Lô C1, Khu chức năng V , Vùng Đề án SX NNUDCNC huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": " Vùng Đề án sản xuất NNUDCNC xã Tân Thành, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.564775,106.232021",
+                "Toạ độ khu đất trên google map": "X=11.564798 Y=106.231691",
+                "Diện tích (ha)": "22,77 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Chuyên nghiên cứu và sản xuất giống cây cung cấp cho vùng Đề án  NNUDCNC Tân Châu và tỉnh Tây Ninh",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch ",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề xuất của Nhà đầu tư",
+                "Hình thức đầu tư": "Kêu gọi đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế, tạo công ăn việc làm cho ngừoi dân địa phương ",
+                "Hiện trạng": "Cao su",
+                "Nguồn gốc đất": "Đất UBND tỉnh Tây Ninh thu hồi giao UBND huyện Tân Châu quản lý",
+                "Quy mô/công suất dự án": "Quy mô phù hợp theo  Quyết định số 1419/QĐ-UBND ngày 25/07/2024 phê duyệt Đề án vùng SXNNUDCNC Tân Châu, Tây Ninh",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "Đất nông nghiệp khác",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "Đất nông nghiệp khác",
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": "Sở Nông nghiệp và PTNT",
+                "Phân loại": "Đề xuất mới 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

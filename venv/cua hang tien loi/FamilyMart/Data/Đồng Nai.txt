@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "67c57c345115cab953d5c996",
+    "name": "FamilyMart - Swanbay (ĐN)",
+    "status": "enable",
+    "address": "Căn 03 Marina Retails, Khu bến du thuyền, Phân khu 8 thuộc dự án Hoa Sen Đại Phước, Xã Đại Phước, Tỉnh Đồng Nai",
+    "coordinate": {
+      "lat": 10.75461329182845,
+      "lng": 106.36509518877384
+    },
+    "province": "690b79fbcc8c6b334889f5ce",
+    "district": "61b327306583182246623994",
+    "open_time": "00h",
+    "close_time": "24h",
+    "createdAt": "2025-03-03T09:53:56.616Z",
+    "updatedAt": "2025-03-03T09:53:56.616Z",
+    "__v": 0,
+    "ward": "690b79ffcc8c6b33488a014c"
+  },
+  {
+    "_id": "67c964e12b232333c58584a8",
+    "name": "FamilyMart - 198 Phan Đình Phùng (ĐN)",
+    "status": "enable",
+    "address": "198-198A Phan Đình Phùng, KP1, P. Trấn Biên, Tỉnh Đồng Nai",
+    "coordinate": {
+      "lat": 10.950671414942631,
+      "lng": 106.81783676147461
+    },
+    "province": "690b79fbcc8c6b334889f5ce",
+    "district": "61b3273065831822466238e2",
+    "open_time": "00h",
+    "close_time": "24h",
+    "createdAt": "2025-03-06T09:03:29.516Z",
+    "updatedAt": "2025-03-06T09:03:29.516Z",
+    "__v": 0,
+    "ward": "690b79ffcc8c6b33488a011b"
+  },
+  {
+    "_id": "67c965282b232333c58584aa",
+    "name": "FamilyMart - A2 Trần Quốc Toản (ĐN)",
+    "status": "enable",
+    "address": "A2 Trần Quốc Toản , Khu phố 3, P. Tam Hiệp, Tỉnh Đồng Nai",
+    "coordinate": {
+      "lat": 10.938406903622482,
+      "lng": 106.85989245772362
+    },
+    "province": "690b79fbcc8c6b334889f5ce",
+    "district": "61b3273065831822466238e2",
+    "open_time": "00h",
+    "close_time": "24h",
+    "createdAt": "2025-03-06T09:04:40.717Z",
+    "updatedAt": "2025-03-06T09:04:40.717Z",
+    "__v": 0,
+    "ward": "690b79ffcc8c6b33488a0119"
+  },
+  {
+    "_id": "67c965d92b232333c58584b3",
+    "name": "FamilyMart - 201 Nguyễn Khuyến (ĐN)",
+    "status": "enable",
+    "address": "201 Nguyễn Khuyến, P. Trảng Dài, Tỉnh Đồng Nai",
+    "coordinate": {
+      "lat": 10.984516827814453,
+      "lng": 106.86825223267078
+    },
+    "province": "690b79fbcc8c6b334889f5ce",
+    "district": "61b3273065831822466238e2",
+    "open_time": "00h",
+    "close_time": "24h",
+    "createdAt": "2025-03-06T09:07:37.005Z",
+    "updatedAt": "2025-03-06T09:07:37.005Z",
+    "__v": 0,
+    "ward": "690b79ffcc8c6b33488a0117"
+  }
+]

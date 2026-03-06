@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.058468,
+                    10.73029
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Khu đô thị, thương mại - dịch vụ xã Mộc Hóa",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Thị trấn Bình Phong Thạnh, huyện Mộc Hóa",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Mộc Hoá, Tỉnh Tây Ninh",
+                "Định vị toạ độ": "10.730290,106.058468",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "12,1",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Khu đô thị, thương mại, dịch vụ ",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Đã được phê duyệt Quy hoạch chi tiết 1/500",
+                "Tổng vốn đầu tư (dự kiến)": 147000000000,
+                "Hình thức đầu tư": "Kêu gọi đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": "50 năm",
+                "Hiệu quả kinh tế": "Thúc đẩy phát triển đô thị, nhà ở, phát triển kinh tế xã hội địa phương",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

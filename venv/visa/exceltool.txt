@@ -1,0 +1,442 @@
+# ========== excel_tool.py — PHẦN 1/4 ==========
+
+import os
+import sys
+import json
+import time
+import requests
+import pandas as pd
+import webbrowser
+from threading import Timer
+from flask import Flask, request, jsonify, render_template_string, send_from_directory
+
+# ========================================
+# CẤU HÌNH LINH ĐỘNG CHO EXE
+# ========================================
+if getattr(sys, 'frozen', False):
+    BASE_DIR = sys._MEIPASS
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+RUN_DIR = os.path.dirname(os.path.abspath(sys.executable if getattr(sys, 'frozen', False) else __file__))
+UPLOAD_DIR = os.path.join(RUN_DIR, "uploads")
+OUTPUT_DIR = os.path.join(RUN_DIR, "outputs")
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# 🔐 Điền API key của bạn (hoặc đọc từ biến môi trường)
+GOOGLE_API_KEY = value"
+MAP4D_API_KEY  = value"
+
+app = Flask(__name__)
+
+# ========================================
+# GIAO DIỆN HTML
+# ========================================
+INDEX_HTML = """
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Bộ công cụ xử lý Excel</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap: 20px; }
+    .card { border: 1px solid #ccc; padding: 20px; border-radius: 10px; background: #fff; }
+    h2 { margin: 0 0 10px; }
+    .out { margin-top: 10px; background: #f8f9fa; padding: 10px; border-radius: 8px; white-space: pre-line; }
+    button { padding: 8px 14px; background: #16a34a; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    button.cancel { background: #dc2626; margin-left: 8px; }
+    select, input[type=file], input[type=text] { width: 100%; margin-top: 5px; }
+    label { display:block; margin-top: 6px; }
+  </style>
+</head>
+<body>
+<h1>🧰 Bộ công cụ xử lý Excel</h1>
+<div class="grid">
+
+  <!-- ===================== NEARBY ===================== -->
+  <div class="card">
+    <h2>🔍 Nearby Search (Google Places)</h2>
+    <input type="file" id="file-nearby" accept=".xlsx,.xls"><br>
+    <div id="cols-nearby"></div>
+    <button id="run-nearby">Chạy Nearby Search</button>
+    <button class="cancel" id="cancel-nearby" disabled>Cancel</button>
+    <div id="out-nearby" class="out"></div>
+  </div>
+
+  <!-- ===================== BUILDING ===================== -->
+  <div class="card">
+    <h2>🏢 Building (Google Places)</h2>
+    <input type="file" id="file-building" accept=".xlsx,.xls"><br>
+    <div id="cols-building"></div>
+
+    <label>Keyword (nhập tay cho tất cả dòng):</label>
+    <input type="text" id="kw-building" placeholder="vd: trung tâm mua sắm">
+
+    <button id="run-building">Chạy Building</button>
+    <button class="cancel" id="cancel-building" disabled>Cancel</button>
+    <div id="out-building" class="out"></div>
+  </div>
+
+  <!-- ===================== GEOCODE (MAP4D) ===================== -->
+  <div class="card">
+    <h2>🗺️ Geocode Tách Cột (Map4D)</h2>
+    <input type="file" id="file-geocode_tach_cot" accept=".xlsx,.xls"><br>
+    <div id="cols-geocode_tach_cot"></div>
+    <button id="run-geocode_tach_cot">Chạy Geocode</button>
+    <button class="cancel" id="cancel-geocode_tach_cot" disabled>Cancel</button>
+    <div id="out-geocode_tach_cot" class="out"></div>
+  </div>
+
+</div>
+
+<script>
+let controller = {};
+
+async function getColumns(type) {
+  const fileInput = document.getElementById("file-" + type);
+  const colsDiv = document.getElementById("cols-" + type);
+  if (!fileInput.files.length) return;
+
+  colsDiv.innerHTML = "⏳ Đang đọc cột...";
+  const formData = new FormData();
+  formData.append("file", fileInput.files[0]);
+
+  const res = await fetch("/preview_columns", { method: "POST", body: formData });
+  const data = await res.json();
+
+  if (data.error) {
+    colsDiv.innerHTML = "❌ " + data.error;
+  } else {
+    colsDiv.innerHTML = `
+      <label>Lat:</label>
+      <select id="lat-${type}">${data.columns.map(c=>`<option>${c}</option>`).join("")}</select>
+      <label>Long:</label>
+      <select id="long-${type}">${data.columns.map(c=>`<option>${c}</option>`).join("")}</select>
+    `;
+  }
+}
+
+async function runProcess(type) {
+  const out = document.getElementById("out-" + type);
+  const btn = document.getElementById("run-" + type);
+  const cancelBtn = document.getElementById("cancel-" + type);
+  const fileInput = document.getElementById("file-" + type);
+
+  if (!fileInput.files.length) { out.textContent = "❗ Vui lòng chọn file."; return; }
+
+  out.textContent = "⏳ Đang xử lý...";
+  btn.disabled = true; cancelBtn.disabled = false;
+
+  const formData = new FormData();
+  formData.append("file", fileInput.files[0]);
+  formData.append("lat_col", document.getElementById("lat-" + type)?.value || "");
+  formData.append("long_col", document.getElementById("long-" + type)?.value || "");
+
+  // Nearby không dùng keyword nhập tay; Building dùng keyword nhập tay cho toàn bộ
+  if (type === "building") {
+    formData.append("kw_col", document.getElementById("kw-building").value || "");
+  } else {
+    formData.append("kw_col", "");
+  }
+
+  controller[type] = new AbortController();
+
+  try {
+    const res = await fetch("/run_" + type, { method: "POST", body: formData, signal: controller[type].signal });
+    const data = await res.json();
+    if (data.error) out.textContent = "❌ " + data.error;
+    else out.textContent = data.log + "\\n📁 Tải file: " + data.download_url;
+  } catch (e) {
+    out.textContent = "⚠️ Đã hủy hoặc lỗi mạng.";
+  } finally {
+    btn.disabled = false;
+    cancelBtn.disabled = true;
+  }
+}
+
+function cancelProcess(type) {
+  if (controller[type]) controller[type].abort();
+  document.getElementById("out-" + type).textContent = "⚠️ Đã hủy tiến trình.";
+  document.getElementById("run-" + type).disabled = false;
+  document.getElementById("cancel-" + type).disabled = true;
+}
+
+["nearby","building","geocode_tach_cot"].forEach(t=>{
+  document.getElementById("file-"+t).addEventListener("change", ()=>getColumns(t));
+  document.getElementById("run-"+t).addEventListener("click", ()=>runProcess(t));
+  document.getElementById("cancel-"+t).addEventListener("click", ()=>cancelProcess(t));
+});
+</script>
+
+</body>
+</html>
+"""
+
+# ========================================
+# API: LẤY CỘT EXCEL
+# ========================================
+@app.route("/preview_columns", methods=["POST"])
+def preview_columns():
+    try:
+        file = request.files.get("file")
+        if not file:
+            return jsonify({"error": "Không có file tải lên."})
+        save_path = os.path.join(UPLOAD_DIR, file.filename)
+        file.save(save_path)
+        df = pd.read_excel(save_path)
+        return jsonify({"columns": list(df.columns)})
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+# ========================================
+# GOOGLE NEARBY / BUILDING (có AUTO-SAVE)
+# ========================================
+def run_nearby_like(df, lat_col, long_col, kw_col, key, suffix=""):
+    """
+    Thực hiện Nearby/Building:
+    - Giữ nguyên cột gốc
+    - Thêm 4 cột + 1 cột Status với hậu tố (suffix)
+    - AUTO-SAVE từng dòng vào outputs/autosave_<suffix>.xlsx
+    """
+    import math
+    url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+    session = requests.Session()
+
+    # Thêm cột kết quả
+    out_cols = [f"Name{suffix}", f"Address{suffix}", f"latitude{suffix}", f"longtitude{suffix}", f"Status{suffix}"]
+    for c in out_cols:
+        if c not in df.columns:
+            df[c] = ""
+
+    # File autosave
+    safe_suffix = suffix.strip("_") or "nearby"
+    autosave_path = os.path.join(OUTPUT_DIR, f"autosave_{safe_suffix}.xlsx")
+
+    for i, row in df.iterrows():
+        try:
+            lat = str(row[lat_col]).replace(",", ".").strip()
+            lon = str(row[long_col]).replace(",", ".").strip()
+            kw  = str(row[kw_col]).strip() if kw_col else ""
+
+            if not lat or not lon:
+                df.at[i, f"Status{suffix}"] = "⚠️ Thiếu lat/lon"
+            else:
+                try:
+                    lat_f = float(lat); lon_f = float(lon)
+                except Exception:
+                    df.at[i, f"Status{suffix}"] = "⚠️ Sai định dạng lat/lon"
+                else:
+                    params = {"location": f"{lat_f},{lon_f}", "radius": 700, "key": key}
+                    if kw:
+                        params["keyword"] = kw
+
+                    resp = session.get(url, params=params, timeout=30)
+                    js = resp.json()
+                    results = js.get("results", [])
+                    print(f"📍 Row {i}: lat={lat_f}, lon={lon_f}, kw='{kw}', status={js.get('status')}, results={len(results)}")
+
+                    if results:
+                        first = results[0]
+                        df.at[i, f"Name{suffix}"]       = first.get("name", "")
+                        df.at[i, f"Address{suffix}"]    = first.get("vicinity", "")
+                        loc = first.get("geometry", {}).get("location", {})
+                        df.at[i, f"latitude{suffix}"]   = loc.get("lat", "")
+                        df.at[i, f"longtitude{suffix}"] = loc.get("lng", "")
+                        df.at[i, f"Status{suffix}"]     = "✅ Có kết quả"
+                    else:
+                        df.at[i, f"Status{suffix}"]     = js.get("status", "ZERO_RESULTS")
+        except Exception as e:
+            df.at[i, f"Status{suffix}"] = f"❌ {e}"
+
+        # ✅ AUTO-SAVE từng dòng để tránh mất dữ liệu
+        try:
+            df.to_excel(autosave_path, index=False, engine="openpyxl")
+        except Exception as e:
+            # Không để autosave làm gián đoạn quy trình
+            print(f"⚠️ Auto-save lỗi tại dòng {i}: {e}")
+
+    return df
+
+# ========== RUN NEARBY ==========
+@app.route("/run_nearby", methods=["POST"])
+def run_nearby():
+    file = request.files.get("file")
+    df = pd.read_excel(file)
+    df = run_nearby_like(
+        df,
+        request.form.get("lat_col"),
+        request.form.get("long_col"),
+        request.form.get("kw_col"),  # Nearby hiện tại không dùng keyword nhập tay
+        GOOGLE_API_KEY,
+        suffix="_nearby"
+    )
+    out = os.path.join(OUTPUT_DIR, "nearby_output.xlsx")
+    df.to_excel(out, index=False, engine="openpyxl")
+    return jsonify({"download_url": "/download/nearby_output.xlsx", "log": "✅ Hoàn tất Nearby"})
+
+# ========== RUN BUILDING (keyword nhập tay) ==========
+@app.route("/run_building", methods=["POST"])
+def run_building():
+    file = request.files.get("file")
+    df = pd.read_excel(file)
+
+    lat_col = request.form.get("lat_col")
+    long_col = request.form.get("long_col")
+    manual_keyword = request.form.get("kw_col")  # user nhập tay
+
+    # Gán keyword nhập tay cho mọi record
+    df["_manual_keyword_"] = manual_keyword or ""
+
+    df = run_nearby_like(
+        df,
+        lat_col,
+        long_col,
+        "_manual_keyword_",
+        GOOGLE_API_KEY,
+        suffix="_building"
+    )
+
+    out = os.path.join(OUTPUT_DIR, "building_output.xlsx")
+    df.to_excel(out, index=False, engine="openpyxl")
+    return jsonify({"download_url": "/download/building_output.xlsx", "log": "✅ Hoàn tất Building"})
+# ========================================
+# MAP4D GEOCODE — CÓ AUTO-SAVE + LOG
+# ========================================
+
+def extract_address_components(data):
+    """
+    Lấy ra dict: {type: name}
+    Ví dụ: [{"types":["street"],"name":"Nguyễn Huệ"}] --> {"street":"Nguyễn Huệ"}
+    """
+    out = {}
+    if data:
+        for comp in data:
+            types = comp.get("types", [])
+            name  = comp.get("name", "")
+            for t in types:
+                out[t] = name
+    return out
+
+
+@app.route("/run_geocode_tach_cot", methods=["POST"])
+def run_geocode_tach_cot():
+    try:
+        file = request.files.get("file")
+        df = pd.read_excel(file)
+
+        lat_col  = request.form.get("lat_col")
+        long_col = request.form.get("long_col")
+        url      = "https://api.map4d.vn/sdk/v2/geocode"
+
+        # Auto-save path
+        autosave_path = os.path.join(OUTPUT_DIR, "autosave_geocode.xlsx")
+
+        # Danh sách JSON gốc
+        ac_list     = []
+        ac_old_list = []
+
+        print("\n========== BẮT ĐẦU MAP4D GEOCODE ==========\n")
+
+        for idx, row in df.iterrows():
+            lat, lon = row[lat_col], row[long_col]
+            print(f"▶ Row {idx}: lat={lat}, lon={lon}")
+
+            params = {"location": f"{lat},{lon}", "key": MAP4D_API_KEY}
+
+            try:
+                response = requests.get(url, params=params, timeout=20)
+                status_code = response.status_code
+
+                print(f"   ↳ Map4D status = {status_code}")
+
+                if status_code == 200:
+                    result = response.json().get("result", [{}])[0]
+
+                    addr     = result.get("addressComponents", [])
+                    addr_old = result.get("oldAddressComponents", [])
+
+                    print(f"   ↳ addressComponents={len(addr)}, oldAddressComponents={len(addr_old)}")
+
+                    ac_list.append(json.dumps(addr, ensure_ascii=False))
+                    ac_old_list.append(json.dumps(addr_old, ensure_ascii=False))
+
+                    # Fill từng cột mới
+                    for k, v in extract_address_components(addr).items():
+                        print(f"      + {k} = {v}")
+                        df.at[idx, k] = v
+
+                    # Old version
+                    for k, v in extract_address_components(addr_old).items():
+                        print(f"      + old_{k} = {v}")
+                        df.at[idx, f"old_{k}"] = v
+
+                else:
+                    print("   ❌ Map4D trả lỗi")
+                    ac_list.append("[]")
+                    ac_old_list.append("[]")
+
+            except Exception as e:
+                print(f"   ❌ LỖI Row {idx}: {e}")
+                ac_list.append(str(e))
+                ac_old_list.append(str(e))
+
+            # ✅ AUTO-SAVE từng dòng
+            try:
+                df["addressComponents"]     = ac_list
+                df["oldAddressComponents"]  = ac_old_list
+                df.to_excel(autosave_path, index=False, engine="openpyxl")
+            except Exception as e:
+                print(f"⚠️ Auto-save lỗi tại dòng {idx}: {e}")
+
+        # Xuất file hoàn chỉnh
+        out_path = os.path.join(OUTPUT_DIR, "geocode_output.xlsx")
+        df.to_excel(out_path, index=False, engine="openpyxl")
+
+        print("\n========== KẾT THÚC MAP4D GEOCODE ==========\n")
+
+        return jsonify({
+            "download_url": "/download/geocode_output.xlsx",
+            "log": "✅ Hoàn tất Geocode"
+        })
+
+    except Exception as e:
+        print("❌ Lỗi tổng:", e)
+        return jsonify({"error": str(e)})
+# ========================================
+# API TẢI FILE KẾT QUẢ
+# ========================================
+@app.route("/download/<path:filename>")
+def download_file(filename):
+    return send_from_directory(OUTPUT_DIR, filename, as_attachment=True)
+
+
+# ========================================
+# TRANG CHỦ — RENDER HTML UI
+# ========================================
+@app.route("/")
+def index():
+    return render_template_string(INDEX_HTML)
+
+
+# ========================================
+# TỰ ĐỘNG MỞ TRÌNH DUYỆT KHI CHẠY APP
+# ========================================
+def open_browser():
+    try:
+        webbrowser.open("http://127.0.0.1:5000")
+    except:
+        pass
+
+
+# ========================================
+# CHẠY FLASK SERVER
+# ========================================
+if __name__ == "__main__":
+    # Chờ 1 giây rồi mở browser (tránh bị chặn khi chưa khởi động server)
+    Timer(1, open_browser).start()
+
+    # Chạy server localhost
+    app.run(host="127.0.0.1", port=5000)
+

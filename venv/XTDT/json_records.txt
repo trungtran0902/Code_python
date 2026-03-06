@@ -1,0 +1,23 @@
+{
+    "_id": BinData(3, "ZjWbR9BIVBAaAzoc97nuDQ=="),
+    "ConcurrencyStamp": "b79f0eefe4754f2c8dc9ccc3d9090350",
+    "CreationTime": ISODate(2025-09-07T15:32:07.392+0000),
+    "CreatorId": BinData(3, "K+vXFmSqZl3eeTn+LRmiaQ=="),
+    "LastModificationTime": null,
+    "LastModifierId": null,
+    "Code": "001030017",
+    "Acreage": 112.02,
+    "Population": "49,228 người",
+    "Density": 0.0,
+    "Description": "Thành lập Xã Bến Cầu trên cơ sở sắp xếp Thị trấn Bến Cầu, Xã An Thạnh (huyện Bến Cầu), Xã Tiên Thuận, Xã Lợi Thuận",
+    "Tags": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+    },
+    "location": {
+       "Lng": 106.2097796504379, "Lat": 11.093345494921188
+    },
+    "DescriptionEN": "",
+    "PopulationEN": ""
+}

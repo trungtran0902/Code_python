@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.32955729459009,
+                    11.592066374263103
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Chợ Suối Ngô và nhà ở thương mại dịch vụ",
+                "Lĩnh vực": "Lĩnh vực đầu tư xây dựng nhà ở",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Xã Suối Ngô, huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Tân Hoà, Tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.592066374263103\t,106.32955729459009",
+                "Toạ độ khu đất trên google map": "11,591889 106,329983",
+                "Diện tích (ha)": "0,8868",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Đầu tư chợ và nhà ở thương mại dịch vụ",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp Quy hoạch chung xây dựng xã Suối Ngô, huyện Tân Châu, tỉnh Tây Ninh đến năm 2035 (UBND huyện Tân Châu phê duyệt tại Quyết định số 5115/QĐ-UBND ngày 9/12/2024)",
+                "Tổng vốn đầu tư (dự kiến)": "55.000.000.000 đ",
+                "Hình thức đầu tư": "Kêu gọi nhà đầu tư ",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": "50 năm",
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế, tạo công ăn việc làm cho người dân địa phương",
+                "Hiện trạng": "Đất trống",
+                "Nguồn gốc đất": "UBND huyện quản lý",
+                "Quy mô/công suất dự án": "Mật độ xây dựng tối đa 80%; 01 đến 05 tầng",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "TMD",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "TMD",
+                "Quy hoạch chung": "Phù hợp QĐ số 2985/QĐ-UBND ngày 28/8/2023 của UBND huyện Tân Châu về phê duyệt nhiệm vụ quy hoạch chung xây dựng xã Suối Ngô, huyện Tân Châu, tỉnh Tây Ninh đến năm 2035",
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": "phù hợp",
+                "Kế hoạch phát triển nhà ở đến năm 2025": "phù hợp",
+                "Ghi chú": null,
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

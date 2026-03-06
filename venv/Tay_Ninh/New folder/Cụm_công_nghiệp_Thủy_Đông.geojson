@@ -1,0 +1,73 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            106.16247386354954,
+                            10.617907261741513
+                        ],
+                        [
+                            106.17418100751055,
+                            10.6176044723381
+                        ],
+                        [
+                            106.17383860011032,
+                            10.610861068434584
+                        ],
+                        [
+                            106.16736719543394,
+                            10.610922941198705
+                        ],
+                        [
+                            106.16732556846418,
+                            10.614664106810425
+                        ],
+                        [
+                            106.1625066400966,
+                            10.614685900775024
+                        ],
+                        [
+                            106.16247386354954,
+                            10.617907261741513
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Cụm công nghiệp Thủy Đông",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Xã Thạnh An, huyện Thạnh Hóa",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Thạnh Hóa, Tỉnh Tây Ninh",
+                "Định vị toạ độ": "10.617907261741513,106.16247386354954;\n10.6176044723381,106.17418100751055;\n10.610861068434584,106.17383860011032;\n10.610922941198705,106.16736719543394;\n10.614664106810425,106.16732556846418;\n10.614685900775024,106.1625066400966;\n10.617907261741513,106.16247386354954",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": 75,
+                "Hiện trạng dự án": "Đầu tư hạ tầng CCN phát triển công nghiệp",
+                "Mục tiêu thực hiện dự án": "Đầu tư hạ tầng CCN phát triển công nghiệp",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp Quy hoạch tỉnh ",
+                "Tổng vốn đầu tư (dự kiến)": 603525000000,
+                "Hình thức đầu tư": "Kêu gọi đầu tư",
+                "Thời gian dự kiến triển khai": "2025-2031",
+                "Thời gian hoạt dộng dự án": 2027,
+                "Hiệu quả kinh tế": "Thúc đẩy phát triển cơ sở hạ tầng góp phần phát triển kinh tế - xã hội",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

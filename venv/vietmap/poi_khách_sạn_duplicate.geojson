@@ -1,0 +1,3275 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thương Mại",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.314885,
+          20.4380896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thương Mại",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6271666,
+          19.1434401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thương Mại",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8397557,
+          14.6590976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thương Mại",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6739444,
+          18.6694798
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thương Mại",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.179007,
+          20.4250346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công Ty TNHH Nhà Hàng Khách Sạn Ly Na-Long Tỵ",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1609424,
+          9.1835295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Sân Golf",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6801241,
+          10.7933631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hotel Dạ Lan 1 Khách Sạn Dạ Lan",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7635113,
+          10.843148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thuận Phát",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7588228,
+          10.3067757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thuận Phát",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9627968,
+          9.5986845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Xổ Số",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7596141,
+          21.8525892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Uông Bí",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.758737,
+          21.0336278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thanh Tùng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7606333,
+          10.8203365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quốc Tế Lợi Lai",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.963191,
+          21.5288539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NH Sen-Tầng 2 Khách Sạn Grand",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9716855,
+          21.5266208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạn Gia Hân Lộc An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9069933,
+          11.5492285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trông Giữ Chó Mèo Thủ Đức",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.768924,
+          10.8496441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trông Giữ Chó Mèo Thủ Đức",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7536247,
+          10.8407823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ Dịch Vụ Trí Trần Bình Dương",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7657402,
+          10.8928298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hương Trà",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7698762,
+          21.0377885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hương Trà",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7267141,
+          18.8018382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hương Trà",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2236683,
+          13.7638387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hương Trà",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6545224,
+          10.7080006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ Hana Bắc Ninh",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0591605,
+          21.1713462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Mt Collection Ninh Bình",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9714657,
+          20.2663941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Thiên Ân",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9638643,
+          9.5849743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Bãi Đỗ Xe Khách Sạn T&T",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2785651,
+          14.5789629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Pleiku",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0074716,
+          13.9853461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hải Đăng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7238495,
+          18.8044382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hải Đăng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6199622,
+          10.8378819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hải Đăng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8154415,
+          10.868605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hải Đăng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7797601,
+          10.791308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hải Đăng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0331002,
+          22.0655938
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hội Nông Dân Việt Nam",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7305095,
+          18.794457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hội Nông Dân Việt Nam",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7202312,
+          18.7944747
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Suối Hoa-Thị Xã Bắc Ninh-Quốc Lộ 1",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0738912,
+          21.1890435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn Hải Đăng Mũi Dinh",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.866972,
+          11.333645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Chó Mèo Kimi Pet Hotel",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6932562,
+          10.7967856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quốc Tế Thiên Phúc",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6960913,
+          10.7845075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Bia Khách Sạn Ngôi Sao",
+        "class": "bar",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6959465,
+          20.8298248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thanh Long",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6946831,
+          10.9642705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ Tt Service Apartment",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6987815,
+          10.7625664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Du Lịch Hồ Núi Cốc Khách Sạn Công Đoàn",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6847268,
+          21.5937838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast BĐX Khách Sạn Núi Cốc Plaza",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6881896,
+          21.5923548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Khách Sạn Thiên Hồng",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.664511,
+          10.7519972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tr.Cấp Du Lịch Và Khách Sạn",
+        "class": "college",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6597661,
+          10.795376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DNTN Kinh Doanh Kdl Và Khách Sạn Camly",
+        "class": "tourist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6661873,
+          10.7881567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Pha Lê 43",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6555417,
+          10.7324439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Phòng Trọ Tháng Nguyên Lam 62",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6653076,
+          10.760664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Bến Thủy",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7005224,
+          18.6519988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Giữ Xe Khách Sạn Hiền Thuận",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1832796,
+          16.0740812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VP ĐT Ngh.Vụ DL Khách Sạn",
+        "class": "school",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1890383,
+          16.0657201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quán Ăn Bờ Sông Karaoke Hồng Quyên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9206056,
+          11.0439365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Xe Khách Sạn Gia Mỹ An",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1947863,
+          16.0722487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Xe Khách Sạn Kim Loan",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.199102,
+          16.0725967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1098838,
+          11.3351572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2450027,
+          10.7796014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Phú Gia",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8427035,
+          14.6441661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Oto VinFast Khách Sạn Bên Hồ",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0208882,
+          22.436011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Sandals Star 1",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3737487,
+          11.7376248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thành Đạt Đệm Khách Sạn",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.831103,
+          20.8611152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hoa Lan 2",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8235714,
+          21.0204138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ Hanoi Privet Studio",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8289063,
+          21.0632136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Đồng Hới Quảng Bình Thời Đại Hotel",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6271853,
+          17.4878193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nd",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.629205,
+          10.8367676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Chó Mèo Phương Nam",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6238138,
+          10.8112763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Khách Sạn Ngọc Châu",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6264209,
+          10.8111577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn-Nhà Nghỉ Thanh Tùng",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6181034,
+          10.6526553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quán Ăn Biển Gọi 99",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2049196,
+          14.1223218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Kim Chi",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2103431,
+          13.4600943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hoa Viên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5072182,
+          20.6953423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hoa Viên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.8025239,
+          15.1226576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Đậu Xe Khách Sạn Thanh Bình",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3056339,
+          13.0872011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Việt Hương",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.7031188,
+          21.5074596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng Tiệc Cưới-Khách Sạn Sun Rise",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6987815,
+          11.9980516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Karaoke Khách Sạn Cao Su",
+        "class": "karaoke",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0882356,
+          10.3397025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Khách Victory Vũng Tàu",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0914677,
+          10.3383172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn The Rice",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0179189,
+          10.3454943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ 46-Motel Sân Vườn-Khách Sạn Gia Đình",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1446826,
+          11.918589
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Kim Hoàn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6759962,
+          10.7385024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Kim Hoàn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9984593,
+          11.5682118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thương Mại Tân Hy Vọng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6732255,
+          10.7572832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Bình Dân Danh Mục",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6707069,
+          10.7713989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quận 10 Thy Thảo",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6672334,
+          10.7665585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Tiệc Cưới Thái Phát Đạt",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3009966,
+          18.4583127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn 4 Sao Đẳng Cấp Uy Tín Có View Đẹp",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0124766,
+          20.9592129
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Khách Sạn Trường Thành",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3362569,
+          20.9488379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Xông Hơi",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3799796,
+          20.1901106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Minh Phát",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5559646,
+          10.7935133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Minh Phát",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7323521,
+          10.8391069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kdl Sinh Thái-Khách Sạn Thái Hoàng",
+        "class": "tourist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7182625,
+          9.3249613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Công Ty Dệt",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1658588,
+          20.4207414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thế Giới-The Gioi Hotel",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1420435,
+          9.1613505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn-Cà Phê An",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3678424,
+          11.7397966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Xổ Số Yên Bái",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9072698,
+          21.7149196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hồ Chí Minh Khách Sạn Glenwood City",
+        "class": "tourist",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7319712,
+          10.8096112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cafe Kim Phú",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3406825,
+          10.4275335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạn Đức Anh Tại Long Khánh",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2530654,
+          10.9195651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cây Đa",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8021969,
+          19.8039635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ Urhome",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8056194,
+          21.038144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn Vườn Dừa Quảng Thái",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8336431,
+          19.6627346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn Vườn Dừa Quảng Thái",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.836218,
+          19.6627296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Du Lịch Văn Miếu",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8382806,
+          21.0284855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Khách Sạn-Spa Le Jardin",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.838455,
+          22.1428049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cảng Sài Gòn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7067745,
+          10.7657812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Tiệc Cưới Khoa Trí",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4163316,
+          10.394703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Oto VinFast Luxury-Khách Sạn Phượng Hoàng",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7792962,
+          19.8081626
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Âu Cơ-Khách Sạn Thanh Hóa",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7765523,
+          19.8157784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trống Đồng Thanh Hóa",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7799587,
+          19.8120185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trống Đồng Thanh Hóa",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7696804,
+          19.8120185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Khách Sạn Cát Phượng",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7865086,
+          10.0448095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Đức Lưu Quang",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.5488057,
+          11.1639845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Sapa New Orient Hotel",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.8509434,
+          22.3375501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cánh Đồng Hoa Hồng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7511893,
+          10.3169829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nông Nghiệp Điện Biên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0189732,
+          21.3953384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cảng Hàng Không Điện Biên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0091804,
+          21.3667708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Và Cà Phê Sân Thượng Sky",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.6561343,
+          15.4360507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hoàng Anh-Khách Sạn Biển Hải Tiến",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9336841,
+          19.8389566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Vui Chơi-Khách Sạn Paracel Hai Tien",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9336385,
+          19.8365975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Dầu Khí",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7203116,
+          20.861253
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hương Thơm",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2614205,
+          22.6656528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Lam Sơn Khách Sạn Gía Rẻ Vũng Tàu",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0720109,
+          10.3514126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Suntorini Nhà Hàng & Khách Sạn",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.072145,
+          10.3340003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Mira-Khách Sạn Gần Biển Ở Quy Nhơn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2192721,
+          13.761718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Mira Khách Sạn Gần Biển Ở Quy Nhơn",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2194009,
+          13.761679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Khách Sạn Tân Vạn Xuân",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7626987,
+          10.0138306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Bộ Công An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.4466487,
+          10.3861736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Khách Sạn Cap Saint Jacques",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0990074,
+          10.3508031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quốc Tế Thiên Phát Ý",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7339534,
+          10.7432906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Phong Lan",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7327839,
+          10.8027163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Phong Lan",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0146223,
+          14.4415246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Phong Lan",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8436048,
+          21.0233531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Và Căn Hộ Smeraldo",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2449248,
+          16.0806946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Để Xe Khách Sạn Kingdom",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.243176,
+          16.0663774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Đà Lạt Hoa Dalat Travel",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4517822,
+          11.9589963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Lê Lợi",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8987671,
+          19.7329721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trống Đồng Sầm Sơn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9002423,
+          19.7355952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Bộ Tài Chính Sầm Sơn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8997139,
+          19.7361658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Bộ Xây Dựng Sầm Sơn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9017953,
+          19.7375367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Ngọc Trai",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9048638,
+          19.7439516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Khách Sạn Nhật Oanh",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9032303,
+          19.7411468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Điện Lực Sầm Sơn-Thanh Hóa",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9048182,
+          19.742293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thanh Long Sầm Sơn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9064785,
+          19.7454562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạn Giá Rẻ Sầm Sơn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9062344,
+          19.7453174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Ban Cơ Yếu Chính Phủ",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9030023,
+          19.7387308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn VHL Hà Nam",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9046546,
+          20.5289962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Ngọc Bích 2",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9913085,
+          11.5947689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Ngọc Bích 2",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9893237,
+          11.5755063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hoa Lan",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1248612,
+          20.9397774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Bãi Biển Hạ Long",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.047686,
+          20.9590301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Hương Rừng",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6307231,
+          13.2218251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Coffee Tân Hạnh",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9613698,
+          11.8210152
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trông Giữ Chó Mèo Thiện Tâm Pet",
+        "class": "pet",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.753445,
+          10.8405742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trông Giữ Chó Mèo Thiện Tâm Pet",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7536354,
+          10.8407929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cà Phê Sân Vườn Điểm Hẹn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4876755,
+          12.0513005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cafe Hoa Hồng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.323806,
+          22.8292035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Minh Hạnh",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9144929,
+          19.7574169
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Và Căn Hộ Masséna",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9123364,
+          20.5406182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe GSM Phú Quốc-Khách Sạn Fla Village",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9675096,
+          10.2314015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quốc Tế",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9660934,
+          22.503307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạn Đặng Đình Nguyên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6095445,
+          10.8509981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Và Cafe Phương Nhi",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6020343,
+          16.6162738
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hai Lúa: Nhà Hàng-Khách Sạn-Vườn Táo Cổ Thụ",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6547183,
+          10.3709267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Khách Sạn Suối Bạc",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6452608,
+          21.4543692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cây Thông",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6464168,
+          21.4546139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Vườn Quốc Gia Cát Tiên",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.4282861,
+          11.4223799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạn Homestay Năm Bé House",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5512922,
+          10.5739373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ TBN",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8007404,
+          10.7966618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TNHH Đầu Tư Khách Sạn Quỳnh Anh",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8086395,
+          10.7988697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hương Trầm 5",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0126804,
+          11.5626462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Và Cà Phê Gia Phú",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2942291,
+          13.1193933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Chìa Khóa Vàng-Golden Key Hotel",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0060475,
+          10.0317252
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TS Oto VinFast Khách Sạn Quê Tôi",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9601119,
+          9.6002818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ Pacific Phú Quốc",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9870548,
+          10.1112579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Massage Khách Sạn Khăn Quàng Đỏ",
+        "class": "massage",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8198243,
+          21.0397587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Xổ Số Miền Tây",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.5143825,
+          21.5970459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Sân Bay Anpha Giá Rẻ",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6737271,
+          18.7170598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Thế Giới",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1946736,
+          12.25331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nha Trang",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.193818,
+          12.2470481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Căn Hộ Khách Sạn Cao Cấp Tiến Đạt Nha Trang",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1944349,
+          12.286609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Pha Lê",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.193716,
+          12.2553413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Căn Hộ Villa Miami",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.19521,
+          12.2547306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Đoàn An Điều Dưỡng 26",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1976267,
+          12.2305866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Và Căn Hộ Cẩm Trang",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1947353,
+          12.2333364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Karaoke Khách Sạn Hoàng Gia Bắc Ninh",
+        "class": "karaoke",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0446954,
+          21.1664163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quốc Tế Bắc Ninh",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0431853,
+          21.164733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Bình Phước-Khách Sạn Ngọc Lan",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9022861,
+          11.523508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Trống Đồng",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8519009,
+          21.0332598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nơi Để Xe Khách Sạn Halais",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.848532,
+          21.0173342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Oto VinFast Luxury-Khách Sạn Ngọc Bích",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1585228,
+          13.8307512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Trọ Khách Sạn Sen",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4954755,
+          10.3450906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Cầu Tây",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3606489,
+          21.3462944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Hàng Coffee Linh Chi",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3624755,
+          23.2769837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nơi Để Xe Khách Sạn Hoàng Gia",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7702491,
+          21.0237987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Để Xe Khách Sạn Hoàng Tử",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7720622,
+          21.0344089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Điện Lực Hà Nội",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8551571,
+          21.0294694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Chó Mèo Fagopet",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6484579,
+          10.8000922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quốc Tế Đồi Rồng",
+        "class": "resort",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7809644,
+          20.7000042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Khách Sạn Xanh",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7931766,
+          20.9660482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Khách Sạn Hướng Dương",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7933322,
+          20.9662962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Oto VinFast Khách Sạn Lam Kinh",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7935092,
+          19.8063608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Quan Hoa",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7973877,
+          21.031983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Gửi Xe Ô Tô Khách Sạn Mường Thanh",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7917416,
+          20.960573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Việt",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9799603,
+          20.2570564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Nghỉ Khách Sạnthanh Hoa",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.251743,
+          11.7864454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Phan Thiết Giá Rẻ Phương Anh",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1104228,
+          10.9400067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Nhà Đất",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1106213,
+          10.9432143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Khuôn Viên Khách Sạn Tam Quan",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0490994,
+          14.5606614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Kim Chi An",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4402433,
+          11.9491693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Dalat Mai Vàng 2 Hotel",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4398249,
+          11.9477575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Chợ Lớn Mới",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6439331,
+          10.7494859
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Đầm Sen",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.637831,
+          10.7696467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Kim Ngân Khách Sạn Quận 12",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6369861,
+          10.8846225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Hàn Quốc-Hotel Korea",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7917684,
+          10.853606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Phố Đông",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7913553,
+          10.7977051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TNHH Dv Nhà Hàng Khách Sạn Lúa Việt",
+        "class": "clinic",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7931229,
+          10.7686138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khách Sạn Điện Lực Đồ Sơn",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7933187,
+          20.7118866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đồng Đen Hotel-Khách Sạn",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.6382791,
+          20.8440834
+        ]
+      }
+    }
+  ]
+}

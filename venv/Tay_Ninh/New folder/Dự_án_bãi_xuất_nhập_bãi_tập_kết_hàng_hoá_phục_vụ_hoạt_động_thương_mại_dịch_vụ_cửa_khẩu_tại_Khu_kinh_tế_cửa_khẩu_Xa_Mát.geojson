@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.9809193552566,
+                    11.655467932665347
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Dự án bãi xuất nhập, bãi tập kết hàng hoá phục vụ hoạt động thương mại dịch vụ cửa khẩu tại Khu kinh tế cửa khẩu Xa Mát",
+                "Lĩnh vực": "Lĩnh vực logistics",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Khu kinh tế cửa khẩu Xa Mát, xã Tân Lập, huyện Tân Biên, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Tân Lập, Tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.655467932665347,105.9809193552566",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "6,98932 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Cho thuê kho, bãi và lưu trữ hàng hóa. Dịch vụ đóng hàng và xếp dỡ hàng từ các phương tiện vận tải.",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch ",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề nghị của nhà đầu tư",
+                "Hình thức đầu tư": "đấu giá lựa chọn nhà đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế - xã hội của địa phương",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": "Phù hợp theo Quyết định 130A/2005/QĐ-UBND ngày 23/02/2005 của UBND tỉnh ",
+                "Quy hoạch phân khu": "Phù hợp theo Quyết định 410/QĐ-UBND ngày 03/3/2020 của UBND tỉnh",
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": "DM các khu đất đấu giá 2025",
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

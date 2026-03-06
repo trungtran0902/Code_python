@@ -1,0 +1,3215 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Woori Mart-Siêu Thị Hàn Quốc Tại Phú Thọ",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3196675,
+          21.4017141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Nguyên Liệu",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6789895,
+          10.8303133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Kem Siêu Thị",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6883102,
+          10.9391772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Lốp Và Phụ Tùng Ô Tô Xanh",
+        "class": "car_parts",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6829082,
+          20.8647795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Lốp Và Phụ Tùng Ô Tô Xanh",
+        "class": "car_parts",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6851506,
+          20.8648647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NH Siêu Thị Ốc",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6823637,
+          20.8483822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Japana Siêu Thị Nhật Bản",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6826293,
+          10.7997365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Everon Siêu Thị Nệm",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6811943,
+          10.7969121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Siêu Thị Quà Việt",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6865292,
+          10.7968488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VPĐD Cty DV Đi Siêu Thị",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6841796,
+          10.8098141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hóa Xanh 51 Đường Số 2",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7547888,
+          10.834531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7543194,
+          10.7903436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7610329,
+          10.8611267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8163669,
+          10.8048767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7304665,
+          10.8442228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7299569,
+          10.7900222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7244262,
+          10.864422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.826967,
+          10.8412934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7468333,
+          10.8416675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.796371,
+          10.8400184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Happy Pet Siêu Thị Thú Cưng",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7640638,
+          10.7747031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Kingfoodmart 160A Nguyễn Thị Định",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7542335,
+          10.7898298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Vật Tư Giá Tốt Enoithat",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7651474,
+          10.7837513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Siêu Thị Đồng Tiến",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.764273,
+          21.8536995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Ô Tô Bình Dương",
+        "class": "used_car",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7610919,
+          10.911506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Vật Tư Nông Nghiệp-Thế Giới Nhà Nông",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.762417,
+          10.8218039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kap Mart-Siêu Thị Ngoại Nhập Gia Lai",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.9968527,
+          13.9754244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.357103,
+          10.3570643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7691225,
+          10.8245596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6645592,
+          10.98359
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6606942,
+          10.8005322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6621828,
+          10.7966223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6645753,
+          10.796999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6240498,
+          10.7452512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6273409,
+          10.7825577
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1704776,
+          20.432731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7004016,
+          10.7572305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2612355,
+          22.6654424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2128029,
+          21.8149881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6764522,
+          18.6766988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Hàng-Siêu Thị Tất Thắng",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8987724,
+          12.5909941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mld Siêu Thị Đồng Giá 19K",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.769388,
+          10.8242593
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tóc Á Đông-Salon Tóc Đẹp Quận 9",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7705977,
+          10.823519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tự Chọn Hàng Gia Dụng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.768519,
+          10.8898508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Thoại Tgdd Quận Thủ Đức",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7659387,
+          10.8751295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Thoại Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7655042,
+          10.7768269
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Thoại Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7684788,
+          10.8810666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Thoại Thế Giới Di Động",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.731872,
+          10.8032986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Máy Xanh Nguyễn Duy Trinh Hcm",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7697233,
+          10.7885388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hoá Xanh 130A Đường Số 11",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7682508,
+          10.8853784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Petshop Thủ Đức-Siêu Thị Thú Cưng Hachiko",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7661372,
+          10.8563562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Siêu Thị Sữa",
+        "class": "dairy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1342463,
+          20.2379564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Siêu Thị Sữa",
+        "class": "dairy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1545935,
+          20.2213962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Siêu Thị Sữa",
+        "class": "dairy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1224821,
+          20.2547665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Sữa Siêu Thị Sữa",
+        "class": "dairy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0806906,
+          20.3322809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Kính.Com",
+        "class": "accessories",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6909468,
+          10.8112842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Siêu Thị Cá Cảnh",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6898766,
+          10.8101118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Concung-Siêu Thị Mẹ Bầu & Em Bé",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6893589,
+          10.8034488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NS Fahasa Siêu Thị Thuận An",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6985133,
+          10.9019033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thực Phẩm An Toàn Quế Lâm",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5909567,
+          16.456544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "VP Cty Siêu Thị Huế",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5952509,
+          16.4585376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd 811 Hùng Vương Chư Sê",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.077158,
+          13.6937669
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Lồng Chim Sla",
+        "class": "pet",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.909606,
+          21.3439136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Siêu Thị Lan Chi Kinh Môn",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5420976,
+          20.99874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị 10K Kim Anh",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6576445,
+          10.8358772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Siêu Thị VinMart Cộng Hòa",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6586772,
+          10.7999894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Lông Mi",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6598386,
+          10.7895189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bố Mẹ Bé Nhất Nhất",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7059646,
+          18.699007
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Đông Yên Yên Phong",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0061118,
+          21.189121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kingdom Pets-Siêu Thị Thú Cưng Tại Huế",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5832239,
+          16.451852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Nguyễn Huệ Long Mỹ",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5719131,
+          9.6800376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "89Japan Siêu Thị Nhật Bản Cam Lâm",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1621277,
+          12.0746319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Phạm Văn Đồng Núi Thành",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.643831,
+          15.4360947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đại Siêu Thị Bếp-69 Tây Sơn",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8260819,
+          21.012309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8301562,
+          21.0038533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.806711,
+          21.0017098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.806306,
+          21.047131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8173728,
+          21.0196676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8528316,
+          21.0181604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Smilemart.Vn-Siêu Thị Điện Máy Chính Hãng",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8266264,
+          20.9975731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Siêu Thị Khăn",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8287427,
+          20.9951241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vichi Market-Siêu Thị Chất Lượng Hòa Xuân",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2271257,
+          16.0145124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kem Baby-Siêu Thị Mẹ Và Bé Đà Nẵng",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2371733,
+          16.0570365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Siêu Thị Aeon",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.630581,
+          10.8253078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hair Salon Siêu Thị Tóc",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3576421,
+          11.1998569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hair Salon Siêu Thị Tóc",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2988908,
+          13.1137379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hair Salon Siêu Thị Tóc",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6418785,
+          10.7855377
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Lộc Thắng Bảo Lâm",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8396592,
+          11.6269116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quán Lẩu Siêu Thị",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.615161,
+          11.4721915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Ngoại Nhập Be Mart",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6147667,
+          10.8910677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thú Nuôi Hachiko",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.621719,
+          10.7568985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Việt",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6157135,
+          10.7320065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Quang Phát-Siêu Thị Nệm",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6113308,
+          10.8614375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Siêu Thị Co.opMart Tuy Hòa",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3099442,
+          13.0886954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tk Mobile Siêu Thị Di Động Uy Tín",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1971576,
+          21.5399117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast BĐX Siêu Thị Country Mart",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2773207,
+          20.0992188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Gửi Xe Siêu Thị MM Mega Market",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8150687,
+          10.956318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Hùng Vương Buôn Hồ",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2654384,
+          12.9167837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Nệm",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6701704,
+          10.8303106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Nệm",
+        "class": "furniture",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6455451,
+          10.7971993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Xanh",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6731316,
+          10.7931101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Làm Đẹp",
+        "class": "cosmetics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6733596,
+          10.7701368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chợ Siêu Thị Thực Phẩm San Hà",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6721177,
+          10.5349333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hoyodo-Siêu Thị Đồng Giá 19K",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6745773,
+          10.7320407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Satramart-Siêu Thị Sài Gòn",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6679254,
+          10.7682607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ares Mart Siêu Thị 24H",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2235101,
+          16.0385339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Riri Mart _ Siêu Thị Mẹ & Bé Đông Phú-Quế Sơn",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2179043,
+          15.6729081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "2B Mart Đà Nẵng-Siêu Thị Mini 24/7",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2224613,
+          16.0581294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Sữa Và Bỉm Mẹ Bắp",
+        "class": "dairy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6006718,
+          18.7403177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Dừng Nghỉ-Siêu Thị Đặc Sản Xứ Thanh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.442003,
+          20.2121992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Dừng Nghỉ-Siêu Thị Đặc Sản Xứ Thanh XHK",
+        "class": "reststop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4420057,
+          20.212179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hùng Store-Chuỗi Siêu Thị Apple",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2534517,
+          22.6690684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Giày Sinbad",
+        "class": "shoes",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2454506,
+          10.939825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị-Cà Phê Châu Mai Loan",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2424063,
+          10.9212216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TT Ảnh Màu Siêu Thị",
+        "class": "studio",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.1493445,
+          9.1754826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Zmart 3",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9203376,
+          10.3012734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hoá Xanh 2/14 Đường Số 20",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.721288,
+          10.8270914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hoá Xanh 2/14 Đường Số 20",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7229241,
+          10.826251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hóa Xanh 75 Đường Số 23",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7275321,
+          10.8278764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Lốp Xe Vá Vỏ Lưu Động Long Phan",
+        "class": "car_repair",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7210519,
+          11.2067872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vinatexmart-Siêu Thị Tân Thuận",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7299059,
+          10.7416515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hóa Xanh 419 Kha Vạn Cân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7285594,
+          10.8347154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vinatexmart-Siêu Thị NBC",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7296109,
+          10.7554702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Magic Mart-Siêu Thị Giá Gốc",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7215911,
+          10.8024212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Chống Thấm Toàn Cầu",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7238522,
+          10.859907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Siêu Thị VinMart Trúc Khê",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8085939,
+          21.0159421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Siêu Thị VHSC Việt Nam Seika Mart",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8330718,
+          21.0074389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Hàng Đức Ngôi Nhà Đức",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.834944,
+          21.0032498
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Uni Mart-Siêu Thị 18K",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7077321,
+          10.9603285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thảo Nguyên Plaza-Siêu Thị Đồ Nhập Khẩu",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7873723,
+          20.9850972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tana-Siêu Thị Bánh Tráng Kim Chung Đông Anh",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7826704,
+          21.1290704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Siêu Thị Điện Máy HC Hà Nội",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7856637,
+          21.069491
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NS Fahasa Siêu Thị Đồng Nai",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8892667,
+          10.9687891
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Nguyễn Trung Trực Dương Đông",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.9634836,
+          10.222968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Safarm-Đặc Sản Sa Pa-Siêu Thị Hải Yến Mart",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.849538,
+          22.3374806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Siêu Thị Country Mart",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2961283,
+          20.1980805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lienmart-Siêu Thị Xanh",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7456988,
+          20.3231156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Siêu Thị Hoa Ba",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0162615,
+          21.3786501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hóa Xanh 190 Quốc Lộ 13",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.714274,
+          10.8309087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Công Nghệ",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7199656,
+          10.8237825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Máy Bảo Ngọc-Thủ Đức",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7209125,
+          10.8528869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Đồ Nghề",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7139494,
+          10.8365199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đức Hưng-Siêu Thị Ô Tô Thủ Đức",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7173505,
+          10.8416464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị-Nhà Sách Đập Đá",
+        "class": "stationery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0875757,
+          13.925458
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mộc Châu Food-Siêu Thị Đặc Sản Mộc Châu",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.6883801,
+          20.8192854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đặc Sản Phú Yên-Siêu Thị Hòa Yên Cs1",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3168831,
+          13.0989416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tíbo Mart-Siêu Thị Mẹ Và Bé Thị Trấn Hà Lam",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3543321,
+          15.7354721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Thoại Đăng Khoa",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3931921,
+          21.1128998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Nguyễn Trãi Thanh Hóa",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7608747,
+          19.8079809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Hóa Siêu Thị Nhỏ Hạnh",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7611269,
+          10.5259358
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Máy Xanh Tô Ngọc Vân Thủ Đức",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7415011,
+          10.8659998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Nước Hoa Chính Hãng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7347071,
+          10.8380953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NS Phương Nam Siêu Thị An Phú",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7364961,
+          10.8051692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Máy Sx Giá Kệ Siêu Thị Thành Đạt",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7334786,
+          10.877861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hoá Xanh Tân Lập",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8192234,
+          10.8429609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Baby Huyền Trang",
+        "class": "baby_goods",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.906854,
+          20.2908543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Hóa Siêu Thị Sáu Sen",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.4418259,
+          21.0857013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Siêu Thị Co.opMart Thanh Hà",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9888275,
+          11.5758794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Siêu Thị Lan Chi Đồng Văn",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9255597,
+          20.6442001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Sữa",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.921641,
+          21.7016473
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quầy Thuốc Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8697644,
+          21.0417063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Quầy Thuốc Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8139986,
+          21.0450833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thế Giới Di Động Phố Lu",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.1878235,
+          22.3194232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Aloha Siêu Thị Aloha Mall Thị Xã Phú Thọ",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2236927,
+          21.3994715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bách Hoá Xanh 26 Tl769",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9588351,
+          10.7836064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Mẹ Và Bé Kidsplaza 774 Kha Vạn Cân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7524526,
+          10.847866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Máy Xanh 584 Kha Vạn Cân Hcm",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7443255,
+          10.840756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Điện Máy Chợ Lớn-Cn Quận 2",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7455459,
+          10.7905597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Mẹ Và Bé Kidsplaza 330 Tô Ngọc Vân",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7479786,
+          10.859778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Quán Toan Hải Phòng",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.603649,
+          20.890219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Thảo Dược Gia Bảo",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6032439,
+          10.7817462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mini Siêu Thị Thanh Bình",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6019887,
+          17.4795585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Bỉm Sữa Zia",
+        "class": "baby_goods",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6481603,
+          18.6658612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Công Đoàn Khu Cnc Q9",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.807698,
+          10.8440937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Quang Trung Nha Trang",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1903204,
+          12.2517163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Minimart 4Fmart-Siêu Thị Tiện Lợi 24/7",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1901433,
+          12.2433967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Minimart 4Fmart-Siêu Thị Tiện Lợi 24/7",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1934773,
+          12.2518919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mixue Siêu Thị Go",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2084067,
+          21.2660127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Hương Long",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.4742406,
+          22.3836433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Hương Long",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.4620151,
+          22.3910214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "DNTN Nhu Mai-Siêu Thị Điện Tử Thái Lan",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.1067724,
+          16.8182904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Mẹ & Bé Siêu Thị Sữa Tốt",
+        "class": "baby_goods",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9544122,
+          21.1931623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Siêu Thị Thuốc Việt",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8174077,
+          21.0196852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NH Siêu Thị",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8151037,
+          21.0140692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Phúc Đạt",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5302423,
+          22.8357866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hệ Thống Siêu Thị Thú Cưng Petster",
+        "class": "pet",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8445114,
+          21.0294444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Đồ Nhật Linh Chi",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8478025,
+          21.0397111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Siêu Thị Dabaco",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.064423,
+          21.1735247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "89Japan Siêu Thị Nhật Bản",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1518334,
+          11.9114899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Thạnh Mỹ Đơn Dương",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4928361,
+          11.7611119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tana-Siêu Thị Ăn Vặt Tt Sóc Sơn",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.854634,
+          21.2579839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Lốp Tuấn Hiền",
+        "class": "car_tires",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8535236,
+          20.0731742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Super Baby Mart-Siêu Thị Mẹ & Bé",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8608702,
+          20.8676692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zoan-Hệ Thống Siêu Thị Giầy Sneaker",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8578312,
+          19.8498632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mỳ Thanh Long Caty Siêu Thị Thanh Lân",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.440981,
+          20.3889656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Siêu Thị Lan Chi Giao Thủy",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4373252,
+          20.2737638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NS Fahasa Siêu Thị Bình Minh",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6513279,
+          10.9896091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pha Chế Việt Quận 12-Siêu Thị Nguyên Liệu",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6545546,
+          10.867957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Trà Cà Phê Salavina",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6446948,
+          10.8048715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Mẹ Và Bé Kidsplaza 147 Lê Văn Việt",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7785665,
+          10.8460088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Nệm Kim Cương",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7851165,
+          10.8445283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tủ Nhựa Đài Loan",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7816913,
+          10.8369283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phụ Kiện Kệ Siêu Thị",
+        "class": "baby_goods",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7787302,
+          10.8800789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Siêu Thị Thuốc Việt",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7926482,
+          21.0714057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Sữa Tốt",
+        "class": "dairy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9744832,
+          21.4635106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Máy Lọc Nước Điện Giải Minota",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8335009,
+          10.8531793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Cầu Lông Thủ Đức",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8378648,
+          10.842002
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mpmart Mạnh Phương Siêu Thị Đồng Giá 15K Cs5",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.030831,
+          20.8716717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Siêu Thị Lan Chi Lý Nhân",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0338995,
+          20.560969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Siêu Thị Tgdd Phước Lộc Long Hải",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.2211069,
+          10.4075877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Sách-Siêu Thị Nam Gia Lai Ctc",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4408253,
+          13.4041451
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH ĐTDĐ Siêu Thị Táo",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6413984,
+          10.777786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Làm Đẹp Siêu Thị Tóc",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.642195,
+          10.7657838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kệ Siêu Thị Tạp Hóa Bình Dương",
+        "class": "supermarket",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6395128,
+          11.0349989
+        ]
+      }
+    }
+  ]
+}

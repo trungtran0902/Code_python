@@ -1,0 +1,77 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            105.50576446534858,
+                            10.952084460800554
+                        ],
+                        [
+                            105.53865096082427,
+                            10.939281708262083
+                        ],
+                        [
+                            105.55063454024031,
+                            10.919540110939623
+                        ],
+                        [
+                            105.5438430024354,
+                            10.916993102403145
+                        ],
+                        [
+                            105.54643088597597,
+                            10.910987764350981
+                        ],
+                        [
+                            105.54304049857186,
+                            10.914822578099592
+                        ],
+                        [
+                            105.53759999364712,
+                            10.920633449354447
+                        ],
+                        [
+                            105.50576446534858,
+                            10.952084460800554
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Khu sản xuất nông nghiệp ứng dụng công nghệ cao tại xã Hưng Điền",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Xã Hưng Điền, huyện Tân Hưng",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Hưng Điền, Tỉnh Tây Ninh",
+                "Định vị toạ độ": "10.952084460800554,105.50576446534858;\n10.939281708262083,105.53865096082427;\n10.919540110939623,105.55063454024031;\n10.916993102403145,105.5438430024354;\n10.910987764350981,105.54643088597597;\n10.914822578099592,105.54304049857186;\n10.920633449354447,105.53759999364712;\n10.952084460800554,105.50576446534858",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": 855744,
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Hình thành khu sản xuất nông nghiệp ứng dụng công nghệ cao tập trung với quy mô lớn, máy móc hiện đại; sản xuất sản phẩm lương thực chất lượng, hiệu quả năng suất lao động cao: lúa, ngô, chuối, cây ăn quả, cá, bò, dê, heo nhà máy sơ chế và chế biến nguyên liệu từ nông sản ",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch ",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề xuất của Nhà đầu tư",
+                "Hình thức đầu tư": "Kêu gọi nhà đầu tư",
+                "Thời gian dự kiến triển khai": "50 năm",
+                "Thời gian hoạt dộng dự án": "50 năm ",
+                "Hiệu quả kinh tế": "Vừa tạo quỹ đất sạch để kêu gọi thu hút đầu tư, vừa thực hiện chính sách an sinh xã hội cho dân cư vùng biên giới. ",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

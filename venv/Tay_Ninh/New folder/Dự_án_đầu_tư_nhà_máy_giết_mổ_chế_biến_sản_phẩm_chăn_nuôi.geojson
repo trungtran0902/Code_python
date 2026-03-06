@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.231726,
+                    11.569231
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Dự án đầu tư nhà máy giết mổ, chế biến sản phẩm chăn nuôi",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Lô D1, Vùng Đề án SX NNUDCNC huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": " Vùng Đề án sản xuất NNUDCNC xã Tân Thành, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.569231,106.231726",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "24,66 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Đầu tư xây dựng nhà máy giết mổ, chế biến sản phẩm chăn nuôi đảm bảo ứng dụng công nghệ cao (công nghệ tiên tiến hàng đầu thế giới)",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Quyết định số 1893 ngày 29/6/2025.",
+                "Tổng vốn đầu tư (dự kiến)": 1215,
+                "Hình thức đầu tư": "Vốn nhà đầu tư: 243 tỷ\nVốn huy động: 972 tỷ",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": "Quý 4/2027",
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế, tạo công ăn việc làm cho ngừoi dân địa phương ",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

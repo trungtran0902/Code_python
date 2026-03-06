@@ -1,0 +1,72 @@
+[
+  {
+    "location": {
+      "lng": 106.625,
+      "lat": 10.8545
+    },
+    "name": "Khách Sạn Ánh Sao",
+    "objectId": null,
+    "description": null,
+    "types": [
+      "hotel"
+    ],
+    "tags": [
+      "aegona"
+    ],
+    "address": "123 Đường Lê Văn Khương, Phường Thới An, Quận 12, TP. Hồ Chí Minh, Việt Nam",
+    "photos": [],
+    "startDate": "2025-09-16T06:49:58.725172+00:00",
+    "endDate": "2025-09-16T06:49:58.725172+00:00",
+    "phoneNumber": null,
+    "website": null,
+    "businessHours": [],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        106.625,
+        10.8545
+      ]
+    },
+    "rank": {
+      "value": 0
+    },
+    "layer": "address",
+    "source": null,
+    "metadata": []
+  },
+  {
+    "location": {
+      "lng": 106.6275,
+      "lat": 10.852
+    },
+    "name": "Khách Sạn Ngọc Lan",
+    "objectId": null,
+    "description": null,
+    "types": [
+      "hotel"
+    ],
+    "tags": [
+      "aegona"
+    ],
+    "address": "45 Đường Hà Huy Giáp, Phường Thạnh Lộc, Quận 12, TP. Hồ Chí Minh, Việt Nam",
+    "photos": [],
+    "startDate": "2025-09-16T06:49:58.725172+00:00",
+    "endDate": "2025-09-16T06:49:58.725172+00:00",
+    "phoneNumber": null,
+    "website": null,
+    "businessHours": [],
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        106.6275,
+        10.852
+      ]
+    },
+    "rank": {
+      "value": 0
+    },
+    "layer": "address",
+    "source": null,
+    "metadata": []
+  }
+]

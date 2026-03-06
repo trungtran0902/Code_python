@@ -1,0 +1,1175 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TT Sơ Sinh Bệnh Viện Phụ Sản Hải Phòng",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6837612,
+          20.859659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Gửi Xe Ô Tô Bệnh Viện Phcn",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6855046,
+          10.7413221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Giữ Xe Bệnh Viện Bình Dân",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6777316,
+          10.7741972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Giữ Xe Bệnh Viện Bình Dân",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6803065,
+          10.774192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Bình Dân",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6804782,
+          10.774055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NVH Tiểu Khu Bệnh Viện",
+        "class": "culture_centre",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.6743628,
+          20.8396289
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vòng Xoay Bệnh Viện Xuyên Mộc",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.414175,
+          10.5397933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KDC Phía Tây Bệnh Viện Sản Nhi",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9634057,
+          20.2428713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Căn Tin Bệnh Viện Đa Khoa Tân Định",
+        "class": "food_court",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6895279,
+          10.7902909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Đồng Hồ",
+        "class": "accessories",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6972634,
+          10.7905149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện-Phòng Khám Da Liễu Quận 1",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.699369,
+          10.7887206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Xe Bệnh Viện Tai Mũi Họng Sài Gòn",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6973305,
+          10.7674623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Máy Tính-Huế",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.590498,
+          16.4647213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Mắt Kính Bệnh Viện Sài Gòn",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5429211,
+          10.9427719
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Đa Khoa Đa Khoa Chánh Hưng",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6589803,
+          10.7457413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Bệnh Viện Quốc Tế Green",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.661936,
+          20.8415566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Tân Bình",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6552305,
+          10.7948175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Căn Tin Bệnh Viện Đa Khoa Tân Bình",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.655665,
+          10.7943696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Ô Tô Bệnh Viện 115",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6660345,
+          10.7739785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Thánh Mẫu",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6565958,
+          10.7896507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Võng Gần Bệnh Viện Chợ Rẫy",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6586289,
+          10.7594914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Nhi Trung Ương Nghệ An",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7024401,
+          18.6817934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Bình Dân Đà Nẵng",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2000032,
+          16.0713956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Phổi Tỉnh Lai Châu",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.481673,
+          22.3797594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cổng Bệnh Viện Đại Học Y Hà Nội",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.830124,
+          21.0028291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Hóa Bệnh Viện Trần Văn Thời",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9704921,
+          9.0756432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Phong-Da Liếu Trung Ương Quy Hòa",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2128268,
+          13.7221676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Trông Giữ Xe Bệnh Viện Tuyên Quang",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2038014,
+          21.8274806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đỗ Xe Trạm Xe Dịch Vụ Bệnh Viện Ung Bướu",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8136042,
+          10.869332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ Ô Tô VinFast BĐX Bệnh Viện Ung Bướu",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8137866,
+          10.869332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NX Phương Trang Bệnh Viện Nhi Đồng 3",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5741125,
+          10.7092578
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Hóa Bệnh Viện Cái Nước",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0127798,
+          8.9456329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Thẩm Mỹ Bệnh Viện Quân Y 7A",
+        "class": "beauty",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.670672,
+          10.7567746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Xe Hơi Bệnh Viện Mêkong",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6676921,
+          10.7994757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Nhi Đồng 1",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6690144,
+          10.7680341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Giữ Xe Bệnh Viện Quân Y 7B",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8525714,
+          10.9662954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Đa Khoa Minh Tâm CS 2",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3323972,
+          9.9223082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Công Vụ Bệnh Viện Quân Y 7",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3269174,
+          20.9418766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Bệnh Viện Ba Lan",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6920788,
+          18.6651345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Gửi Xe Bệnh Viện Đa Khoa Cửa Đông",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.697993,
+          18.6833789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Giữ Xe Bệnh Viện",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.3628938,
+          11.1981151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "An Phước Spa-Bệnh Viện An Phước",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0980766,
+          10.9309475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Circle K Bệnh Viện Hoàn Mỹ Cần Thơ",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7990533,
+          10.004805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Hóa Bệnh Viện Nhi",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.807851,
+          21.0238338
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Gửi Xe Bệnh Viện Bạch Mai",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8411372,
+          21.0034151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tr.Cấp Y Tế Bệnh Viện Bạch Mai",
+        "class": "college",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8386266,
+          21.0012917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Nhi Đồng 2",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7017829,
+          10.7826684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty DV Thúy An Việt-Bệnh Viện Thú Y",
+        "class": "veterinary",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7096901,
+          10.7302435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Bệnh Viện Quận 4",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7022389,
+          10.7656784
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điểm Trông Giữ Xe Bệnh Viện 19-8",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7787812,
+          21.0339357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Gửi Xe Bệnh Viện 198",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7784754,
+          21.0337054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Đồng Hồ Điện ThoạiTuấn Hà",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1463833,
+          20.2756735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Phổi Tỉnh Hậu Giang",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4498833,
+          9.7692323
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Tư Bệnh Viện Anh Sơn",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.0926024,
+          18.9314592
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Xe Bệnh Viện Y Dược Cần Thơ",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7551241,
+          10.0338567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spa Bác Sĩ Linh Da Liễu Bệnh Viện Tp.Thủ Đức",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7422736,
+          10.8637766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Aha Cafe Bệnh Viện Hải Tiến",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9033725,
+          19.8473958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Bệnh Viện Đa Khoa",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0041536,
+          11.578825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tạp Hóa Đối Diện Bệnh Viện",
+        "class": "department_store",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4491671,
+          10.3531804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Bệnh Viện",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8138484,
+          21.0435012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Bệnh Viện",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8508253,
+          21.0247526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Thuốc Bệnh Viện Quân Y 354",
+        "class": "pharmacy",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8127138,
+          21.0396836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Căng Tin Bệnh Viện Quân Y 354",
+        "class": "eatery",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8127004,
+          21.0393356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Bệnh Viện Hòe Nhai",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8460724,
+          21.0408727
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bệnh Viện Phổi Tỉnh Nam Định",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.179015,
+          20.4504951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "K.Vực Gửi Xe Bệnh Viện Hữu Nghị",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8626056,
+          21.0147502
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tập Thể Bệnh Viện Hữu Nghị",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8619055,
+          21.0059942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Thống Nhất",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6526717,
+          10.7899326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện 1A",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6530123,
+          10.7888602
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Giữ Xe Bệnh Viện Quân Y 103",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7913473,
+          20.9660432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Chung Cư CT1 Bệnh Viện 103",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7928789,
+          20.9682648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Bệnh Viện Thanh Hà",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7954967,
+          19.815733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nơi Gửi Xe Bệnh Viện E",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7897112,
+          21.0508959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Bệnh Viện Tương Lai",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.107467,
+          10.9369809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vòng Xoay Bệnh Viện Tỉnh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9874302,
+          10.2316839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Đồng Nai",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8678305,
+          10.9535951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Đồng Nai 2",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8664357,
+          10.9514989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bãi Đậu Xe Bệnh Viện Đồng Nai 2",
+        "class": "parking",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8673718,
+          10.9509038
+        ]
+      }
+    }
+  ]
+}

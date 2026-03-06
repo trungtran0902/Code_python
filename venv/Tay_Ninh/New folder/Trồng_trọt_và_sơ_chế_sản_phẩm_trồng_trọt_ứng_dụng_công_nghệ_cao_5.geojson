@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.202294,
+                    11.557233
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Trồng trọt và sơ chế sản phẩm trồng trọt ứng dụng công nghệ cao 5",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Các lô A6, B6, C6, A7, B7, A8, B8, C8, A9, B9 của Vùng Đề án SX NNUDCNC huyện Tân Châu, tỉnh Tây Ninh (vùng mở rộng thị trấn Tân Châu)",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Khu chức năng I, Vùng Đề án sản xuất NNUDCNC xã Tân Thành, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.557233,106.202294",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "195 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Đối tượng trồng trọt, sơ chế sản phẩm trồng trọt ứng dụng công nghệ cao phù hợp theo Đề án vùng SX NNUDCNC huyện Tân Châu, tỉnh Tây Ninh",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch ",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề xuất của Nhà đầu tư",
+                "Hình thức đầu tư": "Kêu gọi đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế, tạo công ăn việc làm cho ngừoi dân địa phương ",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

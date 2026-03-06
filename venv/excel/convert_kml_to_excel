@@ -1,0 +1,60 @@
+import geopandas as gpd
+import pandas as pd
+import fiona
+import tkinter as tk
+from tkinter import filedialog
+import os
+
+def extract_extended_data(gdf):
+    records = []
+
+    for _, row in gdf.iterrows():
+        base = row.drop("geometry").to_dict()
+        ext = {}
+
+        # Lấy ExtendedData nếu có
+        if "ExtendedData" in row and isinstance(row["ExtendedData"], dict):
+            ext = row["ExtendedData"]
+
+        # Gộp dữ liệu
+        records.append({**base, **ext})
+
+    return pd.DataFrame(records)
+
+# -------- GUI chọn file ----------
+root = tk.Tk()
+root.withdraw()
+
+kml_path = filedialog.askopenfilename(
+    title="Chọn file KML",
+    filetypes=[("KML files", "*.kml")]
+)
+
+if not kml_path:
+    print("❌ Chưa chọn file")
+    exit()
+
+layers = fiona.listlayers(kml_path)
+print(f"📂 Các layer: {layers}")
+
+excel_path = os.path.splitext(kml_path)[0] + "_FULL.xlsx"
+
+with pd.ExcelWriter(excel_path, engine="openpyxl") as writer:
+    for layer in layers:
+        gdf = gpd.read_file(kml_path, driver="KML", layer=layer)
+
+        if gdf.empty:
+            continue
+
+        # Bung ExtendedData
+        df = extract_extended_data(gdf)
+
+        # Tách tọa độ nếu là POINT
+        if gdf.geometry.iloc[0].geom_type == "Point":
+            df["longitude"] = gdf.geometry.x
+            df["latitude"] = gdf.geometry.y
+
+        sheet_name = layer.replace("/", "_")[:31]
+        df.to_excel(writer, sheet_name=sheet_name, index=False)
+
+print(f"✅ Đã xuất đầy đủ field: {excel_path}")

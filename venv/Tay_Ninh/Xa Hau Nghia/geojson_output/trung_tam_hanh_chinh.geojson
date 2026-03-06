@@ -1,0 +1,245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.399014,
+          10.8938464
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "UBND Xã Hậu Nghĩa",
+        "address": "29 tháng 4, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "V9VX+GJJ, 29 tháng 4, TT. Hậu Nghĩa, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3404925,
+          10.9780546
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Công An Xã An Ninh Đông",
+        "address": "Xã An Ninh, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "X8HR+65H, An Ninh Đông, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3408128,
+          10.9745023
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "UBND Xã An Ninh",
+        "address": "Ấp An Hiệp ĐT825, Xã An Ninh, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "ĐT825, Ấp An Hiệp, Đức Hòa, Long An 81000, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3905338,
+          10.9070312
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Đảng Ủy Thị Trấn Hậu Nghĩa",
+        "address": "413/A Ô 4, Khu 4, Xã Hậu Nghĩa, Tỉnh Tây Ninh",
+        "oldaddress": "413/A Ô 4, Khu 4, Thị Trấn Hậu Nghĩa",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3963964,
+          10.893084
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Công Ty TNHH Hóa Chất Và Môi Trường An Thành Phát",
+        "address": "171, Ô 6, Khu B Long An, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "171, Ô 6, Khu B, Thị Trấn Hậu Nghĩa, Huyện Đức Hoà, Tỉnh Long An, TT. Hậu Nghĩa, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3905709,
+          10.9477082
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "NHÀ VĂN HOÁ ẤP BẾN LONG",
+        "address": "W9XR+36P, Tân Mỹ, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "W9XR+36P, Tân Mỹ, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3651057,
+          10.9427969
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Công An Xã Tân Mỹ",
+        "address": "Ấp Chánh Hội Long An, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "Ấp Chánh Hội, Xã Tân Mỹ, Huyện Đức Hòa, Tỉnh Long An, W9V8+428, Tân Mỹ, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3651836,
+          10.9428643
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Đảng Ủy Xã Tân Mỹ",
+        "address": "Ấp, Chánh Hội, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "W9V8+539, Ấp, Chánh Hội, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4303925,
+          10.9149789
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "UBND xã Đức Lập Hạ",
+        "address": "Xã Đức Lập, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "WC7J+X5R, Đức Lập Hạ, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4204691,
+          10.9840732
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Văn phòng ấp Mỹ Khánh A",
+        "address": "293 Cây Trôm Mỹ Khánh, Xã Thái Mỹ, Thành phố Hồ Chí Minh, Việt Nam",
+        "oldaddress": "293 Cây Trôm Mỹ Khánh, Thái Mỹ, Củ Chi, Thành phố Hồ Chí Minh, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.399014,
+          10.8938464
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "UBND Xã Hậu Nghĩa",
+        "address": "29 tháng 4, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "V9VX+GJJ, 29 tháng 4, TT. Hậu Nghĩa, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4303925,
+          10.9149789
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "UBND xã Đức Lập Hạ",
+        "address": "Xã Đức Lập, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "WC7J+X5R, Đức Lập Hạ, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3963636,
+          10.8924323
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Chi Cục Thi Hành Án Dân Sự Huyện Đức Hòa",
+        "address": "Nguyễn Trọng Thế, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "V9RW+XGH, Đường Nguyễn Trọng Thế, TT. Hậu Nghĩa, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3968749,
+          10.8951274
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Bảo hiểm xã hội Tỉnh Long An",
+        "address": "Bảo Hiểm Xã Hội, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "Bảo Hiểm Xã Hội, TT. Hậu Nghĩa, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3963636,
+          10.8924323
+        ]
+      },
+      "properties": {
+        "Tên Địa Điểm": "Chi Cục Thi Hành Án Dân Sự Huyện Đức Hòa",
+        "address": "Nguyễn Trọng Thế, Xã Hậu Nghĩa, Tỉnh Tây Ninh, Việt Nam",
+        "oldaddress": "V9RW+XGH, Đường Nguyễn Trọng Thế, TT. Hậu Nghĩa, Đức Hòa, Long An, Việt Nam",
+        "Loại Địa Điểm": "trung tâm hành chính"
+      }
+    }
+  ]
+}

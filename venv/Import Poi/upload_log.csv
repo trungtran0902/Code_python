@@ -1,0 +1,12 @@
+time,status,id,message,name,address,lat,lng,tags
+2025-09-16 14:50:18,FAIL,,"404: <!DOCTYPE html>
+<html lang=""en"">
+<head>
+<meta charset=""utf-8"">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /map/manage/place</pre>
+</body>
+</html>
+",Trung Test,"107/48/7 Tân Chánh Hiệp 35-34-36, Tân Chánh Hiệp, Quận 12, Thành phố Hồ Chí Minh, Việt Nam",10.862693,106.621888,trung

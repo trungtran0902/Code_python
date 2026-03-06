@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.3327973024825,
+                    11.210118722215608
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Khu đô thị mới kết hợp chức năng thể thao, sân golf, sinh thái, nghỉ dưỡng Bến Sắn tại Gò Dầu, tỉnh Tây Ninh",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Xã Bàu Đồn, huyện Gò Dầu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Truông Mít, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.210118722215608,106.3327973024825",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": 294.09,
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Đầu tư xây dựng và kinh doanh dự án tổ hợp sân golf theo quy hoạch",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Quyêt định số 854/QĐ-UBND ngày 15/4/2025 của UBND tỉnh Tây Ninh về phê duyệt đồ án quy hoạch phân khu Khu đô thị mới kết hợp chức năng thể thao, sân gofl, sinh thái, nghỉ dưỡng Bến Sắn tại Gò Dầu, tỉnh Tây Ninh",
+                "Tổng vốn đầu tư (dự kiến)": "2.989,25 tỷ đồng",
+                "Hình thức đầu tư": "Kêu gọi đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế - xã hội của địa phương",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

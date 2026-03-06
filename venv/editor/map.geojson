@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "name": "Duong_chuan_hoa",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "way_id": "",
+        "highway": "primary",
+        "name": "",
+        "stroke": "#ffb380",
+        "stroke-width": 24,
+        "stroke-opacity": 1,
+        "stroke-dasharray": "",
+        "__line_id": 1,
+        "poly_name": "Biên Hòa - Vũng Tàu"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            106.68945653100258,
+            10.773604487457746
+          ],
+          [
+            106.689942193207,
+            10.774155804433306
+          ]
+        ],
+        "type": "LineString"
+      }
+    }
+  ]
+}

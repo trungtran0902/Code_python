@@ -1,0 +1,39 @@
+2026/02/11-09:01:21.506 5d0 Reusing MANIFEST C:\Users\Admin Data\PycharmProjects\pythonProject1\github\venv\foody\google_profile\Default\Service Worker\Database/MANIFEST-000001
+2026/02/11-09:01:21.506 5d0 Recovering log #13
+2026/02/11-09:01:21.510 5d0 Reusing old log C:\Users\Admin Data\PycharmProjects\pythonProject1\github\venv\foody\google_profile\Default\Service Worker\Database/000013.log 
+2026/02/11-09:52:34.004 21b4 Level-0 table #18: started
+2026/02/11-09:52:34.010 21b4 Level-0 table #18: 59967 bytes OK
+2026/02/11-09:52:34.012 21b4 Delete type=0 #13
+2026/02/11-10:04:13.338 1ecc Compacting 1@1 + 1@2 files
+2026/02/11-10:04:13.341 1ecc Generated table #19@1: 9 keys, 706 bytes
+2026/02/11-10:04:13.342 1ecc Compacted 1@1 + 1@2 files => 706 bytes
+2026/02/11-10:04:13.342 1ecc compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/02/11-10:04:13.343 1ecc Delete type=2 #15
+2026/02/11-10:04:13.343 1ecc Delete type=2 #18
+2026/02/11-11:30:51.957 21b4 Level-0 table #21: started
+2026/02/11-11:30:51.963 21b4 Level-0 table #21: 59966 bytes OK
+2026/02/11-11:30:51.964 21b4 Delete type=0 #17
+2026/02/11-11:42:37.003 21b4 Compacting 1@1 + 1@2 files
+2026/02/11-11:42:37.006 21b4 Generated table #22@1: 9 keys, 706 bytes
+2026/02/11-11:42:37.006 21b4 Compacted 1@1 + 1@2 files => 706 bytes
+2026/02/11-11:42:37.007 21b4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/02/11-11:42:37.008 21b4 Delete type=2 #19
+2026/02/11-11:42:37.008 21b4 Delete type=2 #21
+2026/02/11-13:07:41.575 21b4 Level-0 table #24: started
+2026/02/11-13:07:41.579 21b4 Level-0 table #24: 59935 bytes OK
+2026/02/11-13:07:41.580 21b4 Delete type=0 #20
+2026/02/11-13:19:00.672 21b4 Compacting 1@1 + 1@2 files
+2026/02/11-13:19:00.677 21b4 Generated table #25@1: 9 keys, 706 bytes
+2026/02/11-13:19:00.678 21b4 Compacted 1@1 + 1@2 files => 706 bytes
+2026/02/11-13:19:00.679 21b4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/02/11-13:19:00.680 21b4 Delete type=2 #22
+2026/02/11-13:19:00.680 21b4 Delete type=2 #24
+2026/02/11-14:41:14.568 21b4 Level-0 table #27: started
+2026/02/11-14:41:14.572 21b4 Level-0 table #27: 59893 bytes OK
+2026/02/11-14:41:14.573 21b4 Delete type=0 #23
+2026/02/11-14:52:03.291 1ecc Compacting 1@1 + 1@2 files
+2026/02/11-14:52:03.295 1ecc Generated table #28@1: 9 keys, 706 bytes
+2026/02/11-14:52:03.295 1ecc Compacted 1@1 + 1@2 files => 706 bytes
+2026/02/11-14:52:03.296 1ecc compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/02/11-14:52:03.296 1ecc Delete type=2 #25
+2026/02/11-14:52:03.296 1ecc Delete type=2 #27

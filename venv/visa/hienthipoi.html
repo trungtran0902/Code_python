@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Excel → Marker Cluster Map4D (2.6)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ MAP4D SDK 2.6 -->
+  <script defer src="https://api.map4d.vn/sdk/map/js?version=2.6&key=93d393d0f6507ee00b62fe01db7430fa"></script>
+
+  <!-- ✅ SheetJS -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <style>
+    body { margin: 0; font-family: Arial; }
+
+    /* LAYOUT 2 CỘT */
+    #layout {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+
+    /* LEFT PANEL */
+    #leftPanel {
+      width: 350px;
+      border-right: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #controls {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #poiList {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    .poi-item {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* MAP */
+    #map {
+      flex: 1;
+      min-width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="layout">
+
+  <!-- ✅ BÊN TRÁI -->
+  <div id="leftPanel">
+
+    <div id="controls">
+      <input type="file" id="fileInput" accept=".xlsx,.xls" />
+
+      Lat:
+      <select id="latCol"><option value="">-- chọn cột --</option></select>
+
+      Lng:
+      <select id="lngCol"><option value="">-- chọn cột --</option></select>
+
+      Name:
+      <select id="nameCol"><option value="">-- chọn cột --</option></select>
+
+      <button id="plotBtn" disabled>Vẽ Marker</button>
+    </div>
+
+    <div id="poiList"></div>
+
+  </div>
+
+  <!-- ✅ BÊN PHẢI -->
+  <div id="map"></div>
+
+</div>
+
+<script>
+let map;
+let markers = [];
+let excelRows = [];
+let allPoints = [];
+
+/* ==============================
+ ✅ KHỞI TẠO MAP4D (v2.6)
+============================== */
+document.addEventListener("DOMContentLoaded", () => {
+  map = new map4d.Map(document.getElementById("map"), {
+    center: { lat: 10.775658, lng: 106.700424 },
+    zoom: 13
+  });
+
+  // ✅ Lắng nghe camera thay đổi → update cluster
+  map.addListener("cameraChanged", () => {
+    if (allPoints.length > 0) drawClusters(allPoints);
+  });
+});
+
+/* ==============================
+ ✅ ĐỌC EXCEL
+============================== */
+document.getElementById("fileInput").addEventListener("change", async (e) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+
+  const data = await file.arrayBuffer();
+  const wb = XLSX.read(data, { type: "array" });
+  const sheet = wb.Sheets[wb.SheetNames[0]];
+
+  excelRows = XLSX.utils.sheet_to_json(sheet, { defval: null });
+
+  if (!excelRows.length) {
+    alert("Không đọc được dữ liệu Excel!");
+    return;
+  }
+
+  const headers = Object.keys(excelRows[0]);
+
+  fillSelect("latCol", headers);
+  fillSelect("lngCol", headers);
+  fillSelect("nameCol", headers);
+
+  document.getElementById("plotBtn").disabled = false;
+});
+
+function fillSelect(id, headers) {
+  const sel = document.getElementById(id);
+  sel.innerHTML = `<option value="">-- chọn cột --</option>`;
+  headers.forEach(h => sel.innerHTML += `<option value="${h}">${h}</option>`);
+}
+
+/* ==============================
+ ✅ CHUẨN HOÁ TOẠ ĐỘ
+============================== */
+function toNumber(x) {
+  if (!x) return null;
+  x = String(x).trim().replace(/[^0-9.,-]/g, "");
+  x = x.replace(",", ".");
+  const n = parseFloat(x);
+  return isNaN(n) ? null : n;
+}
+
+/* ==============================
+ ✅ VẼ MARKER + CLUSTERING
+============================== */
+document.getElementById("plotBtn").addEventListener("click", () => {
+  const latCol = document.getElementById("latCol").value;
+  const lngCol = document.getElementById("lngCol").value;
+  const nameCol = document.getElementById("nameCol").value;
+
+  if (!latCol || !lngCol) {
+    alert("Vui lòng chọn cột Lat và Lng!");
+    return;
+  }
+
+  markers.forEach(m => m.setMap(null));
+  markers = [];
+  allPoints = [];
+
+  let poiHTML = "";
+
+  excelRows.forEach(row => {
+    const lat = toNumber(row[latCol]);
+    const lng = toNumber(row[lngCol]);
+    const name = row[nameCol] || "";
+
+    if (lat !== null && lng !== null) {
+      allPoints.push({ lat, lng, name });
+
+      poiHTML += `
+        <div class="poi-item">
+          <b>${name || "Không tên"}</b><br>
+          Lat: ${lat} — Lng: ${lng}
+        </div>
+      `;
+    }
+  });
+
+  document.getElementById("poiList").innerHTML = poiHTML;
+
+  drawClusters(allPoints);
+  fitBounds(allPoints);
+});
+
+/* ==============================
+ ✅ GRID CLUSTERING - ỔN ĐỊNH NHẤT CHO MAP4D
+============================== */
+function gridCluster(points, gridSize) {
+  const grid = {};
+  points.forEach(p => {
+    const gx = Math.floor(p.lat / gridSize);
+    const gy = Math.floor(p.lng / gridSize);
+    const key = gx + "_" + gy;
+
+    if (!grid[key]) grid[key] = [];
+    grid[key].push(p);
+  });
+  return Object.values(grid);
+}
+
+function getZoom() {
+  return map.getCamera().zoom;
+}
+
+function drawClusters(points) {
+  markers.forEach(m => m.setMap(null));
+  markers = [];
+
+  const zoom = getZoom();
+  const gridSize = zoom >= 15 ? 0.005 : zoom >= 12 ? 0.01 : 0.02;
+
+  const clusters = gridCluster(points, gridSize);
+
+  clusters.forEach(group => {
+    const lat = group.reduce((a, x) => a + x.lat, 0) / group.length;
+    const lng = group.reduce((a, x) => a + x.lng, 0) / group.length;
+
+    const label = group.length > 1 ? String(group.length) : (group[0].name || "");
+
+    const marker = new map4d.Marker({
+      position: { lat, lng },
+      label: label
+    });
+
+    marker.setMap(map);
+    markers.push(marker);
+  });
+}
+
+/* ==============================
+ ✅ FIT MAP TO POINTS
+============================== */
+function fitBounds(points) {
+  let minLat = 90, maxLat = -90;
+  let minLng = 180, maxLng = -180;
+
+  points.forEach(p => {
+    minLat = Math.min(minLat, p.lat);
+    maxLat = Math.max(maxLat, p.lat);
+    minLng = Math.min(minLng, p.lng);
+    maxLng = Math.max(maxLng, p.lng);
+  });
+
+  const center = { lat: (minLat + maxLat) / 2, lng: (minLng + maxLng) / 2 };
+  map.setCenter(center);
+
+  const span = Math.max(maxLat - minLat, maxLng - minLng);
+  map.setZoom(span < 0.01 ? 14 : span < 0.05 ? 12 : span < 0.2 ? 10 : 8);
+}
+
+</script>
+
+</body>
+</html>

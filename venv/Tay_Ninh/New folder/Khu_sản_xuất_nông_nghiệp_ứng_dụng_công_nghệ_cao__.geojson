@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.37299316606772,
+                    10.675127357083854
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Khu sản xuất nông nghiệp ứng dụng công nghệ cao  ",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Ấp 3, xã Tân Thành (kênh T2 đến kênh T4), huyện Thủ Thừa",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Mỹ Thạnh, Xã Thủ Thừa, Tây Ninh",
+                "Định vị toạ độ": "10.675127357083854\t,106.37299316606772",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": 1400,
+                "Hiện trạng dự án": "80% là đất sản xuất nông nghiệp còn lại là đất ở và đất GTTL",
+                "Mục tiêu thực hiện dự án": "Phát triển kinh tế nông nghiệp",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch ",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề xuất của Nhà đầu tư",
+                "Hình thức đầu tư": "Đầu tư trực tiếp",
+                "Thời gian dự kiến triển khai": 2026,
+                "Thời gian hoạt dộng dự án": 2028,
+                "Hiệu quả kinh tế": null,
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

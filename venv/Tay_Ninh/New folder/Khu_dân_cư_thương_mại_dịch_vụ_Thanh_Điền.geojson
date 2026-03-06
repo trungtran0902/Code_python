@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.080234,
+                    11.285032
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Khu dân cư thương mại dịch vụ Thanh Điền",
+                "Lĩnh vực": "Lĩnh vực đầu tư xây dựng nhà ở",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Xã Thanh Điền, huyện Châu Thành, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "phường Thanh Điền, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.285032,106.080234",
+                "Toạ độ khu đất trên google map": "11,2875108, 106,0786907",
+                "Diện tích (ha)": "17,85 ha (diện tích điều chỉnh khoản 1,43 ha trong tổng thể 17,85 ha)",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Xây dựng khu phức hợp đô thị,",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Quyết định số 05/QĐ-UBND ngày 16 tháng 01 năm 2024 của UBND huyện Châu Thành về việc Phê duyệt Đồ án điều chỉnh quy hoạch chi tiết 1/500 Khu dân cư thương mại dịch vụ Thanh Điền, xã Thanh Điền, huyện Châu Thành",
+                "Tổng vốn đầu tư (dự kiến)": "86,864 tỷ đồng",
+                "Hình thức đầu tư": "Kêu gọi nhà đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Thúc đẩy phát triển đô thị, nhà ở, phát triển kinh tế xã hội địa phương",
+                "Hiện trạng": "đang cho thuê ngắn hạn",
+                "Nguồn gốc đất": "Đất công",
+                "Quy mô/công suất dự án": "01 trường mẫu giáo, 1 chợ và 754 nhà ở liền kề, công viên cây xanh, hạ tầng kỹ thuật",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "ONT",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "ONT",
+                "Quy hoạch chung": "Phù hợp theo QĐ 417/QĐ-UBND ngày 27/10/2023 của UBND huyện Châu Thành",
+                "Quy hoạch phân khu": "Không có QH phần khu",
+                "Quy hoạch chi tiết": "Phù hợp theo QĐ 05/QĐ-UBND ngày 16/01/2024 của UBND huyện Châu Thành",
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": "phù hợp",
+                "Kế hoạch phát triển nhà ở đến năm 2025": "phù hợp",
+                "Ghi chú": null,
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

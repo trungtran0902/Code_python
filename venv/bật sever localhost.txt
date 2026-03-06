@@ -1,0 +1,9 @@
+cd đến thư mục CMND
+G
+cd G:\Bình Phước\Bàn Giao
+npm install -g http-server
+http-server
+
+mở ternimal
+B1: npm install -g http-server
+B2: http-server

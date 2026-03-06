@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô Hình Bệnh Viện Đa Khoa Tỉnh Bình Phước</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #titleBar {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 34px;
+        }
+        #mainContent {
+            display: flex;
+            flex: 1;
+        }
+        #leftColumn {
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        #rightColumn {
+            flex: 1;
+            position: relative;
+        }
+        #zoomButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #noteBox {
+            position: absolute;
+            top: 60px; /* Đặt vị trí dưới nút Zoom to Layer */
+            right: 10px;
+            padding: 10px;
+            background-color: #ffeb3b;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="titleBar">Mô Hình 3D Mô Phỏng</div>
+    <div id="mainContent">
+        <div id="leftColumn">
+            <h2>Bệnh Viện Đa Khoa Tỉnh Bình Phước</h2>
+            <p>Quốc Lộ 14, Tiến Thành, Đồng Xoài, Bình Phước</p>
+        </div>
+        <div id="rightColumn">
+            <button id="zoomButton">Zoom to Layer</button>
+            <div id="noteBox">
+                <h2>Ghi Chú</h2>
+                <p>Giữ chuột phải để xoay</p>
+                <p>Giữ chuột để di chuyển</p>
+                <p>Lăn chuột để zoom in/zoom out</p>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+            <script>
+                // Tạo scene, camera và renderer
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(window.innerWidth - 300, window.innerHeight - 50); // Trừ đi chiều rộng của cột trái và chiều cao của thanh tiêu đề
+                renderer.setClearColor(0xffffff); // Đặt nền màu trắng
+                document.getElementById('rightColumn').appendChild(renderer.domElement);
+
+                // Thêm điều khiển camera
+                const controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enablePan = true; // Bật tính năng di chuyển
+                controls.enableRotate = true; // Bật tính năng xoay
+                controls.mouseButtons = {
+                    LEFT: THREE.MOUSE.PAN,    // Chuột trái di chuyển camera
+                    RIGHT: THREE.MOUSE.ROTATE // Chuột phải xoay camera
+                };
+
+                // Thêm ánh sáng
+                const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
+                scene.add(light);
+
+                let object;
+
+                // Tải file GLB
+                const loader = new THREE.GLTFLoader();
+                loader.load('BPH003_Benh vien Da khoa tinh Binh Phuoc-all.glb', function (gltf) {
+                    object = gltf.scene;
+                    scene.add(object);
+
+                    // Zoom to layer ngay khi tải xong mô hình
+                    zoomToLayer(object);
+
+                    renderer.render(scene, camera);
+                }, undefined, function (error) {
+                    console.error(error);
+                });
+
+                // Hàm zoom to layer
+                function zoomToLayer(object) {
+                    const box = new THREE.Box3().setFromObject(object);
+                    const size = box.getSize(new THREE.Vector3());
+                    const center = box.getCenter(new THREE.Vector3());
+
+                    const maxDim = Math.max(size.x, size.y, size.z);
+                    const fov = camera.fov * (Math.PI / 180);
+                    let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+
+                    cameraZ *= 1.5; // Thêm khoảng cách giữa đối tượng và camera
+                    camera.position.z = cameraZ;
+
+                    const minZ = box.min.z;
+                    const cameraToFarEdge = minZ < 0 ? -minZ + cameraZ : cameraZ - minZ;
+
+                    camera.far = cameraToFarEdge * 3;
+                    camera.updateProjectionMatrix();
+
+                    camera.lookAt(center);
+
+                    controls.target.copy(center);
+                    controls.update();
+
+                    render();
+                }
+
+                // Thêm sự kiện cho nút zoom
+                document.getElementById('zoomButton').addEventListener('click', function() {
+                    if (object) {
+                        zoomToLayer(object);
+                    }
+                });
+
+                // Hàm render
+                function render() {
+                    renderer.render(scene, camera);
+                }
+
+                // Hàm animate để render mô hình liên tục
+                function animate() {
+                    requestAnimationFrame(animate);
+                    controls.update();
+                    render();
+                }
+                animate();
+            </script>
+        </div>
+    </div>
+</body>
+</html>

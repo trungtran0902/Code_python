@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js webgl - loaders - OBJ loader</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        label {
+            display: block;
+        }
+        #xyzDisplay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            font-family: Arial, sans-serif;
+        }
+        #zoomButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="xyzDisplay"></div>
+    <div id="zoomButton">Zoom to Layer</div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./three.module.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OBJLoader } from './OBJLoader.js';
+        import { OrbitControls } from './OrbitControls.js';
+
+        let camera, scene, renderer;
+        let object;
+
+        init();
+
+        function init() {
+            camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+            camera.position.set(0.03, -0.64, 1.39);
+
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xffffff);
+
+            const ambientLight = new THREE.AmbientLight(0xffffff);
+            scene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0xffffff, 15);
+            camera.add(pointLight);
+            scene.add(camera);
+
+            function loadModel() {
+                object.traverse(function (child) {
+                    if (child.isMesh) child.material.map = texture;
+                });
+
+                object.position.y = -0.95;
+                object.scale.setScalar(0.01);
+                scene.add(object);
+                render();
+            }
+
+            const manager = new THREE.LoadingManager(loadModel);
+
+            const textureLoader = new THREE.TextureLoader(manager);
+            const texture = textureLoader.load('bph003_benviendakhoatinhbinhphuoc_nha_27.png', render);
+            texture.colorSpace = THREE.SRGBColorSpace;
+
+            function onProgress(xhr) {
+                if (xhr.lengthComputable) {
+                    const percentComplete = xhr.loaded / xhr.total * 100;
+                    console.log('model ' + percentComplete.toFixed(2) + '% downloaded');
+                }
+            }
+
+            function onError() {}
+
+            const loader = new OBJLoader(manager);
+            loader.load('BPH003_BenviendakhoatinhBinhPhuoc_nha_27.obj', function (obj) {
+                object = obj;
+            }, onProgress, onError);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.minDistance = 1;
+            controls.maxDistance = 10;
+            controls.addEventListener('change', render);
+
+            window.addEventListener('resize', onWindowResize);
+
+            const xyzDisplay = document.getElementById('xyzDisplay');
+
+            function updateXYZDisplay() {
+                xyzDisplay.innerHTML = `
+                    <span>X: ${camera.position.x.toFixed(2)}</span><br>
+                    <span>Y: ${camera.position.y.toFixed(2)}</span><br>
+                    <span>Z: ${camera.position.z.toFixed(2)}</span>
+                `;
+            }
+
+            updateXYZDisplay();
+
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                render();
+            }
+
+            function render() {
+                updateXYZDisplay();
+                renderer.render(scene, camera);
+            }
+
+            // Zoom to layer function
+            function zoomToLayer(object) {
+                const box = new THREE.Box3().setFromObject(object);
+                const size = box.getSize(new THREE.Vector3());
+                const center = box.getCenter(new THREE.Vector3());
+
+                const maxDim = Math.max(size.x, size.y, size.z);
+                const fov = camera.fov * (Math.PI / 180);
+                let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+
+                cameraZ *= 1.5; // Add some space between object and camera
+                camera.position.z = cameraZ;
+
+                const minZ = box.min.z;
+                const cameraToFarEdge = minZ < 0 ? -minZ + cameraZ : cameraZ - minZ;
+
+                camera.far = cameraToFarEdge * 3;
+                camera.updateProjectionMatrix();
+
+                camera.lookAt(center);
+
+                controls.target.copy(center);
+                controls.update();
+
+                render();
+            }
+
+            document.getElementById('zoomButton').addEventListener('click', function() {
+                zoomToLayer(object);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "5 Lý Thường Kiệt, Phường 4, Thành Phố Mỹ Tho, Tiền Giang",
+    "lat": "10.3552354",
+    "lng": "106.3594652",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>5 Lý Thường Kiệt, Phường 4, Thành Phố Mỹ Tho, Tiền Giang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "Số 30/2 Ấp Bắc, Phường 5, Thành Phố Mỹ Tho, Tiền Giang",
+    "lat": "10.3646296",
+    "lng": "106.3576324",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>Số 30/2 Ấp Bắc, Phường 5, Thành Phố Mỹ Tho, Tiền Giang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "Số 269B Lê Văn Phẩm, Phường 6, Thành Phố Mỹ Tho, Tiền Giang",
+    "lat": "10.3583814",
+    "lng": "106.3419033",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>Số 269B Lê Văn Phẩm, Phường 6, Thành Phố Mỹ Tho, Tiền Giang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  }
+]

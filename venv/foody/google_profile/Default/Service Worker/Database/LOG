@@ -1,0 +1,12 @@
+2026/02/24-15:19:13.273 3584 Reusing MANIFEST C:\Users\Admin Data\PycharmProjects\pythonProject1\github\venv\foody\google_profile\Default\Service Worker\Database/MANIFEST-000001
+2026/02/24-15:19:13.274 3584 Recovering log #26
+2026/02/24-15:19:13.279 3584 Reusing old log C:\Users\Admin Data\PycharmProjects\pythonProject1\github\venv\foody\google_profile\Default\Service Worker\Database/000026.log 
+2026/02/24-15:44:07.967 2d1c Level-0 table #31: started
+2026/02/24-15:44:07.973 2d1c Level-0 table #31: 60255 bytes OK
+2026/02/24-15:44:07.975 2d1c Delete type=0 #26
+2026/02/24-16:00:26.985 4134 Compacting 1@1 + 1@2 files
+2026/02/24-16:00:28.461 4134 Generated table #32@1: 9 keys, 702 bytes
+2026/02/24-16:00:28.461 4134 Compacted 1@1 + 1@2 files => 702 bytes
+2026/02/24-16:00:28.994 4134 compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/02/24-16:00:28.995 4134 Delete type=2 #28
+2026/02/24-16:00:28.995 4134 Delete type=2 #31

@@ -1,0 +1,237 @@
+{
+    "cookies": [
+        {
+            "name": "flg",
+            "value": "vn",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1801277138.576879,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "__ondemand_sessionid",
+            "value": "ubuuksr5wyq0cifmwxta3pdm",
+            "domain": "www.foody.vn",
+            "path": "/",
+            "expires": -1,
+            "httpOnly": true,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "floc",
+            "value": "217",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1801277129.677274,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "gcat",
+            "value": "food",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1801277157.991832,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "_ga",
+            "value": "GA1.2.1824366719.1769741140",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1804301159.087185,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "_gid",
+            "value": "GA1.2.869166836.1769741140",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1769827559,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "_fbp",
+            "value": "fb.1.1769741140463.848724579875409259",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1777517159,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "_gcl_au",
+            "value": "1.1.1886536941.1769741141",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1777517141,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "__utma",
+            "value": "257500956.1824366719.1769741140.1769741141.1769741141.1",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1804301159.159356,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "__utmc",
+            "value": "257500956",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": -1,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "__utmz",
+            "value": "257500956.1769741141.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1785509159,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "__utmt_UA-33292184-1",
+            "value": "1",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1769741741,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "__RequestVerificationToken",
+            "value": "wiMGdR3GXeR1wB0L4OylaFQSiVlCs4GI5y_8tyc2xBw9-yHnpXdIXiOXsdMi7wurigRCYb7liLCi8v9XQ30PXDzE5IngoPm8mmxUDJartKA1",
+            "domain": "id.foody.vn",
+            "path": "/",
+            "expires": -1,
+            "httpOnly": true,
+            "secure": true,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "ID_FOODY.AUTH.UDID",
+            "value": "c4a465ff-f594-408e-8b31-8c26fcc9fbe7",
+            "domain": "id.foody.vn",
+            "path": "/",
+            "expires": 1804301157.695612,
+            "httpOnly": true,
+            "secure": true,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "ID_FOODY.AUTH",
+            "value": "46922AD365B6785AD7B7454862DAF35624D52E01E76A0CCC6AB878467B3D79D33903B73ACA767A8DA6A16F5B309B818EB1FBF35929D65752BD05A1CC2148D6F2556F17DB6FDB5A413C88BF6D758A2745C8B787424ED62959AE1E8AABDF2203487AFEA75A33CA010AF052333642A5BD00EF1D61489AA1D60BF0549747BDF79AAA624AAB861DA025BEF35F1F6F4734D98DA224889C3DA9348BBD23FAACC341BF7A5CA7AD745DADB257B495400D95BC44EAB07A252C072B7ECAC1FC984AA0B8FCC492EDCD7557A04E7279EEBAEAEBEE490161AF1BC3209D80D836A3135A65C0BD84448B5CEA9CB43A8053B0FE052431F348",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1772333158.695669,
+            "httpOnly": true,
+            "secure": true,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "FOODY.AUTH.UDID",
+            "value": "6abe1900-55f6-4895-a587-37ce2694652d",
+            "domain": "www.foody.vn",
+            "path": "/",
+            "expires": 1804301158.84327,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "FOODY.AUTH",
+            "value": "B537CAE175FC661E8194E10C8BF537D1CE9A7E83D95F44E4C78EBD3D21F554CBF817F046501965F61B5C6F3033CBACCB24C1BA538575F0FC4694DDACF621C715A50BB4724443562EAB9FFCEC8C3A1BFEF8BB0EBB3FDA49B8150B540A5E2088D7EEB7C4EF01572810346D2F0000A8C063093989E5B38FBF5271BF1A74A419A7567FF29CB35BF3CFA78BA759E7531EFB1AF2C44213795FEAB480E95494345B219484FC1E584CC532E87555C1569FACDC738A5D7524C7F40D64AEBF90C5AAB30F227608789BC49A5B3ABC85DF5DDD74EC988219351B73F920DF09E3B19EC7BCAD071CD5EF110146D3BA95DAF45DCBF48804",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1772307948.843346,
+            "httpOnly": true,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "__utmb",
+            "value": "257500956.2.10.1769741141",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1769742959,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "IDE",
+            "value": "AHWqTUkYxKNw0hvE6gZ-ldskRjWdOt0pTtwYffk-b7GnudAM3-rUzuEAo8F5pQCL",
+            "domain": ".doubleclick.net",
+            "path": "/",
+            "expires": 1804301159.278241,
+            "httpOnly": true,
+            "secure": true,
+            "sameSite": "None"
+        },
+        {
+            "name": "_ga_6M8E625L9H",
+            "value": "GS2.2.s1769741140$o1$g1$t1769741159$j41$l0$h0",
+            "domain": ".foody.vn",
+            "path": "/",
+            "expires": 1804301159.931485,
+            "httpOnly": false,
+            "secure": false,
+            "sameSite": "Lax"
+        },
+        {
+            "name": "GCLB",
+            "value": "CLPZoNzgq-6kXhAD",
+            "domain": "profiles.dunsregistered.com",
+            "path": "/",
+            "expires": 1769827560.600054,
+            "httpOnly": true,
+            "secure": true,
+            "sameSite": "None"
+        }
+    ],
+    "origins": [
+        {
+            "origin": "https://www.foody.vn",
+            "localStorage": [
+                {
+                    "name": "lastExternalReferrer",
+                    "value": "other"
+                },
+                {
+                    "name": "lastExternalReferrerTime",
+                    "value": "1769741159144"
+                },
+                {
+                    "name": "_gcl_ls",
+                    "value": "{\"schema\":\"gcl\",\"version\":1,\"gcl_ctr\":{\"value\":{\"value\":0,\"timeouts\":0,\"creationTimeMs\":1769741140761},\"expires\":1777517140761}}"
+                },
+                {
+                    "name": "topicsLastReferenceTime",
+                    "value": "1769741159154"
+                }
+            ]
+        }
+    ]
+}

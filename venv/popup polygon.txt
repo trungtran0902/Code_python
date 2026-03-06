@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map4D Polygon with Click Event</title>
+  <style>
+    #map {
+      height: 100%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script defer src="https://api.map4d.vn/sdk/map/js?version=2.0&key="YOUR_API_KEY&callback=initMap"></script>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      // Cấu hình bản đồ
+      const options = {
+        center: { lat: 10.771111, lng: 106.703218 },
+        zoom: 16,
+        controls: true
+      };
+
+      // Khởi tạo bản đồ
+      const map = new map4d.Map(document.getElementById("map"), options);
+
+      // Khởi tạo một Polygon với thông tin
+      const polygonInfo = {
+        name: "Polygon 1",
+        description: "Đây là một vùng Polygon demo."
+      };
+
+      const polygon = new map4d.Polygon({
+        fillOpacity: 0.1,
+        userInteractionEnabled: true,
+        paths: [
+          [
+            { lat: 10.771749380684138, lng: 106.70001268386841 },
+            { lat: 10.768534727930506, lng: 106.70332789421082 },
+            { lat: 10.770684860129196, lng: 106.70641779899597 },
+            { lat: 10.77348844082262, lng: 106.70296311378479 },
+            { lat: 10.771749380684138, lng: 106.70001268386841 }
+          ]
+        ]
+      });
+
+      // Thêm Polygon vào bản đồ
+      polygon.setMap(map);
+
+      // Thêm sự kiện click cho bản đồ
+      map.addListener("click", function(event) {
+        const clickLatLng = event.location;
+
+        // Kiểm tra xem click có nằm trong Polygon không
+        const isInside = map4d.geometry.containsLocation(clickLatLng, polygon.getPaths());
+
+        if (isInside) {
+          // Hiển thị thông tin về Polygon
+          const infoContent = `<div>
+            <h4>${polygonInfo.name}</h4>
+            <p>${polygonInfo.description}</p>
+          </div>`;
+
+          // Khởi tạo Popup
+          const popup = new map4d.Popup({
+            position: clickLatLng,
+            anchor: [0.5, 1], // Vị trí anchor của popup
+            content: infoContent
+          });
+
+          // Thêm popup vào bản đồ
+          popup.setMap(map);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tượng Chúa Kitô Vua (Vũng Tàu) - Web/App Tương Tác Thông Minh 3D/360</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../css/style.css">
+		<script src="../../../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="https://sanpham.starglobal3d.vn/smart-museum-3d/bao-tang-phu-nu-nam-bo-gd2/admin/management/public/assets/qrcode/qrcode.js"></script>
+		
+			<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+		<link rel="preconnect" href="https://fonts.gstatic.com"> 
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+		<style>
+			@-ms-viewport { width:device-width; }
+			@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+			html { height:100%; }
+			body { height:100%; overflow:hidden;font-family: Roboto, sans-serif; margin:0; padding:0; color:#FFFFFF;}
+		</style>
+
+		<script>
+		var audioElement;
+		var first_play = true;
+		//giongdoc.stop()
+		var qrcode = new QRCode(document.getElementById("qrcode"), {
+    		width : 256,
+    		height : 256
+    	});
+		function tapped() {
+			if(first_play) {
+				audioElement.play()
+			}
+			first_play = false;
+			document.body.removeEventListener("touchstart", tapped, false)
+
+		}
+		
+		
+		function open_information(){
+			document.getElementById("mieu_ta").style.display = "block";
+			document.getElementById("float_element").style.display = "none";
+
+		}
+		
+		function close_information(){
+			document.getElementById("mieu_ta").style.display = "none";
+			document.getElementById("float_element").style.display = "block";
+		}
+		
+		function open_writing(){
+			document.getElementById("writing").style.display = "block";
+			document.getElementById("float_element").style.display = "none";
+			
+
+		}
+		
+		function close_writing(){
+			document.getElementById("writing").style.display = "none";
+			document.getElementById("float_element").style.display = "block";
+		}
+		
+		function open_video(){
+			document.getElementById("model").style.display = "none";
+			document.getElementById("video").style.display = "block";
+			document.getElementById("model-button").style.display = "block";
+			document.getElementById("video-button").style.display = "none";
+			document.getElementById("rotation-button").style.display = "none";
+			stop_audio();
+		}
+		
+		function open_model(){
+			document.getElementById("model").style.display = "block";
+			document.getElementById("video").pause();
+			document.getElementById("video").style.display = "none";
+			document.getElementById("model-button").style.display = "none";
+			document.getElementById("video-button").style.display = "block";
+			document.getElementById("rotation-button").style.display = "block";
+		}
+		
+		window.onload = function(){ 
+			jQuery.ajax({
+			url: "../../../../js/local-vn.js",
+			dataType: 'script',
+			success: function() {
+				if (document.getElementById("info_function_text"))
+					document.getElementById("info_function_text").innerHTML = print_text.MODEL_INFORMATION;
+				if (document.getElementById("writing_function_text"))
+					document.getElementById("writing_function_text").innerHTML = print_text.WRITING;
+				if (document.getElementById("model_function_text"))
+					document.getElementById("model_function_text").innerHTML = print_text.MODEL;
+				if (document.getElementById("pause_function_text"))
+					document.getElementById("pause_function_text").innerHTML = print_text.PAUSE;
+				if (document.getElementById("stop_function_text"))
+					document.getElementById("stop_function_text").innerHTML = print_text.STOP;
+				if (document.getElementById("rotation_function_text"))
+					document.getElementById("rotation_function_text").innerHTML = print_text.STOPROTATE;
+				$("#loading_animation").remove();
+			},
+			async: true
+			});
+							document.body.addEventListener("touchstart", tapped, false)
+
+		}
+		
+		function play_audio(){
+			//var x = document.getElementById("myAudio"); 
+			audioElement.play(); 
+			document.getElementById("play-audio-button").style.display = "none";
+			document.getElementById("pause-audio-button").style.display = "block";
+			document.getElementById("stop-audio-button").style.display = "block";
+
+		}
+		function pause_audio(){
+			//var x = document.getElementById("myAudio"); 
+			audioElement.pause(); 
+			document.getElementById("play-audio-button").style.display = "block";
+			document.getElementById("pause-audio-button").style.display = "none";
+			document.getElementById("stop-audio-button").style.display = "none";
+		}
+		function stop_audio(){
+			//var x = document.getElementById("myAudio"); 
+			audioElement.pause();
+			audioElement.currentTime = 0;
+			document.getElementById("play-audio-button").style.display = "block";
+			document.getElementById("pause-audio-button").style.display = "none";
+			document.getElementById("stop-audio-button").style.display = "none";
+		}
+
+		</script>
+	</head>
+
+	<body>
+	
+	<div id="copy_to_clipboard" class="copy_to_clipboard">
+    	<img class="close_copy-url" onclick="copyToClipboard();" src="https://sanpham.starglobal3d.vn/managements/user/modules/language_button/img/close.svg">
+        <div id="title-share" class="title-share">
+            CHIA SẺ HIỆN VẬT 3D/360        </div>
+    	<div id="table-copy" >
+    		<div id='qr'>
+        		<canvas id="myCanvas" width="256" height="300" style="border:1px solid #c3c3c3;">
+    								Your browser does not support the canvas element.
+    			</canvas>
+    		</div>
+    		<div id='save' style='text-align:center;'></div>
+    		<br>
+    		<input id="starglobal_link" value="">
+    	</div>
+    	<div class="div-icon-share">
+    	    <div class="div-share-fb" onclick="share_facebook()">
+    	        <!--<img onclick="share_facebook()" style="width:150px; padding:5px;margin-left: auto; margin-right: auto;" src="https://sanpham.starglobal3d.vn/managements/user/modules/language_button/img/fb.png">-->
+                <img class="size-img-icon" src="https://sanpham.starglobal3d.vn/managements/user/modules/language_button/img/icon-fb.png" />	
+                <p>Facebook</p>
+                
+    	    </div>
+    	    <div class="div-share-link btn" id="btn" onclick="copyLink()">
+    	        <!--<img id="btn" class="btn" data-clipboard-target="#starglobal_link" style="width:150px; padding:5px;margin-left: auto; margin-right: auto;" src="https://sanpham.starglobal3d.vn/managements/user/modules/language_button/img/share-link.png">-->
+    	        <img class="size-img-icon-share-link" src="https://sanpham.starglobal3d.vn/managements/user/modules/language_button/img/icon-share-link.png"/>	
+    	        <p>Chia sẻ link</p>
+
+    	    </div>
+    	</div>
+    </div>
+	
+	
+	<div id="loading_animation" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+	
+		<div id="mieu_ta" style="display:none" class="mieu-ta"> 
+			<div class="information-book">
+			<p><b>Tượng Chúa Kitô Vua</b> (hoặc <b>Tượng Đức Chúa dang tay</b>, <b>Tượng Chúa Kitô trên đỉnh Núi Tao Phùng</b>) là một bức tượng Chúa Giêsu được đặt trên đỉnh Núi Nhỏ của thành phố Vũng Tàu (được xây từ năm 1974). Tượng đã được xác lập là "Tượng Chúa Giêsu lớn nhất khu vực châu Á" vào năm 2012.</p>
+
+<p>Đầu những năm 70 của thế kỷ XX, giáo xứ Vũng Tàu do linh mục Nguyễn Minh Tri cai quản đã dự định xây một tượng đài Chúa Giêsu ở mũi Nghinh Phong, Ô Quắn cao 10 mét và bệ tượng cao 5 mét. Công việc được khởi sự từ năm 1972 nhưng đến ngày 17 tháng 01 năm 1973, thị trưởng Vũng Tàu là đại tá Vũ Duy Tạo ra lệnh tạm ngưng thi công vì có đơn khiếu nại của bên Giáo hội Phật giáo nói rằng đây là vùng đất của họ. Nhiều cuộc họp thương lượng giữa hai bên tôn giáo diễn ra với sự chủ trì của chính quyền, kết quả đã dẫn đến thoả hiệp kết ngày 16 tháng 2 năm 1974. Theo đó, Giáo hội Phật giáo toàn quyền sử dụng mũi Nghinh Phong, còn Giáo hội Công giáo thì xây dựng các công trình trên núi Nhỏ với diện tích 10 hecta.</p>
+
+<p><a href="https://vi.wikipedia.org/wiki/Tập_tin:Đường_lên_núi_Chúa_Vũng_Tàu.jpg"><img alt="" data-file-height="2448" data-file-width="3264" decoding="async" height="165" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Đường_lên_núi_Chúa_Vũng_Tàu.jpg/220px-Đường_lên_núi_Chúa_Vũng_Tàu.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/25/Đường_lên_núi_Chúa_Vũng_Tàu.jpg/330px-Đường_lên_núi_Chúa_Vũng_Tàu.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/25/Đường_lên_núi_Chúa_Vũng_Tàu.jpg/440px-Đường_lên_núi_Chúa_Vũng_Tàu.jpg 2x" width="220"></a></p>
+
+<p>Đường lên tượng Chúa.</p>
+
+<p>Ngày 16 tháng 02 năm 1974, Giáo hội Công giáo đã dỡ bỏ bức tượng ở Nghinh Phong theo thỏa hiệp<span xss="removed">.</span> Ngày 18 tháng 03 năm 1974, chính quyền địa phương cấp văn thư số <i>140/VT/HC/LA</i> cho phép Giáo hội Công giáo xây dựng tượng đài Chúa Giêsu trên núi Nhỏ (Tao Phùng) và họ bắt đầu tiến hành xây dựng. Công trình hoàn thành giai đoạn 1 thì xảy ra Sự kiện 30 tháng 4 năm 1975 nên phải ngưng lại. Cùng lúc đó, do không có ai quản lý nên xảy ra tình trạng người dân khai thác đá tràn lan dưới chân núi.</p>
+
+<p>Ngày 28 tháng 01 năm 1992, sau nhiều lần Toà Giám mục Xuân Lộc đề nghị, Chủ tịch Ủy ban Nhân dân tỉnh Bà Rịa – Vũng Tàu đã có công văn số <i>233/QĐ.UB</i> cho phép linh mục Trần Văn Huyên - quản xứ Vũng Tàu được tiếp tục công việc sửa chữa, tu bổ lại tượng Chúa Kitô vua trên núi Nhỏ (Tao Phùng).</p>
+
+<p>Thời điểm này, bức tượng đã bị hoang phế và xuống cấp, cỏ dại mọc um tùm, cuộn cáp đồng <a href="https://vi.wikipedia.org/w/index.php?title=Thu_lôi&action=edit&redlink=1" title="Thu lôi (trang chưa được viết)">chống sét</a> cũng bị mất trộm. Rất nhiều công việc phải làm, nhưng với những nỗ lực của Giáo phận Xuân Lộc và Giáo hội Công giáo Việt Nam thì tượng đài được hoàn thiện sau hai năm tu sửa.</p>
+
+<p>Ngày 01 tháng 12 năm 1994, Giám mục Giáo phận Xuân Lộc Phaolô Maria Nguyễn Minh Nhật đã chính thức khánh thành khu tượng đài Chúa Kitô Vua trên đỉnh núi Tao Phùng.</p>
+
+<h2>Quá trình xây dựng</h2>
+
+<p><a href="https://vi.wikipedia.org/wiki/Tập_tin:Tượng_Chúa_Vũng_Tàu.jpg"><img alt="" data-file-height="3264" data-file-width="2448" decoding="async" height="267" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tượng_Chúa_Vũng_Tàu.jpg/200px-Tượng_Chúa_Vũng_Tàu.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tượng_Chúa_Vũng_Tàu.jpg/300px-Tượng_Chúa_Vũng_Tàu.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tượng_Chúa_Vũng_Tàu.jpg/400px-Tượng_Chúa_Vũng_Tàu.jpg 2x" width="200"></a></p>
+
+<p>Tượng Chúa Kitô Vua (Vũng Tàu) khi nhìn tổng thể.</p>
+
+<p><a href="https://vi.wikipedia.org/wiki/Tập_tin:Tượng_Đức_Mẹ_Sầu_Bi.JPG"><img alt="" data-file-height="3056" data-file-width="4592" decoding="async" height="146" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Tượng_Đức_Mẹ_Sầu_Bi.JPG/220px-Tượng_Đức_Mẹ_Sầu_Bi.JPG" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Tượng_Đức_Mẹ_Sầu_Bi.JPG/330px-Tượng_Đức_Mẹ_Sầu_Bi.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Tượng_Đức_Mẹ_Sầu_Bi.JPG/440px-Tượng_Đức_Mẹ_Sầu_Bi.JPG 2x" width="220"></a></p>
+
+<p>Tượng Đức Mẹ Sầu Bi trước tượng Chúa</p>
+
+<h3>Nhân sự</h3>
+
+<p>Ban xây dựng do linh mục Tổng đại diện Đa Minh Nguyễn Chu Trinh làm trưởng ban, giáo dân Công giáo trong và ngoài nước góp công, góp của.</p>
+
+<p>Phần kỹ thuật bê tông do kỹ sư Nguyễn Quảng Đức phụ trách; phần mỹ thuật do điêu khắc gia Văn Nhân cùng với 50 thợ lành nghề thi công. Điêu khắc gia Văn Nhân (hiện đang định cư ở nước ngoài) đã hoàn thành các bức phù điêu dang dở ở chân tượng. Vì tuổi cao, không đủ sức leo 800 bậc đá nên ông ngồi dưới chân núi chỉ đạo các học trò làm việc từng ngày cho đến khi hoàn tất.</p>
+
+<h3>Thiết kế</h3>
+
+<p>Núi Tao Phùng (núi Nhỏ) cao 176 mét so với mực nước biển, khí hậu khắc nghiệt và gió to, nắng lớn. Vì vậy, tượng đài không thể giữ lại thiết kế như ban đầu năm 1972 mà đã phải thiết kế lại cả về quy mô, kết cấu. Vật liệu hầu hết lấy từ trong nước, trừ xi măng trắng nhập ngoại. Cát, sỏi khai thác dưới sông Đồng Nai, đá cẩm thạch lấy từ hòn Non Nước (Đà Nẵng). Khó khăn lớn nhất là việc chuyển hàng ngàn tấn vật liệu lên đỉnh núi. Việc đào móng cũng rất vất vả vì trên đỉnh núi là một hệ thống địa đạo bằng bê tông được xây dựng rất chắc chắn dưới thời Pháp thuộc.</p>
+
+<h3>Kiến trúc</h3>
+
+<p><a href="https://vi.wikipedia.org/wiki/Tập_tin:Mũi_Nghinh_Phong.JPG"><img alt="" data-file-height="3056" data-file-width="4592" decoding="async" height="146" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mũi_Nghinh_Phong.JPG/220px-Mũi_Nghinh_Phong.JPG" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mũi_Nghinh_Phong.JPG/330px-Mũi_Nghinh_Phong.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mũi_Nghinh_Phong.JPG/440px-Mũi_Nghinh_Phong.JPG 2x" width="220"></a></p>
+
+<p>Nhìn xuống từ Tượng Chúa Kitô Vua.</p>
+
+<p>Tượng có chiều cao 32 mét, chiều dài hai cánh tay là 18,4 mét; đặt trên bệ khối chạm hình Chúa và 12 tông đồ. Bên trong tượng là cầu thang xoắn ốc gồm 133 bậc, chạy từ bệ lên cổ tượng. Đường lên tượng có 1.000 bậc thang cao 500m. Trong lòng tượng có thể chứa được 100 khách tham quan cùng một lúc.</p>
+
+<h2>Các kỷ lục</h2>
+
+<p><a href="https://vi.wikipedia.org/wiki/Tập_tin:Vung_Tau_Thanh_Gioc_1.JPG"><img alt="" data-file-height="2736" data-file-width="3648" decoding="async" height="165" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Vung_Tau_Thanh_Gioc_1.JPG/220px-Vung_Tau_Thanh_Gioc_1.JPG" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Vung_Tau_Thanh_Gioc_1.JPG/330px-Vung_Tau_Thanh_Gioc_1.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Vung_Tau_Thanh_Gioc_1.JPG/440px-Vung_Tau_Thanh_Gioc_1.JPG 2x" width="220"></a></p>
+
+<p>Góc nhìn khác của Tượng Chúa Kitô Vua</p>
+
+<p>Ngày 15 tháng 05 năm 2006, Trung tâm sách Kỷ lục Việt Nam và Công ty Văn hóa Đầm Sen đã trao cho bức tượng này kỷ lục là "Tượng chúa Giêsu lớn nhất Việt Nam". và trong dịp này theo Trung tâm sách kỷ lục Việt Nam, giai đoạn một của cuộc xác lập kỷ lục châu Á, tượng Chúa Kitô là một trong số mười kỷ lục Việt Nam trên tổng số 30 hồ sơ đề nghị công nhận kỷ lục vừa được Hội đồng xác lập kỷ lục châu Á thông qua.</p>
+
+<p>Ngày 09 tháng 01 năm 2012, Trung tâm Sách kỷ lục Việt Nam (VietKings) đã chính thức công bố 10 sự kiện của kỷ lục Việt Nam năm 2012 với các nội dung mang giá trị về văn hóa, ẩm thực đặc sắc của dân tộc. Trong 4 điểm đến tâm linh Việt Nam đạt Kỷ lục châu Á, có "Tượng Chúa Kitô Vua (Vũng Tàu)" với kỷ lục xác nhận là "Tượng Chúa Kitô lớn nhất".</p>
+
+<p>Ngày 26 tháng 05 năm 2012, Trung tâm sách Kỷ lục Việt Nam đã tổ chức chương trình trao danh hiệu kỷ lục châu Á cho Tượng Chúa Kitô Vua (Vũng Tàu)</p>
+			</div>
+			<div onclick="close_information()" class="information-close-button-book" style="background-image:url('../img/close.png');"></div>
+		</div>
+		
+				<div class="float_element" id="float_element">
+		
+				
+			<div onclick="open_information()" id="info-button" class="float_element_button">
+                <img width="40%" src="../img/info.png">
+                <div id="info_function_text" class="float_element_text">
+                    Thông tin                </div>
+            </div>
+			
+			<div onclick="open_AR()" id="ARiPhone" class="float_element_button openAR">
+			<a id="linkar" rel="ar" href="../../../../../smart-tourism-3d/vung-tau/upload/model/AR/tuong-chua.usdz#callToAction=Thoát&checkoutTitle=Tượng Chúa Kitô Vua (Vũng Tàu)&checkoutSubtitle=Tượng Chúa Kitô Vua (Vũng Tàu)" download="asset.usdz">
+			  <img width="40%" src="../img/ar.png">
+			  </a>
+			  <div id="info_function_text" class="float_element_text">AR</div>
+			</div>
+			
+			
+						
+						
+						
+			<div onclick="toggle_rotation()" id="rotation-button" class="float_element_button">
+                <img id="rotation" width="40%" src="../img/stoprotate.png">
+                <div id="rotation_function_text" class="float_element_text">Dừng xoay</div>
+            </div>
+            
+            <div onclick="copyToClipboard()" id="copy_link_button" class="float_element_button">
+                <img id="copy_link-link" width="40%" src="../img/shareIcon.png">
+                <div id="copy_link_text" class="float_element_text">Chia sẻ model</div>
+            </div>
+
+		</div>
+		
+				
+		<script>
+			var free = 0;
+			console.log(free)
+			var parent_path;
+			
+			var rotation_speed = 0.005;
+			
+				function toggle_rotation(){
+					if (rotation_speed == 0){
+						rotation_speed = 0.005;
+						document.getElementById("rotation").src = "../img/stoprotate.png";
+						document.getElementById("rotation_function_text").innerHTML = print_text.STOPROTATE;
+
+					}	else {
+						rotation_speed = 0;
+						document.getElementById("rotation").src = "../img/rotate.png";
+						document.getElementById("rotation_function_text").innerHTML = print_text.ROTATE;
+					}
+				}
+				
+				function copyToClipboard() {
+                	if (document.getElementById("copy_to_clipboard").style.display == "block") {
+                		document.getElementById("copy_to_clipboard").style.display = "none";
+                	} else {
+                	    var qrcode = new QRCode(document.getElementById("qr"), {
+                    		width : 256,
+                    		height : 256
+                    	});
+                    	var name_path = "https://sanpham.starglobal3d.vn/smart-tourism-3d/vung-tau/";
+                        var project_url = name_path;
+                        var model_id = "model-606aeabe626530cb40466d88";
+                        var logo = project_url+"upload/image/logo.png"
+                        var copytext = project_url + "?QR_model_id=" + model_id+"&lang_model=vn";
+                        
+                        qrcode.makeCode(copytext);
+                		var text = "Tượng Chúa Kitô Vua (Vũng Tàu)";
+                		var canvas = document.getElementById("myCanvas");
+                		var ctx = canvas.getContext("2d");
+                		ctx.clearRect( 0,257, 256, 44 );
+                		ctx.fillStyle = "white";
+                		ctx.font = "18px Arial";
+                		ctx.textAlign = "center";
+                		ctx.fillText(text,128,285);
+                		
+
+                		//document.getElementById('link_qr').value="https://sanpham.starglobal3d.vn"+qrlink;
+                		//document.getElementById('link_qr').value=link;
+                        
+                        
+                 		document.getElementById("starglobal_link").value = copytext;
+                 		
+                 		document.getElementById("starglobal_link").style.display="none";
+        
+                // 		document.getElementById("qr").innerHTML="<img style='width:150px; padding:5px;display: block; margin-left: auto; margin-right: auto;' src='https://sanpham.starglobal3d.vn/managements/user/modules/language_button/php/qrCode.php?url="+copytext+"'>";
+             
+                // 		document.getElementById("save").innerHTML="<a style='width:30px; color:#EB8E3D' href='https://sanpham.starglobal3d.vn/managements/user/modules/language_button/php/qrCode.php?url="+copytext+"' target='_blank'>Tải xuống QR</a>";
+                			
+                		document.getElementById("copy_to_clipboard").style.display = "block";
+                	}
+                	
+                }
+                
+                
+                function share_facebook(){
+                        var project_url = "https://sanpham.starglobal3d.vn/smart-museum-3d/bao-tang-phu-nu-nam-bo-gd2/";
+                        var model_id = "model-606aeabe626530cb40466d88";;
+                         
+                        var copytext = project_url + "?QR_model_id=" + model_id;
+            	        window.open('https://www.facebook.com/sharer/sharer.php?u='+copytext,'_blank');
+                }
+                function copyLink(){
+                    var lang_model = "vn";
+                    var name_path = "https://sanpham.starglobal3d.vn/smart-tourism-3d/vung-tau/";
+                    var project_url = name_path;
+                    var model_id = "model-606aeabe626530cb40466d88";
+                    var copytext = project_url + "?QR_model_id=" + model_id + "&lang_model=" + lang_model;
+                    var tempTxt=document.createElement("input");
+                                tempTxt.value=copytext;
+                                document.body.appendChild(tempTxt);
+                                tempTxt.select();
+                                document.execCommand("copy");
+                                document.body.removeChild(tempTxt);
+                                alert("Copied Link");
+                }
+        
+
+		
+		</script>
+		<script type="module">
+		
+			// import * as THREE from '../build/three.module.js';
+			// import { DDSLoader } from '../jsm/loaders/DDSLoader.js';
+			// import { MTLLoader } from '../jsm/loaders/MTLLoader.js';
+			// import { OBJLoader } from '../jsm/loaders/OBJLoader.js';
+			// import { GLTFLoader } from '../jsm/loaders/GLTFLoader.js';
+			// import { RGBELoader } from '../jsm/loaders/RGBELoader.js';
+			// import { USDZExporter } from '../jsm/exporters/USDZExporter.js';
+			// import { TrackballControls } from '../jsm/controls/TrackballControlsLock.js';
+			
+			// import { DRACOLoader } from '../jsm/loaders/DRACOLoader.js';
+			// import { OrbitControls } from '../jsm/controls/OrbitControls.js';
+
+//cần giữ
+			import * as THREE from '../build_rev1/three.module.js';
+// import * as THREE from '../threejs-master/build/three.module.js';
+			import { DDSLoader } from '../jsm_ver1/loaders/DDSLoader.js';
+			import { MTLLoader } from '../jsm_ver1/loaders/MTLLoader.js';
+			import { OBJLoader } from '../jsm_ver1/loaders/OBJLoader.js';
+			//import { GLTFLoader } from '../jsm_ver1/loaders/GLTFLoader.js';
+			import { GLTFLoader } from '../jsm_rev02/loaders/GLTFLoader.js';
+			import { RGBELoader } from '../jsm_ver1/loaders/RGBELoader.js';
+			import { USDZExporter } from '../jsm_ver1/exporters/USDZExporter.js';
+// 			import { TrackballControls } from '../jsm_ver1/controls/TrackballControls.js';
+            import { TrackballControls } from '../jsm_ver1/controls/TrackballControlsLock.js';
+			
+			import { DRACOLoader } from '../jsm_ver1/loaders/DRACOLoader.js';
+			import { OrbitControls } from '../jsm_ver1/controls/OrbitControls.js';
+
+//             import * as THREE from '../threejs-master/build/three.module.js';
+//  			import { DDSLoader } from '../threejs-master/examples/jsm/loaders/DDSLoader.js';
+// 			import { MTLLoader } from '../threejs-master/examples/jsm/loaders/MTLLoader.js';
+// 			import { OBJLoader } from '../threejs-master/examples/jsm/loaders/OBJLoader.js';
+// 			import { GLTFLoader } from '../threejs-master/examples/jsm/loaders/GLTFLoader.js';
+// 			import { RGBELoader } from '../threejs-master/examples/jsm/loaders/RGBELoader.js';
+// 			import { USDZExporter } from '../threejs-master/examples/jsm/exporters/USDZExporter.js';
+// 			import { TrackballControls } from '../jsm/controls/TrackballControlsLock.js';
+			
+// 			import { DRACOLoader } from '../jsm/loaders/DRACOLoader.js';
+// 			//import { DRACOLoader } from '../threejs-master/examples/jsm/loaders/DRACOLoader.js';
+// 			import { OrbitControls } from '../threejs-master/examples/jsm/controls/OrbitControls.js';
+			
+			import { VRButton } from '../jsm_ver1/webxr/VRButton.js';
+			
+			
+			
+			var box;
+			var camera;
+			
+		
+			var container, stats, light;
+			var controls, scene, renderer;
+			var mouseX = 0, mouseY = 0;
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+			
+			var myobject;
+			
+			var gemFrontMaterial7;
+
+			var filename = '/upload/model/Final/gltf/tuongchua.gltf';
+			var extension = filename.split('.').pop();
+			if (extension == "jpg" || extension == "png"){
+				init_photo(filename);
+			}else if (extension == "gltf" || extension == "glb"){
+				init_gltf();
+				//init();
+			}else{
+				init();
+			}
+			function init_photo() {
+				container = document.createElement( 'div' );
+				container.setAttribute("id", "model");
+				container.setAttribute("class", "model");
+				document.body.appendChild( container );
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 0 );
+				camera.position.z = 4000;
+				scene = new THREE.Scene();
+				var texture = new THREE.TextureLoader().load( '../../../../../'+file );
+				var geometry = new THREE.PlaneGeometry( 4000, 4000,128);
+				var material = new THREE.MeshBasicMaterial( { map: texture ,side: THREE.DoubleSide} );
+				myobject = new THREE.Mesh( geometry, material );
+				scene.add( myobject );
+				renderer = new THREE.WebGLRenderer( { alpha: true } );
+				renderer.setClearColor( 0x000000, 0 ); // the default
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				
+				container.appendChild( renderer.domElement );
+				controls = new TrackballControls( camera, renderer.domElement );
+				window.addEventListener( 'resize', onWindowResize, false );
+				animateobj();
+
+			}
+			
+			function init_gltf() {
+				console.log('gltf model nay');
+				
+				container = document.createElement( 'div' );
+				container.setAttribute("id", "model");
+				container.setAttribute("class", "model");
+				document.body.appendChild( container );
+				
+				var texture;
+				var z=42				
+				camera = new THREE.PerspectiveCamera( 25, window.innerWidth / window.innerHeight, 0.1, 1000000);
+				camera.position.x = 0;
+				camera.position.y = 0;
+				camera.position.z = 15;
+				
+				scene = new THREE.Scene();
+				
+
+				light = new THREE.PointLight( 0xffffff, 0.7, 0 );
+				//light = new THREE.PointLight( 0x9f9f9f, 0.5, 0 );
+				scene.add( light );
+
+				var light_effect;			
+				// model
+				free = 0;
+				
+				var z;
+								
+									var ambientLight = new THREE.AmbientLight( 0xffffff, 1 );
+									scene.add( ambientLight );
+				
+				var pickableObjects = new Array();
+				
+				gemFrontMaterial7 = new THREE.MeshStandardMaterial( {
+					// color: 0x545454,
+					// emissive: 0x000000,
+					metalness: 1,
+					roughness: 0,
+					envMap:texture,
+					//reflectivity: 1,
+					//clearcoat: 0,
+					//clearcoatRoughness: 1,
+					//wireframe: false,
+					// side: THREE.FrontSide,
+					// shading: THREE.SmoothShading,
+					// envMapIntensity: 5,
+					// premultipliedAlpha: false,
+					//envMap:texture,
+				} );
+
+				// gemFrontMaterial7 = new THREE.MeshStandardMaterial( {
+				// 	color: 0x525557,
+				// 	emissive: 0x000000,
+				// 	metalness: 1,
+				// 	roughness: 0,
+				// 	//reflectivity: 1,
+				// 	//clearcoat: 0,
+				// 	//clearcoatRoughness: 1,
+				// 	//wireframe: false,
+				// 	// side: THREE.FrontSide,
+				// 	// shading: THREE.SmoothShading,
+				// 	// envMapIntensity: 5,
+				// 	// premultipliedAlpha: false,
+				//envMaps:texture,
+				// } );
+				
+                					var glb_token = "67d147468b73b";
+
+
+				
+				var loader = new GLTFLoader().setPath( 'https://sanpham.starglobal3d.vn/managements/user/assets/Load-Model-3D/php/' );
+				var dracoLoader = new DRACOLoader();
+					dracoLoader.setDecoderPath("./draco/");//copypasted draco/gltf/all files in public folder
+					dracoLoader.setDecoderConfig({type: 'js'});
+					loader.setDRACOLoader( dracoLoader );
+                    loader.load( "loadglb.php?id=222334&token="+glb_token, async function ( gltf ) {
+					//loader.load( filename, async function ( gltf ) {
+						console.log("o ",gltf)
+						gltf.scene.traverse(function (child) {
+                			if (child.isMesh) {
+                				child.material.side = THREE.DoubleSide;
+                				//child.material.receiveShadow = true;
+                				console.log("okokoko ",child)
+                				var namepath = "smart-tourism-3d/vung-tau"
+                				console.log(namepath)
+                				 //var path = 'https://sanpham.starglobal3d.vn/'+smart-tourism-3d/vung-tau+'/upload/texture/test2/';
+                				 var path = 'https://sanpham.starglobal3d.vn/'+namepath+'/upload/texture/under_sea/';
+                					var format = '.jpg';
+                					var urls = [
+                						path + 'pano_r' + format, path + 'pano_l' + format,
+                						path + 'pano_u' + format, path + 'pano_d' + format,
+                						path + 'pano_f' + format, path + 'pano_b' + format
+                					];
+
+                					var reflectionCube = new THREE.CubeTextureLoader().load( urls );
+                					var refractionCube = new THREE.CubeTextureLoader().load( urls );
+                					//refractionCube.mapping = THREE.CubeRefractionMapping;
+                					child.material.envMap=refractionCube
+                					console.log(refractionCube)
+                					scene.background = refractionCube;
+                												
+										
+										
+								var id_path = "222334";
+								if(id_path == '20230515'){
+								    child.material.color.b='0.8'
+								    child.material.color.g='0.8'
+								    child.material.color.r='0.8'
+								    child.material.metalness = '1'
+								}
+								
+
+                				
+                    			var m = child;
+                    			pickableObjects.push(m);
+                			}
+            			});
+            		
+						myobject = gltf.scene;
+
+
+												
+													
+							camera.position.x = 0*10;
+							camera.position.y = 0*10;
+							camera.position.z = 42;
+							//camera.position.z = z+z;
+							myobject.rotation.x = 0;
+							myobject.rotation.y = 0;
+							myobject.rotation.z = 0;
+							
+												
+						
+						
+						scene.add( myobject );
+						animate();
+					
+						var exporter = new USDZExporter();
+						var arraybuffer = await exporter.parse( myobject );
+						var blob = new Blob( [ arraybuffer ], { type: 'application/octet-stream' } );
+
+						var link = document.getElementById( 'linkar' );
+						link.href = URL.createObjectURL( blob );
+					
+						
+						//controls = new ObjectControls(camera, renderer.domElement, myobject);
+						// controls = new OrbitControls(camera, renderer.domElement);
+						
+						
+						// controls.touches = {
+						// 	ONE: THREE.TOUCH.ROTATE,
+						// 	TWO: THREE.TOUCH.DOLLY_PAN
+						// }
+						// controls.setZoomSpeed(1); // set zoom speed
+						// controls.update();
+
+						
+				
+					
+				} );
+				
+				
+				renderer = new THREE.WebGLRenderer( { container, alpha: true, antialias: true  } );
+				//renderer.setClearColor( 0xffffff, 0 ); // the default
+				//if(light_effect == "3") renderer.setClearColor( 0x363636, 0 ); 
+				//renderer.physicallyCorrectLights = true;
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				
+				renderer.toneMapping = THREE.ACESFilmicToneMapping;
+								
+				renderer.toneMappingExposure = 1;
+				renderer.outputEncoding = THREE.sRGBEncoding;
+				document.body.appendChild( VRButton.createButton( renderer ) );
+				
+				renderer.xr.enabled = true;
+				renderer.xr.addEventListener('sessionstart', function () {
+                    alert('sessionstart')
+                });
+                //When user turn off the VR mode.
+                renderer.xr.addEventListener('sessionend', function () {
+                    alert('sessionend')
+                });
+				//renderer.xr.isPresenting()
+			
+				renderer.setAnimationLoop( function () {
+                	renderer.render( scene, camera );
+                
+                } );
+				container.appendChild( renderer.domElement );
+				
+				
+//				renderer = new THREE.WebGLRenderer( { antialias: true } );
+// 			renderer.physicallyCorrectLights = true;
+// 			renderer.setPixelRatio( window.devicePixelRatio );
+			
+// 			// renderer.setClearColor( 0x000000, 0.0 );
+// 			renderer.setSize( window.innerWidth, window.innerHeight );
+// 			renderer.outputEncoding = THREE.sRGBEncoding;
+// 			renderer.shadowMap.enabled = true;
+			
+				// document.body.appendChild( renderer.domElement );
+				
+				
+		    	//renderer.shadowMap.enabled = true;
+				
+				var pmremGenerator = new THREE.PMREMGenerator( renderer );
+				pmremGenerator.compileEquirectangularShader();
+				
+				controls = new TrackballControls( camera, renderer.domElement );
+				console.log('khong xoay')
+				//controls = new OrbitControls( camera, renderer.domElement );
+				//controls.maxDistance=z*10000
+				// if(free == 1){
+				// 	controls.minDistance=0.3
+				// 	console.log("free 1", free)
+				// }
+				// else {
+				// 	controls.minDistance=2
+				// 	console.log("free 0", free)
+				// }
+				controls.minDistance=42 / 2;
+				controls.maxDistance=42 * 2;
+				console.log(42 * 1000)
+				window.addEventListener( 'resize', onWindowResize, false );
+				
+
+			}
+
+
+			function init() {
+				container = document.createElement( 'div' );
+				container.setAttribute("id", "model");
+				container.setAttribute("class", "model");
+				document.body.appendChild( container );
+			
+				renderer = new THREE.WebGLRenderer( { alpha: true, logarithmicDepthBuffer: true, antialias: false} );
+				renderer.setClearColor( 0x000000, 0 ); // the default
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( VRButton.createButton( renderer ) );
+				renderer.xr.enabled = true;
+				renderer.setAnimationLoop( function () {
+
+                	renderer.render( scene, camera );
+                
+                } );
+				container.appendChild( renderer.domElement );
+
+				camera = new THREE.PerspectiveCamera( 5, window.innerWidth / window.innerHeight, 1, 1000000 );
+				//camera.position.z = 100;
+				camera.position.x = 0;
+				camera.position.y = 0;
+				camera.position.z = 15;
+				//controls = new OrbitControls( camera, renderer.domElement );
+				controls = new TrackballControls( camera, renderer.domElement );
+				// controls.maxDistance = 1000000;
+                controls.minDistance=42 / 2;
+				controls.maxDistance=42 * 2;
+				// scene
+				scene = new THREE.Scene();
+
+				//var ambientLight = new THREE.AmbientLight( 0x6f6f6f, 0.4 );
+				//scene.add( ambientLight );
+				
+				//scene.background = new THREE.Color( 0x000000 );
+
+				light = new THREE.PointLight( 0xffffff, 0.7, 0 );
+				
+				// model
+				free = 0;
+								
+									var ambientLight = new THREE.AmbientLight( 0xffffff, 1 );
+									scene.add( ambientLight );
+
+				var onProgress = function ( xhr ) {
+					if ( xhr.lengthComputable ) {
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						
+						var loggerPercentComplete = Math.round( percentComplete, 2 )
+						console.log( loggerPercentComplete + '% downloaded' );
+						if (loggerPercentComplete == 100) {
+						    $("#loading_animation").remove();
+						}
+						//document.getElementById("progress").value =  Math.round( percentComplete, 2 ) + '% downloaded';
+					}
+				};
+
+				var onError = function ( xhr ) {
+				}; 
+
+
+
+				var url_string = window.location.href;
+				var url = new URL(url_string);
+				
+								
+			
+				var model_URL = "https://sanpham.starglobal3d.vn/smart-tourism-3d/vung-tau//upload/model/Final/gltf/tuongchua.gltf";
+				console.log(model_URL)
+								var obj_token = "67d147468db69";
+				
+								var mtl_token = "67d147468f1d8";
+                console.log(mtl_token)
+				var objName = model_URL.replace('jpg', 'obj');
+					objName = objName.replace('png', 'obj');
+					objName = objName.replace('mtl', 'obj');
+				
+				var mtlName = model_URL.replace('jpg', 'mtl');
+					mtlName = mtlName.replace('png', 'mtl');
+					mtlName = mtlName.replace('obj', 'mtl');
+				parent_path = model_URL.substr( 0, model_URL.lastIndexOf( "/" ) + 1 );
+				var manager = new THREE.LoadingManager();
+				console.log(mtlName)
+				console.log('loading: ', manager)
+				manager.addHandler( /\.dds$/i, new DDSLoader() );
+				new MTLLoader( manager )
+					.setPath("")
+					.setMaterialOptions({ 
+						side:THREE.DoubleSide,
+						transparent: true,
+						depthTest: true,
+						depthWrite: false,
+						polygonOffset: true,
+						polygonOffsetFactor: -4
+					})
+					
+						.load(mtlName, function ( materials ) {
+						materials.preload();
+						console.log(materials )
+						new OBJLoader( manager )
+							.setMaterials( materials )
+							.setPath( '' )
+						
+							.load( objName, function ( object ) {
+								console.log(object )
+								var center = new THREE.Vector3();
+								object.children[0].geometry.computeBoundingBox();
+								object.children[0].geometry.boundingBox.getCenter(center);
+								object.children[0].geometry.center();
+								for (var i=1; i < object.children.length; i++){
+									object.children[i].position.x -= center.x;
+									object.children[i].position.y -= center.y;
+									object.children[i].position.z -= center.z;
+								}	
+								box = new THREE.Box3().setFromObject( object );
+								object.position.x = 0;
+								object.position.y = 0;
+								object.position.z = 0;
+
+																	camera.position.set(0,0,42);
+									object.rotation.x = 0;
+									object.rotation.y = 0;
+									object.rotation.z = 0;
+																myobject = object;
+								
+							
+								setSmoothGeometry(myobject)
+								scene.add( myobject );
+								animateobj();
+																				
+							}, onProgress, onError );
+											//document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+						
+
+					} );
+					
+			
+
+
+				window.addEventListener( 'resize', onWindowResize, false );
+				controls.addEventListener( 'change', light_update );
+				document.addEventListener('dblclick', toggle_rotation,false);
+
+			}
+
+			
+
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+
+			var axis = new THREE.Vector3(0,0,0);
+
+			function animate() {
+				render2();
+				requestAnimationFrame( animate );
+				controls.update();
+				renderer.render( scene, camera );
+				
+			}
+			
+			function animateobj() {
+				render();
+				requestAnimationFrame( animateobj );
+				controls.update();
+				renderer.render( scene, camera );
+				
+			}
+			
+			renderer.setAnimationLoop( function () {
+				renderer.render( scene, camera );
+			} );
+			
+
+			
+			function render2() {
+				myobject.rotation.y += rotation_speed;
+			}
+			
+			function render() {
+				myobject.rotateOnWorldAxis(axis,rotation_speed);
+			}
+			
+
+			
+			function light_update(){
+								axis.x = camera.up.x;
+				axis.y = camera.up.y;
+				axis.z = camera.up.z;
+				var normalvector = new THREE.Vector3(camera.position.x,camera.position.y,camera.position.z);
+				axis.projectOnPlane(normalvector);
+			}
+			
+			function setSmoothGeometry(obj) {
+				obj.traverse(node => {
+					if ('geometry' in node) {
+						const tempGeometry = new THREE.Geometry().fromBufferGeometry( node.geometry );
+						tempGeometry.mergeVertices();
+						tempGeometry.computeVertexNormals();
+						node.geometry = new THREE.BufferGeometry().fromGeometry( tempGeometry );
+					}
+				})
+			}
+
+		</script>
+						
+			
+	</body>
+	
+</html>
+

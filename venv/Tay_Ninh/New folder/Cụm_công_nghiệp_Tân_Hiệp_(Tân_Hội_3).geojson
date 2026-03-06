@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.18808,
+                    11.636154
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Cụm công nghiệp Tân Hiệp (Tân Hội 3)",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Ấp Hội An, xã Tân Hội, huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Ấp Hội An, xã Tân Hội, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.636154,106.188080",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "70,47 ha",
+                "Hiện trạng dự án": "Đất công do UBND xã Tân Hội quản lý",
+                "Mục tiêu thực hiện dự án": "Đầu tư hạ tầng CNN theo quy hoạch, ưu tiên các ngành, lĩnh vực hỗ trợ phát triển nông nghiệp, sử dụng nhiều lao động, các ngành công nghiệp mũi nhọn có điều kiện để phát triển và xuất khẩu (chế biến sản phẩm sau mía, sau tinh bột khoai mì, sau cao su; chế biên nông, lâm sản; dịch vụ trung chuyển và vận chuyển (kho, bãi); sản xuất vật liệu không nung; cơ khí luyện kim; sản xuất hàng tiêu dùng; cơ khí nhỏ, dịch vụ sửa chữa máy móc, thiết bị công nghiệp, nông nghiệp); công nghiệp công nghệ cao thế hệ 4.0 (ô tô điện, máy bay/hàng không, điện tử bán dẫn) và công nghiệp phụ trợ.",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp",
+                "Tổng vốn đầu tư (dự kiến)": "519,46 tỷ đồng",
+                "Hình thức đầu tư": "Đấu giá quyền sử dụng đất",
+                "Thời gian dự kiến triển khai": "2025-2030",
+                "Thời gian hoạt dộng dự án": "50 năm",
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế, tạo công ăn việc làm cho người dân tại địa phương",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

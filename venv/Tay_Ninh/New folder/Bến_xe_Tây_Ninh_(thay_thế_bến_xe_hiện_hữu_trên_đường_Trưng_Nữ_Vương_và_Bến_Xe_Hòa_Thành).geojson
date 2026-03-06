@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.112316,
+                    11.290807
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Bến xe Tây Ninh (thay thế bến xe hiện hữu trên đường Trưng Nữ Vương và Bến Xe Hòa Thành)",
+                "Lĩnh vực": "Lĩnh vực giao thông vận tải",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Phường Hiệp Tân, thị xã Hòa Thành, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "phường Thanh Điền, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.290807,106.112316",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "4,84 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Di dời và xây dựng mới bến xe khách",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Quyết định số 2463/QĐ-UBND ngày 30/9/2021 của UBND tỉnh Tây Ninh phê duyệt đồ án quy hoạch phân khu phường Hiệp Tân, thị xã Hòa Thành, tỉnh Tây Ninh.",
+                "Tổng vốn đầu tư (dự kiến)": "78,408 tỷ đồng",
+                "Hình thức đầu tư": "Đầu tư công - xã hội hoá",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Là đầu mối giao thông của tỉnh",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

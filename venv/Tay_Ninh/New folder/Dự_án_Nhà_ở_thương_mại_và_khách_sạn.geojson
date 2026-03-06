@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.26470697799309,
+                    11.08797375843242
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Dự án Nhà ở thương mại và khách sạn",
+                "Lĩnh vực": "Lĩnh vực thương mại dịch vụ",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Khu phố Nội ô, thị trấn Gò Dầu, tỉnh Tây Ninh (thu hồi của Công ty Đồng Nguyễn)",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Phường Gò Dầu, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.08797375843242,106.26470697799309",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "0,90326",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "dự án nhà ở thương mại - khách sạn",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "- Quyết định số 1431/QĐ-UBND ngày 15/5/2020 về việc phê duyệt đồ án quy hoạch chi tiết tỷ lệ 1/500 Dự án “ Nhà ở thương mại và khách sạn thị trấn Gò Dầu”\n- Điều chỉnh quy hoạch sử dụng đất Quy hoạch sử dụng đất đến năm 2030 và Kế hoạch sử dụng đất năm 2025 huyện Gò Dầu, được UBND tỉnh Tây Ninh phê duyệt tại Quyết định số 183/QĐ-UBND ngày 24/01/2025 \n-Chưa có Quyết định chủ trương đầu tư",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề xuất của Nhà đầu tư",
+                "Hình thức đầu tư": "Đấu giá quyền sử dụng đất",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": "50 năm kể từ ngày nhà đầu tư được cấp quyết định cho thuê đất",
+                "Hiệu quả kinh tế": "góp phần đưa đô thị Gò Dầu lên đô thị loại 3",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": "DM các khu đất đấu giá 2025",
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

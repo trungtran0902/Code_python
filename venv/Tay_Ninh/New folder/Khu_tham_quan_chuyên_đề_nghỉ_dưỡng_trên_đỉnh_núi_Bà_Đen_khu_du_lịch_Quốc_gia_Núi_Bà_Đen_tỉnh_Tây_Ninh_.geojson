@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.42065654651994,
+                    11.385576611890007
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Khu tham quan chuyên đề, nghỉ dưỡng trên đỉnh núi Bà Đen, khu du lịch Quốc gia Núi Bà Đen, tỉnh Tây Ninh ",
+                "Lĩnh vực": "Lĩnh vực du lịch",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Khu du lịch quốc gia Núi Bà Đen, Xã Thạnh Tân, Thành phố Tây Ninh, tỉnh Tây Ninh ",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Khu du lịch quốc gia Núi Bà Đen, phường Bình Minh, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.385576611890007,106.42065654651994",
+                "Toạ độ khu đất trên google map": "11.382304, 106.170452",
+                "Diện tích (ha)": "69,86 ha ",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Tạo lập không gian tham quan, du lịch sinh thái mang đặc trưng riêng tại Núi Bà Đen tại trên cơ sở khai thác tiềm năng khí hậu, cảnh quan sinh thái tại đỉnh núi, hình thành các khu công viên chuyên đề, không gian trưng bày ngoài trời, bảo tàng, công trình tâm linh; đầu tư xây dựng các công trình lưu trú, nghĩ dưỡng, thương mại, dịch vụ cao cấp (để bán, cho thuê, cho thuê mua khi đảm bảo các quy định pháp luật hiện hành có liên quan); góp phần đưa Khu du lịch quốc gia Núi Bà Đen, tỉnh Tây Ninh trở thành khu du lịch sinh thái, đặc sắc, đẳng cấp quốc tế.",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Quyết định số 1099/QĐ-TTg ngày 5/9/2018 của Thủ tướng Chính phủ",
+                "Tổng vốn đầu tư (dự kiến)": 5349919000000,
+                "Hình thức đầu tư": "Đấu giá quyền sử dụng đất",
+                "Thời gian dự kiến triển khai": "10 năm",
+                "Thời gian hoạt dộng dự án": "50 năm",
+                "Hiệu quả kinh tế": "- Đóng góp cho ngân sách Nhà nước trong quá trình đầu tư xây dựng thông qua Nguồn thu từ tiền sử dụng đất, tiền thuê đất dự kiến của dự án; Nguồn thu từ thuế vãng lai của nhà thầu trong quá trình xây dựng, thuế thu nhập doanh nghiệp, thuế GTGT và các khoản phí khác.\n- Việc triển khai dự án sẽ giúp gia tăng thu nhập cho người dân lao động, giúp mức sống người dân cao hơn, từ đó thu nhập bình quân đầu người của tỉnh cũng tăng lên.\n- Phát triển các dịch vụ lân cận: người dân nơi đây cũng có thể phát triển thêm nhiều dịch vụ lân cận với khu vực của dự án như quán ăn, quán cà phê, hàng lưu niệm,…",
+                "Hiện trạng": "Chưa lựa chọn được nhà đầu tư (Đang hoàn thiện phương án đấu giá quyền sử dụng đất lựa chọn nhà đầu tư)",
+                "Nguồn gốc đất": "Đất rừng đặc dụng đã được chấp thuận chủ trương chuyển đổi mục đích sử dụng",
+                "Quy mô/công suất dự án": "Diện tích đất sử dụng: 69,86 ha thuộc phạm vi 88,90 ha của quy hoạch chi tiết Khu tham quan chuyên đề, lưu trú, nghỉ dưỡng, thương mại, dịch vụ trên đỉnh núi Bà Đen được Ủy ban nhân dân tỉnh phê duyệt tại Quyết định số 1399/QĐ-UBND ngày 29/6/2021, gồm:\n+ Diện tích đất khai thác có đầu tư xây dựng 32,25 ha chuyển đổi mục đích sử dụng đất và chuyển đổi mục đích sử dụng rừng sang thương mại dịch vụ;\n+ Diện tích 37,61 ha rừng nằm trong dự án thực hiện theo phương án quản lý rừng bền vững, giai đoạn 2021 - 2030 đã được Ủy ban nhân dân tỉnh phê duyệt tại Quyết định số 3924/QĐ-UBND ngày 31/12/2021 và Đề án du lịch sinh thái, nghỉ dưỡng, giải trí tại Khu rừng Văn hóa – Lịch sử Núi Bà, giai đoạn 2022 – 2030 đã được Ủy ban nhân dân tỉnh phê duyệt tại Quyết định số 2595/QĐ-UBND ngày 16/12/2022 và các quy định khác có liên quan để kết nối không gian chung với dự án.",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "TMD",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "TMD",
+                "Quy hoạch chung": " QĐ số 1099/QĐ-TTg ngày 5/9/2018 của Thủ tướng Chính phủ",
+                "Quy hoạch phân khu": "QĐ số 2428/QĐ-UBND ngày 08/11/2019 của UBND tỉnh Tây Ninh",
+                "Quy hoạch chi tiết": "QĐ số 1399/QĐ-UBND ngày 29/6/2021 của UBND tỉnh Tây Ninh",
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": "DM các khu đất đấu giá 2025",
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,1670 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện VH X. Mỹ Thạnh Đông B",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3046578,
+          10.8682573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Viện Khoa Học Kỹ Thuật Bưu Điện",
+        "class": "institute",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6828787,
+          10.760021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty DV XD C.Trình Bưu Điện",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6879213,
+          10.8126304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty DV XD C.Trình Bưu Điện",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7787892,
+          10.8521677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bưu Điện",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.7327087,
+          14.762952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bưu Điện",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2072479,
+          13.2056566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bưu Điện",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7194909,
+          18.8170111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bưu Điện",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7866454,
+          10.0361915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bưu Điện",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1366521,
+          11.9137995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vòng Xoay Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6686871,
+          11.9792082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vòng Xoay Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6840992,
+          18.6701049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vòng Xoay Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5935264,
+          21.3085093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện T. Đắk Nông",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.6680407,
+          11.9787831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NH Bưu Điện",
+        "class": "restaurant",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3813689,
+          20.1915052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Khách Bưu Điện Tỉnh",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5912249,
+          16.4612307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BCVT Bưu Điện Nghệ An",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6836513,
+          18.6704937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Phường An Tây",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5400726,
+          11.0929266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nước Sâm Bưu Điện Quận 8",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.656467,
+          10.7445739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vnpost-Bưu Điện Tân Bình",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6591117,
+          10.7987195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chung Cư Bưu Điện",
+        "class": "housing",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6583258,
+          10.7768796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty In Tem Bưu Điện",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6572556,
+          10.77386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BV ĐK Bưu Điện",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6603509,
+          10.7802391
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty C.Phát Nhanh Bưu Điện CN TP.HCM",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6586423,
+          10.8036042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Xã Nâm N'Jang",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.5865766,
+          12.1887731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Khu Tập Thể Bưu Điện Khánh Vĩnh",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.9102843,
+          12.2784425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BV Bưu Điện",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.831382,
+          20.9904914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BV Bưu Điện",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8522549,
+          21.0111873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Đ.Lý Bưu Điện",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8244216,
+          21.0113575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Xe Buýt Bưu Điện Phổ Châu",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0641573,
+          14.6293217
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trạm Xe Buýt Bưu Điện Sh",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0668717,
+          14.6662127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.9702051,
+          21.5935419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4416785,
+          20.4650506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.3088045,
+          18.8992981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.1986379,
+          12.6505033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9906033,
+          20.7769023
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BH Bưu Điện Khu Vực Tây Nguyên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0540186,
+          12.689987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CLB Quần Vợt Bưu Điện",
+        "class": "tennis",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.0546436,
+          12.688574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đài Giao Bưu TTLL Ngành Bưu Điện",
+        "class": "monument",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0735049,
+          16.9513137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Bưu Điện Vũng Tàu",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0741272,
+          10.3412646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spa KS Bưu Điện Vũng Tàu",
+        "class": "massage",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0741272,
+          10.3412646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hồ Bơi KS Bưu Điện Vũng Tàu",
+        "class": "swimming",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0741272,
+          10.3412646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Tập Gym KS Bưu Điện Vũng Tàu",
+        "class": "gym",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0741272,
+          10.3412646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Phương Nam Bưu Điện",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6201231,
+          17.4764041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PGD Cty BH Bưu Điện Phú Yên",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3131253,
+          13.0969849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BH Bưu Điện PGD Số 2",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.3131763,
+          13.096977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Phát Nhanh Bưu Điện CN Đà Nẵng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2112068,
+          16.0195783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty C.Phát Nhanh Bưu Điện CN Đà Nẵng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2108474,
+          16.0612972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CN Cty C.Phát Nhanh Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2119069,
+          16.0606915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Tòa Nhà Bưu Điện Đà Nẵng",
+        "class": "building",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2117164,
+          16.059895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Giao Dịch Cấp 3 Chợ Do",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0936751,
+          17.0177452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện VH X. Thường Thới Hậu A",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2747619,
+          10.8877779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện T.Trấn Thường Thới Tiền",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2806467,
+          10.8205236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Bưu Điện",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2250684,
+          16.0709729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Bưu Điện",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6381074,
+          22.4202103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Bưu Điện",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8978713,
+          19.7342319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "NXB Bưu Điện CN Đà Nẵng",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.2221931,
+          16.0662923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vòng Xoay Bưu Điện Trung Tâm",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3308468,
+          20.9396095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty ĐT XD Bưu Điện PTIC",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6990337,
+          18.6543546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Bưu Điện Cao Bằng",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.2581509,
+          22.6654573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đlý Bưu Điện Photocopy Phương Anh",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.4338167,
+          11.9430551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Tư Bưu Điện Lương Điền",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.1667466,
+          20.9557638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Ba Bưu Điện Thị Trấn Liên Nghĩa",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.3682314,
+          11.7256074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đ.Lý Bưu Điện",
+        "class": "services",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.5789217,
+          11.0687761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TV ĐT XD Bưu Điện",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8058044,
+          21.0235859
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đ.Lý Bưu Điện",
+        "class": "shop",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8065984,
+          21.019893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BH Bưu Điện Âu Lạc",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8004722,
+          21.0047998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Phòng Trọ Bưu Điện",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8319184,
+          20.9904588
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Tài Chính Bưu Điện",
+        "class": "finace",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8401528,
+          21.0077244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cafe Bưu Điện Hồng Phương",
+        "class": "cafe",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7852212,
+          10.0367488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bưu Điện Tỉnh Thanh Hóa",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7771075,
+          19.808251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Bưu Điện Số 034",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.9362107,
+          10.9643574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Vườn Quốc Gia Ba Bể",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6382254,
+          22.4202648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đ.Lý ĐTDĐ Thủy Bưu Điện 312",
+        "class": "electronics",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.75179,
+          12.5139487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BH Bưu Điện Điện Biên",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.0128926,
+          21.3922617
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CN NXB Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.716122,
+          10.8066683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH Thanh Trúc-Đại Lý Bưu Điện",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7198825,
+          10.8029218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện V.Hóa X. Đức Lập Thượng",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4034221,
+          10.9209688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Khách Bưu Điện",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.3611799,
+          10.3095597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Cửa Khẩu Q.Tế Dinh Bà",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.4258668,
+          10.9637201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Bưu Điện Bình Định",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2208251,
+          13.7684785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Cửa Khẩu Q.Tế Cha Lo",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7653326,
+          17.6800866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty Vận Chuyển & Kho Vận Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.7635543,
+          21.0148404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện VH X. Châu Quế Thượng",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.4428131,
+          22.0883962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BV ĐK Bưu Điện CS 2",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7373061,
+          10.8028533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đ.Lý Internet Bưu Điện Chợ",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4144218,
+          10.5393345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "XN S.Chữa Ô Tô Bưu Điện",
+        "class": "car_repair",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.9068245,
+          21.0900408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Bưu Điện Huyện Tân Phú",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.4371132,
+          11.2705861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "KS Bưu Điện Hạ Long",
+        "class": "hotel",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.0502636,
+          20.9566205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điểm Bưu Điện Văn Hoá Xã Tân Thuận",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.2248916,
+          9.5243085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Điểm Bưu Điện Văn Hoá Xã Dương Hòa",
+        "class": "industrial",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.5538726,
+          10.2972068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Đ.Lý ĐT SPT-Bưu Điện",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.8052813,
+          10.8672905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nhà Trọ Bưu Điện Cầu Ngang",
+        "class": "lodging",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4508998,
+          9.7895667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty BH Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.6668982,
+          18.6765184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cty TV ĐT & Thiết Kế Bưu Điện",
+        "class": "company",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8457989,
+          20.9983218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "N.Sách Bưu Điện",
+        "class": "bookstore",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.0647422,
+          21.182366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bưu Điện T.Trấn Nông Trường Thống Nhất",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5003732,
+          20.0371695
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CPN Bưu Điện EMS TT Vận Chuyển Phát Hành",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8611652,
+          21.0233105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Công Đoàn Bưu Điện Việt Nam",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8574423,
+          21.0167157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện V.Hóa X. Đức Hòa Thượng",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4430597,
+          10.8734227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Tư Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.4423168,
+          20.2821571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ngã Tư Bưu Điện",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7976102,
+          11.0618162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện VH X. Hồng Thành",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.5226651,
+          19.0379234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast Bưu Điện Xã Bình Kiến",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.2889667,
+          13.1312472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B.Điện X. Đa Phước Bưu Điện Bình Chánh",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6442388,
+          10.6839454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bưu Điện Chợ Nhỏ",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7869163,
+          10.847621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BH Bưu Điện Thăng Long",
+        "class": "",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.796406,
+          20.9868026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Cửa Khẩu Nậm Cắn",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.0873936,
+          19.46881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TSĐ VinFast BĐX Bưu Điện Ninh Hải",
+        "class": "charging_station",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          109.0359941,
+          11.5954889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Vietnam Post Bưu Điện Xím Vàng",
+        "class": "post_office",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.3768656,
+          21.3282113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "BV Ph.Hồi C.Năng Bưu Điện",
+        "class": "nursing_home",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7878014,
+          20.7123658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "TT Điều Dưỡng & CSSK Bưu Điện",
+        "class": "hospital",
+        "vt_layer": "poi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7878014,
+          20.7123658
+        ]
+      }
+    }
+  ]
+}

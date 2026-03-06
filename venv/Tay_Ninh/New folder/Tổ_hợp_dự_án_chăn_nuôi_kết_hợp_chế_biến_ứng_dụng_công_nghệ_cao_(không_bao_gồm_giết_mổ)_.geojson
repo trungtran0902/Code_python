@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.229798,
+                    11.592036
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Tổ hợp dự án chăn nuôi kết hợp chế biến ứng dụng công nghệ cao (không bao gồm giết mổ) ",
+                "Lĩnh vực": "Lĩnh vực Nông nghiệp",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Các lô I0, I1, I2, H0, H1, H2, G1, Vùng Đề án SX NNUDCNC huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": " Vùng Đề án sản xuất NNUDCNC xã Tân Thành, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.592036,106.229798;\n11.587525,106.231010;\n11.582994,106.232115",
+                "Toạ độ khu đất trên google map": "X=11.594139 Y=106.233227",
+                "Diện tích (ha)": "170,36 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Chăn nuôi kết hợp chế biến đảm bảo ứng dụng công nghệ cao (công nghệ tiên tiến hàng đầu thế giới)",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Quyết định số 1894, 1896, 1897 ngày 29/6/2025.",
+                "Tổng vốn đầu tư (dự kiến)": "4920 tỷ",
+                "Hình thức đầu tư": "Vốn nhà đầu tư: 760 tỷ\nVốn huy động: 4160 tỷ",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": "Quý 4/2027",
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế, tạo công ăn việc làm cho ngừoi dân địa phương ",
+                "Hiện trạng": "1 phần I2 ; 1 phần H2; 1 phần I0 cao su chưa tới hạn thanh lý hợp đồng; H3, H4, I4, 1 phần H2 đang cho thuê ngắn hạn 1 năm; H0, H1, I1, 1 phần I0 đất trống",
+                "Nguồn gốc đất": "Đất UBND tỉnh Tây Ninh thu hồi giao UBND huyện Tân Châu quản lý",
+                "Quy mô/công suất dự án": "Theo đề xuất của nhà đầu tư và cơ quan có thẩm quyền",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "Đất chăn nuôi tập trung",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "Đất chăn nuôi tập trung",
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": "Sở Nông nghiệp và PTNT",
+                "Phân loại": "Đề xuất mới 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

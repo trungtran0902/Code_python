@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.1897462,
+                    11.5527331
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Nhà máy nước Tân Châu (giai đoạn 1) ",
+                "Lĩnh vực": "Lĩnh vực cấp nước đô thị",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Thị trấn Tân Châu, huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Tân Châu, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.5527331,106.1897462",
+                "Toạ độ khu đất trên google map": "11,552559 106,189943",
+                "Diện tích (ha)": "1,93",
+                "Hiện trạng dự án": "Đất trống (đã giải phóng xong mặt bằng)",
+                "Mục tiêu thực hiện dự án": "Cấp nước cho thị trấn Tân Châu",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch sử dụng đất (Đất xây dựng trụ sở của tổ chức sự nghiệp)",
+                "Tổng vốn đầu tư (dự kiến)": "77,2",
+                "Hình thức đầu tư": "Xã hội hoá ",
+                "Thời gian dự kiến triển khai": "2026-2030",
+                "Thời gian hoạt dộng dự án": "50 năm ",
+                "Hiệu quả kinh tế": "Đảm bảo cấp nước sinh hoạt, nâng cao chất lượng đời sống người dân ",
+                "Hiện trạng": "Đất trống",
+                "Nguồn gốc đất": "UBND huyện quản lý",
+                "Quy mô/công suất dự án": "5.000 m3/ngày đêm ; sử dụng nguồn nước mặt",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "DTS",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "DTS",
+                "Quy hoạch chung": "Phù hợp QĐ số 1546/QĐ-UBND ngày 18/7/2019 của UBND tỉnh Tây Ninh về phê duyệt đồ án điều chỉnh quy hoạch chung thị trấn Tân Châu, huyện Tân Châu, tỉnh Tây Ninh đến năm 2030",
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": "2024 chuyển 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

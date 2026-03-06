@@ -1,0 +1,104 @@
+tentinh,tenxa,loai,matinh,maxa,danso,dientich_km2,trungtam_hc,truoc_sapnhap,kinhdo,vido
+thành phố Cần Thơ,An Bình,phường,33,281,5015,18.39,UBND phường An Bình,"Phường An Bình, Xã Mỹ Khánh, Phường Long Tuyền",105.7,10.0009
+thành phố Cần Thơ,An Lạc Thôn,xã,33,155,56248,84.99,UBND thị trấn An Lạc Thôn,"Thị trấn An Lạc Thôn, Xã Xuân Hòa, Xã Trinh Phú",105.912,9.87378
+thành phố Cần Thơ,An Ninh,xã,33,323,40,68.81,UBND xã An Hiệp,"Xã An Hiệp, Xã An Ninh",105.911,9.63103
+thành phố Cần Thơ,An Thạnh,xã,33,325,37711,94.92,UBND huyện Cù Lao Dung,"Thị trấn Cù Lao Dung, Xã An Thạnh 1, Xã An Thạnh Tây, Xã An Thạnh Đông",106.148,9.68459
+thành phố Cần Thơ,Bình Thủy,phường,33,282,62483,15.17,đang cập nhật,"Phường An Thới, Phường Bình Thủy, Phường Bùi Hữu Nghĩa (phần còn lại sau khi sáp nhập vào phường Cái Khế)",105.752,10.0712
+thành phố Cần Thơ,Cái Khế,phường,33,271,57688,10.04,UBND phường An Hòa,"Phường An Hòa, Phường Cái Khế, Phường Bùi Hữu Nghĩa",105.781,10.0517
+thành phố Cần Thơ,Cái Răng,phường,33,285,71106,26.88,Quận ủy - UBND quận Cái Răng (cũ),"Phường Lê Bình, Phường Thường Thạnh, Phường Ba Láng, Phường Hưng Thạnh",105.761,9.98744
+thành phố Cần Thơ,Châu Thành,xã,33,302,39104,47.71,UBND huyện Châu Thành,"Thị trấn Mái Dầm, Thị trấn Ngã Sáu, Xã Đông Phú",105.841,9.96217
+thành phố Cần Thơ,Cờ Đỏ,xã,33,102,đang cập nhật,44.6265,Huyện ủy Cờ Đỏ,"Thị trấn Cờ Đỏ, Xã Thới Đông, Xã Thới Xuân",105.416,10.0678
+thành phố Cần Thơ,Cù Lao Dung,xã,33,326,44937,150.13,UBND xã An Thạnh 3,"Xã An Thạnh 2, Xã Đại Ân 1, Xã An Thạnh 3, Xã An Thạnh Nam",106.225,9.57508
+thành phố Cần Thơ,Đại Hải,xã,33,316,43579,70.52,UBND xã Đại Hải,"Xã Ba Trinh, Xã Đại Hải",105.881,9.79863
+thành phố Cần Thơ,Đại Ngãi,xã,33,327,24532,37.67,UBND thị trấn Đại Ngãi,"Thị trấn Đại Ngãi, Xã Long Đức",106.08,9.70044
+thành phố Cần Thơ,Đại Thành,phường,33,137,34594,53,UBND TP Ngã Bảy,"Phường Hiệp Lợi, Xã Tân Thành, Xã Đại Thành",105.82,9.84481
+thành phố Cần Thơ,Đông Hiệp,xã,33,104,22762,46.25,UBND xã Đông Hiệp,"Xã Đông Thắng, Xã Xuân Thắng, Xã Đông Hiệp",105.503,10.0745
+thành phố Cần Thơ,Đông Phước,xã,33,125,40105,40,UBND xã Đông Thạnh,"Thị trấn Cái Tắc, Xã Đông Thạnh, Xã Đông Phước A",105.763,9.93409
+thành phố Cần Thơ,Đông Thuận,xã,33,105,24586,60.89,UBND xã Đông Thuận,"Xã Đông Bình, Xã Đông Thuận",105.469,10.0238
+thành phố Cần Thơ,Gia Hòa,xã,33,157,40135,77.06,UBND xã Gia Hòa 2,"Xã Thạnh Quới, Xã Gia Hòa 2",105.8,9.43175
+thành phố Cần Thơ,Hiệp Hưng,xã,33,304,33514,69.25,UBND huyện Phụng Hiệp,"Thị trấn Cây Dương, Xã Hiệp Hưng",105.741,9.76771
+thành phố Cần Thơ,Hồ Đắc Kiện,xã,33,317,31322,72.61,UBND xã Hồ Đắc Kiện,"Xã Thiện Mỹ, Xã Hồ Đắc Kiện",105.857,9.7071
+thành phố Cần Thơ,Hòa An,xã,33,139,32937,61.62,UBND thị trấn Kinh Cùng,"Thị trấn Kinh Cùng, Xã Hòa An",105.635,9.78092
+thành phố Cần Thơ,Hỏa Lựu,xã,33,119,đang cập nhật,59.7457,UBND xã Hoả Lựu,"Xã Tân Tiến, Xã Hỏa Tiến, Xã Hỏa Lựu",105.401,9.71728
+thành phố Cần Thơ,Hòa Tú,xã,33,338,24499,67.15,UBND huyện Mỹ Xuyên,"Xã Hòa Tú 1, Xã Hòa Tú 2",105.888,9.4164
+thành phố Cần Thơ,Hưng Phú,phường,33,286,58543,40.93,UBND quận Cái Răng (mới),"Phường Tân Phú, Phường Phú Thứ, Phường Hưng Phú",105.803,9.99405
+thành phố Cần Thơ,Kế Sách,xã,33,154,43332,61.58,UBND huyện Kế Sách,"Thị trấn Kế Sách, Xã Kế An, Xã Kế Thành",105.944,9.77057
+thành phố Cần Thơ,Khánh Hòa,phường,33,167,37634,130.48,UBND phường Khánh Hòa,"Phường Khánh Hòa, Xã Vĩnh Hiệp, Xã Hòa Đông",106.026,9.40992
+thành phố Cần Thơ,Lai Hòa,xã,33,170,29426,55.37,UBND xã Lai Hòa,Không sáp nhập,105.844,9.29803
+thành phố Cần Thơ,Lâm Tân,xã,33,162,32006,90.83,UBND xã Lâm Tân,"Xã Tuân Tức, Xã Lâm Kiết, Xã Lâm Tân",105.773,9.50692
+thành phố Cần Thơ,Lịch Hội Thượng,xã,33,333,27913,48.99,UBND thị trấn Lịch Hội Thượng,"Thị trấn Lịch Hội Thượng, Xã Lịch Hội Thượng",106.148,9.4652
+thành phố Cần Thơ,Liêu Tú,xã,33,332,3137,83.15,UBND xã Liêu Tú,"Xã Viên Bình, Xã Liêu Tú",106.1,9.48141
+thành phố Cần Thơ,Long Bình,phường,33,310,26378,40.2,UBND thị xã Long Mỹ,"Phường Bình Thạnh, Phường Vĩnh Tường, Xã Long Bình",105.587,9.72868
+thành phố Cần Thơ,Long Hưng,xã,33,319,33579,79.71,UBND xã Long Hưng,"Xã Hưng Phú, Xã Long Hưng",105.798,9.68836
+thành phố Cần Thơ,Long Mỹ,phường,33,309,35865,51.4,Thị uỷ Long Mỹ,"Phường Thuận An (thị xã Long Mỹ), Xã Long Trị, Xã Long Trị A",105.609,9.6862
+thành phố Cần Thơ,Long Phú,xã,33,330,39763,76.77,UBND huyện Long Phú,"Thị trấn Long Phú, Xã Long Phú",106.123,9.59559
+thành phố Cần Thơ,Long Phú 1,phường,33,311,30365,57.67,UBND xã Long Phú,"Phường Trà Lồng, Xã Tân Phú, Xã Long Phú",105.639,9.6522
+thành phố Cần Thơ,Long Tuyền,phường,33,284,45292,28.48,UBND phường Long Tuyền,"Phường Long Hòa, Phường Long Tuyền (phần còn lại sau khi sáp nhập vào phường An Bình)",105.725,10.0432
+thành phố Cần Thơ,Lương Tâm,xã,33,149,2402,60.53,UBND xã Lương Tâm,"Xã Lương Nghĩa, Xã Lương Tâm",105.428,9.62804
+thành phố Cần Thơ,Mỹ Hương,xã,33,321,51412,104.74,UBND xã Mỹ Hương,"Xã Thuận Hưng, Xã Phú Mỹ, Xã Mỹ Hương",105.861,9.5898
+thành phố Cần Thơ,Mỹ Phước,xã,33,324,23539,97.36,UBND xã Mỹ Phước,Không sáp nhập,105.721,9.58793
+thành phố Cần Thơ,Mỹ Quới,phường,33,160,3024,83.91,UBND xã Mỹ Quới,"Phường 3 (thị xã Ngã Năm), Xã Mỹ Bình, Xã Mỹ Quới",105.58,9.4866
+thành phố Cần Thơ,Mỹ Tú,xã,33,322,38049,86.63,UBND huyện Mỹ Tú,"Thị trấn Huỳnh Hữu Nghĩa, Xã Mỹ Thuận, Xã Mỹ Tú",105.792,9.59959
+thành phố Cần Thơ,Mỹ Xuyên,phường,33,334,51769,48.34,UBND thị trấn Mỹ Xuyên,"Phường 10, Thị trấn Mỹ Xuyên, Xã Đại Tâm",105.918,9.54742
+thành phố Cần Thơ,Ngã Bảy,phường,33,298,37861,25.17,UBND xã Ngã Bảy,"Phường Lái Hiếu, Phường Hiệp Thành, Phường Ngã Bảy",105.82,9.80178
+thành phố Cần Thơ,Ngã Năm,phường,33,158,58588,95.3,UBND thị xã Ngã Năm,"Phường 1 (thị xã Ngã Năm), Phường 2 (thị xã Ngã Năm), Xã Vĩnh Quới",105.612,9.58612
+thành phố Cần Thơ,Ngọc Tố,xã,33,339,47,112.53,UBND xã Ngọc Tố,"Xã Tham Đôn, Xã Ngọc Đông, Xã Ngọc Tố",105.939,9.47663
+thành phố Cần Thơ,Nhơn Ái,xã,33,107,40707,38.16,UBND xã Nhơn Ái,"Xã Nhơn Nghĩa, Xã Nhơn Ái",105.682,9.97745
+thành phố Cần Thơ,Nhơn Mỹ,xã,33,315,42213,79.73,UBND xã Nhơn Mỹ,"Xã An Mỹ, Xã Song Phụng, Xã Nhơn Mỹ",106.025,9.7621
+thành phố Cần Thơ,Nhu Gia,xã,33,337,3839,75.59,UBND xã Thạnh Phú,"Xã Thạnh Phú, Xã Gia Hòa 1",105.855,9.47039
+thành phố Cần Thơ,Ninh Kiều,phường,33,272,119547,5.42,UBND quận Ninh Kiều,"Phường Tân An, Phường Thới Bình, Phường Xuân Khánh",105.777,10.0331
+thành phố Cần Thơ,Ô Môn,phường,33,81,73412,54.69,UBND quận Ô Môn,"Phường Châu Văn Liêm, Phường Thới Hòa, Phường Thới An, Xã Thới Thạnh",105.625,10.1245
+thành phố Cần Thơ,Phong Điền,phường,33,106,51949,45.58,Huyện ủy Phong Điền,"Thị trấn Phong Điền, Xã Tân Thới, Xã Giai Xuân",105.669,10.0279
+thành phố Cần Thơ,Phong Nẫm,xã,33,313,6416,17.3,UBND xã Phong Nẫm,Không sáp nhập,105.953,9.8964
+thành phố Cần Thơ,Phú Hữu,xã,33,303,41254,60.54,UBND xã Phú Hữu.,"Xã Phú Tân, Xã Đông Phước, Xã Phú Hữu",105.852,9.90089
+thành phố Cần Thơ,Phú Lộc,xã,33,161,50929,80.15,Huyện ủy Thạnh Trị,"Thị trấn Hưng Lợi, Thị trấn Phú Lộc, Xã Thạnh Trị",105.711,9.43517
+thành phố Cần Thơ,Phú Lợi,phường,33,153,95516,26.79,UBND TP Sóc Trăng,"Phường 1 (thành phố Sóc Trăng), Phường 2 (thành phố Sóc Trăng), Phường 3 (thành phố Sóc Trăng), Phường 4",105.985,9.59174
+thành phố Cần Thơ,Phú Tâm,xã,33,318,33318,48.88,UBND huyện Châu Thành,"Thị trấn Châu Thành, Xã Phú Tâm",105.944,9.71385
+thành phố Cần Thơ,Phụng Hiệp,xã,33,138,33408,66.78,UBND xã Hoà Mỹ,"Xã Hòa Mỹ, Xã Phụng Hiệp",105.684,9.80551
+thành phố Cần Thơ,Phước Thới,phường,33,83,46788,53.11,UBND phường Phước Thới,"Phường Trường Lạc, Phường Phước Thới",105.686,10.1078
+thành phố Cần Thơ,Phương Bình,xã,33,142,33937,85.87,UBND xã Phương Bình,"Xã Phương Phú, Xã Phương Bình",105.688,9.71564
+thành phố Cần Thơ,Sóc Trăng,phường,33,152,61253,41.67,UBND phường 6,"Phường 5, Phường 6, Phường 7, Phường 8",105.991,9.62716
+thành phố Cần Thơ,Tài Văn,xã,33,335,3449,68.07,UBND xã Tài Văn,"Xã Viên An, Xã Tài Văn",106.049,9.54262
+thành phố Cần Thơ,Tân An,phường,33,280,85997,8.06,UBND phường Hưng Lợi,"Phường An Khánh, Phường Hưng Lợi",105.76,10.0258
+thành phố Cần Thơ,Tân Bình,xã,33,126,38032,61.85,UBND xã Tân Bình,"Xã Bình Thành, Xã Tân Bình",105.646,9.86425
+thành phố Cần Thơ,Tân Hòa,xã,33,299,50989,58.6,UBND huyện Châu Thành A,"Thị trấn Một Ngàn, Thị trấn Bảy Ngàn, Xã Nhơn Nghĩa A, Xã Tân Hòa",105.617,9.9186
+thành phố Cần Thơ,Tân Lộc,xã,33,289,35621,33.4,UBND phường Tân Lộc,Không sáp nhập,105.571,10.2538
+thành phố Cần Thơ,Tân Long,xã,33,159,35492,102.12,UBND xã Tân Long,"Xã Thạnh Tân, Xã Long Bình, Xã Tân Long",105.669,9.52249
+thành phố Cần Thơ,Tân Phước Hưng,xã,33,305,25745,57.77,UBND xã Tân Phước Hưng,"Thị trấn Búng Tàu, Xã Tân Phước Hưng",105.795,9.74639
+thành phố Cần Thơ,Tân Thạnh,xã,33,329,35806,70.8,UBND xã Tân Thạnh,"Xã Tân Hưng, Xã Châu Khánh, Xã Tân Thạnh",106.064,9.62299
+thành phố Cần Thơ,Thạnh An,xã,33,292,30682,85.97,UBND thị trấn Thạnh An,"Thị trấn Thạnh An, Xã Thạnh Lợi, Xã Thạnh Thắng",105.29,10.1854
+thành phố Cần Thơ,Thạnh Hòa,xã,33,136,63248,81.36,UBND xã Long Thạnh,"Xã Long Thạnh, Xã Tân Long, Xã Thạnh Hòa",105.728,9.87692
+thành phố Cần Thơ,Thạnh Phú,xã,33,296,25699,99.07,UBND xã Thạnh Phú,Không sáp nhập,105.405,10.1295
+thành phố Cần Thơ,Thạnh Quới,xã,33,295,3911,103.86,UBND xã Thạnh Quới,"Xã Thạnh Tiến, Xã Thạnh An, Xã Thạnh Quới",105.348,10.2075
+thành phố Cần Thơ,Thạnh Thới An,xã,33,336,29019,87.15,UBND xã Thạnh Thới An,"Xã Thạnh Thới Thuận, Xã Thạnh Thới An",106.007,9.48256
+thành phố Cần Thơ,Thạnh Xuân,xã,33,301,41039,43.95,UBND xã Thạnh Xuân,"Thị trấn Rạch Gòi, Xã Tân Phú Thạnh, Xã Thạnh Xuân",105.696,9.9338
+thành phố Cần Thơ,Thới An Đông,phường,33,283,39401,25.04,UBND phường Thới An Đông,"Phường Trà An, Phường Trà Nóc, Phường Thới An Đông",105.701,10.0815
+thành phố Cần Thơ,Thới An Hội,xã,33,314,31726,60.32,UBND xã An Lạc Tây,"Xã An Lạc Tây, Xã Thới An Hội",105.979,9.82553
+thành phố Cần Thơ,Thới Hưng,xã,33,103,19044,69.92,UBND xã Thới Hưng,Không sáp nhập,105.519,10.124
+thành phố Cần Thơ,Thới Lai,xã,33,100,36371,50.78,Huyện ủy Thới Lai,"Thị trấn Thới Lai, Xã Thới Tân, Xã Trường Thắng",105.551,10.0411
+thành phố Cần Thơ,Thới Long,phường,33,82,52979,54.1,UBND phường Long Hưng,"Phường Long Hưng, Phường Tân Hưng, Phường Thới Long",105.583,10.1701
+thành phố Cần Thơ,Thốt Nốt,phường,33,287,61387,23.61,Quận ủy Thốt Nốt,"Phường Thuận An (quận Thốt Nốt), Phường Thới Thuận, Phường Thốt Nốt (phần còn lại sau khi sáp nhập vào phường Thuận Hưng)",105.504,10.2917
+thành phố Cần Thơ,Thuận Hòa,xã,33,320,29846,45.86,UBND xã Phú Tân,"Xã Thuận Hòa (huyện Châu Thành), Xã Phú Tân",105.928,9.68571
+thành phố Cần Thơ,Thuận Hưng,phường,33,291,56878,31.13,UBND quận Thốt Nốt,"Phường Trung Kiên, Phường Thuận Hưng, Phường Thốt Nốt",105.562,10.2263
+thành phố Cần Thơ,Trần Đề,xã,33,331,52771,93.92,UBND huyện Trần Đề,"Thị trấn Trần Đề, Xã Đại Ân 2, Xã Trung Bình",106.176,9.51405
+thành phố Cần Thơ,Trung Hưng,xã,33,297,55012,61.07,UBND xã Trung Hưng,"Xã Trung Thạnh, Xã Trung Hưng",105.499,10.1766
+thành phố Cần Thơ,Trung Nhứt,phường,33,290,37469,30.84,UBND phường Thạnh Hòa,"Phường Thạnh Hòa, Phường Trung Nhứt, Xã Trung An",105.51,10.2336
+thành phố Cần Thơ,Trường Khánh,xã,33,328,34621,58.33,UBND xã Trường Khánh,"Xã Hậu Thạnh, Xã Phú Hữu, Xã Trường Khánh",106.029,9.68798
+thành phố Cần Thơ,Trường Long,xã,33,108,24064,31.01,UBND xã Trường Long,Không sáp nhập,105.618,9.98011
+thành phố Cần Thơ,Trường Long Tây,xã,33,300,25313,50.59,UBND xã Trường Long Tây,"Xã Trường Long A, Xã Trường Long Tây",105.572,9.94336
+thành phố Cần Thơ,Trường Thành,xã,33,110,37802,59.09,UBND xã Định Môn,"Xã Tân Thạnh, Xã Định Môn, Xã Trường Thành",105.61,10.0423
+thành phố Cần Thơ,Trường Xuân,xã,33,109,36405,67.94,UBND xã Trường Xuân,"Xã Trường Xuân A, Xã Trường Xuân B, Xã Trường Xuân",105.525,9.97916
+thành phố Cần Thơ,Vị Tân,phường,33,118,36079,37.07,UBND xã Vị Tân,"Phường IV, Phường V, Xã Vị Tân",105.454,9.79155
+thành phố Cần Thơ,Vị Thanh,phường,33,111,32766,22.11,UBND TP Vị Thanh,"Phường I, Phường III, Phường VII",105.47,9.76382
+thành phố Cần Thơ,Vị Thanh 1,xã,33,308,42766,71.12,UBND xã Vị Thanh,"Xã Vị Đông, Xã Vị Bình, Xã Vị Thanh",105.559,9.86743
+thành phố Cần Thơ,Vị Thủy,xã,33,306,32394,49.84,UBND huyện Vị Thủy,"Thị trấn Nàng Mau, Xã Vị Thắng, Xã Vị Trung",105.536,9.76016
+thành phố Cần Thơ,Vĩnh Châu,phường,33,164,68437,98.26,UBND thị xã Vĩnh Châu,"Phường 1 (thị xã Vĩnh Châu), Phường 2 (thị xã Vĩnh Châu), Xã Lạc Hòa",106.034,9.34799
+thành phố Cần Thơ,Vĩnh Hải,xã,33,168,2782,83.75,UBND xã Vĩnh Hải,Không sáp nhập,106.134,9.37338
+thành phố Cần Thơ,Vĩnh Lợi,xã,33,163,17236,31.98,UBND xã Vĩnh Lợi,"Xã Châu Hưng, Xã Vĩnh Thành, Xã Vĩnh Lợi",105.643,9.4381
+thành phố Cần Thơ,Vĩnh Phước,phường,33,169,51897,103.15,UBND phường Vĩnh Phước,"Phường Vĩnh Phước, Xã Vĩnh Tân",105.912,9.32011
+thành phố Cần Thơ,Vĩnh Thạnh,xã,33,293,30522,65.9,UBND huyện Vĩnh Thạnh,"Thị trấn Vĩnh Thạnh, Xã Thạnh Lộc, Xã Thạnh Mỹ",105.43,10.2179
+thành phố Cần Thơ,Vĩnh Thuận Đông,xã,33,312,39808,72.2,UBND xã Vĩnh Thuận Tây,"Xã Vĩnh Thuận Tây, Xã Vị Thủy, Xã Vĩnh Thuận Đông",105.503,9.71711
+thành phố Cần Thơ,Vĩnh Trinh,xã,33,294,27026,51.01,UBND xã Vĩnh Trinh,"Xã Vĩnh Bình, Xã Vĩnh Trinh",105.464,10.2688
+thành phố Cần Thơ,Vĩnh Tường,xã,33,307,31676,67.01,UBND xã Vĩnh Tường,"Xã Vĩnh Trung, Xã Vĩnh Tường",105.577,9.81249
+thành phố Cần Thơ,Vĩnh Viễn,xã,33,151,24432,68.86,UBND huyện Long Mỹ,"Thị trấn Vĩnh Viễn, Xã Vĩnh Viễn A",105.432,9.67488
+thành phố Cần Thơ,Xà Phiên,xã,33,150,46156,100.48,UBND xã Xà Phiên,"Xã Thuận Hòa (huyện Long Mỹ), Xã Thuận Hưng, Xã Xà Phiên",105.527,9.6319

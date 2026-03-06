@@ -1,0 +1,45 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    105.98130013219507,
+                    11.655144414228518
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Dự án bãi xuất nhập, bãi tập kết hàng hoá phục vụ hoạt động thương mại dịch vụ cửa khẩu tại cửa khẩu Tân Nam",
+                "Lĩnh vực": null,
+                "Địa điểm (theo đơn vị hành chính cũ)": "Cửa khẩu Quốc tế Tân Nam Khu kinh tế cửa khẩu Xa Mát, xã Tân Bình, huyện Tân Biên, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Xã Tân Biên, Tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.655144414228518,105.98130013219507",
+                "Toạ độ khu đất trên google map": null,
+                "Diện tích (ha)": "14,81 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Cho thuê kho, bãi và lưu trữ hàng hóa. Dịch vụ đóng hàng và xếp dỡ hàng từ các phương tiện vận tải.",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch ",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề nghị của nhà đầu tư",
+                "Hình thức đầu tư": "đấu giá lựa chọn nhà đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế - xã hội của địa phương",
+                "Hiện trạng": null,
+                "Nguồn gốc đất": null,
+                "Quy mô/công suất dự án": null,
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": null,
+                "Loại đất theo Kế hoạch sử dụng đất 2025": null,
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": null,
+                "Phân loại": null,
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

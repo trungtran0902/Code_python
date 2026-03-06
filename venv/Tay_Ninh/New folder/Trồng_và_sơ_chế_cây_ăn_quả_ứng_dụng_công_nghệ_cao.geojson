@@ -1,0 +1,61 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            106.220527,
+                            11.573655
+                        ],
+                        [
+                            106.216364,
+                            11.568946
+                        ],
+                        [
+                            106.207286,
+                            11.582757
+                        ],
+                        [
+                            106.203718,
+                            11.587086
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "Tên dự án": "Trồng và sơ chế cây ăn quả ứng dụng công nghệ cao",
+                "Lĩnh vực": "Lĩnh vực Nông nghiệp",
+                "Địa điểm (theo đơn vị hành chính cũ)": "Các lô: E2, E3, E4, D4, D5, G4, G5, G6, H7 Khu chức năng I, Vùng Đề án SX NNUDCNC huyện Tân Châu, tỉnh Tây Ninh",
+                "Địa điểm (cập nhật theo đơn vị hành chính mới)": "Khu chức năng I, Vùng Đề án sản xuất NNUDCNC xã Tân Thành, tỉnh Tây Ninh",
+                "Định vị toạ độ": "11.573655,106.220527;\n11.568946,106.216364;\n11.582757,106.207286;\n11.587086,106.203718",
+                "Toạ độ khu đất trên google map": "X=11.579681 Y=106.222343",
+                "Diện tích (ha)": "213,5 ha",
+                "Hiện trạng dự án": null,
+                "Mục tiêu thực hiện dự án": "Đối tượng trồng trọt, sơ chế sản phẩm trồng trọt ứng dụng công nghệ cao phù hợp theo Đề án vùng SX NNUDCNC huyện Tân Châu, tỉnh Tây Ninh",
+                "Sự phù hợp Quy hoạch (Ghi rõ quyết định phê duyệt chủ trương)": "Phù hợp quy hoạch ",
+                "Tổng vốn đầu tư (dự kiến)": "Theo đề xuất của Nhà đầu tư",
+                "Hình thức đầu tư": "Kêu gọi đầu tư",
+                "Thời gian dự kiến triển khai": null,
+                "Thời gian hoạt dộng dự án": null,
+                "Hiệu quả kinh tế": "Góp phần phát triển kinh tế, tạo công ăn việc làm cho ngừoi dân địa phương ",
+                "Hiện trạng": "Cao su",
+                "Nguồn gốc đất": "Đất UBND tỉnh Tây Ninh thu hồi giao UBND huyện Tân Châu quản lý",
+                "Quy mô/công suất dự án": "Quy mô phù hợp tiêu chí vùng NNUDCNC quy định tại Quyết định số 66/2015/QĐ-TTg ngày 25/12/2015 của Thủ tướng Chính phủ",
+                "Loại đất theo Quy hoạch sử dụng đất đến năm 2030 điều chỉnh": "CLN",
+                "Loại đất theo Kế hoạch sử dụng đất 2025": "CLN",
+                "Quy hoạch chung": null,
+                "Quy hoạch phân khu": null,
+                "Quy hoạch chi tiết": null,
+                "Chương trình phát triển nhà ở tỉnh đến năm 2030": null,
+                "Kế hoạch phát triển nhà ở đến năm 2025": null,
+                "Ghi chú": "Sở Nông nghiệp và PTNT",
+                "Phân loại": "Đề xuất mới 2025",
+                "Trạng Thái Xử Lý Dữ Liệu": null
+            }
+        }
+    ]
+}

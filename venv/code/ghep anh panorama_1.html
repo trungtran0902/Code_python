@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panorama 360 Độ</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .panorama-container {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .panorama-content {
+      display: flex;
+      width: max-content;
+      height: 100%;
+      transition: transform 0.1s ease;
+    }
+    .panorama-content img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .controls {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    input[type="file"] {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <h2>Chọn Ảnh Panorama</h2>
+    <input type="file" id="fileInput" multiple accept="image/*">
+  </div>
+
+  <div class="panorama-container" id="panoramaContainer">
+    <div class="panorama-content" id="panoramaContent">
+      <!-- Các ảnh panorama sẽ được ghép vào đây -->
+    </div>
+  </div>
+
+  <script>
+    let currentPosition = 0; // Vị trí hiện tại của cuộn ảnh
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+      const files = event.target.files;
+      const panoramaContent = document.getElementById('panoramaContent');
+      panoramaContent.innerHTML = ''; // Xóa các ảnh cũ nếu có
+
+      // Duyệt qua các ảnh đã chọn và thêm vào container
+      Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          panoramaContent.appendChild(img); // Thêm ảnh vào container
+        };
+        reader.readAsDataURL(file); // Đọc file ảnh thành URL
+      });
+    });
+
+    // Xử lý sự kiện cuộn chuột để di chuyển ảnh
+    let isMouseDown = false;
+    let startX;
+    let scrollLeft;
+
+    const panoramaContainer = document.getElementById('panoramaContainer');
+    panoramaContainer.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      startX = e.pageX - panoramaContainer.offsetLeft;
+      scrollLeft = panoramaContainer.scrollLeft;
+    });
+
+    panoramaContainer.addEventListener('mouseleave', () => {
+      isMouseDown = false;
+    });
+
+    panoramaContainer.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+
+    panoramaContainer.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const x = e.pageX - panoramaContainer.offsetLeft;
+      const walk = (x - startX) * 3; // Tăng giảm giá trị này để điều chỉnh tốc độ
+      panoramaContainer.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+</body>
+</html>

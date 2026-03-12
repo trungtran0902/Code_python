@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps với Tìm Kiếm</title>
+    <style>
+        #map {
+            height: 750px;
+            width: 100%;
+        }
+        #search-box {
+            width: 300px;
+            padding: 8px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        let map;
+        let marker;
+        let autocomplete;
+
+        function initMap() {
+            const defaultLocation = { lat: 10.775873366600358, lng: 106.70584566627723 }; // Đà Nẵng 
+
+            // Khởi tạo bản đồ
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: defaultLocation,
+            });
+
+            // Đặt marker mặc định
+            marker = new google.maps.Marker({
+                position: defaultLocation,
+                map: map,
+                title: "Vị trí mặc định!",
+                draggable: true
+            });
+
+            // Khởi tạo Autocomplete
+            const input = document.getElementById("search-box");
+            autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.bindTo("bounds", map);
+
+            // Lắng nghe sự kiện chọn địa điểm từ gợi ý
+            autocomplete.addListener("place_changed", function () {
+                const place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    alert("Không tìm thấy vị trí.");
+                    return;
+                }
+
+                // Cập nhật bản đồ
+                map.setCenter(place.geometry.location);
+                map.setZoom(15);
+
+                // Cập nhật marker
+                marker.setPosition(place.geometry.location);
+                marker.setTitle(place.name);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Tìm kiếm địa điểm trên Google Maps</h2>
+    <input id="search-box" type="text" placeholder="Nhập địa điểm..." />
+    <div id="map"></div>
+
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEXoHOqcjbcK4D7isvej-oqvKVyUlxAuU&libraries=places&callback=initMap">
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polygon with Popup on OSM</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script defer
+    src="https://api.map4d.vn/sdk/map/js?version=2.6&key=93d393d0f6507ee00b62fe01db7430fa&callback=initMap"></script>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+   function initMap() {
+  let options = {
+    center: { lat: 10.771111, lng: 106.703218 },
+    zoom: 16,
+    controls: true
+  }
+  let map = new map4d.Map(document.getElementById("map"), options)
+  
+  // Khởi tạo một Polygon
+  let polygon = new map4d.Polygon({
+      fillOpacity: 0.1,
+      userInteractionEnabled: true,
+      paths:[[
+        {lat: 10.771749380684138, lng: 106.70001268386841},
+        {lat: 10.768534727930506, lng: 106.70332789421082},
+        {lat: 10.770684860129196, lng: 106.70641779899597},
+        {lat: 10.77348844082262, lng: 106.70296311378479},
+        {lat: 10.771749380684138, lng: 106.70001268386841}
+      ]]
+    })
+  let clickEvent = map.addListener("click", (args) => {
+  console.log("Polygon clicked: Đây là vùng polygon demo")
+  console.log(args)
+}, {polygon: true})
+  // Thêm Polygon vào bản đồ
+  polygon.setMap(map)
+}
+  </script>
+</body>
+</html>

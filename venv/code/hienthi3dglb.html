@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiển thị Mô hình OBJ và PNG</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- OBJLoader từ Three.js examples -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+</head>
+<body>
+  <script>
+let scene, camera, renderer, objLoader, textureLoader;
+
+function init() {
+  // Khởi tạo cảnh
+  scene = new THREE.Scene();
+
+  // Khởi tạo camera
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 2, 5);
+  camera.lookAt(0, 0, 0);
+
+  // Khởi tạo renderer
+  renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  // Khởi tạo ánh sáng
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(1, 1, 1).normalize();
+  scene.add(light);
+
+  // Khởi tạo loaders
+  objLoader = new THREE.OBJLoader();
+  textureLoader = new THREE.TextureLoader();
+
+  // Tải và hiển thị mô hình OBJ
+  loadOBJModel();
+}
+
+function loadOBJModel() {
+  const texture = textureLoader.load('models/bph003_benviendakhoatinhbinhphuoc_nha_27.png'); // Đường dẫn đến texture PNG
+
+  objLoader.load('models/BPH003_BenviendakhoatinhBinhPhuoc_nha_27.obj', function (object) { // Đường dẫn đến mô hình OBJ
+    object.traverse(function (child) {
+      if (child.isMesh) {
+        child.material.map = texture; // Áp dụng texture cho mô hình
+      }
+    });
+
+    scene.add(object);
+    animate();
+  }, undefined, function (error) {
+    console.error('Error loading OBJ model:', error);
+  });
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+}
+
+// Khởi tạo khi trang tải xong
+window.onload = init;
+
+// Cập nhật kích thước khi cửa sổ thay đổi kích thước
+window.addEventListener('resize', function () {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+  </script>
+</body>
+</html>

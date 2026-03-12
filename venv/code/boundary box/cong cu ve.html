@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draw and Download Polygon on Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet Draw CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+
+    <style>
+        #map {
+            height: 800px;
+            width: 100%;
+        }
+        #downloadBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        #logBtn {
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            z-index: 1000;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <button id="downloadBtn">Download GeoJSON</button>
+    <button id="logBtn">Log Polygon Bounding Box</button>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Leaflet Draw JS -->
+    <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([10.762622, 106.660172], 13);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('http://rtile.map4d.vn/all/2d/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Initialize the FeatureGroup to store drawn layers
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        // Initialize the draw control and pass it the FeatureGroup of editable layers
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems
+            }
+        });
+        map.addControl(drawControl);
+
+        // Event listener for when a new layer (polygon) is created
+        map.on('draw:created', function (e) {
+            var type = e.layerType,
+                layer = e.layer;
+
+            // Add the drawn layer to the FeatureGroup
+            drawnItems.addLayer(layer);
+        });
+
+        // Function to download data as GeoJSON
+        function downloadGeoJSON() {
+            var data = drawnItems.toGeoJSON();
+            var blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.geojson';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Function to calculate the bounding box (minLon, minLat, maxLon, maxLat)
+        function calculateBoundingBox(latlngs) {
+            var minLat = Infinity, minLon = Infinity, maxLat = -Infinity, maxLon = -Infinity;
+
+            // Flatten the coordinates if it's a MultiPolygon
+            if (latlngs[0] && latlngs[0][0]) {
+                latlngs = latlngs[0];  // MultiPolygon, only take the first ring
+            }
+
+            // Iterate through each coordinate and find the bounding box
+            latlngs.forEach(function (latlng) {
+                minLat = Math.min(minLat, latlng.lat);
+                minLon = Math.min(minLon, latlng.lng);
+                maxLat = Math.max(maxLat, latlng.lat);
+                maxLon = Math.max(maxLon, latlng.lng);
+            });
+
+            return `${minLon.toFixed(4)}, ${minLat.toFixed(4)}, ${maxLon.toFixed(4)}, ${maxLat.toFixed(4)}`;
+        }
+
+        // Function to log polygon bounding box
+        function logPolygonBoundingBox() {
+            drawnItems.eachLayer(function(layer) {
+                if (layer instanceof L.Polygon || layer instanceof L.MultiPolygon) {
+                    var boundingBox = calculateBoundingBox(layer.getLatLngs());
+                    console.log("Bounding Box:", boundingBox);
+                }
+            });
+        }
+
+        // Add event listener to the download button
+        document.getElementById('downloadBtn').addEventListener('click', downloadGeoJSON);
+        
+        // Add event listener to the log button
+        document.getElementById('logBtn').addEventListener('click', logPolygonBoundingBox);
+    </script>
+</body>
+</html>

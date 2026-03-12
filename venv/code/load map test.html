@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map4D Map</title>
+  <style>
+    /* Make the map fill the screen */
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    /* Style cho nút Reload */
+    #reloadButton {
+      position: absolute;
+      z-index: 999;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: #f44336; /* Màu đỏ */
+      color: white;
+      border: none;
+      cursor: pointer;
+      top: 50px;
+      left: 10px;
+    }
+    #reloadButton:hover {
+      background-color: #e53935;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nút Reload Page -->
+  <button id="reloadButton">Reload Page</button>
+  
+  <div id="map"></div>
+
+  <script>
+    let map; // Khai báo biến global để quản lý đối tượng map
+
+    // Hàm khởi tạo bản đồ
+    function initMap() {
+      const options = {
+        center: { lat: 16.072163491469226, lng: 108.22690536081757 }, // Tọa độ ban đầu
+        zoom: 15, // Mức zoom ban đầu
+        controls: true, // Bật các điều khiển của bản đồ
+        mapId: '67ec9b6b667bcb2067e77287' // Sử dụng Map Style ID cố định
+      };
+
+      // Tạo đối tượng bản đồ Map4D
+      map = new map4d.Map(document.getElementById("map"), options);
+    }
+
+    // Tự động tải SDK Map4D và khởi tạo bản đồ khi trang được tải
+    const script = document.createElement("script");
+    script.src = `https://api.map4d.vn/sdk/map/js?version=2.6&key=93d393d0f6507ee00b62fe01db7430fa&mapId=67ec9b6b667bcb2067e77287&callback=initMap`;
+    document.body.appendChild(script); // Thêm thẻ script vào trang
+
+    // Lắng nghe sự kiện click của nút Reload Page
+    document.getElementById("reloadButton").addEventListener("click", function() {
+      // Tải lại trang
+      location.reload(); // Đây sẽ tải lại trang và làm mới mọi thứ
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tìm Đường Giống Map4D</title>
+    <link rel="stylesheet" href="https://unpkg.com/map4d-web-sdk@2.8.5/dist/map4d.css">
+    <style>
+        #map {
+            height: 900px;
+        }
+
+        #search-panel {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-panel">
+        <h2>Tìm Đường</h2>
+        <label for="start">Điểm xuất phát:</label>
+        <input type="text" id="start" placeholder="Nhập điểm xuất phát" required>
+        
+        <label for="destination">Điểm đích:</label>
+        <input type="text" id="destination" placeholder="Nhập điểm đích" required>
+        
+        <button type="button" onclick="getDirections()">Tìm Đường</button>
+    </div>
+
+    <div id="map"></div>
+    
+    <script>
+        var map;
+        function initMap() {
+  let options = {
+    center: { lat: 10.773766, lng: 106.720739 },
+    zoom: 17,
+    controls: true
+  }
+  let map = new map4d.Map(document.getElementById("map"), options)}
+
+        function getDirections() {
+            var start = document.getElementById('start').value;
+            var destination = document.getElementById('destination').value;
+
+            // Gọi API hoặc sử dụng Map4D JavaScript SDK để tính toán và hiển thị chỉ đường
+            // Ví dụ: Sử dụng DirectionsService của Map4D
+
+            var directionsService = new Map4D.DirectionsService();
+
+            directionsService.route({
+                origin: start,
+                destination: destination,
+                travelMode: 'driving'
+            }, function(response) {
+                var directionsRenderer = new Map4D.DirectionsRenderer();
+                directionsRenderer.setMap(map);
+                directionsRenderer.setDirections(response);
+            });
+        }
+    </script>
+
+    <script src="https://api.map4d.vn/sdk/map/js?version=2.6&key=93d393d0f6507ee00b62fe01db7430fa&callback=initMap"></script>
+</body>
+</html>

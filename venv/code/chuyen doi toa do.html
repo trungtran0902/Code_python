@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi Tọa độ</title>
+</head>
+<body>
+    <h1>Chuyển đổi Tọa độ Độ - Phút - Giây sang Decimal Degrees</h1>
+    
+    <input type="file" id="fileInput" accept=".xlsx">
+    <br><br>
+
+    <button id="downloadBtn" disabled>Tải xuống Excel</button>
+    
+    <br><br>
+    <table border="1" id="resultTable">
+        <thead>
+            <tr>
+                <th>Độ</th>
+                <th>Phút</th>
+                <th>Giây</th>
+                <th>Decimal Degrees</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const resultTable = document.getElementById('resultTable').getElementsByTagName('tbody')[0];
+        let convertedData = [];
+
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const data = new Uint8Array(event.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+                const sheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[sheetName];
+
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+                processExcelData(jsonData);
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+
+        function processExcelData(data) {
+            convertedData = []; // Reset dữ liệu đã chuyển đổi
+            resultTable.innerHTML = ''; // Xóa dữ liệu bảng cũ
+
+            data.forEach((row, index) => {
+                if (index > 0 && row.length >= 3) { // Bỏ qua tiêu đề và kiểm tra có đủ cột
+                    const degree = parseFloat(row[0]) || 0;
+                    const minute = parseFloat(row[1]) || 0;
+                    const second = parseFloat(row[2]) || 0;
+                    
+                    const decimalDegree = dmsToDecimalDegrees(degree, minute, second);
+
+                    // Thêm vào dữ liệu đã chuyển đổi
+                    convertedData.push([degree, minute, second, parseFloat(decimalDegree.toFixed(5))]);
+
+                    // Hiển thị dữ liệu trong bảng
+                    const newRow = resultTable.insertRow();
+                    newRow.insertCell(0).innerText = degree;
+                    newRow.insertCell(1).innerText = minute;
+                    newRow.insertCell(2).innerText = second;
+                    newRow.insertCell(3).innerText = decimalDegree.toFixed(5);
+                }
+            });
+
+            downloadBtn.disabled = convertedData.length === 0;
+        }
+
+        function dmsToDecimalDegrees(degree, minute, second) {
+            return degree + (minute / 60) + (second / 3600);
+        }
+
+        downloadBtn.addEventListener('click', function() {
+            // Tạo workbook mới
+            const newWorkbook = XLSX.utils.book_new();
+            const newWorksheet = XLSX.utils.aoa_to_sheet([["Độ", "Phút", "Giây", "Decimal Degrees"], ...convertedData]);
+
+            // Thêm worksheet vào workbook
+            XLSX.utils.book_append_sheet(newWorkbook, newWorksheet, "Converted Data");
+
+            // Xuất file Excel
+            XLSX.writeFile(newWorkbook, "converted_data.xlsx");
+        });
+    </script>
+</body>
+</html>

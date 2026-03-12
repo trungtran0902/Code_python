@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #map { height: 100vh; }
+    #infoBox {
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        border-radius: 5px;
+        padding: 10px;
+        display: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+          .info-button {
+        margin: 5px 0;
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 3px;
+      }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="infoBox">
+      <button class="info-button" onclick="viewDetail()">Xem chi tiết</button>
+      <button class="info-button" onclick="share()">Chia sẻ</button>
+      <button class="info-button" onclick="getDirections()">Chỉ đường</button>
+    </div>
+  <script>
+    function initMap() {
+      const options = {
+        center: { lat: 16.0721, lng: 108.2269 },
+        zoom: 15,
+        controls: true
+      };
+      const map = new map4d.Map(document.getElementById("map"), options);
+      map.enable3dMode(true);
+      map.addListener("click", (args) => {
+          if (args.building) {
+            const { pixel } = args;
+            showInfoBox(pixel.x, pixel.y);
+          }
+        });
+    }
+    function showInfoBox(x, y) {
+        const infoBox = document.getElementById("infoBox");
+        infoBox.style.left = `${x}px`;
+        infoBox.style.top = `${y}px`;
+        infoBox.style.display = "block";
+      }
+
+      function viewDetail() {
+        alert("Hiển thị chi tiết đối tượng!");
+      }
+
+      function share() {
+        alert("Chức năng chia sẻ!");
+      }
+
+      function getDirections() {
+        // Gọi API Dẫn đường với Map4D
+        alert("Chức năng chỉ đường!");
+      }
+  </script>
+  <script src="https://api.map4d.vn/sdk/map/js?version=2.6&key=93d393d0f6507ee00b62fe01db7430fa&callback=initMap"></script>
+</body>
+</html>

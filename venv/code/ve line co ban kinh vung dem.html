@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map with Line and Buffered Polygon</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map { height: 400px; }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/@turf/turf"></script> <!-- Turf.js -->
+<script>
+  var map = L.map('map').setView([16.052, 108.211], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+  }).addTo(map);
+
+  // Tạo đoạn line
+  var lineCoordinates = [
+    [16.047079, 108.206230],
+    [16.057079, 108.216230]
+  ];
+  var polyline = L.polyline(lineCoordinates, {color: 'red'}).addTo(map);
+
+  // Tạo vùng polygon bao quanh đoạn line
+  var bufferRadius = 200; // Bán kính vùng đệm (mét)
+  var lineGeoJSON = polyline.toGeoJSON();
+  var buffered = turf.buffer(lineGeoJSON, bufferRadius, {units: 'meters'});
+
+  var bufferedPolygon = L.geoJSON(buffered, {
+    style: {
+      color: 'blue',
+      fillColor: 'blue',
+      fillOpacity: 0.2
+    }
+  }).addTo(map);
+
+  // Căn chỉnh bản đồ để hiển thị toàn bộ đoạn line và vùng polygon
+  map.fitBounds(polyline.getBounds().extend(bufferedPolygon.getBounds()));
+</script>
+
+</body>
+</html>

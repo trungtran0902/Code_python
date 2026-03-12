@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map4D Polygon Circle</title>
+  <script defer
+    src="https://api.map4d.vn/sdk/map/js?version=1.5.x&key=93d393d0f6507ee00b62fe01db7430fa&callback=initMap"></script>
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+    #coordinates {
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="coordinates"></div>
+
+  <script>
+    // Khởi tạo bản đồ Map4D
+    var map = new map4d.Map(document.getElementById('map'), {
+      center: { lat: 10.762622, lng: 106.660172 },
+      zoom: 13,
+      controls: true,
+    });
+
+    // Tọa độ trung tâm và bán kính của hình tròn
+    var center = { lat: 10.762622, lng: 106.660172 };
+    var radius = 500; // mét
+
+    // Hàm tạo hình tròn dạng polygon
+    function createCirclePolygon(center, radius, numSides) {
+      var latlngs = [];
+      for (var i = 0; i < numSides; i++) {
+        var angle = (i / numSides) * 360;
+        var point = {
+          lat: center.lat + (radius / 111320) * Math.cos(angle * Math.PI / 180),
+          lng: center.lng + (radius / (111320 * Math.cos(center.lat * Math.PI / 180))) * Math.sin(angle * Math.PI / 180)
+        };
+        latlngs.push(point);
+      }
+      latlngs.push(latlngs[0]); // Đóng polygon
+      return latlngs;
+    }
+
+    // Tạo polygon hình tròn và thêm vào bản đồ
+    var latlngs = createCirclePolygon(center, radius, 60);
+    var polygon = new map4d.Polygon({
+      paths: latlngs,
+      fillColor: "#FF0000",
+      fillOpacity: 0.5,
+      strokeColor: "#FF0000",
+      strokeOpacity: 1.0,
+      strokeWidth: 2
+    });
+    polygon.setMap(map);
+
+    // Hiển thị tọa độ của hình tròn
+    var coordinatesText = JSON.stringify(latlngs, null, 2);
+    document.getElementById('coordinates').textContent = coordinatesText;
+  </script>
+</body>
+</html>

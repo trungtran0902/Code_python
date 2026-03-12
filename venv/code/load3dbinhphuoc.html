@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>3D Model on OSM Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jscastro76/threebox-plugin/dist/threebox.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jscastro76/threebox-plugin/dist/threebox.css" />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    // Tạo bản đồ Leaflet
+    var map = L.map('map').setView([11.538999, 106.901425], 16);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Tạo lớp Threebox để thêm các đối tượng 3D
+    var tb = new Threebox(map, map.getPane('overlayPane'), {
+      defaultLights: true,
+      enableSelectingFeatures: true,
+      enableTooltips: true
+    });
+
+    // Tải mô hình 3D
+    tb.loadGLTF('https://docs.mapbox.com/mapbox-gl-js/assets/metlife-building.gltf', function (gltf) {
+      var scale = 10; // Điều chỉnh tỉ lệ mô hình
+      var model = tb.Object3D({ obj: gltf, units: 'meters', scale: scale });
+      tb.add(model);
+
+      // Đặt vị trí của mô hình
+      model.setCoords([106.901425, 11.538999]);
+    });
+
+    // Cập nhật Threebox trong vòng lặp render
+    map.on('moveend', () => {
+      tb.update();
+    });
+  </script>
+</body>
+</html>

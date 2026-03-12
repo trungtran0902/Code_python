@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem ảnh Panorama 360 độ kiểu Street View</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <style>
+        #panorama {
+            width: 100%;
+            height: 800px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+        }
+        .file-input {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .custom-hotspot {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 123, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+        }
+        .custom-hotspot:hover {
+            transform: scale(1.1);
+        }
+        .clear-button {
+            padding: 10px 20px;
+            background-color: #BB0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .clear-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Xem ảnh Panorama 360 độ kiểu Street View</h1>
+
+    <div class="file-input">
+        <label for="imageUpload">Chọn danh sách ảnh panorama 360 độ: </label>
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+        <button class="clear-button" onclick="clearImages()">Xóa ảnh</button>
+    </div>
+
+    <div id="panorama"></div>
+
+    <p>Kéo chuột để xoay, cuộn để phóng to/thu nhỏ, nhấp vào hotspot để di chuyển!</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        let viewer = null;
+        const scenes = {};
+
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const files = event.target.files;
+            if (files.length > 0) {
+                if (viewer) viewer.destroy();
+                Object.keys(scenes).forEach(key => delete scenes[key]);
+
+                Array.from(files).forEach((file, index) => {
+                    const sceneId = `scene${index + 1}`;
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        const imageUrl = e.target.result;
+                        scenes[sceneId] = {
+                            type: 'equirectangular',
+                            panorama: imageUrl,
+                            autoLoad: true,
+                            yaw: 0, // Cố định góc nhìn ban đầu
+                            pitch: 0, // Đảm bảo không bị lệch lên/xuống
+                            hotSpots: []
+                        };
+
+                        // Hotspot ">>" để đi tới ảnh tiếp theo (bên phải, yaw = 90)
+                        if (index < files.length - 1) {
+                            scenes[sceneId].hotSpots.push({
+                                pitch: 0,
+                                yaw: 90, // Cố định bên phải
+                                type: 'scene',
+                                sceneId: `scene${index + 2}`,
+                                cssClass: 'custom-hotspot',
+                                createTooltipFunc: (hotspot) => {
+                                    hotspot.innerHTML = '&raquo;'; // Dùng icon >>
+                                }
+                            });
+                        }
+
+                        // Hotspot "<<" để quay lại ảnh trước đó (bên trái, yaw = -90)
+                        if (index > 0) {
+                            scenes[sceneId].hotSpots.push({
+                                pitch: 0,
+                                yaw: -90, // Cố định bên trái
+                                type: 'scene',
+                                sceneId: `scene${index}`,
+                                cssClass: 'custom-hotspot',
+                                createTooltipFunc: (hotspot) => {
+                                    hotspot.innerHTML = '&laquo;'; // Dùng icon <<
+                                }
+                            });
+                        }
+
+                        // Thêm một checkpoint hotspot
+                        scenes[sceneId].hotSpots.push({
+                            pitch: 10,  // Vị trí điểm kiểm tra trên trục pitch
+                            yaw: 45,   // Vị trí điểm kiểm tra trên trục yaw
+                            type: 'scene',
+                            sceneId: `checkpointScene`, // ID cho cảnh checkpoint
+                            cssClass: 'custom-hotspot',
+                            createTooltipFunc: (hotspot) => {
+                                hotspot.innerHTML = 'Checkpoint'; // Tên tooltip
+                            }
+                        });
+
+                        if (Object.keys(scenes).length === files.length) {
+                            initializeViewer();
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        });
+
+        function initializeViewer() {
+            viewer = pannellum.viewer('panorama', {
+                default: {
+                    firstScene: 'scene1',
+                    sceneFadeDuration: 1000,
+                    yaw: 0 // Đặt góc nhìn mặc định để đảm bảo thấy hai hotspot
+                },
+                scenes: scenes
+            });
+        }
+
+        function clearImages() {
+            if (viewer) {
+                viewer.destroy();
+                viewer = null;
+            }
+            Object.keys(scenes).forEach(key => delete scenes[key]);
+            document.getElementById('imageUpload').value = '';
+            document.getElementById('panorama').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

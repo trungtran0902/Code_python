@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyển đổi tọa độ WGS-84 sang VN-2000</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.2/proj4.js"></script>
+</head>
+<body>
+  <h1>Chuyển đổi tọa độ từ WGS-84 sang VN-2000</h1>
+
+  <label for="latitude">Vĩ độ (WGS-84): </label>
+  <input type="text" id="latitude" placeholder="VD: 9.9429" /><br><br>
+
+  <label for="longitude">Kinh độ (WGS-84): </label>
+  <input type="text" id="longitude" placeholder="VD: 106.3541" /><br><br>
+
+  <label for="centralMeridian">Kinh tuyến trục VN-2000 (độ): </label>
+  <input type="text" id="centralMeridian" placeholder="VD: 105.5" /><br><br>
+
+  <button onclick="convertCoordinates()">Chuyển đổi</button><br><br>
+
+  <h3>Kết quả:</h3>
+  <p id="result"></p>
+
+  <script>
+    function convertCoordinates() {
+      // Lấy giá trị nhập từ các ô input
+      const latitude = parseFloat(document.getElementById('latitude').value);
+      const longitude = parseFloat(document.getElementById('longitude').value);
+      const centralMeridian = parseFloat(document.getElementById('centralMeridian').value);
+
+      // Kiểm tra dữ liệu hợp lệ
+      if (isNaN(latitude) || isNaN(longitude) || isNaN(centralMeridian)) {
+        alert('Vui lòng nhập tất cả các tọa độ và kinh tuyến trục hợp lệ!');
+        return;
+      }
+
+      // Định nghĩa hệ tọa độ VN-2000 với kinh tuyến trục do người dùng nhập
+      const projWGS84 = '+proj=longlat +datum=WGS84 +no_defs'; // Hệ WGS-84
+      const projVN2000 = `+proj=tmerc +lat_0=0 +lon_0=${centralMeridian} +k=1.0 +x_0=500000 +y_0=0 +datum=WGS84 +units=m +no_defs`; // VN-2000 với kinh tuyến trục
+
+      // Chuyển đổi tọa độ từ WGS-84 sang VN-2000
+      const coordsWGS84 = [longitude, latitude]; // WGS-84: [longitude, latitude]
+      const coordsVN2000 = proj4(projWGS84, projVN2000, coordsWGS84);
+
+      // Hiển thị kết quả chuyển đổi (tọa độ VN-2000)
+      const result = `Tọa độ VN-2000: X = ${coordsVN2000[0].toFixed(2)} m, Y = ${coordsVN2000[1].toFixed(2)} m`;
+      document.getElementById('result').textContent = result;
+    }
+  </script>
+</body>
+</html>

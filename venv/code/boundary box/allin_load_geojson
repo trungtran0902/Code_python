@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Polygon – Boundary Box – GeoJSON Import</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Leaflet Draw -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <style>
+    #map { height: 750px; width: 100%; }
+    .btn {
+      background:#fff;border:1px solid #ccc;padding:8px 10px;cursor:pointer;margin-right:6px
+    }
+    #downloadBtn, #logBtn {
+      position: absolute; right: 10px; z-index: 1000;
+      background: #fff; padding: 10px; border: 1px solid #ccc; cursor: pointer;
+    }
+    #downloadBtn { top: 10px; }
+    #logBtn { top: 50px; }
+    #dropHint {
+      position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+      background:rgba(255,255,255,.95); padding:16px 20px; border:1px dashed #aaa; border-radius:8px;
+      display:none; z-index:1200; text-align:center;
+    }
+    form, h2 { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h2>Polygon and Boundary Box Drawing</h2>
+
+  <button id="downloadBtn">Download GeoJSON</button>
+  <button id="logBtn">Log Polygon Bounding Box</button>
+
+  <form id="bboxForm">
+    <label for="coordinates">BBox (minLon,minLat,maxLon,maxLat):</label>
+    <input type="text" id="coordinates" placeholder="104.3124,21.5067,105.7462,23.3902" required />
+    <button type="submit" class="btn">Draw Boundary Box</button>
+  </form>
+
+  <button id="clearBoxesBtn" class="btn">Clear Boundary Boxes</button>
+  <button id="clearAllBtn" class="btn">Clear ALL Layers</button>
+
+  <!-- Import controls -->
+  <button id="importBtn" class="btn">Import GeoJSON</button>
+  <input id="fileInput" type="file" accept=".geojson,.json,application/geo+json" style="display:none" />
+  <span style="opacity:.7">Bạn cũng có thể kéo-thả file GeoJSON vào bản đồ</span>
+
+  <div id="map"></div>
+  <div id="dropHint">Thả file GeoJSON vào đây để import</div>
+
+  <script>
+    // --- Map ---
+    const map = L.map('map').setView([10.762622, 106.660172], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 20, attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // FeatureGroup để edit/export tất cả layer
+    const drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+
+    // Draw controls
+    const drawControl = new L.Control.Draw({
+      edit: { featureGroup: drawnItems },
+      draw: {
+        polyline: true,
+        circle: false,
+        circlemarker: false,
+        marker: true,
+        polygon: { allowIntersection: false, showArea: true },
+        rectangle: { shapeOptions: { weight: 1 } }
+      }
+    });
+    map.addControl(drawControl);
+
+    map.on('draw:created', (e) => { drawnItems.addLayer(e.layer); });
+
+    // --- Export GeoJSON ---
+    function downloadGeoJSON() {
+      const data = drawnItems.toGeoJSON();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href = url; a.download = 'data.geojson';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+    document.getElementById('downloadBtn').addEventListener('click', downloadGeoJSON);
+
+    // --- BBox helpers ---
+    function boundsToBbox(bounds) {
+      const sw = bounds.getSouthWest();
+      const ne = bounds.getNorthEast();
+      return {
+        minLon: sw.lng.toFixed(6),
+        minLat: sw.lat.toFixed(6),
+        maxLon: ne.lng.toFixed(6),
+        maxLat: ne.lat.toFixed(6)
+      };
+    }
+    function logPolygonBoundingBox() {
+      drawnItems.eachLayer(function(layer) {
+        if (layer.getBounds) {
+          const bbox = boundsToBbox(layer.getBounds());
+          console.log('Bounding Box:', bbox);
+          document.getElementById('coordinates').value =
+            `${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`;
+        }
+      });
+    }
+    document.getElementById('logBtn').addEventListener('click', logPolygonBoundingBox);
+
+    function drawBoundaryBox(minLat, minLon, maxLat, maxLon) {
+      const bounds = L.latLngBounds([ [minLat, minLon], [maxLat, maxLon] ]);
+      const rectangle = L.rectangle(bounds, { weight: 1 });
+      drawnItems.addLayer(rectangle);
+      map.fitBounds(bounds, { padding: [20, 20] });
+    }
+    function parseAndNormalizeBbox(str) {
+      const parts = str.split(',').map(s => parseFloat(s.trim()));
+      if (parts.length !== 4 || parts.some(n => Number.isNaN(n))) return null;
+      let [minLon, minLat, maxLon, maxLat] = parts;
+      if (minLon > maxLon) [minLon, maxLon] = [maxLon, minLon];
+      if (minLat > maxLat) [minLat, maxLat] = [maxLat, minLat];
+      if (minLat < -90 || maxLat > 90 || minLon < -180 || maxLon > 180) return null;
+      return { minLon, minLat, maxLon, maxLat };
+    }
+    document.getElementById('bboxForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const raw = document.getElementById('coordinates').value;
+      const bbox = parseAndNormalizeBbox(raw);
+      if (!bbox) return alert('Sai định dạng. Dùng: minLon,minLat,maxLon,maxLat');
+      drawBoundaryBox(bbox.minLat, bbox.minLon, bbox.maxLat, bbox.maxLon);
+    });
+
+    // Clear chỉ các Rectangle (BBox)
+    document.getElementById('clearBoxesBtn').addEventListener('click', () => {
+      const toRemove = [];
+      drawnItems.eachLayer(l => { if (l instanceof L.Rectangle) toRemove.push(l); });
+      toRemove.forEach(l => drawnItems.removeLayer(l));
+    });
+
+    // Clear tất cả layer (import + vẽ tay)
+    document.getElementById('clearAllBtn').addEventListener('click', () => {
+      drawnItems.clearLayers();
+    });
+
+    // =========================
+    //   IMPORT GEOJSON (FILE)
+    // =========================
+
+    // Nút mở file chooser
+    const importBtn = document.getElementById('importBtn');
+    const fileInput = document.getElementById('fileInput');
+    importBtn.addEventListener('click', () => fileInput.click());
+
+    // Đọc file & load vào map
+    fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      try {
+        await loadGeoJSONFile(file);
+      } catch (err) {
+        console.error(err);
+        alert('Không thể đọc file GeoJSON. Hãy kiểm tra định dạng nội dung.');
+      } finally {
+        // reset để chọn lại cùng tên file lần sau vẫn kích hoạt change
+        fileInput.value = '';
+      }
+    });
+
+    // Hỗ trợ kéo-thả vào map
+    const mapContainer = map.getContainer();
+    const dropHint = document.getElementById('dropHint');
+
+    ['dragenter','dragover'].forEach(evt => {
+      mapContainer.addEventListener(evt, (e) => {
+        e.preventDefault(); e.stopPropagation();
+        dropHint.style.display = 'block';
+      });
+    });
+    ['dragleave','drop'].forEach(evt => {
+      mapContainer.addEventListener(evt, (e) => {
+        e.preventDefault(); e.stopPropagation();
+        if (evt === 'drop') {
+          const files = e.dataTransfer.files;
+          if (files && files.length) {
+            loadGeoJSONFile(files[0]).catch(err => {
+              console.error(err); alert('Không thể đọc file GeoJSON.');
+            });
+          }
+        }
+        dropHint.style.display = 'none';
+      });
+    });
+
+    // Hàm đọc & load file GeoJSON
+    async function loadGeoJSONFile(file) {
+      if (!/(\.geojson|\.json)$/i.test(file.name) && file.type !== 'application/geo+json') {
+        throw new Error('File không phải GeoJSON');
+      }
+      const text = await file.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        throw new Error('JSON không hợp lệ');
+      }
+      loadGeoJSONData(data, { fit: true });
+    }
+
+    // =========================
+    //   LOAD GEOJSON (OBJECT)
+    // =========================
+    // Thêm vào drawnItems, style đơn giản, fit bounds
+    function loadGeoJSONData(geojson, options = { fit: true }) {
+      // Kiểm tra tối thiểu
+      if (!geojson || (typeof geojson !== 'object')) {
+        alert('GeoJSON không hợp lệ'); return;
+      }
+
+      // L.geoJSON sẽ tự xử lý Feature, FeatureCollection, Geometry
+      const layer = L.geoJSON(geojson, {
+        onEachFeature: (feature, layer) => {
+          // popup nhanh để xem properties
+          if (feature && feature.properties) {
+            layer.bindPopup(`<pre style="margin:0;max-height:200px;overflow:auto">${escapeHtml(JSON.stringify(feature.properties, null, 2))}</pre>`);
+          }
+        },
+        // style nhẹ cho Polygon/Line; marker mặc định cho Point
+        style: () => ({ weight: 1 })
+      });
+
+      if (!layer) {
+        alert('Không tạo được layer từ GeoJSON'); return;
+      }
+
+      drawnItems.addLayer(layer);
+
+      // Fit bounds nếu có thể
+      try {
+        const b = layer.getBounds?.();
+        if (options.fit && b && b.isValid && b.isValid()) {
+          map.fitBounds(b, { padding: [20, 20] });
+        }
+      } catch (e) {
+        console.warn('Không thể fitBounds:', e);
+      }
+    }
+
+    // Helper: escape HTML trong popup
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'",'&#039;');
+    }
+
+    // Optional: scale
+    L.control.scale().addTo(map);
+  </script>
+</body>
+</html>

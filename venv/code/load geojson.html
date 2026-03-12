@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map4D</title>
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://api.map4d.vn/sdk/map/js?version=2.6&key=93d393d0f6507ee00b62fe01db7430fa&callback=initMap"></script>
+  <script>
+    let map;
+
+    function initMap() {
+      // Tạo bản đồ Map4D
+      map = new map4d.Map('map', {
+        center: [105.8542, 21.0285], // Tọa độ trung tâm (Hà Nội)
+        zoom: 10
+      });
+
+      // Sau khi bản đồ đã được load xong, bạn có thể thêm dữ liệu GeoJSON nếu cần.
+      // Ví dụ: Gọi một hàm tải GeoJSON hoặc xử lý thêm.
+      loadGeoJSONData();
+    }
+
+    // Hàm tải dữ liệu GeoJSON
+    function loadGeoJSONData() {
+      // Dữ liệu GeoJSON mẫu
+      const geojsonData = {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [105.8542, 21.0285]
+            },
+            "properties": {
+              "name": "Điểm 1"
+            }
+          },
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [105.8542, 21.0285],
+                  [105.8600, 21.0285],
+                  [105.8600, 21.0345],
+                  [105.8542, 21.0345],
+                  [105.8542, 21.0285]
+                ]
+              ]
+            },
+            "properties": {
+              "name": "Khu vực"
+            }
+          }
+        ]
+      };
+
+      // Thêm GeoJSON vào bản đồ
+      const geojsonLayer = map.geojson(geojsonData);
+
+      // Tùy chỉnh kiểu hiển thị cho GeoJSON (nếu cần)
+      geojsonLayer.setStyle({
+        color: 'blue',
+        weight: 2,
+        fillColor: 'lightblue',
+        fillOpacity: 0.4
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Overlay on Image</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+        #image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        #map {
+            position: absolute;
+            bottom: 10px; /* Adjust as needed */
+            left: 10px; /* Adjust as needed */
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .text-overlay {
+            position: absolute;
+            bottom: 10px; /* Adjust to align with the map */
+            left: 180px; /* Adjust to position next to the map */
+            font-size: 16px;
+            font-family: Arial;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 7px;
+            backdrop-filter: blur(5px);
+        }
+        .text-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .text-line {
+            margin-bottom: 10px;
+        }
+        #downloadButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #downloadButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="image" src="Picture1.jpg" alt="Image">
+        <div id="map"></div>
+     
+        <div class="text-overlay">   
+            <p class="text-line">Quốc Lộ 14, Tân Bình, Đồng Xoài, Bình Phước, Việt Nam</p>
+            <p class="text-line">Lat: 11.526982286081594 </p>
+            <p class="text-line">Long: 106.87978247929792</p>
+            <p class="text-line">02/05/24  CH GMT +07:00</p>
+        </div>
+    </div>
+    <button id="downloadButton">Download Image</button>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Marker coordinates
+        var lat = 11.526982286081594;
+        var lng = 106.87978247929792;
+
+        // Initialize map
+        var map = L.map('map').setView([lat, lng], 18);
+
+        // Add map tile layer
+        L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Add marker to map
+        var marker = L.marker([lat, lng]).addTo(map);
+
+        // Download image function
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            var image = document.getElementById('image');
+            var link = document.createElement('a');
+            link.href = image.src;
+            link.download = 'Picture1.jpg';
+            link.click();
+        });
+    </script>
+</body>
+</html>

@@ -34,6 +34,7 @@ def upload_place(row):
     name = str(row.get("Name", "")).strip()
     address = str(row.get("Address", "")).strip()
     oldAddress = str(row.get("OldAddress", "")).strip()
+    phone = str(row.get("Phone", "")).strip()
 
     lat = float(row.get("Latitude", 0.0))
     lng = float(row.get("Longitude", 0.0))
@@ -53,7 +54,7 @@ def upload_place(row):
         "photos": [],
         "startDate": datetime.now(UTC).isoformat(),
         "endDate": datetime.now(UTC).isoformat(),
-        "phoneNumber": None,
+        "phoneNumber": phone or None,
         "website": None,
         "businessHours": [],
         "geometry": {
@@ -130,6 +131,7 @@ if uploaded_file:
                 "message": message,
                 "name": row.get("Name"),
                 "address": row.get("Address"),
+                "phone": row.get("Phone"),
                 "lat": row.get("Latitude"),
                 "lng": row.get("Longitude"),
                 "tags": row.get("Tags")

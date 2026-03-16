@@ -26,7 +26,7 @@ headers = {
 # ===== FILE UPLOAD =====
 st.markdown("### Input file format")
 st.info(
-    "Excel file needs these columns: Name, Address, OldAddress, Latitude, "
+    "Excel file cần có các cột sau: Name, Address, OldAddress, Latitude, "
     "Longitude, Type, Tags, Phone"
 )
 
@@ -168,6 +168,29 @@ if uploaded_file:
         st.success("✅ Import completed")
 
         st.dataframe(result_df)
+
+        success_df = result_df[result_df["status"] == "OK"].copy()
+
+        if not success_df.empty:
+            st.subheader("Imported records")
+            st.write(f"Successful imports: {len(success_df)}/{total}")
+            st.dataframe(
+                success_df[["id", "name", "address", "phone", "lat", "lng", "tags"]],
+                use_container_width=True
+            )
+
+            st.text("Created IDs")
+            st.code("\n".join(success_df["id"].fillna("NO_ID").astype(str).tolist()))
+
+            print("Import completed successfully.")
+            print("Created records:")
+            print(
+                success_df[["id", "name", "address", "phone", "lat", "lng", "tags"]]
+                .to_string(index=False)
+            )
+        else:
+            st.warning("Import finished but no records were created successfully.")
+            print("Import finished but no records were created successfully.")
 
         csv_buffer = io.StringIO()
         result_df.to_csv(csv_buffer, index=False)

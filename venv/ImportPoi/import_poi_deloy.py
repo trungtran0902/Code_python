@@ -128,7 +128,14 @@ def upload_place(row):
 # ===== PROCESS FILE =====
 if uploaded_file:
 
-    df = pd.read_excel(uploaded_file, dtype={"Phone": str})
+    try:
+        df = pd.read_excel(uploaded_file, dtype={"Phone": str})
+    except ImportError:
+        st.error(
+            "Missing Excel dependency in deployment environment. "
+            "Please add 'openpyxl' to requirements.txt."
+        )
+        st.stop()
 
     st.subheader("📄 Preview data")
     st.dataframe(df)

@@ -1,0 +1,248 @@
+time,status,id,message,name,address,phone,lat,lng,tags
+13/03/2026 9:08,OK,69b3d3ff9e268fedeabacbdd,Uploaded,Dimsum & Mì HongKong - 港式茶餐厅,"28 Phan Phú Tiên, Phường Chợ Lớn, Thành phố Hồ Chí Minh, Việt Nam",,10.7519372,106.6656543,foodyhcm
+13/03/2026 9:08,OK,69b3d4009e268fedeabacbde,Uploaded,Chang Hi - Chè Ngon Sáng Tạo - Nơ Trang Long,"107 Nơ Trang Long, Phường Bình Lợi Trung, Thành phố Hồ Chí Minh",,10.810574,106.695109,foodyhcm
+13/03/2026 9:08,OK,69b3d4019e268fedeabacbdf,Uploaded,Chè Thái Út Lyly,"384 Nguyễn Trọng Tuyển, Phường Tân Sơn Hoà, Thành phố Hồ Chí Minh",,10.798682,106.661349,foodyhcm
+13/03/2026 9:08,OK,69b3d4029e268fedeabacbe0,Uploaded,Trà Sữa Mixue - Khu Đô Thị Vinhomes Grand Park,"Vinhomes Grand Park, Phường Long Bình, Thành phố Hồ Chí Minh, Việt Nam",,10.8432695,106.8371114,foodyhcm
+13/03/2026 9:08,OK,69b3d4039e268fedeabacbe1,Uploaded,港式甜品店 Trôi Nước HongKong - ChaChaanTeng,"28 Phan Phú Tiên, Phường Chợ Lớn, Thành phố Hồ Chí Minh, Việt Nam",,10.7519372,106.6656543,foodyhcm
+13/03/2026 9:08,OK,69b3d4049e268fedeabacbe2,Uploaded,Đậu Hủ Cá Viên HongKong 港式鱼丸豆腐 - ChaChaanTeng,"28 Phan Phú Tiên, Phường Chợ Lớn, Thành phố Hồ Chí Minh, Việt Nam",,10.7519372,106.6656543,foodyhcm
+13/03/2026 9:08,OK,69b3d4059e268fedeabacbe3,Uploaded,American Hotdog,"28 Phan Phú Tiên, Phường Chợ Lớn, Thành phố Hồ Chí Minh, Việt Nam",902915908,10.7519372,106.6656543,foodyhcm
+13/03/2026 9:08,OK,69b3d4069e268fedeabacbe4,Uploaded,Kaya Toast Nướng - Cá Viên 咖椰吐司-鱼丸 & ChaChaanTeng,"28 Phan Phú Tiên, Phường Chợ Lớn, Thành phố Hồ Chí Minh, Việt Nam",,10.7519372,106.6656543,foodyhcm
+13/03/2026 9:08,OK,69b3d4069e268fedeabacbe5,Uploaded,Xôi Cua Kim Thư - Hado Centrosa,"376/48 Nguyễn Đình Chiểu, Phường Bàn Cờ, Thành phố Hồ Chí Minh",,10.7745525,106.684935,foodyhcm
+13/03/2026 9:08,OK,69b3d4079e268fedeabacbe6,Uploaded,Bánh Tráng Tóp Mỡ Da Giòn 116C - Kênh Nước Đen,"Phường Bình Hưng Hoà, Thành phố Hồ Chí Minh",,10.7912875,106.6062308,foodyhcm
+13/03/2026 9:08,OK,69b3d4089e268fedeabacbe7,Uploaded,Bà Xã Vegan - Nhà Hàng Chay - Trương Định,"107K Trương Định, Phường Xuân Hoà, Thành phố Hồ Chí Minh",,10.77878,106.688611,foodyhcm
+13/03/2026 9:08,OK,69b3d4099e268fedeabacbe8,Uploaded,Cơm Gà Hải Nam - Ngô Quyền,"116 Đ. Ng. Quyền, Phường Chợ Lớn, Thành phố Hồ Chí Minh, Việt Nam",,10.755209,106.666365,foodyhcm
+13/03/2026 9:08,OK,69b3d40a9e268fedeabacbe9,Uploaded,"Highlands Coffee - Trà, Cà Phê & Bánh - Phan Huy Ích","399 Phan Huy Ích, Phường An Hội Tây, Thành phố Hồ Chí Minh",,10.843824,106.63978,foodyhcm
+13/03/2026 9:08,OK,69b3d40b9e268fedeabacbea,Uploaded,"Cơm Gà, Cháo, Miến Gỏi Gà Ta Tường Vy - Nguyễn Văn Quá","Tổ 9 Kp3, 136B Nguyễn Văn Quá, Phường Đông Hưng Thuận, Thành phố Hồ Chí Minh, Việt Nam",,10.8459266,106.6329307,foodyhcm
+13/03/2026 9:08,OK,69b3d40c9e268fedeabacbeb,Uploaded,Cơm Gà Đông Nguyên - Hà Huy Tập,"53 Hà Huy Tập, Phường Tân Hưng, Thành phố Hồ Chí Minh",,10.726334,106.710351,foodyhcm
+13/03/2026 9:08,OK,69b3d40d9e268fedeabacbec,Uploaded,Bánh Cuốn Thiên Hương - 3 Tháng 2,"St, 181 3/2, Phường Vườn Lài, Thành phố Hồ Chí Minh, Việt Nam",(028) 38 323 396,10.7722968,106.6754996,foodyhcm
+13/03/2026 9:08,OK,69b3d40d9e268fedeabacbed,Uploaded,Bánh Bò Thốt Nốt COCOCake - Lò Bánh Minh Khai,"18A/29 Nguyễn Thị Minh Khai, Phường Sài Gòn, Thành phố Hồ Chí Minh",,10.785945,106.700825,foodyhcm
+13/03/2026 9:08,OK,69b3d40e9e268fedeabacbee,Uploaded,Bánh Mì Chả Cá - Bùi Thị Xuân - Chi Nhánh 1,"Phường Bến Thành, Thành phố Hồ Chí Minh",0938 088 820,10.768753,106.687481,foodyhcm
+13/03/2026 9:08,OK,69b3d40f9e268fedeabacbef,Uploaded,Cháo Sườn 295 - Nhà Thờ Tân Định,"295 Hai Bà Trưng, Phường Xuân Hoà, Thành phố Hồ Chí Minh",0931 810 974 - 01686 753 725 ,10.7890979,106.690211,foodyhcm
+13/03/2026 9:08,OK,69b3d4109e268fedeabacbf0,Uploaded,Bún Mắm Cô Tư Miền Tây - Bùi Minh Trực,"112/20 Bùi Minh Trực, Phường Bình Đông, Thành phố Hồ Chí Minh, Việt Nam",,10.73954,106.659831,foodyhcm
+13/03/2026 9:08,OK,69b3d4119e268fedeabacbf1,Uploaded,Xíu - Mì Cay - Tôn Đản,"318 Tôn Đản, Phường Vĩnh Hội, Thành phố Hồ Chí Minh, Việt Nam",,10.7557048,106.7057312,foodyhcm
+13/03/2026 9:08,OK,69b3d4119e268fedeabacbf2,Uploaded,Hoàng Ty Group - Đặc Sản Trảng Bàng - Hoa Mai,"32 Hoa Mai, Phường Cầu Kiệu, Thành phố Hồ Chí Minh",1900 0091 - 3,10.797457,106.687044,foodyhcm
+13/03/2026 9:08,OK,69b3d4129e268fedeabacbf3,Uploaded,Kim Hương - Bún Bò Huế - Điện Biên Phủ,"568 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh",,10.799852,106.716809,foodyhcm
+13/03/2026 9:08,OK,69b3d4139e268fedeabacbf4,Uploaded,Ngõ 8 - Trà Chanh & Lẩu Riêu Cua Đồng - Cù Lao,"8 Cù Lao, Phường Cầu Kiệu, Thành phố Hồ Chí Minh",0972 620 333,10.7962235,106.6897665,foodyhcm
+13/03/2026 9:08,OK,69b3d4149e268fedeabacbf5,Uploaded,Cơm Niêu Phương Nam - Cơm Văn Phòng,"Phường Phú Thạnh, Thành phố Hồ Chí Minh",,10.7735372,106.6263927,foodyhcm
+13/03/2026 9:08,OK,69b3d4159e268fedeabacbf6,Uploaded,San Fu Lou - Ẩm Thực Quảng Đông - Lê Lai,"Tầng Trệt, AB Tower, 76A Lê Lai, Phường Bến Thành, Thành phố Hồ Chí Minh",(028) 38 239 513,10.770537,106.694305,foodyhcm
+13/03/2026 9:08,OK,69b3d4169e268fedeabacbf7,Uploaded,Bún Cá Nha Trang - Đường Số 79,"122 Đường Số 79, Phường Tân Hưng, Thành phố Hồ Chí Minh",911513482,10.740499,106.707329,foodyhcm
+13/03/2026 9:08,OK,69b3d4169e268fedeabacbf8,Uploaded,Bê Thui Lẩu Bò - Dê Tuấn Râu,"101 Phạm Văn Chiêu, Phường An Hội Tây, Thành phố Hồ Chí Minh, Việt Nam",,10.8463203,106.6439778,foodyhcm
+13/03/2026 9:08,OK,69b3d4179e268fedeabacbf9,Uploaded,Xôi Gà Cô Vy,"1c/2 duong so 22, Phường Phước Long, Thành phố Hồ Chí Minh",,10.829832,106.776524,foodyhcm
+13/03/2026 9:08,OK,69b3d4189e268fedeabacbfa,Uploaded,Sinh Tố Tao Đàn - Hoàng Diệu,"Phường Khánh Hội, Thành phố Hồ Chí Minh",,10.7627859,106.7028027,foodyhcm
+13/03/2026 9:08,OK,69b3d4199e268fedeabacbfb,Uploaded,"Cô Liên - Gỏi Cuốn, Bò Bía & Bún Mắm Nêm","1906A/9 Hồng Lạc, Phường Bảy Hiền, Thành phố Hồ Chí Minh, Việt Nam",,10.785211,106.648649,foodyhcm
+13/03/2026 9:08,OK,69b3d41a9e268fedeabacbfc,Uploaded,Cơm Tấm Hoàng Hoa - AEON Citimart Cao Thắng,"AEON Citimart, 96 Cao Thắng, Phường Bàn Cờ, Thành phố Hồ Chí Minh",,10.771484,106.68067,foodyhcm
+13/03/2026 9:08,OK,69b3d41a9e268fedeabacbfd,Uploaded,"Cơm Gà, Cháo, Miến Gỏi Gà Ta Tường Vy - Phan Văn Hớn","49/2F Phan Văn Hớn, Xã Bà Điểm, Thành phố Hồ Chí Minh",0908 790 080,10.835096,106.606083,foodyhcm
+13/03/2026 9:08,OK,69b3d41b9e268fedeabacbfe,Uploaded,Cơm Lam Gà Nướng - Phan Văn Trị,"957 Phan Văn Trị, Phường Hạnh Thông, Thành phố Hồ Chí Minh, Việt Nam",,10.8299107,106.6802047,foodyhcm
+13/03/2026 9:08,OK,69b3d41c9e268fedeabacbff,Uploaded,"Highlands Coffee - Trà, Cà Phê & Bánh - Hai Bà Trưng","265 Hai Bà Trưng, Phường Xuân Hoà, Thành phố Hồ Chí Minh",(028) 38 204 333,10.787835,106.691793,foodyhcm
+13/03/2026 9:08,OK,69b3d41d9e268fedeabacc00,Uploaded,Cơm Nhà - Cơm & Lẩu Gà Lá É - Phan Văn Trị,"RMHM+28W, buôn BLing, Phường Hạnh Thông, Thành phố Hồ Chí Minh, Việt Nam",,10.8275848,106.6833013,foodyhcm
+13/03/2026 9:08,OK,69b3d41e9e268fedeabacc01,Uploaded,"Thanh Xuân - Ăn Vặt, Bánh Tráng Trộn & Bánh Bột Lọc - Lê Thị Hồng","28/25 Lê Thị Hồng, Phường Gò Vấp, Thành phố Hồ Chí Minh",,10.832925,106.678725,foodyhcm
+13/03/2026 9:08,OK,69b3d41f9e268fedeabacc02,Uploaded,Nem Nướng Nha Trang Since 1982 - Gò Vấp,"50/4/2 Quang Trung, Phường Gò Vấp, Thành phố Hồ Chí Minh",,10.8274399,106.6780486,foodyhcm
+13/03/2026 9:08,OK,69b3d41f9e268fedeabacc03,Uploaded,Bún Cá Nha Trang - Nem Nướng Nha Trang Yến - An Dương Vương,"Phường Chợ Quán, Thành phố Hồ Chí Minh",(028) 62 716 149 - 0949 992 626,10.7590747,106.677307,foodyhcm
+13/03/2026 9:08,OK,69b3d4209e268fedeabacc04,Uploaded,Long Hoa - Hủ Tiếu Mì,"145 Lê Niệm, Phường Phú Thạnh, Thành phố Hồ Chí Minh, Việt Nam",,10.78029,106.62476,foodyhcm
+13/03/2026 9:08,OK,69b3d4219e268fedeabacc05,Uploaded,Phúc Long Phổ Quang,"Phường Đức Nhuận, Thành phố Hồ Chí Minh",,10.808831,106.670971,foodyhcm
+13/03/2026 9:08,OK,69b3d4229e268fedeabacc06,Uploaded,Mì Chú Tắc - Bà Huyện Thanh Quang,"Phường Xuân Hoà, Thành phố Hồ Chí Minh",(028) 39 318 966,10.7766612,106.6888085,foodyhcm
+13/03/2026 9:08,OK,69b3d4239e268fedeabacc07,Uploaded,Gà Rán & Burger Lotteria - Aeon Mall Bình Tân,"Phường An Lạc, Thành phố Hồ Chí Minh",1800 8099,10.7428731,106.6119205,foodyhcm
+13/03/2026 9:08,OK,69b3d4249e268fedeabacc08,Uploaded,Trà Sữa Hi Tea - Quận 1,"11 Phan Văn Trường, Phường Bến Thành, Thành phố Hồ Chí Minh, Việt Nam",,10.7658982,106.6970195,foodyhcm
+13/03/2026 9:08,OK,69b3d4249e268fedeabacc09,Uploaded,Lươn Xứ Nghệ - Củ Nghệ Quán,"672 Lê Đức Thọ, Phường An Hội Đông, Thành phố Hồ Chí Minh, Việt Nam",,10.847022,106.669946,foodyhcm
+13/03/2026 9:08,OK,69b3d4269e268fedeabacc0a,Uploaded,"Quán Hoa - Bún Bò Huế, Mì Quảng & Bò Kho","70 Tân Khai, Phường Minh Phụng, Thành phố Hồ Chí Minh",,10.758441,106.656734,foodyhcm
+13/03/2026 9:08,OK,69b3d4279e268fedeabacc0b,Uploaded,"Highlands Coffee - Trà, Cà Phê & Bánh - Phan Xích Long","193 Phan Xích Long, Phường Cầu Kiệu, Thành phố Hồ Chí Minh",(028) 35 171 777,10.798531,106.687581,foodyhcm
+13/03/2026 9:08,OK,69b3d4279e268fedeabacc0c,Uploaded,Gong Cha - Trà & Cà Phê - Bình Tân,"KDC Bình Trị Đông, Tiểu Khu 1, 385 Đường Số 7, Phường An Lạc, Thành phố Hồ Chí Minh",,10.751792,106.608728,foodyhcm
+13/03/2026 9:08,OK,69b3d4289e268fedeabacc0d,Uploaded,Diệu - Bún Chả Cá Sứa Nha Trang - Lê Văn Quới,"132 Lê Văn Quới, Phường Bình Trị Đông, Thành phố Hồ Chí Minh",,10.775138,106.617199,foodyhcm
+13/03/2026 9:08,OK,69b3d4299e268fedeabacc0e,Uploaded,Trà Sữa O&B - Trà Sữa - Minh Phụng,"4 Nguyễn Đình Chi, Phường Bình Tây, Thành phố Hồ Chí Minh, Việt Nam",,10.7503,106.64229,foodyhcm
+13/03/2026 9:08,OK,69b3d42a9e268fedeabacc0f,Uploaded,Hancook Korean Food - Ẩm Thực Hàn Quốc - Đường 3 Tháng 2,"181/2 3 Tháng 2, Phường Vườn Lài, Thành phố Hồ Chí Minh",(028)6 686 3438,10.772004,106.675128,foodyhcm
+13/03/2026 9:08,OK,69b3d42b9e268fedeabacc10,Uploaded,Dương Thành - Ẩm Thực Trung Hoa,"Phường Minh Phụng, Thành phố Hồ Chí Minh",(028) 39 691 778 - (028) 39 601 003,10.7558213,106.6466314,foodyhcm
+13/03/2026 9:09,OK,69b3d42c9e268fedeabacc11,Uploaded,Bún Đậu Mắm Tôm Hạnh Phúc,"220/17 hoang hoa tham, Phường Bình Lợi Trung, Thành phố Hồ Chí Minh",,10.8094572,106.6858798,foodyhcm
+13/03/2026 9:09,OK,69b3d42c9e268fedeabacc12,Uploaded,Hoàng Ty Group - Đặc Sản Trảng Bàng - Mạc Đĩnh Chi,"38 Mạc Đĩnh Chi, Phường Tân Định, Thành phố Hồ Chí Minh",,10.7869267,106.6972671,foodyhcm
+13/03/2026 9:09,OK,69b3d42d9e268fedeabacc13,Uploaded,Sơn Nga Phở Gà - Nguyễn Đình Chiểu,"46-48 Nguyễn Đình Chiểu, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam",0904 755 755 - 0989 046 462 - 0907782956,10.78997,106.700914,foodyhcm
+13/03/2026 9:09,OK,69b3d42e9e268fedeabacc14,Uploaded,Kim Hương - Bún Bò Huế - Phan Huy Ích,"174 Phan Huy Ích, Phường An Hội Tây, Thành phố Hồ Chí Minh, Việt Nam",,10.8336398,106.634595,foodyhcm
+13/03/2026 9:09,OK,69b3d42f9e268fedeabacc15,Uploaded,Chè Khúc Bạch Thanh - Hoàng Sa,"361 Hoàng Sa, Phường Tân Định, Thành phố Hồ Chí Minh, Việt Nam",0917 251 251 - (028) 38 482 286,10.7939002,106.686303,foodyhcm
+13/03/2026 9:09,OK,69b3d4309e268fedeabacc16,Uploaded,Huê Ký Mì Gia - Thuận Kiều,"59C Thuận Kiều, Phường Chợ Lớn, Thành phố Hồ Chí Minh",(028) 38 572 640,10.757098,106.65828,foodyhcm
+13/03/2026 9:09,OK,69b3d4319e268fedeabacc17,Uploaded,Cháo Lòng Chị Thanh - Cô Giang,"47 Cô Giang, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh",0903 184 130,10.764154,106.696181,foodyhcm
+13/03/2026 9:09,OK,69b3d4329e268fedeabacc18,Uploaded,Yến Hương Giang - Bún Bò Huế,"325 Võ Văn Tần, Phường Bàn Cờ, Thành phố Hồ Chí Minh",(028) 62 903 626 - 0946 260 613,10.7713675,106.6856538,foodyhcm
+13/03/2026 9:09,OK,69b3d4349e268fedeabacc19,Uploaded,Cô Gái 77 - Bánh Cuốn Bình Định - Đường 79,"Phường Phước Long, Thành phố Hồ Chí Minh",,10.8339077,106.7701428,foodyhcm
+13/03/2026 9:09,OK,69b3d4359e268fedeabacc1a,Uploaded,Quán Ty - Bún Chả Cá Đà Nẵng,"69 Trần Hưng Đạo, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh",01645 120 437,10.7954322,106.6355135,foodyhcm
+13/03/2026 9:09,OK,69b3d4359e268fedeabacc1b,Uploaded,Hủ Tiếu Chay - Trường Sơn,"49 Trường Sơn, Phường Hoà Hưng, Thành phố Hồ Chí Minh",907002042,10.784922,106.6659767,foodyhcm
+13/03/2026 9:09,OK,69b3d4369e268fedeabacc1c,Uploaded,San Fu Lou - Ẩm Thực Quảng Đông - Vincom Center,"72 Lý Tự Trọng, Phường Sài Gòn, Thành phố Hồ Chí Minh, Việt Nam",,10.7781984,106.7018236,foodyhcm
+13/03/2026 9:09,OK,69b3d4379e268fedeabacc1d,Uploaded,Mến - Bún Chả Cá Sứa Nha Trang - Cách Mạng Tháng 8,"686/1 cach mang thang 8, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh",,10.7875417,106.6637738,foodyhcm
+13/03/2026 9:09,OK,69b3d4389e268fedeabacc1e,Uploaded,Gỏi Đu Đủ Thái - Cậu Hai - Phạm Văn Bạch,"Thành Phố Hồ Chí Minh, Phường 15, Tân Bình, 684 Phạm Văn Bạch, Phường An Hội Tây, Thành phố Hồ Chí Minh, Việt Nam",,10.835342,106.644437,foodyhcm
+13/03/2026 9:09,OK,69b3d4399e268fedeabacc1f,Uploaded,Cháo Vịt Thanh Đa (Gốc Nhà Lá) - Huỳnh Tấn Phát,"Quận 7, Thành Phố Hồ Chí Minh, Tân Thuận Đông, 457 Huỳnh Tấn Phát, Phường Tân Thuận, Thành phố Hồ Chí Minh, Việt Nam",,10.7543025,106.728146,foodyhcm
+13/03/2026 9:09,OK,69b3d43a9e268fedeabacc20,Uploaded,Hoàng Ty - Đặc Sản Trảng Bàng - Tạ Quang Bửu,"821 Tạ Quang Bửu, Phường Chánh Hưng, Thành phố Hồ Chí Minh",0932 284 899,10.735973,106.668775,foodyhcm
+13/03/2026 9:09,OK,69b3d43a9e268fedeabacc21,Uploaded,Bún Ốc Riêu Cua Thanh Hải - Kỳ Đồng,"14/12 Kỳ Đồng, Phường Nhiêu Lộc, Thành phố Hồ Chí Minh",(028) 38 435 785,10.784369,106.681704,foodyhcm
+13/03/2026 9:09,OK,69b3d43b9e268fedeabacc22,Uploaded,Quán Bụi - Authentic Vietnamese Cuisine,"39 Thảo Điền, Phường An Khánh, Thành phố Hồ Chí Minh, Việt Nam",0914 008 835 - 08 3829 1515 ,10.803204,106.738388,foodyhcm
+13/03/2026 9:09,OK,69b3d43c9e268fedeabacc23,Uploaded,Bánh Mì Bà Bảy - Cây Trâm,"273 Cây Trâm, Phường Thông Tây Hội, Thành phố Hồ Chí Minh",0901 392 908,10.84316,106.652085,foodyhcm
+13/03/2026 9:09,OK,69b3d43d9e268fedeabacc24,Uploaded,Cơm Tấm Cây Điệp Long Xuyên,"58C Cao Thắng, Phường Bàn Cờ, Thành phố Hồ Chí Minh",0908 797 259 ,10.769779,106.682582,foodyhcm
+13/03/2026 9:09,OK,69b3d43e9e268fedeabacc25,Uploaded,Kendy - Sữa Hạt Thức Uống Healthy,"78/18 An Dương Vương, Phường An Đông, Thành phố Hồ Chí Minh",,10.75762,106.670648,foodyhcm
+13/03/2026 9:09,OK,69b3d43f9e268fedeabacc26,Uploaded,Cua Phi Phi - Chuẩn Vị Người Hoa - Hoàng Sa,"185B Hoàng Sa, Phường Tân Định, Thành phố Hồ Chí Minh, Việt Nam",,10.7952313,106.6912833,foodyhcm
+13/03/2026 9:09,OK,69b3d43f9e268fedeabacc27,Uploaded,Gà Rán & Burger McDonald’s Vincom Masteri,"Phường An Khánh, Thành phố Hồ Chí Minh",(028) 38 989 888,10.802127,106.740698,foodyhcm
+13/03/2026 9:09,OK,69b3d4409e268fedeabacc28,Uploaded,Cơm Gà Hải Nam - Âu Cơ,"95 - 97 Âu Cơ, Phường Hoà Bình, Thành phố Hồ Chí Minh",(028) 38 650 808 - (028) 38 619 652 ,10.77089,106.650497,foodyhcm
+13/03/2026 9:09,OK,69b3d4419e268fedeabacc29,Uploaded,"Hương Việt - Bánh Bèo, Bánh Bột Lọc & Bánh Nậm","27 Đ. Số 2, Phường Tân Mỹ, Thành phố Hồ Chí Minh, Việt Nam",,10.7049548,106.7279559,foodyhcm
+13/03/2026 9:09,OK,69b3d4429e268fedeabacc2a,Uploaded,Mom’s Chicken - Món Gà Hàn Quốc,"Phường Bến Thành, Thành phố Hồ Chí Minh",(028) 62 959 272,10.7694833,106.6973948,foodyhcm
+13/03/2026 9:09,OK,69b3d4439e268fedeabacc2b,Uploaded,Vỹ Ký - Hủ Tiếu Mì,"491/40 Huỳnh Văn Bánh, Phường Phú Nhuận, Thành phố Hồ Chí Minh",,10.791061,106.669425,foodyhcm
+13/03/2026 9:09,OK,69b3d4439e268fedeabacc2c,Uploaded,Cơm Gà Duy Phương,"198/91 Đoàn Văn Bơ, Phường Khánh Hội, Thành phố Hồ Chí Minh",,10.76142,106.704083,foodyhcm
+13/03/2026 9:09,OK,69b3d4449e268fedeabacc2d,Uploaded,Măm Măm 24H - Cafe & Khoai Lang Mật Đà Lạt,"12/19 hoang hoa tham, Phường Gia Định, Thành phố Hồ Chí Minh",,10.80554,106.69173,foodyhcm
+13/03/2026 9:09,OK,69b3d4459e268fedeabacc2e,Uploaded,Cô Điệp - Nem Nướng Nha Trang - Khánh Hội,"216 Khánh Hội, Phường Khánh Hội, Thành phố Hồ Chí Minh",,10.758868,106.699199,foodyhcm
+13/03/2026 9:09,OK,69b3d4469e268fedeabacc2f,Uploaded,Tần Ký Mì Gia - Phạm Văn Đồng,"308 Phạm Văn Đồng, Phường Hạnh Thông, Thành phố Hồ Chí Minh",0913 121 571,10.8189618,106.689181,foodyhcm
+13/03/2026 9:09,OK,69b3d4479e268fedeabacc30,Uploaded,ATC Kitchen - Kimbap & Mì Tương Đen,"84/5A Bùi Quang Là, Phường An Hội Tây, Thành phố Hồ Chí Minh, Việt Nam",,10.835065,106.63876,foodyhcm
+13/03/2026 9:09,OK,69b3d4489e268fedeabacc31,Uploaded,Bún Quậy Tâm Quán - Phan Văn Trị,"736 Phan Văn Trị, Phường Gò Vấp, Thành phố Hồ Chí Minh",0389 856 780,10.835361,106.665336,foodyhcm
+13/03/2026 9:09,OK,69b3d4499e268fedeabacc32,Uploaded,WOW Cá Nướng - Ếch Nướng,"132 Nguyễn Thái Học, Phường Bến Thành, Thành phố Hồ Chí Minh, Việt Nam",,10.768805,106.695172,foodyhcm
+13/03/2026 9:09,OK,69b3d44a9e268fedeabacc33,Uploaded,Cơm Tấm Bến Tre - Đường Số 1,"272A Đ. Số 1, Phường An Lạc, Thành phố Hồ Chí Minh, Việt Nam",,10.7482254,106.6128084,foodyhcm
+13/03/2026 9:09,OK,69b3d44b9e268fedeabacc34,Uploaded,Tiệm Bánh Gà Ogy - Đỗ Xuân Hợp,"301 Đỗ Xuân Hợp, Phường Phước Long, Thành phố Hồ Chí Minh, Việt Nam",,10.8230515,106.7704947,foodyhcm
+13/03/2026 9:09,OK,69b3d44c9e268fedeabacc35,Uploaded,Gà Rán & Burger Lotteria - Đỗ Xuân Hợp,"B, 282 Hém 445 Phước Long, Phường Phước Long, Thành phố Hồ Chí Minh, Việt Nam",www.lotteria.vn,10.8231249,106.7700372,foodyhcm
+13/03/2026 9:09,OK,69b3d44c9e268fedeabacc36,Uploaded,Bún Quậy Tâm Quán - Lê Văn Lương,"217, 5 Hẻm 380 Lê Văn Lương, Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam",,10.74123,106.7039,foodyhcm
+13/03/2026 9:09,OK,69b3d44d9e268fedeabacc37,Uploaded,Bánh Đúc Nóng D9,"150 Nguyễn Hữu Tiến, Phường Tây Thạnh, Thành phố Hồ Chí Minh, Việt Nam",,10.8123904,106.6249512,foodyhcm
+13/03/2026 9:09,OK,69b3d44e9e268fedeabacc38,Uploaded,Quán Cơm Chay Đại Bi 6,"Phường Bình Tiên, Thành phố Hồ Chí Minh, Việt Nam",0933 493 369,10.743481,106.637868,foodyhcm
+13/03/2026 9:09,OK,69b3d44f9e268fedeabacc39,Uploaded,Busan Korean Food - Món Hàn Quốc - Nguyễn Đình Chiểu,"702 Nguyễn Đình Chiểu, Phường Bàn Cờ, Thành phố Hồ Chí Minh",,10.767793,106.6798746,foodyhcm
+13/03/2026 9:09,OK,69b3d4509e268fedeabacc3a,Uploaded,Bánh Xếp 789 - Gò Dầu,"30/22 Gò Dầu, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh, Việt Nam",,10.796774,106.628165,foodyhcm
+13/03/2026 9:09,ERROR,,Out of range float values are not JSON compliant: nan,"Vịt cay Hong Kong- đường số 21B- Quán ăn tại 36 đường số 21 B,p. Bình Trị Đông B, Quận Bình Tân",Minh Châu - Bia Hơi & Đặc Sản Đồng Quê,,,,foodyhcm
+13/03/2026 9:09,OK,69b3d4509e268fedeabacc3b,Uploaded,Cô Tím - Bún Mắm & Lẩu Mắm,"7/7A Thống Nhất, Phường An Hội Đông, Thành phố Hồ Chí Minh, Việt Nam",,10.8473656,106.6647373,foodyhcm
+13/03/2026 9:09,OK,69b3d4519e268fedeabacc3c,Uploaded,Twelve - Cơm Gà Hải Nam Singapore - Hoàng Diệu,"9-11 Hoàng Diệu, Phường Xóm Chiếu, Thành phố Hồ Chí Minh, Việt Nam",,10.7648337,106.7066706,foodyhcm
+13/03/2026 9:09,OK,69b3d4529e268fedeabacc3d,Uploaded,Gà Cơ Bắp - Chuyên Các Món Gà Ta,"177A Trần Văn Đang, Phường Nhiêu Lộc, Thành phố Hồ Chí Minh, Việt Nam",0937 117 192 - 0915 207 992,10.7845214,106.673231,foodyhcm
+13/03/2026 9:09,OK,69b3d4539e268fedeabacc3e,Uploaded,Lão Mã - Gà Hấp Muối,"418/5 Trần Phú, Phường An Đông, Thành phố Hồ Chí Minh",1900 2042 - (028) 3857 0404 - (028) 2241 7260,10.7528822,106.6676919,foodyhcm
+13/03/2026 9:09,OK,69b3d4559e268fedeabacc3f,Uploaded,Bánh Cuốn Hongkong - Quán Lộc Ký,"145 Phan Đăng Lưu, Phường Cầu Kiệu, Thành phố Hồ Chí Minh, Việt Nam",,10.8020278,106.6834503,foodyhcm
+13/03/2026 9:09,OK,69b3d4569e268fedeabacc40,Uploaded,"Hunter Steak - Steak, Bít Tết & Mỳ Ý - Phan Xích Long","60C Phan Xích Long, Phường Cầu Kiệu, Thành phố Hồ Chí Minh, Việt Nam",,10.7993019,106.6856081,foodyhcm
+13/03/2026 9:09,OK,69b3d4569e268fedeabacc41,Uploaded,Cô Ba Chề - Cơm Tấm Long Xuyên - Nguyễn Xí,"Nguyễn Xí & Hẻm 278, Phường Bình Lợi Trung, Thành phố Hồ Chí Minh, Việt Nam",,10.81886,106.7046,foodyhcm
+13/03/2026 9:09,OK,69b3d4579e268fedeabacc42,Uploaded,Sanh Ký - Hủ Tiếu Mì,"5, 72 Nơ Trang Long, Phường Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam",(028) 38 433 927,10.80773559,106.6953039,foodyhcm
+13/03/2026 9:09,OK,69b3d4589e268fedeabacc43,Uploaded,Há Cảo Kiều Ký - Lão Tử,"Phường Chợ Lớn, Thành phố Hồ Chí Minh",01265 067 095,10.7535776,106.6578075,foodyhcm
+13/03/2026 9:09,OK,69b3d4599e268fedeabacc44,Uploaded,Ánh Hồng - Bún Chả Hàng Mành Hà Nội - Không Chi Nhánh,"31A Mạc Đĩnh Chi, Phường Tân Định, Thành phố Hồ Chí Minh",(028) 39 307 878 - (028) 38 227 846 - 0908 292 537,10.7875955,106.697046,foodyhcm
+13/03/2026 9:09,OK,69b3d45a9e268fedeabacc45,Uploaded,Cherry Milk - Sữa Tươi Trân Châu Đường Đen,"165/15/5 Hoang Sa, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh",,10.79301,106.65936,foodyhcm
+13/03/2026 9:09,OK,69b3d45b9e268fedeabacc46,Uploaded,Tiệm Cơm Nam Sơn,"211 Âu Cơ, Phường Hoà Bình, Thành phố Hồ Chí Minh, Việt Nam",0918 686 828 - 0903 181 828,10.773569,106.648689,foodyhcm
+13/03/2026 9:09,OK,69b3d45c9e268fedeabacc47,Uploaded,Pappa Roti SG - Co.op Mart Hòa Bình,"175 Hòa Bình, Phường Phú Thạnh, Thành phố Hồ Chí Minh",0904 912 225,10.7704513,106.629239,foodyhcm
+13/03/2026 9:09,OK,69b3d45d9e268fedeabacc48,Uploaded,Quán Tôm Vàng - Hủ Tiếu,"Đường NB1, Phường Phú Thuận, Thành phố Hồ Chí Minh, Việt Nam",,10.735652,106.739509,foodyhcm
+13/03/2026 9:09,OK,69b3d45d9e268fedeabacc49,Uploaded,Bò Ót - Bún Riêu Cua & Hột Vịt Lộn,"Phường Tân Hưng, Thành phố Hồ Chí Minh, Việt Nam",,10.75161394,106.7021319,foodyhcm
+13/03/2026 9:09,OK,69b3d45e9e268fedeabacc4a,Uploaded,ROU Vegetarian Restaurant - Quán Chay - Trần Hưng Đạo,"567A Trần Hưng Đạo, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh, Việt Nam",(028) 62 761 613,10.7568586,106.6859479,foodyhcm
+13/03/2026 9:09,OK,69b3d45f9e268fedeabacc4b,Uploaded,Baan Talay - Thai Seafood - Shop Online,"Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh",,10.794505,106.720544,foodyhcm
+13/03/2026 9:09,OK,69b3d4609e268fedeabacc4c,Uploaded,"Cơm Văn Phòng, Cơm Gà Xối Mỡ & Bánh Xèo Quảng Ngãi","Phường Tân Bình, Thành phố Hồ Chí Minh",,10.802362,106.63869,foodyhcm
+13/03/2026 9:09,OK,69b3d4619e268fedeabacc4d,Uploaded,"Nha Trang Quán - Hủ Tiếu, Bún & Hải Sản","166A Tân Sơn Nhì, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh",0907 133 361,10.800659,106.632899,foodyhcm
+13/03/2026 9:09,OK,69b3d4619e268fedeabacc4e,Uploaded,Quán Ăn Gia Đình Vị Quê,"104 Diệp Minh Châu, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh, Việt Nam",0905514956-0903879600,10.7957884,106.6325846,foodyhcm
+13/03/2026 9:09,OK,69b3d4629e268fedeabacc4f,Uploaded,Thăng Long Quán - Ăn Vặt & Giải Khát,"22/2/17 Nguyễn Văn Săng, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh",982224787,10.8000053,106.636062,foodyhcm
+13/03/2026 9:09,OK,69b3d4639e268fedeabacc50,Uploaded,Cơm Niêu Thiên Lý - Bình Tân,"120 Đường Số 7, Phường An Lạc, Thành phố Hồ Chí Minh",,10.751958,106.612747,foodyhcm
+13/03/2026 9:09,OK,69b3d4649e268fedeabacc51,Uploaded,Phở Dũng Nam Định - Cao Thắng,"242 Cao Thắng, Phường Hoà Hưng, Thành phố Hồ Chí Minh",,10.774806,106.67576,foodyhcm
+13/03/2026 9:09,OK,69b3d4659e268fedeabacc52,Uploaded,Đắc Hòa II - Heo Quay & Vịt Quay - Tân Kỳ Tân Quý,"173A Tân Kỳ Tân Quý, Phường Tân Sơn Nhì, Thành phố Hồ Chí Minh",(028) 62 769 644 - (028) 39 741 785,10.8031727,106.631025,foodyhcm
+13/03/2026 9:09,OK,69b3d4669e268fedeabacc53,Uploaded,Vịt Quay Hùng Trang,"QL50, Xã Bình Hưng, Thành phố Hồ Chí Minh, Việt Nam",0903 776 141 - 0903 376 141,10.716416,106.65552,foodyhcm
+13/03/2026 9:09,OK,69b3d4669e268fedeabacc54,Uploaded,Savouré Bakery - Choux Cream - Thoại Ngọc Hầu,"Street, 235A Thoại Ngọc Hầu, Phường Tân Phú, Thành phố Hồ Chí Minh, Việt Nam",(028) 35 124 463,10.7858901,106.641366,foodyhcm
+13/03/2026 9:09,OK,69b3d4679e268fedeabacc55,Uploaded,Bò Lá Lốt Phương Đông - Nguyễn Kiệm,"732 Nguyễn Kiệm, Phường Đức Nhuận, Thành phố Hồ Chí Minh",,10.8078195,106.6785042,foodyhcm
+13/03/2026 9:10,OK,69b3d4689e268fedeabacc56,Uploaded,Bánh Canh Cá Lóc - Hiếu Quảng Trị - Bàu Cát,"48 Bàu Cát, Phường Tân Bình, Thành phố Hồ Chí Minh",0985 950 506,10.79304,106.64065,foodyhcm
+13/03/2026 9:10,OK,69b3d4699e268fedeabacc57,Uploaded,Cô Ba Chề - Cơm Tấm Long Xuyên - Nguyễn Thái Bình,"Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh",,10.79913,106.65703,foodyhcm
+13/03/2026 9:10,OK,69b3d46a9e268fedeabacc58,Uploaded,Cả Cần - Bánh Bao & Hủ Tiếu Mỹ Tho - Chính Gốc,"Phường An Đông, Thành phố Hồ Chí Minh",(028) 38 561 226,10.757427,106.668411,foodyhcm
+13/03/2026 9:10,OK,69b3d46b9e268fedeabacc59,Uploaded,San Fu Lou - Ẩm Thực Quảng Đông - Cao Thắng,"2A Cao Thắng, Phường Bàn Cờ, Thành phố Hồ Chí Minh",(028) 38 620 920,10.7686161,106.6839611,foodyhcm
+13/03/2026 9:10,OK,69b3d46b9e268fedeabacc5a,Uploaded,Hương Sơn Quán - Bê Thui Nóng,"Tổ 3, Khu Phố 5, 338/22 Lê Thị Riêng, Phường Thới An, Thành phố Hồ Chí Minh, Việt Nam",907721983,10.869482,106.654621,foodyhcm
+13/03/2026 9:10,OK,69b3d46c9e268fedeabacc5b,Uploaded,Súp Cua Doanh,"319 Nguyễn Thiện Thuật, Phường Bàn Cờ, Thành phố Hồ Chí Minh, Việt Nam",,10.7700984,106.677483,foodyhcm
+13/03/2026 9:10,OK,69b3d46d9e268fedeabacc5c,Uploaded,Quán Cô Mĩ - Bún Cá & Cháo Hào,"276 Điện Biên Phủ, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh, Việt Nam",,10.798264,106.719661,foodyhcm
+13/03/2026 9:10,OK,69b3d46e9e268fedeabacc5d,Uploaded,Ốc Ngon Thiện Ý - Chân Gà Sốt Các Loại,"104/1C Cây Trâm, Phường Thông Tây Hội, Thành phố Hồ Chí Minh, Việt Nam",,10.8429693,106.6534925,foodyhcm
+13/03/2026 9:10,OK,69b3d46f9e268fedeabacc5e,Uploaded,Hủ Tíu Nam Vang Quỳnh Anh - Lê Văn Sỹ,"Phường Tân Sơn Hoà, Thành phố Hồ Chí Minh",(028) 62 651 331 ,10.7953365,106.66682,foodyhcm
+13/03/2026 9:10,OK,69b3d4709e268fedeabacc5f,Uploaded,Myeongdong - Quán Mì Hàn Quốc,"78 Nguyễn Tri Phương, Phường An Đông, Thành phố Hồ Chí Minh, Việt Nam",,10.752733,106.670928,foodyhcm
+13/03/2026 9:10,OK,69b3d4709e268fedeabacc60,Uploaded,Mỳ Ý 4B - Hamburger & Ăn Vặt,"4B Đường Số 15, Phường Tân Hưng, Thành phố Hồ Chí Minh",0938 328 044,10.7454553,106.7098418,foodyhcm
+13/03/2026 9:10,OK,69b3d4719e268fedeabacc61,Uploaded,"3 Đậu - Tàu Hũ Cô Vang, Khoai Mì Cốt Dừa & Bắp Luộc - Phan Văn Trị","170A Phan Văn Trị, Phường Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam",,10.8111308,106.6958007,foodyhcm
+13/03/2026 9:10,OK,69b3d4729e268fedeabacc62,Uploaded,Vua Mì - Mì Bò Đài Loan - Cao Thắng,"190 Cao Thắng, Phường Vườn Lài, Thành phố Hồ Chí Minh, Việt Nam",,10.7737165,106.6780702,foodyhcm
+13/03/2026 9:10,OK,69b3d4739e268fedeabacc63,Uploaded,Hủ Tiếu - Phan Đình Phùng,"282 Phan Đình Phùng, Phường Cầu Kiệu, Thành phố Hồ Chí Minh",,10.7974599,106.68123,foodyhcm
+13/03/2026 9:10,OK,69b3d4749e268fedeabacc64,Uploaded,Gong Cha - Trà & Cà Phê - Hồ Bán Nguyệt,"Phường Tân Mỹ, Thành phố Hồ Chí Minh",,10.725645,106.72039,foodyhcm
+13/03/2026 9:10,OK,69b3d4759e268fedeabacc65,Uploaded,Quán Đồng Nhân - Cơm Bà Cả - Trương Định,"42 Trương Định, Phường Bến Thành, Thành phố Hồ Chí Minh",(028) 38 221 010,10.772203,106.695979,foodyhcm
+13/03/2026 9:10,OK,69b3d4759e268fedeabacc66,Uploaded,"Cháo Lòng Cô Ty - Cháo Lòng, Lòng Dồi Hấp, Chiên - Nơ Trang Long","188 Nơ Trang Long, Phường Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam",,10.8124181,106.6966191,foodyhcm
+13/03/2026 9:10,OK,69b3d4769e268fedeabacc67,Uploaded,Bún Bò Huế - Cố Đô Thảo Điền,"Phường An Khánh, Thành phố Hồ Chí Minh",,10.8030819,106.727581,foodyhcm
+13/03/2026 9:10,OK,69b3d4779e268fedeabacc68,Uploaded,Trà Sữa Osu - Trần Hưng Đạo,"112 Trần Hưng Đạo, Phường An Đông, Thành phố Hồ Chí Minh",0899 322 399 - 0939 987 099,10.7527301,106.6695522,foodyhcm
+13/03/2026 9:10,OK,69b3d4789e268fedeabacc69,Uploaded,Mì Cay Nasin - Bùi Thanh Khiết,"4 Bùi Thanh Khiết, Xã Tân Nhựt, Thành phố Hồ Chí Minh, Việt Nam",,10.689281,106.574875,foodyhcm
+13/03/2026 9:10,OK,69b3d4799e268fedeabacc6a,Uploaded,Little HaNoi Egg Coffee - Quán Cà Phê - Yersin,"119, 119/5 Yersin, Phường Bến Thành, Thành phố Hồ Chí Minh, Việt Nam",,10.7694481,106.6959841,foodyhcm
+13/03/2026 9:10,OK,69b3d47a9e268fedeabacc6b,Uploaded,Cháo Lòng Miền Tây - Lê Văn Lương,"Phường Tân Hưng, Thành phố Hồ Chí Minh",0939 474 522,10.749611,106.70499,foodyhcm
+13/03/2026 9:10,OK,69b3d47a9e268fedeabacc6c,Uploaded,Thánh Gióng Express - Bánh Bột Lọc Buôn Mê,"2D Nguyễn Văn Giai, Phường Tân Định, Thành phố Hồ Chí Minh, Việt Nam",0981 787 939,10.7929171,106.6973167,foodyhcm
+13/03/2026 9:10,OK,69b3d47b9e268fedeabacc6d,Uploaded,Bánh Canh Cua Hoàng Lan - Vĩnh Viễn,"486 Vĩnh Viễn, Phường Diên Hồng, Thành phố Hồ Chí Minh, Việt Nam",1900 2042 - (028) 38 579 911 - (028) 38 532 836,10.7632443,106.6651109,foodyhcm
+13/03/2026 9:10,OK,69b3d47c9e268fedeabacc6e,Uploaded,Đặc Sản Trảng Bàng Hoàng Ty - Các Món Cuốn Bánh Tráng & Bánh Canh Trảng Bàng - Nguyễn Trung Nguyệt,"Phường Bình Trưng, Thành phố Hồ Chí Minh",(028) 37 437 460,10.7867251,106.7715948,foodyhcm
+13/03/2026 9:10,OK,69b3d47d9e268fedeabacc6f,Uploaded,Cơm Tấm Cô Ba Sài Gòn - Lê Quang Định,"490c/1 le quang dinh, Phường Bình Lợi Trung, Thành phố Hồ Chí Minh",,10.81497788,106.6897098,foodyhcm
+13/03/2026 9:10,OK,69b3d47e9e268fedeabacc70,Uploaded,"Cơm Gà, Cháo, Miến Gỏi Gà Ta Tường Vy - Xô Viết Nghệ Tĩnh","Phường Bình Thạnh, Thành phố Hồ Chí Minh",,10.8106035,106.7129758,foodyhcm
+13/03/2026 9:10,OK,69b3d47f9e268fedeabacc71,Uploaded,Gong Cha - Trà & Cà Phê - Phú Mỹ Hưng,"SB-02, 201 Tôn Dật Tiên, Phường Tân Hưng, Thành phố Hồ Chí Minh",1900 2042-(028) 62 706 333,10.7217,106.712981,foodyhcm
+13/03/2026 9:10,OK,69b3d47f9e268fedeabacc72,Uploaded,Gong Cha - Trà & Cà Phê - Estella Place,"L2 - 4, Tầng 2 Estella Place, 88 Song Hành, Phường Bình Trưng, Thành phố Hồ Chí Minh",,10.80208,106.748298,foodyhcm
+13/03/2026 9:10,OK,69b3d4809e268fedeabacc73,Uploaded,Ẩm Thực Hoa Viên Sơn Thủy - Món Ăn Thuần Việt,"Phường Long Bình, Thành phố Hồ Chí Minh",(028) 62 714 696 - 0931 414 179,10.868074,106.814381,foodyhcm
+13/03/2026 9:10,OK,69b3d4819e268fedeabacc74,Uploaded,Quán Trương Tuyền - Bún Thịt Nướng - Tôn Thất Thuyết,"209/10/2 Tôn Thất Thuyết, Phường Vĩnh Hội, Thành phố Hồ Chí Minh",,10.753821,106.6996623,foodyhcm
+13/03/2026 9:10,OK,69b3d4829e268fedeabacc75,Uploaded,Vịt 3 Món Mỹ Lợi,"15B Đường Số 2, Phường Bình Trưng, Thành phố Hồ Chí Minh",(028) 37 400 524,10.785791,106.772502,foodyhcm
+13/03/2026 9:10,OK,69b3d4849e268fedeabacc76,Uploaded,Gà Tiềm Đại Dương - Ẩm Thực Trung Hoa,"14 Cao Thắng, Phường Bàn Cờ, Thành phố Hồ Chí Minh",(028) 38 341 583,10.7690153,106.6833596,foodyhcm
+13/03/2026 9:10,OK,69b3d4849e268fedeabacc77,Uploaded,The Pizza Company - Võ Văn Ngân,"Phường Thủ Đức, Thành phố Hồ Chí Minh",(028) 37 201 471,10.851214,106.755943,foodyhcm
+13/03/2026 9:10,OK,69b3d4859e268fedeabacc78,Uploaded,Gà Rán & Burger Lotteria - Hoàng Diệu,"102 Lê Quốc Hưng, Phường Xóm Chiếu, Thành phố Hồ Chí Minh",,10.763935,106.704651,foodyhcm
+13/03/2026 9:10,OK,69b3d4869e268fedeabacc79,Uploaded,Gà Rán & Burger Lotteria - Lottemart Tân Bình,"Lotte Mart Cộng Hòa, 20 Cộng Hòa, Phường Bảy Hiền, Thành phố Hồ Chí Minh",(028) 38 112 046,10.801036,106.652858,foodyhcm
+13/03/2026 9:10,OK,69b3d4879e268fedeabacc7a,Uploaded,Gà Ác Tiềm Thuốc Bắc 181 - Trường Chinh,"193-169 Trường Chinh, Phường Bảy Hiền, Thành phố Hồ Chí Minh, Việt Nam",,10.7962129,106.6471703,foodyhcm
+13/03/2026 9:10,OK,69b3d4889e268fedeabacc7b,Uploaded,A Mao - Mì Súp Đài Loan - Lê Hồng Phong,"4/21A Lê Hồng Phong, Phường Chợ Quán, Thành phố Hồ Chí Minh, Việt Nam",,10.7560401,106.6788795,foodyhcm
+13/03/2026 9:10,OK,69b3d4899e268fedeabacc7c,Uploaded,Gà Rán & Burger McDonald’s Saigon Supermarket,"Phường Hoà Hưng, Thành phố Hồ Chí Minh",(028) 38 625 888,10.7681131,106.6674131,foodyhcm
+13/03/2026 9:10,OK,69b3d4899e268fedeabacc7d,Uploaded,Quán Ăn Minh Ký - Hủ Tiếu Xào,"181 Phạm Phú Thứ, Phường Bình Tiên, Thành phố Hồ Chí Minh, Việt Nam",01229 799 786,10.74434,106.6438,foodyhcm
+13/03/2026 9:10,OK,69b3d48a9e268fedeabacc7e,Uploaded,"Lê Na Food - Lẩu Thái, Lẩu Hải Sản & Lẩu Bò - CN Tân Bình","32-42 Vân Côi, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh, Việt Nam",,10.7866472,106.6562603,foodyhcm
+13/03/2026 9:10,OK,69b3d48b9e268fedeabacc7f,Uploaded,Ốc Bắc Mình Ơi Q1 - Nguyễn Du,"114 Nguyễn Du, Phường Bến Thành, Thành phố Hồ Chí Minh, Việt Nam",,10.773977,106.6946598,foodyhcm
+13/03/2026 9:10,OK,69b3d48c9e268fedeabacc80,Uploaded,Mì Vằn Thắn - Tường Huyền,"khu Nam Thông III, 412 Tân Phú, Phường Tân Mỹ, Thành phố Hồ Chí Minh, Việt Nam",(028) 22 406 667 - (028) 54 122 878,10.7152291,106.7299183,foodyhcm
+13/03/2026 9:10,OK,69b3d48d9e268fedeabacc81,Uploaded,Trang - Cháo Vịt & Gói Vịt - Nguyễn Thị Thập,"8 Nguyễn Thị Thập, Phường Tân Thuận, Thành phố Hồ Chí Minh",0933 396 935,10.7377112,106.7293949,foodyhcm
+13/03/2026 9:10,OK,69b3d48d9e268fedeabacc82,Uploaded,Vân Ngọc 14 - Cơm Gà Xối Mỡ,"LO K Thanh Đa, Phường Bình Quới, Thành phố Hồ Chí Minh, Việt Nam",982127182,10.81438277,106.7205665,foodyhcm
+13/03/2026 9:10,OK,69b3d48e9e268fedeabacc83,Uploaded,Gà Rán & Burger Lotteria - Ngô Gia Tự,"Phường Vườn Lài, Thành phố Hồ Chí Minh",0979 833 002,10.7673753,106.6741669,foodyhcm
+13/03/2026 9:10,OK,69b3d48f9e268fedeabacc84,Uploaded,"Bão Bão - Chân Gà, Trứng Non & Sứa Sốt Thái","Phường Long Bình, Thành phố Hồ Chí Minh",,10.8403095,106.8437174,foodyhcm
+13/03/2026 9:10,OK,69b3d4909e268fedeabacc85,Uploaded,Ocean Palace - Ẩm Thực Trung Hoa,"2 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh",(028) 3911 8822,10.787295,106.704648,foodyhcm
+13/03/2026 9:10,OK,69b3d4919e268fedeabacc86,Uploaded,Sơn Ca - Gà Ta Hun Khói,"Phường 1, Tân Bình, 343/99k Nguyễn Trọng Tuyển, Phường Tân Sơn Hoà, Thành phố Hồ Chí Minh, Việt Nam",0933 040 664,10.7985512,106.6653562,foodyhcm
+13/03/2026 9:10,OK,69b3d4919e268fedeabacc87,Uploaded,Gà Rán KFC - Trịnh Văn Cấn - Nguyễn Thái Học,"35 Trịnh Văn Cấn, Phường Bến Thành, Thành phố Hồ Chí Minh",1900 6886,10.7673434,106.696404,foodyhcm
+13/03/2026 9:10,OK,69b3d4929e268fedeabacc88,Uploaded,Cơm Niêu Thiên Lý - Hà Đô Centrosa,"Hà Đô Centrosa, Số 3 Số 5, Phường Hoà Hưng, Thành phố Hồ Chí Minh, Việt Nam",,10.7764266,106.6791156,foodyhcm
+13/03/2026 9:10,OK,69b3d4939e268fedeabacc89,Uploaded,Cơm Chay Phước Huệ - Lê Bình,"150 Lê Bình, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh, Việt Nam",,10.7931179,106.6588485,foodyhcm
+13/03/2026 9:10,OK,69b3d4949e268fedeabacc8a,Uploaded,Golden Cook - Bò Bít Tết Only - Lê Quang Định,"98 Lê Quang Định, Phường Bình Thạnh, Thành phố Hồ Chí Minh",0908 901 100 - 0835 515 179,10.8054279,106.697961,foodyhcm
+13/03/2026 9:10,OK,69b3d4959e268fedeabacc8b,Uploaded,"Cháo Lòng, Hủ Tiếu, Bánh Canh Trà Vinh","Phường Xóm Chiếu, Thành phố Hồ Chí Minh",,10.764224,106.704894,foodyhcm
+13/03/2026 9:10,OK,69b3d4969e268fedeabacc8c,Uploaded,Hali Sushi - Nguyễn Ảnh Thủ,"818 Nguyễn Ảnh Thủ, Xã Đông Thạnh, Thành phố Hồ Chí Minh, Việt Nam",0903 090 982,10.874358,106.621948,foodyhcm
+13/03/2026 9:10,OK,69b3d4969e268fedeabacc8d,Uploaded,Cơm Tấm Phúc Lộc Thọ - Tô Ký,"12/6 Tô Ký, Xã Bà Điểm, Thành phố Hồ Chí Minh",,10.867327,106.615545,foodyhcm
+13/03/2026 9:10,OK,69b3d4979e268fedeabacc8e,Uploaded,"Yến - Bánh Cuốn Chả Mực, Bánh Đa Cua & Bún Riêu Cua","351B Nơ Trang Long, Phường Bình Lợi Trung, Thành phố Hồ Chí Minh, Việt Nam",,10.8196775,106.7025255,foodyhcm
+13/03/2026 9:10,OK,69b3d4989e268fedeabacc8f,Uploaded,Cô Phúc - Cháo Ếch Singapore & Cơm Ếch - Phan Thị Hành,"2/4/45 Lê Thúc Hoạch, Phường Phú Thọ Hòa, Thành phố Hồ Chí Minh",,10.7862638,106.6284926,foodyhcm
+13/03/2026 9:10,OK,69b3d4999e268fedeabacc90,Uploaded,"3 Râu - Gà Rán, Pizza & Trà Sữa - Tôn Đản","185 Tôn Đản, Phường Khánh Hội, Thành phố Hồ Chí Minh, Việt Nam",,10.7553852,106.7060378,foodyhcm
+13/03/2026 9:10,OK,69b3d49a9e268fedeabacc91,Uploaded,"Văn Ký Bột Chiên Giòn, Mì Vịt Tiềm & Sủi Cảo","160 Tô Hiệu, Phường Phú Thạnh, Thành phố Hồ Chí Minh",,10.7709742,106.6271384,foodyhcm
+13/03/2026 9:10,OK,69b3d49b9e268fedeabacc92,Uploaded,Haidilao - Landmark 81,"Vinhomes Tân Cảng, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh, Việt Nam",,10.7953214,106.722148,foodyhcm
+13/03/2026 9:10,OK,69b3d49c9e268fedeabacc93,Uploaded,Gà Rán & Burger Lotteria - Bạch Đằng,"445 Bạch Đằng, Phường Gia Định, Thành phố Hồ Chí Minh, Việt Nam",,10.803653,106.7014206,foodyhcm
+13/03/2026 9:10,OK,69b3d49d9e268fedeabacc94,Uploaded,Gió Mùa - Đặc Sản Bê Thui ,"66, Phường, Phường Phú Thọ Hòa, Thành phố Hồ Chí Minh, Việt Nam",,10.783164,106.6344,foodyhcm
+13/03/2026 9:10,OK,69b3d49d9e268fedeabacc95,Uploaded,Cơm Tấm Thuận Kiều - Suối Tiên,"98 Quốc lộ 1A, Phường Tăng Nhơn Phú, Thành phố Hồ Chí Minh",(028) 38 931 053 ,10.865739,106.801615,foodyhcm
+13/03/2026 9:10,OK,69b3d49e9e268fedeabacc96,Uploaded,Hoàng Ty - Đặc sản Trảng Bàng - Cao Thắng,"106 Cao Thắng, Phường Bàn Cờ, Thành phố Hồ Chí Minh",(028) 3833 2077 ,10.772034,106.680079,foodyhcm
+13/03/2026 9:10,OK,69b3d49f9e268fedeabacc97,Uploaded,Bánh Bò Thốt Nốt Nguyễn Sơn - Giao Hàng Tận Nơi,"6 Lê Tự Tài, Phường Đức Nhuận, Thành phố Hồ Chí Minh",0906 978 991,10.8048783,106.6791516,foodyhcm
+13/03/2026 9:10,OK,69b3d4a09e268fedeabacc98,Uploaded,The Pizza Company - Nguyễn Ảnh Thủ,"Ấp Vạn Thạnh, 75/3 - 75/4 Nguyễn Ảnh Thủ, Xã Bà Điểm, Thành phố Hồ Chí Minh",,10.8641579,106.6129948,foodyhcm
+13/03/2026 9:10,OK,69b3d4a19e268fedeabacc99,Uploaded,Quán Bò Hai Châu - Cây Trâm,"Cây Trâm, 268 Nguyễn Văn Khối, Phường Thông Tây Hội, Thành phố Hồ Chí Minh",(028) 2244 2660 - (028) 3606 2631 - 0909 675 500,10.843543,106.650341,foodyhcm
+13/03/2026 9:10,OK,69b3d4a19e268fedeabacc9a,Uploaded,Bò Sinh Đôi - Steak & Lẩu Bò Mỹ,"Đường, 460 3 Tháng 2, Phường Hoà Hưng, Thành phố Hồ Chí Minh, Việt Nam",(028) 35 172 333,10.768561,106.6678135,foodyhcm
+13/03/2026 9:10,OK,69b3d4a29e268fedeabacc9b,Uploaded,Gà Nướng Chicken Kitchen,"38 Đồng Nai, Phường Hoà Hưng, Thành phố Hồ Chí Minh",0981 700 239 - 0908 159 298,10.7779246,106.6639849,foodyhcm
+13/03/2026 9:10,OK,69b3d4a39e268fedeabacc9c,Uploaded,Food Connexion Buffet - Pullman Hotel,"144/12 Trần Hưng Đạo, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh",(028) 38 388 686,10.764441,106.691935,foodyhcm
+13/03/2026 9:11,OK,69b3d4a49e268fedeabacc9d,Uploaded,"Vân Hương - Cơm, Cháo & Gỏi Gà Ta","135 Trần Phú, Phường Chợ Quán, Thành phố Hồ Chí Minh",0909 347 366 - 0909 184 678,10.760304,106.676847,foodyhcm
+13/03/2026 9:11,OK,69b3d4a59e268fedeabacc9e,Uploaded,Chè Mỹ - Nguyễn Hữu Thọ,"A2 KDC Phước Nguyên Hưng, Đ Nguyễn Hữu Thọ, Xã Nhà Bè, Thành phố Hồ Chí Minh, Việt Nam",0947223030-0903612020,10.7190812,106.7017145,foodyhcm
+13/03/2026 9:11,OK,69b3d4a69e268fedeabacc9f,Uploaded,Loan - Bún Riêu 42 Bạc Liêu,"J7Bis Hương Giang, Phường Hoà Hưng, Thành phố Hồ Chí Minh",0909 062 029,10.782962,106.662724,foodyhcm
+13/03/2026 9:11,OK,69b3d4a79e268fedeabacca0,Uploaded,Cơm Trộn & Mì Trộn KIM JI - Lê Đại Hành,"11, 60 Lê Đại Hành, Phường Minh Phụng, Thành phố Hồ Chí Minh, Việt Nam",,10.7592843,106.6590471,foodyhcm
+13/03/2026 9:11,OK,69b3d4a79e268fedeabacca1,Uploaded,Bánh Xèo A Phủ - Lê Quang Định,"463 Lê Quang Định, Phường Hạnh Thông, Thành phố Hồ Chí Minh",,10.820761,106.689108,foodyhcm
+13/03/2026 9:11,OK,69b3d4a89e268fedeabacca2,Uploaded,Nhà Cáo - Cá Viên Chiên & Ăn Vặt - Hồ Học Lãm,"350 Hồ Học Lãm, Phường An Lạc, Thành phố Hồ Chí Minh, Việt Nam",,10.724673,106.6096343,foodyhcm
+13/03/2026 9:11,OK,69b3d4a99e268fedeabacca3,Uploaded,Đồng Tiến Bakery - Bàu Cát,"93 Bàu Cát, Phường Tân Bình, Thành phố Hồ Chí Minh",,10.792767,106.641907,foodyhcm
+13/03/2026 9:11,OK,69b3d4aa9e268fedeabacca4,Uploaded,Hủ Tíu Sa Tế Tô Ký - Chu Văn An,"17 Chu Văn An, Phường Bình Tiên, Thành phố Hồ Chí Minh",(028) 38 570 370,10.7470116,106.653432,foodyhcm
+13/03/2026 9:11,OK,69b3d4ab9e268fedeabacca5,Uploaded,Bánh Mì Hoàng Lam (Không Chi Nhánh),"170 Nguyễn Thượng Hiền, Phường Đức Nhuận, Thành phố Hồ Chí Minh",,10.809321,106.68394,foodyhcm
+13/03/2026 9:11,OK,69b3d4ab9e268fedeabacca6,Uploaded,Gà Rán & Burger Lotteria - Bình Long,"Góc đường Bình Long Thoại Ngọc Hầu, Phường Phú Thạnh, Thành phố Hồ Chí Minh",(028) 18 008 099,10.773898,106.62158,foodyhcm
+13/03/2026 9:11,OK,69b3d4ac9e268fedeabacca7,Uploaded,Shang Palace - Ẩm Thực Trung Hoa,"Lầu 1, 17 - 19 - 21 Lý Tự Trọng, Phường Sài Gòn, Thành phố Hồ Chí Minh",(028) 38 232 221,10.78099,106.704041,foodyhcm
+13/03/2026 9:11,OK,69b3d4ad9e268fedeabacca8,Uploaded,Cô Ba Chề - Cơm Tấm Long Xuyên - Nguyễn Thái Sơn,"1A16 Đường số 7, Phường Hạnh Thông, Thành phố Hồ Chí Minh, Việt Nam",,10.819859,106.6828,foodyhcm
+13/03/2026 9:11,OK,69b3d4ae9e268fedeabacca9,Uploaded,Chè 3/2 - Hẻm 992 Diễm Hồng,"992 3 Tháng 2, Phường Phú Thọ, Thành phố Hồ Chí Minh",,10.761709,106.65576,foodyhcm
+13/03/2026 9:11,OK,69b3d4af9e268fedeabaccaa,Uploaded,Bún Bò Huế - Lam Sơn,"Phường Linh Xuân, Thành phố Hồ Chí Minh",,10.850784,106.754158,foodyhcm
+13/03/2026 9:11,OK,69b3d4b09e268fedeabaccab,Uploaded,Cơm Tấm Nguyễn - Hoàng Hoa Thám,"27 Hoàng Hoa Thám, Phường Gia Định, Thành phố Hồ Chí Minh",,10.806377,106.690283,foodyhcm
+13/03/2026 9:11,OK,69b3d4b09e268fedeabaccac,Uploaded,Lam Sơn Hà Nội - Mỳ sủi cảo,"3, Phường Tân Sơn Hoà, Thành phố Hồ Chí Minh",0983 876 887,10.806292,106.664827,foodyhcm
+13/03/2026 9:11,OK,69b3d4b19e268fedeabaccad,Uploaded,Gà Ta Như Ý - Nguyễn Văn Đậu,"258 Nguyễn Văn Đậu, Phường Bình Lợi Trung, Thành phố Hồ Chí Minh",0932 050 257,10.8128217,106.6934463,foodyhcm
+13/03/2026 9:11,OK,69b3d4b29e268fedeabaccae,Uploaded,Clover Tea - Trà Sữa Siêu Topping,"Phường Bình Đông, Thành phố Hồ Chí Minh",0909 957 091,10.7382793,106.6626846,foodyhcm
+13/03/2026 9:11,OK,69b3d4b39e268fedeabaccaf,Uploaded,Bún Bò Huế Chú Há,"284/1 Võ Văn Tần, Phường Bàn Cờ, Thành phố Hồ Chí Minh, Việt Nam",(028) 38 340 645,10.771888,106.685768,foodyhcm
+13/03/2026 9:11,OK,69b3d4b49e268fedeabaccb0,Uploaded,Gà Rán & Burger Lotteria - Nguyễn Văn Quá,"867A Nguyễn Văn Quá, Phường Đông Hưng Thuận, Thành phố Hồ Chí Minh",(028) 62 569 335,10.850457,106.636668,foodyhcm
+13/03/2026 9:11,OK,69b3d4b59e268fedeabaccb1,Uploaded,Quán 51 - Cơm Gà Tam Kỳ,"201, 61 Nguyễn Xí, Phường Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam",0914 165 521,10.811721,106.711074,foodyhcm
+13/03/2026 9:11,OK,69b3d4b69e268fedeabaccb2,Uploaded,Hồng Nga - Cơm Gà Tam Kỳ,"A22 Bàu Cát, Phường Tân Bình, Thành phố Hồ Chí Minh, Việt Nam",01699 018 193,10.7933843,106.6408984,foodyhcm
+13/03/2026 9:11,OK,69b3d4b69e268fedeabaccb3,Uploaded,Nhà Hàng Taj Mahal - Ẩm Thực Ấn Độ,"31 Bui Viên, Phường Bến Thành, Thành phố Hồ Chí Minh",,10.7671379,106.693736,foodyhcm
+13/03/2026 9:11,OK,69b3d4b79e268fedeabaccb4,Uploaded,Bánh Canh Chả Cá - Đặc Sản Phan Thiết - Vạn Kiếp,"1 Vạn Kiếp, Phường Gia Định, Thành phố Hồ Chí Minh",01668 756 225,10.8028402,106.6933806,foodyhcm
+13/03/2026 9:11,OK,69b3d4b89e268fedeabaccb5,Uploaded,Matsuri Japanese Restaurant - Vincom Center Landmark 81,"Landmark 81, Vinhomes Tân Cảng, Phường Thạnh Mỹ Tây, Thành phố Hồ Chí Minh, Việt Nam",093 8761969,10.794948,106.721874,foodyhcm
+13/03/2026 9:11,OK,69b3d4b99e268fedeabaccb6,Uploaded,Cơm Niêu Thiên Lý - Nguyễn Đình Chiểu,"16 Nguyễn Đình Chiểu, Phường Tân Định, Thành phố Hồ Chí Minh",0978 785 500,10.7908996,106.7017776,foodyhcm
+13/03/2026 9:11,OK,69b3d4ba9e268fedeabaccb7,Uploaded,Bún Riêu Trung Kiên - Bún Riêu & Bánh Khọt - Bế Văn Đàn,"Phường Tân Bình, Thành phố Hồ Chí Minh",,10.7894541,106.6424482,foodyhcm
+13/03/2026 9:11,OK,69b3d4bb9e268fedeabaccb8,Uploaded,Núp Coffee & Tea - Trường Sa,"195/19/11 Lê Văn Sỹ, Phường Nhiêu Lộc, Thành phố Hồ Chí Minh, Việt Nam",,10.7852878,106.6803773,foodyhcm
+13/03/2026 9:11,OK,69b3d4bc9e268fedeabaccb9,Uploaded,Bánh Bò Thốt Nốt COCOCake - Lò Bánh Huỳnh Văn Bánh,"65-61 Huỳnh Văn Bánh, Phường Phú Nhuận, Thành phố Hồ Chí Minh, Việt Nam",(028) 66 759 900 - (028) 66 759 911,10.7945162,106.6811357,foodyhcm
+13/03/2026 9:11,OK,69b3d4bc9e268fedeabaccba,Uploaded,Chè Bưởi Vĩnh Long - Ngô Gia Tự,"Phường Vườn Lài, Thành phố Hồ Chí Minh",,10.764043,106.671965,foodyhcm
+13/03/2026 9:11,OK,69b3d4bd9e268fedeabaccbb,Uploaded,Thiên Tân Quán - Ẩm Thực Việt & Hoa,"15 Tôn Đản, Phường Xóm Chiếu, Thành phố Hồ Chí Minh", (028) 38 259 956,10.761498,106.707862,foodyhcm
+13/03/2026 9:11,OK,69b3d4be9e268fedeabaccbc,Uploaded,Cơm Tấm Duy - Gò Ô Môi,"13, 8 Gò Ô Môi, Phường Phú Thuận, Thành phố Hồ Chí Minh, Việt Nam",,10.7289487,106.7336333,foodyhcm
+13/03/2026 9:11,OK,69b3d4bf9e268fedeabaccbd,Uploaded,Đồng Xuân - Bún Chả -  Ba Vân,"165 Ba Vân, Phường Tân Bình, Thành phố Hồ Chí Minh, Việt Nam",(028) 38 491 392,10.7958672,106.6388701,foodyhcm
+13/03/2026 9:11,OK,69b3d4c09e268fedeabaccbe,Uploaded,Gà Rán & Burger Lotteria - An Phú,"Phường An Khánh, Thành phố Hồ Chí Minh",,10.799233,106.733703,foodyhcm
+13/03/2026 9:11,OK,69b3d4c19e268fedeabaccbf,Uploaded,Hào Phong - Cơm Gà & Hủ Tiếu Mì,"1672 Phạm Thế Hiển, Phường Bình Đông, Thành phố Hồ Chí Minh, Việt Nam",0903 008 846,10.7394165,106.653454,foodyhcm
+13/03/2026 9:11,OK,69b3d4c19e268fedeabaccc0,Uploaded,Ái Huê 2 - Ẩm Thực Trung Hoa,"Phường Chợ Lớn, Thành phố Hồ Chí Minh",,10.752098,106.662057,foodyhcm
+13/03/2026 9:11,OK,69b3d4c29e268fedeabaccc1,Uploaded,"Highlands Coffee - Trà, Cà Phê & Bánh - Bến Xe Miền Tây","Bến xe Miền Tây, 408 Kinh Dương Vương, Phường An Lạc, Thành phố Hồ Chí Minh, Việt Nam",,10.7412153,106.6188245,foodyhcm
+13/03/2026 9:11,OK,69b3d4c39e268fedeabaccc2,Uploaded,Phở 68 Hà Nội,"163 Bùi Đình Túy, Phường Bình Thạnh, Thành phố Hồ Chí Minh",0903 196 669,10.807838,106.70411,foodyhcm
+13/03/2026 9:11,OK,69b3d4c49e268fedeabaccc3,Uploaded,Quán Minh - Lẩu Bò Dê Trương Định,"Phường Xuân Hoà, Thành phố Hồ Chí Minh",(028) 39 305 861,10.779372,106.687857,foodyhcm
+13/03/2026 9:11,OK,69b3d4c59e268fedeabaccc4,Uploaded,Cơm Gà Thượng Hải - Ẩm Thực Trung Hoa,"21 - 23 Võ Văn Tần, Phường Xuân Hoà, Thành phố Hồ Chí Minh",(028) 39 303 031 - (028) 39 303 032,10.778116,106.691862,foodyhcm
+13/03/2026 9:11,OK,69b3d4c69e268fedeabaccc5,Uploaded,NHẪN HOA Trà Lẩu - Cách Mạng Tháng 8,"927/8 Cách Mạng Tháng Tám, Phường Tân Sơn Nhất, Thành phố Hồ Chí Minh, Việt Nam",,10.7894798,106.658757,foodyhcm
+13/03/2026 9:11,OK,69b3d4c69e268fedeabaccc6,Uploaded,San Fu Lou - Ẩm Thực Quảng Đông - Mplaza Saigon,"Tầng Trệt Mplaza Saigon, 39 Lê Duẩn, Phường Sài Gòn, Thành phố Hồ Chí Minh",,10.780889,106.701108,foodyhcm
+13/03/2026 9:11,OK,69b3d4c79e268fedeabaccc7,Uploaded,Bún Riêu Gánh Bến Thành - Saigon House,"77 Nguyễn Huệ, Phường Sài Gòn, Thành phố Hồ Chí Minh",0908 557 975,10.773181,106.704113,foodyhcm
+13/03/2026 9:11,OK,69b3d4c89e268fedeabaccc8,Uploaded,Nhà Hàng Chay KIM SA - Quận 2,"Phường An Khánh, Thành phố Hồ Chí Minh",,10.8023091,106.7357328,foodyhcm
+13/03/2026 9:11,OK,69b3d4c99e268fedeabaccc9,Uploaded,Gà Ta Tam Kỳ - Nguyễn Duy Trinh,"623 Nguyễn Duy Trinh, Phường Bình Trưng, Thành phố Hồ Chí Minh",903132224,10.788391,106.774463,foodyhcm
+13/03/2026 9:11,OK,69b3d4ca9e268fedeabaccca,Uploaded,Cơm Tấm Ghiền - Sườn Cây Nướng Mật Ong - Cách Mạng Tháng Tám,"705 Đ. Cách Mạng Tháng 8, Phường Tân Hoà, Thành phố Hồ Chí Minh, Việt Nam",,10.7872889,106.6636991,foodyhcm
+13/03/2026 9:11,OK,69b3d4cb9e268fedeabacccb,Uploaded,Trà Sữa Monkey - Phạm Văn Chiêu,"485 Phạm Văn Chiêu, Phường An Hội Đông, Thành phố Hồ Chí Minh",0918 476 978,10.85143929,106.6578184,foodyhcm
+13/03/2026 9:11,OK,69b3d4cb9e268fedeabacccc,Uploaded,Cỏ Mây - Cơm Văn Phòng & Bún Chả Cá,"258/1 Vườn Lài, Phường Phú Thọ Hòa, Thành phố Hồ Chí Minh",,10.788178,106.626093,foodyhcm
+13/03/2026 9:11,OK,69b3d4cc9e268fedeabacccd,Uploaded,Bánh Canh Ghẹ Ngọc Lâm - Lê Lợi,"45 le loi, Phường Tăng Nhơn Phú, Thành phố Hồ Chí Minh",0923 011 011,10.8449044,106.7742718,foodyhcm
+13/03/2026 9:11,OK,69b3d4cd9e268fedeabaccce,Uploaded,Phúc Long Âu Cơ,"681 Âu Cơ, Phường Tân Phú, Thành phố Hồ Chí Minh",,10.788103,106.640781,foodyhcm
+13/03/2026 9:11,OK,69b3d4ce9e268fedeabacccf,Uploaded,Hue Delights 1 - Ẩm Thực Huế - Vincom Center,"Tầng B3 - Lô 19A, Vincom Center, 72 Lê Thánh Tôn, Phường Sài Gòn, Thành phố Hồ Chí Minh",,10.778185,106.701907,foodyhcm
+13/03/2026 9:11,OK,69b3d4cf9e268fedeabaccd0,Uploaded,Món Huy Mê - Bò Beefsteak & Súp Cua,"10, 36 Ngô Gia Tự, Phường Vườn Lài, Thành phố Hồ Chí Minh, Việt Nam",,10.766901,106.673993,foodyhcm
+13/03/2026 9:11,OK,69b3d4d09e268fedeabaccd1,Uploaded,Gà Rán & Burger Lotteria - Lý Chính Thắng,"250B Lý Chính Thắng, Phường Nhiêu Lộc, Thành phố Hồ Chí Minh",,10.779649,106.682084,foodyhcm
+13/03/2026 9:11,OK,69b3d4d09e268fedeabaccd2,Uploaded,Nem Nướng Góc Nhà - Đặc Sản Nha Trang,"561/6 Phạm Văn Chiêu, Phường An Hội Đông, Thành phố Hồ Chí Minh, Việt Nam",,10.8534575,106.6622046,foodyhcm

@@ -24,6 +24,30 @@ headers = {
 }
 
 # ===== FILE UPLOAD =====
+st.markdown("### Input file format")
+st.info(
+    "Excel file needs these columns: Name, Address, OldAddress, Latitude, "
+    "Longitude, Type, Tags, Phone"
+)
+
+sample_columns_df = pd.DataFrame(
+    [
+        {
+            "Name": "Sample POI",
+            "Address": "123 Example Street",
+            "OldAddress": "Old Example Address",
+            "Latitude": 21.0285,
+            "Longitude": 105.8542,
+            "Type": "restaurant",
+            "Tags": "sample-tag",
+            "Phone": "0123456789",
+        }
+    ]
+)
+
+st.caption("Example input row")
+st.dataframe(sample_columns_df, use_container_width=True)
+
 uploaded_file = st.file_uploader(
     "Upload Excel file",
     type=["xlsx", "xls"]

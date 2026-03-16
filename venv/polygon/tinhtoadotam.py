@@ -4,9 +4,9 @@ import pandas as pd
 import tempfile
 import json
 
-st.set_page_config(page_title="GeoJSON Centroid Tool", layout="wide")
+st.set_page_config(page_title="GeoJSON Polygon Tọa Độ Tâm", layout="wide")
 
-st.title("📍 GeoJSON Polygon Centroid Calculator")
+st.title("📍 GeoJSON Polygon Tọa Độ Tâm")
 
 st.write("Upload các file GeoJSON polygon để tính tọa độ tâm và xuất bảng thống kê.")
 

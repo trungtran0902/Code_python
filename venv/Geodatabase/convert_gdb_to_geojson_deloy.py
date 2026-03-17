@@ -9,7 +9,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Convert GDB to GeoJSON", page_icon=":world_map:", layout="wide")
 st.title("Convert GDB to GeoJSON")
-st.caption("Upload file .zip chua thu muc .gdb de chuyen doi tung layer sang GeoJSON")
+st.caption("Upload file .zip chua thu muc .gdb de kiem tra he toa do, chuyen sang WGS 84 va convert GeoJSON")
 
 
 def find_gdb_folder(root_dir):
@@ -27,17 +27,14 @@ def list_layers(gdb_path):
     return [layer[0] for layer in layers_info]
 
 
-def convert_layer_to_geojson_text(gdb_path, layer_name):
+def read_layer_dataframe(gdb_path, layer_name):
     import pyogrio
 
-    gdf = pyogrio.read_dataframe(gdb_path, layer=layer_name)
-    return gdf.to_json()
+    return pyogrio.read_dataframe(gdb_path, layer=layer_name)
 
 
 def get_layer_crs(gdb_path, layer_name):
-    import pyogrio
-
-    gdf = pyogrio.read_dataframe(gdb_path, layer=layer_name, max_features=1)
+    gdf = read_layer_dataframe(gdb_path, layer_name)
     return gdf.crs
 
 
@@ -63,49 +60,36 @@ def get_central_meridian(crs):
     return None
 
 
-def describe_crs(crs):
+def parse_crs_info(crs):
     from pyproj import CRS
 
     parsed_crs = CRS.from_user_input(crs)
     epsg_code = parsed_crs.to_epsg()
-    crs_name = parsed_crs.name or "Khong ro ten he toa do"
+    crs_name = parsed_crs.name or "Khong ro ten CRS"
+    datum_name = parsed_crs.datum.name if parsed_crs.datum else ""
     central_meridian = get_central_meridian(parsed_crs)
-    datum_name = ""
-
-    if parsed_crs.datum:
-        datum_name = parsed_crs.datum.name or ""
 
     normalized_name = crs_name.upper()
     normalized_datum = datum_name.upper()
+    is_wgs84 = "WGS 84" in normalized_name or "WGS 84" in normalized_datum or epsg_code == 4326
+    is_vn2000 = "VN-2000" in normalized_name or "VN_2000" in normalized_name or "VN-2000" in normalized_datum
 
-    if "WGS 84" in normalized_name or "WGS 84" in normalized_datum:
+    if is_wgs84:
         system_label = "WGS 84"
-    elif "VN-2000" in normalized_name or "VN_2000" in normalized_name or "VN-2000" in normalized_datum:
+    elif is_vn2000:
         system_label = "VN-2000"
     else:
         system_label = crs_name
 
-    description_parts = [f"He toa do: {system_label}", f"Ten CRS: {crs_name}"]
-
-    if epsg_code:
-        description_parts.append(f"EPSG: {epsg_code}")
-
-    if datum_name:
-        description_parts.append(f"Datum: {datum_name}")
-
-    if central_meridian is not None:
-        description_parts.append(f"Kinh tuyen truc: {central_meridian}")
-
-    return description_parts
-
-
-def build_download_zip(converted_files):
-    buffer = io.BytesIO()
-    with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
-        for file_name, content in converted_files.items():
-            zip_file.writestr(file_name, content)
-    buffer.seek(0)
-    return buffer
+    return {
+        "label": system_label,
+        "name": crs_name,
+        "epsg": epsg_code,
+        "datum": datum_name,
+        "central_meridian": central_meridian,
+        "is_wgs84": is_wgs84,
+        "is_vn2000": is_vn2000,
+    }
 
 
 def sanitize_name(name):
@@ -135,6 +119,98 @@ def append_log(log_lines, message, log_placeholder):
     log_placeholder.code("\n".join(log_lines), language="text")
 
 
+def build_download_zip(converted_files):
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
+        for file_name, content in converted_files.items():
+            zip_file.writestr(file_name, content)
+    buffer.seek(0)
+    return buffer
+
+
+def render_crs_info(crs_info, layer_name):
+    st.subheader("Thong tin he toa do")
+    st.caption(f"Phat hien tu layer: {layer_name}")
+    st.write(f"- He toa do: {crs_info['label']}")
+    st.write(f"- Ten CRS: {crs_info['name']}")
+    if crs_info["epsg"]:
+        st.write(f"- EPSG: {crs_info['epsg']}")
+    if crs_info["datum"]:
+        st.write(f"- Datum: {crs_info['datum']}")
+    if crs_info["central_meridian"] is not None:
+        st.write(f"- Kinh tuyen truc: {crs_info['central_meridian']}")
+
+
+def process_layers(gdb_path, layers, mode):
+    converted_files = {}
+    results = []
+    log_lines = []
+
+    mode_label = {
+        "reproject_only": "Chuyen he toa do sang WGS 84",
+        "convert_geojson": "Convert GeoJSON",
+    }[mode]
+
+    st.subheader("Tien trinh xu ly")
+    progress_bar = st.progress(0)
+    status_placeholder = st.empty()
+    log_placeholder = st.empty()
+
+    append_log(log_lines, f"Bat dau: {mode_label}", log_placeholder)
+    append_log(log_lines, f"Mo geodatabase: {os.path.basename(gdb_path)}", log_placeholder)
+    append_log(log_lines, f"Tim thay {len(layers)} layer", log_placeholder)
+
+    for index, layer_name in enumerate(layers, start=1):
+        status_placeholder.info(f"Dang xu ly {index}/{len(layers)}: {layer_name}")
+        append_log(log_lines, f"[{index}/{len(layers)}] Dang doc layer: {layer_name}", log_placeholder)
+
+        try:
+            gdf = read_layer_dataframe(gdb_path, layer_name)
+            source_crs = gdf.crs
+            reprojected = False
+
+            if source_crs:
+                crs_info = parse_crs_info(source_crs)
+                if mode in {"reproject_only", "convert_geojson"} and not crs_info["is_wgs84"]:
+                    gdf = gdf.to_crs(4326)
+                    reprojected = True
+                    append_log(
+                        log_lines,
+                        f"[{index}/{len(layers)}] Da chuyen {layer_name} sang WGS 84",
+                        log_placeholder,
+                    )
+
+            geojson_text = gdf.to_json()
+            feature_count = len(json.loads(geojson_text).get("features", []))
+            output_name = f"{sanitize_name(layer_name)}.geojson"
+            converted_files[output_name] = geojson_text
+
+            if reprojected:
+                status_text = "Thanh cong - da chuyen sang WGS 84"
+            else:
+                status_text = "Thanh cong"
+
+            results.append((layer_name, status_text, feature_count))
+            append_log(
+                log_lines,
+                f"[{index}/{len(layers)}] Hoan thanh: {layer_name} ({feature_count} features)",
+                log_placeholder,
+            )
+        except Exception as exc:
+            results.append((layer_name, f"Loi: {exc}", 0))
+            append_log(
+                log_lines,
+                f"[{index}/{len(layers)}] Loi: {layer_name} -> {exc}",
+                log_placeholder,
+            )
+
+        progress_bar.progress(index / len(layers))
+
+    status_placeholder.success("Da hoan tat qua trinh xu ly.")
+    append_log(log_lines, "Da hoan tat qua trinh xu ly.", log_placeholder)
+    return converted_files, results
+
+
 uploaded_zip = st.file_uploader("Upload file ZIP chua thu muc .gdb", type=["zip"])
 
 is_valid, message = validate_zip_file(uploaded_zip)
@@ -151,71 +227,62 @@ if uploaded_zip and is_valid:
                 st.error("Khong tim thay thu muc .gdb trong file zip")
             else:
                 st.success(f"Da tim thay geodatabase: {os.path.basename(gdb_path)}")
-
                 layers = list_layers(gdb_path)
+
                 if not layers:
                     st.warning("Khong tim thay layer nao trong geodatabase")
                 else:
                     st.info(f"Tim thay {len(layers)} layer")
+
                     crs_layer_name, detected_crs = find_first_available_crs(gdb_path, layers)
+                    crs_info = None
 
                     if detected_crs:
-                        st.subheader("Thong tin he toa do")
-                        st.caption(f"Phat hien tu layer: {crs_layer_name}")
-                        for line in describe_crs(detected_crs):
-                            st.write(f"- {line}")
+                        crs_info = parse_crs_info(detected_crs)
+                        render_crs_info(crs_info, crs_layer_name)
                     else:
                         st.warning("Khong doc duoc thong tin he toa do tu cac layer")
 
-                    st.write("Nhan nut ben duoi de bat dau convert.")
+                    st.write("Chon hanh dong ben duoi de xu ly du lieu.")
 
-                    start_convert = st.button("Start Convert", type="primary")
+                    if crs_info and crs_info["is_vn2000"]:
+                        st.warning("Du lieu dang o he VN-2000. Ban co the chuyen sang WGS 84 truoc khi convert.")
 
-                    if start_convert:
-                        converted_files = {}
-                        results = []
-                        log_lines = []
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        reproject_clicked = st.button("Chuyen he toa do sang WGS 84", type="primary")
+                    with col2:
+                        convert_clicked = st.button("Convert GeoJSON")
 
-                        st.subheader("Tien trinh xu ly")
-                        progress_bar = st.progress(0)
-                        status_placeholder = st.empty()
-                        log_placeholder = st.empty()
+                    if reproject_clicked:
+                        converted_files, results = process_layers(gdb_path, layers, mode="reproject_only")
 
-                        append_log(log_lines, f"Mo geodatabase: {os.path.basename(gdb_path)}", log_placeholder)
-                        append_log(log_lines, f"Tim thay {len(layers)} layer", log_placeholder)
-
-                        for index, layer_name in enumerate(layers, start=1):
-                            status_placeholder.info(f"Dang xu ly {index}/{len(layers)}: {layer_name}")
-                            append_log(log_lines, f"[{index}/{len(layers)}] Dang convert layer: {layer_name}", log_placeholder)
-
-                            try:
-                                geojson_text = convert_layer_to_geojson_text(gdb_path, layer_name)
-                                output_name = f"{sanitize_name(layer_name)}.geojson"
-                                converted_files[output_name] = geojson_text
-
-                                feature_count = len(json.loads(geojson_text).get("features", []))
-                                results.append((layer_name, "Thanh cong", feature_count))
-                                append_log(
-                                    log_lines,
-                                    f"[{index}/{len(layers)}] Hoan thanh: {layer_name} ({feature_count} features)",
-                                    log_placeholder,
-                                )
-                            except Exception as exc:
-                                results.append((layer_name, f"Loi: {exc}", 0))
-                                append_log(
-                                    log_lines,
-                                    f"[{index}/{len(layers)}] Loi: {layer_name} -> {exc}",
-                                    log_placeholder,
-                                )
-
-                            progress_bar.progress(index / len(layers))
-
-                        status_placeholder.success("Da hoan tat qua trinh convert.")
-                        append_log(log_lines, "Da hoan tat qua trinh convert.", log_placeholder)
-
-                        st.subheader("Ket qua chuyen doi")
+                        st.subheader("Ket qua chuyen he toa do")
                         for layer_name, status, feature_count in results:
-                            if status == "Thanh cong":
+                            if status.startswith("Thanh cong"):
+                                st.success(f"{layer_name}: {status} - {feature_count} features")
+                            else:
+                                st.error(f"{layer_name}: {status}")
+
+                        if converted_files:
+                            output_zip = build_download_zip(converted_files)
+                            download_name = f"{os.path.splitext(uploaded_zip.name)[0]}_wgs84.zip"
+                            st.download_button(
+                                label="Tai ZIP du lieu WGS 84",
+                                data=output_zip,
+                                file_name=download_name,
+                                mime="application/zip",
+                            )
+                            st.info("File tai ve la ZIP chua cac layer da duoc dua ve WGS 84 o dang GeoJSON.")
+                        else:
+                            st.warning("Khong co layer nao duoc chuyen he toa do thanh cong")
+
+                    if convert_clicked:
+                        converted_files, results = process_layers(gdb_path, layers, mode="convert_geojson")
+
+                        st.subheader("Ket qua convert GeoJSON")
+                        for layer_name, status, feature_count in results:
+                            if status.startswith("Thanh cong"):
                                 st.success(f"{layer_name}: {status} - {feature_count} features")
                             else:
                                 st.error(f"{layer_name}: {status}")
@@ -230,7 +297,7 @@ if uploaded_zip and is_valid:
                                 mime="application/zip",
                             )
                         else:
-                            st.warning("Khong co layer nao duoc chuyen doi thanh cong")
+                            st.warning("Khong co layer nao duoc convert thanh cong")
     except ModuleNotFoundError as exc:
         st.error(f"Thieu thu vien can thiet: {exc}")
         st.info("Can cai geopandas, pyogrio va cac phu thuoc GDAL trong moi truong deploy")

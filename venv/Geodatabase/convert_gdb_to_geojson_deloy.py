@@ -21,15 +21,16 @@ def find_gdb_folder(root_dir):
 
 
 def list_layers(gdb_path):
-    import fiona
+    import pyogrio
 
-    return list(fiona.listlayers(gdb_path))
+    layers_info = pyogrio.list_layers(gdb_path)
+    return [layer[0] for layer in layers_info]
 
 
 def convert_layer_to_geojson_text(gdb_path, layer_name):
-    import geopandas as gpd
+    import pyogrio
 
-    gdf = gpd.read_file(gdb_path, layer=layer_name)
+    gdf = pyogrio.read_dataframe(gdb_path, layer=layer_name)
     return gdf.to_json()
 
 
@@ -121,7 +122,7 @@ if uploaded_zip and is_valid:
                         st.warning("Khong co layer nao duoc chuyen doi thanh cong")
     except ModuleNotFoundError as exc:
         st.error(f"Thieu thu vien can thiet: {exc}")
-        st.info("Can cai geopandas, fiona va cac phu thuoc GDAL trong moi truong deploy")
+        st.info("Can cai geopandas, pyogrio va cac phu thuoc GDAL trong moi truong deploy")
     except zipfile.BadZipFile:
         st.error("File zip khong hop le")
     except Exception as exc:

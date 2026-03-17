@@ -1,11 +1,16 @@
+import contextlib
 import io
 import json
 import os
 import tempfile
+import warnings
 import zipfile
 
 import streamlit as st
 
+
+os.environ.setdefault("CPL_DEBUG", "OFF")
+warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="Convert GDB to GeoJSON", page_icon=":world_map:", layout="wide")
 st.title("Convert GDB to GeoJSON")
@@ -30,7 +35,8 @@ def list_layers(gdb_path):
 def read_layer_dataframe(gdb_path, layer_name):
     import pyogrio
 
-    return pyogrio.read_dataframe(gdb_path, layer=layer_name)
+    with contextlib.redirect_stderr(io.StringIO()):
+        return pyogrio.read_dataframe(gdb_path, layer=layer_name)
 
 
 def get_layer_crs(gdb_path, layer_name):
@@ -119,6 +125,29 @@ def append_log(log_lines, message, log_placeholder):
     log_placeholder.code("\n".join(log_lines), language="text")
 
 
+def fix_invalid_geometries(gdf):
+    from shapely import make_valid
+
+    if gdf.empty or "geometry" not in gdf:
+        return gdf, 0
+
+    invalid_mask = ~gdf.geometry.is_valid.fillna(False)
+    invalid_count = int(invalid_mask.sum())
+
+    if invalid_count > 0:
+        gdf = gdf.copy()
+        gdf.loc[invalid_mask, "geometry"] = gdf.loc[invalid_mask, "geometry"].apply(
+            lambda geom: make_valid(geom) if geom is not None else geom
+        )
+
+    return gdf, invalid_count
+
+
+def dataframe_to_geojson_text(gdf):
+    with contextlib.redirect_stderr(io.StringIO()):
+        return gdf.to_json()
+
+
 def build_download_zip(converted_files):
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
@@ -168,11 +197,20 @@ def process_layers(gdb_path, layers, mode):
             gdf = read_layer_dataframe(gdb_path, layer_name)
             source_crs = gdf.crs
             reprojected = False
+            gdf, invalid_count = fix_invalid_geometries(gdf)
+
+            if invalid_count > 0:
+                append_log(
+                    log_lines,
+                    f"[{index}/{len(layers)}] Da sua {invalid_count} geometry loi trong layer {layer_name}",
+                    log_placeholder,
+                )
 
             if source_crs:
                 crs_info = parse_crs_info(source_crs)
                 if mode in {"reproject_only", "convert_geojson"} and not crs_info["is_wgs84"]:
-                    gdf = gdf.to_crs(4326)
+                    with contextlib.redirect_stderr(io.StringIO()):
+                        gdf = gdf.to_crs(4326)
                     reprojected = True
                     append_log(
                         log_lines,
@@ -180,7 +218,7 @@ def process_layers(gdb_path, layers, mode):
                         log_placeholder,
                     )
 
-            geojson_text = gdf.to_json()
+            geojson_text = dataframe_to_geojson_text(gdf)
             feature_count = len(json.loads(geojson_text).get("features", []))
             output_name = f"{sanitize_name(layer_name)}.geojson"
             converted_files[output_name] = geojson_text

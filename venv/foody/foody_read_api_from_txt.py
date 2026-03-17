@@ -107,7 +107,7 @@ class CsvWorkbook:
 # ======================
 COOKIE = "..."   # ðŸ”´ GIá»® NGUYÃŠN COOKIE Báº N ÄÃƒ CÃ“
 USE_COOKIE = True
-COOKIE_STATE_FILE = "foody_state_HaiPhong.json"
+COOKIE_STATE_FILE = "foody_state_Hue.json"
 
 
 # ======================

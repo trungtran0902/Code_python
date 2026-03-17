@@ -1,0 +1,7 @@
+streamlit==1.44.1
+geopandas==1.1.1
+fiona==1.10.1
+shapely==2.0.4
+pyproj==3.6.1
+pandas==2.2.3
+numpy==2.1.3

@@ -1,4 +1,5 @@
 import contextlib
+import datetime as dt
 import io
 import json
 import os
@@ -125,22 +126,90 @@ def append_log(log_lines, message, log_placeholder):
     log_placeholder.code("\n".join(log_lines), language="text")
 
 
-def fix_invalid_geometries(gdf):
+def normalize_properties_for_json(gdf):
+    for column_name in gdf.columns:
+        if column_name == "geometry":
+            continue
+
+        series = gdf[column_name]
+
+        if getattr(series.dtype, "kind", "") == "M":
+            gdf[column_name] = series.dt.strftime("%Y-%m-%dT%H:%M:%S").where(series.notna(), None)
+            continue
+
+        if series.dtype == "object":
+            gdf[column_name] = series.apply(
+                lambda value: value.isoformat()
+                if isinstance(value, (dt.datetime, dt.date))
+                else value
+            )
+
+    return gdf
+
+
+def is_geometry_usable(geometry):
+    if geometry is None or geometry.is_empty:
+        return False
+
+    try:
+        geometry.__geo_interface__
+        return True
+    except Exception:
+        return False
+
+
+def repair_geometry(geometry):
     from shapely import make_valid
 
+    if geometry is None:
+        return None
+
+    try:
+        repaired = make_valid(geometry)
+        if is_geometry_usable(repaired):
+            return repaired
+    except Exception:
+        pass
+
+    try:
+        repaired = geometry.buffer(0)
+        if is_geometry_usable(repaired):
+            return repaired
+    except Exception:
+        pass
+
+    return None
+
+
+def fix_invalid_geometries(gdf):
     if gdf.empty or "geometry" not in gdf:
-        return gdf, 0
+        return gdf, 0, 0
 
-    invalid_mask = ~gdf.geometry.is_valid.fillna(False)
-    invalid_count = int(invalid_mask.sum())
+    gdf = gdf.copy()
+    fixed_count = 0
+    null_geometry_count = 0
 
-    if invalid_count > 0:
-        gdf = gdf.copy()
-        gdf.loc[invalid_mask, "geometry"] = gdf.loc[invalid_mask, "geometry"].apply(
-            lambda geom: make_valid(geom) if geom is not None else geom
-        )
+    for row_index, geometry in gdf.geometry.items():
+        if geometry is None:
+            continue
 
-    return gdf, invalid_count
+        try:
+            is_valid = bool(geometry.is_valid)
+        except Exception:
+            is_valid = False
+
+        if is_valid and is_geometry_usable(geometry):
+            continue
+
+        repaired = repair_geometry(geometry)
+        if repaired is not None:
+            gdf.at[row_index, "geometry"] = repaired
+            fixed_count += 1
+        else:
+            gdf.at[row_index, "geometry"] = None
+            null_geometry_count += 1
+
+    return gdf, fixed_count, null_geometry_count
 
 
 def dataframe_to_geojson_text(gdf):
@@ -197,12 +266,21 @@ def process_layers(gdb_path, layers, mode):
             gdf = read_layer_dataframe(gdb_path, layer_name)
             source_crs = gdf.crs
             reprojected = False
-            gdf, invalid_count = fix_invalid_geometries(gdf)
+            original_feature_count = len(gdf)
+            gdf, fixed_geometry_count, null_geometry_count = fix_invalid_geometries(gdf)
+            gdf = normalize_properties_for_json(gdf)
 
-            if invalid_count > 0:
+            if fixed_geometry_count > 0:
                 append_log(
                     log_lines,
-                    f"[{index}/{len(layers)}] Da sua {invalid_count} geometry loi trong layer {layer_name}",
+                    f"[{index}/{len(layers)}] Da sua {fixed_geometry_count} geometry loi trong layer {layer_name}",
+                    log_placeholder,
+                )
+
+            if null_geometry_count > 0:
+                append_log(
+                    log_lines,
+                    f"[{index}/{len(layers)}] Co {null_geometry_count} feature khong the sua geometry, da giu lai feature va dat geometry = null trong layer {layer_name}",
                     log_placeholder,
                 )
 
@@ -222,6 +300,13 @@ def process_layers(gdb_path, layers, mode):
             feature_count = len(json.loads(geojson_text).get("features", []))
             output_name = f"{sanitize_name(layer_name)}.geojson"
             converted_files[output_name] = geojson_text
+
+            if feature_count != original_feature_count:
+                append_log(
+                    log_lines,
+                    f"[{index}/{len(layers)}] Canh bao: so feature thay doi tu {original_feature_count} thanh {feature_count} o layer {layer_name}",
+                    log_placeholder,
+                )
 
             if reprojected:
                 status_text = "Thanh cong - da chuyen sang WGS 84"

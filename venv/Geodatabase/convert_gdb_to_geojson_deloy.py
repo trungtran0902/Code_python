@@ -252,7 +252,8 @@ def process_layers(gdb_path, layers, mode):
     st.subheader("Tien trinh xu ly")
     progress_bar = st.progress(0)
     status_placeholder = st.empty()
-    log_placeholder = st.empty()
+    log_expander = st.expander("Xem log chi tiet", expanded=False)
+    log_placeholder = log_expander.empty()
 
     append_log(log_lines, f"Bat dau: {mode_label}", log_placeholder)
     append_log(log_lines, f"Mo geodatabase: {os.path.basename(gdb_path)}", log_placeholder)

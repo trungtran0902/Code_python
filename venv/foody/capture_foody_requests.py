@@ -3,8 +3,8 @@ import json
 import time
 import os
 
-STATE_FILE = os.path.join(os.path.dirname(__file__), "foody_state_HaiPhong.json")
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "captured_urls_HaiPhong_1_0403.txt")
+STATE_FILE = os.path.join(os.path.dirname(__file__), "foody_state_Hue.json")
+OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "captured_urls_Hue_17032026.txt")
 
 def load_cookies(file_path):
     try:
@@ -20,8 +20,8 @@ def load_cookies(file_path):
         # Example: Removing geolocation cookies or replacing them with Ho Chi Minh values
         for cookie in cookies:
             if 'lat' in cookie or 'lon' in cookie:
-                cookie['lat'] = 20.861361
-                cookie['lon'] = 106.679802
+                cookie['lat'] = 16.4498
+                cookie['lon'] = 107.56235
         return cookies
     if isinstance(data, list):
         return data
@@ -45,7 +45,7 @@ def main():
         browser = p.chromium.launch(headless=False)
         # Force geolocation and locale to Hanoi to avoid server using wrong region
         context = browser.new_context(
-            geolocation={"latitude": 20.861361, "longitude": 106.679802},
+            geolocation={"latitude": 16.4498, "longitude": 107.56235},
             permissions=["geolocation"],
             locale="vi-VN"
         )
@@ -75,9 +75,9 @@ def main():
             if "/__get/Place/HomeListPlace" in url:
                 purl = urlparse(url)
                 qs = parse_qs(purl.query)
-                qs['lat'] = [str(20.861361)]
-                qs['lon'] = [str(106.679802)]
-                qs['CityId'] = ['220']      # QUAN TRỌNG
+                qs['lat'] = [str(16.4498)]
+                qs['lon'] = [str(107.56235)]
+                qs['CityId'] = ['273']      # QUAN TRỌNG
                 qs['districtId'] = ['']     # optional – để all quận
 
                 # flatten values
@@ -142,7 +142,7 @@ def main():
 
         try:
             # Change this URL to the Foody page you normally use
-            start_url = "https://www.foody.vn/hai-phong/"
+            start_url = "https://www.foody.vn/hue/"
             
             print("Navigating to", start_url)
             page.goto(start_url, timeout=60000)

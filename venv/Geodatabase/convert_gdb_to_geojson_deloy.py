@@ -34,6 +34,71 @@ def convert_layer_to_geojson_text(gdb_path, layer_name):
     return gdf.to_json()
 
 
+def get_layer_crs(gdb_path, layer_name):
+    import pyogrio
+
+    gdf = pyogrio.read_dataframe(gdb_path, layer=layer_name, max_features=1)
+    return gdf.crs
+
+
+def find_first_available_crs(gdb_path, layers):
+    for layer_name in layers:
+        try:
+            crs = get_layer_crs(gdb_path, layer_name)
+            if crs:
+                return layer_name, crs
+        except Exception:
+            continue
+    return None, None
+
+
+def get_central_meridian(crs):
+    if not crs or not crs.coordinate_operation:
+        return None
+
+    for param in crs.coordinate_operation.params:
+        param_name = param.name.lower()
+        if "central meridian" in param_name or "longitude of natural origin" in param_name:
+            return param.value
+    return None
+
+
+def describe_crs(crs):
+    from pyproj import CRS
+
+    parsed_crs = CRS.from_user_input(crs)
+    epsg_code = parsed_crs.to_epsg()
+    crs_name = parsed_crs.name or "Khong ro ten he toa do"
+    central_meridian = get_central_meridian(parsed_crs)
+    datum_name = ""
+
+    if parsed_crs.datum:
+        datum_name = parsed_crs.datum.name or ""
+
+    normalized_name = crs_name.upper()
+    normalized_datum = datum_name.upper()
+
+    if "WGS 84" in normalized_name or "WGS 84" in normalized_datum:
+        system_label = "WGS 84"
+    elif "VN-2000" in normalized_name or "VN_2000" in normalized_name or "VN-2000" in normalized_datum:
+        system_label = "VN-2000"
+    else:
+        system_label = crs_name
+
+    description_parts = [f"He toa do: {system_label}", f"Ten CRS: {crs_name}"]
+
+    if epsg_code:
+        description_parts.append(f"EPSG: {epsg_code}")
+
+    if datum_name:
+        description_parts.append(f"Datum: {datum_name}")
+
+    if central_meridian is not None:
+        description_parts.append(f"Kinh tuyen truc: {central_meridian}")
+
+    return description_parts
+
+
 def build_download_zip(converted_files):
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
@@ -92,6 +157,16 @@ if uploaded_zip and is_valid:
                     st.warning("Khong tim thay layer nao trong geodatabase")
                 else:
                     st.info(f"Tim thay {len(layers)} layer")
+                    crs_layer_name, detected_crs = find_first_available_crs(gdb_path, layers)
+
+                    if detected_crs:
+                        st.subheader("Thong tin he toa do")
+                        st.caption(f"Phat hien tu layer: {crs_layer_name}")
+                        for line in describe_crs(detected_crs):
+                            st.write(f"- {line}")
+                    else:
+                        st.warning("Khong doc duoc thong tin he toa do tu cac layer")
+
                     st.write("Nhan nut ben duoi de bat dau convert.")
 
                     start_convert = st.button("Start Convert", type="primary")

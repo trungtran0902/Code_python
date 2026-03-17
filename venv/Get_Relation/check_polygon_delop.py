@@ -77,8 +77,9 @@ if uploaded_files:
                 continue
 
             st.error(f"Co {len(issues)} feature bi loi")
-            for idx, gtype, reason in issues:
-                st.write(f"- Feature {idx} ({gtype}): {reason}")
+            with st.expander(f"Xem chi tiet {len(issues)} loi", expanded=False):
+                for idx, gtype, reason in issues:
+                    st.write(f"- Feature {idx} ({gtype}): {reason}")
 
             if st.button(f"Fix geometry - {uploaded_file.name}", key=f"fix_{uploaded_file.name}"):
                 fixed_data, fixed_count = fix_geojson(data)

@@ -8,7 +8,7 @@ from shapely.validation import explain_validity
 
 
 st.set_page_config(page_title="Check lỗi Polygon", page_icon="🧩", layout="wide")
-st.title("🧩 Check lỗi Polygon (Upload folder)")
+st.title("🧩 Check lỗi Polygon (Upload file)")
 
 
 # -----------------------

@@ -14,7 +14,7 @@ with sync_playwright() as p:
     page.wait_for_timeout(60000)  # 60 giây cho bạn login
 
     # LƯU COOKIE
-    output_json = os.path.join(os.path.dirname(os.path.abspath(__file__)), "foody_state_HaiPhong.json")
+    output_json = os.path.join(os.path.dirname(os.path.abspath(__file__)), "foody_state_Hue.json")
     context.storage_state(path=output_json)
     print(f"✅ Đã tạo {output_json}")
 

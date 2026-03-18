@@ -1,5 +1,6 @@
 import io
 import json
+import re
 
 import geopandas as gpd
 import pandas as pd
@@ -20,7 +21,7 @@ def load_geojson_files(uploaded_geojson_files):
     gdf_list = []
 
     for uploaded_file in uploaded_geojson_files:
-        data = json.loads(uploaded_file.getvalue().decode("utf-8"))
+        data = parse_geojson_upload(uploaded_file)
         gdf = gpd.GeoDataFrame.from_features(data["features"])
 
         if "address" not in gdf.columns:
@@ -33,6 +34,37 @@ def load_geojson_files(uploaded_geojson_files):
 
     wards_gdf = pd.concat(gdf_list, ignore_index=True)
     return gpd.GeoDataFrame(wards_gdf, geometry="geometry", crs="EPSG:4326")
+
+
+def remove_trailing_commas(raw_text):
+    return re.sub(r",\s*([}\]])", r"\1", raw_text)
+
+
+def parse_geojson_upload(uploaded_file):
+    raw_text = uploaded_file.getvalue().decode("utf-8-sig")
+
+    try:
+        return json.loads(raw_text)
+    except json.JSONDecodeError as exc:
+        sanitized_text = remove_trailing_commas(raw_text)
+
+        if sanitized_text != raw_text:
+            try:
+                return json.loads(sanitized_text)
+            except json.JSONDecodeError:
+                pass
+
+        line_text = ""
+        text_lines = raw_text.splitlines()
+        if 1 <= exc.lineno <= len(text_lines):
+            line_text = text_lines[exc.lineno - 1].strip()
+
+        raise ValueError(
+            f"GeoJSON file '{uploaded_file.name}' has invalid JSON at "
+            f"line {exc.lineno}, column {exc.colno}. "
+            f"Please check for a missing comma, an extra comma, or broken quotes. "
+            f"Problematic line: {line_text}"
+        ) from exc
 
 
 def normalize_old_address_column(df):

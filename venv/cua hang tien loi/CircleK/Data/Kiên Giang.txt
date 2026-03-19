@@ -1,0 +1,20 @@
+[
+  {
+    "title": "E9-3 và E9-4 đường 3 tháng 2, P. Vĩnh Lạc,  TP. Rạch Giá, Kiên Giang",
+    "lat": "9.9906413",
+    "lng": "105.0878804",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>E9-3 và E9-4 đường 3 tháng 2, P. Vĩnh Lạc,  TP. Rạch Giá, Kiên Giang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "130-132 đường Nguyễn Trung Trực, P. Vĩnh Bảo, TP. Rạch Giá, Kiên Giang",
+    "lat": "10.0015871",
+    "lng": "105.0890952",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>130-132 đường Nguyễn Trung Trực, P. Vĩnh Bảo, TP. Rạch Giá, Kiên Giang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  },
+  {
+    "title": "Số 99 Đường 3 Tháng 2, P. Vĩnh Bảo, TP. Rạch Giá, Kiên Giang",
+    "lat": "10.0020261",
+    "lng": "105.082695",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>Số 99 Đường 3 Tháng 2, P. Vĩnh Bảo, TP. Rạch Giá, Kiên Giang</p><p></p> <div class=\"list-ser liss-all\"></div>"
+  }
+]

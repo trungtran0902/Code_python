@@ -1,0 +1,14 @@
+[
+  {
+    "title": "328/2A Hùng Vương, Phường Mỹ Long, TP. Long Xuyên, An Giang",
+    "lat": "10.379268",
+    "lng": "105.4418072",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>328/2A Hùng Vương, Phường Mỹ Long, TP. Long Xuyên, An Giang</p><p></p> <div class=\"list-ser liss-all\"><div class=\"list-ser-24h\"><img title=\"Thanh Toán Hóa Đơn\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2018/03/bill-pyment-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thanh Toán Bằng Thẻ\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2018/10/credit-card100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thẻ Điện Thoại\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/phonecard-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thẻ Game\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/gamecard-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Cửa hàng có ghế ngồi\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/seat.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thức Ăn &#038; Thức Uống\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/1.png\" alt=\"\"></div></div>"
+  },
+  {
+    "title": "155 Ung Văn Khiêm, TP. Long Xuyên",
+    "lat": "10.3734144",
+    "lng": "105.4330428",
+    "html": "\r\n\t\t\t\t<div id=\"content\"><div id=\"siteNotice\"></div><h1 id=\"firstHeading\" class=\"firstHeading\">Circle K</h1><div id=\"bodyContent\" style=\"height:100px\"><p>155 Ung Văn Khiêm, TP. Long Xuyên</p><p></p> <div class=\"list-ser liss-all\"><div class=\"list-ser-24h\"><img title=\"Thanh Toán Hóa Đơn\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2018/03/bill-pyment-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thanh Toán Bằng Thẻ\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2018/10/credit-card100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thẻ Điện Thoại\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/phonecard-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thẻ Game\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/gamecard-100x54.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Cửa hàng có ghế ngồi\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/seat.png\" alt=\"\"></div><div class=\"list-ser-24h\"><img title=\"Thức Ăn &#038; Thức Uống\" style=\"height:54px;\" src=\"https://www.circlek.com.vn/wp-content/uploads/2016/01/1.png\" alt=\"\"></div></div>"
+  }
+]

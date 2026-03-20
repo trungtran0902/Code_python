@@ -4,7 +4,6 @@ import tempfile
 import zipfile
 from io import BytesIO
 
-import geopandas as gpd
 import streamlit as st
 from shapely.geometry import GeometryCollection, MultiPolygon, Polygon, mapping, shape
 from shapely.ops import unary_union
@@ -170,6 +169,13 @@ def sanitize_column_name(name, used_names):
 
 
 def build_shapefile_zip(fixed_data, base_name):
+    try:
+        import geopandas as gpd
+    except ModuleNotFoundError as exc:
+        raise ModuleNotFoundError(
+            "Thieu thu vien geopandas trong moi truong deploy, chua the xuat shapefile zip."
+        ) from exc
+
     features = fixed_data.get("features", [])
     if not features:
         raise ValueError("Khong co feature hop le de xuat shapefile.")

@@ -14,10 +14,9 @@ REQUIRED_COLUMNS = [
     "Latitude",
     "Longitude",
     "Type",
-    "Tags",
-    "Phone",
 ]
-REQUIRED_ROW_FIELDS = ["Name", "Address", "Latitude", "Longitude"]
+OPTIONAL_COLUMNS = ["Tags", "Phone", "Website", "website"]
+REQUIRED_ROW_FIELDS = ["Name", "Address", "OldAddress", "Latitude", "Longitude", "Type"]
 
 st.set_page_config(page_title="Map4D Import POI Tool", layout="wide")
 
@@ -38,8 +37,8 @@ headers = {
 # ===== FILE UPLOAD =====
 st.markdown("### Input file format")
 st.info(
-    "Excel file can phai co cac cot sau: Name, Address, OldAddress, Latitude, "
-    "Longitude, Type, Tags, Phone"
+    "Excel file bat buoc co 6 cot: Name, Address, OldAddress, Latitude, "
+    "Longitude, Type. Cac cot khong bat buoc co the co: Tags, Phone, Website."
 )
 
 sample_columns_df = pd.DataFrame(
@@ -93,8 +92,16 @@ def validate_token(auth_token):
 
 def validate_dataframe_columns(df):
     missing_columns = [col for col in REQUIRED_COLUMNS if col not in df.columns]
-    extra_columns = [col for col in df.columns if col not in REQUIRED_COLUMNS]
+    accepted_columns = set(REQUIRED_COLUMNS + OPTIONAL_COLUMNS)
+    extra_columns = [col for col in df.columns if col not in accepted_columns]
     return missing_columns, extra_columns
+
+
+def get_optional_value(row, *column_names):
+    for column_name in column_names:
+        if column_name in row and not is_blank(row.get(column_name)):
+            return str(row.get(column_name)).strip()
+    return None
 
 
 def validate_row(row):
@@ -125,7 +132,8 @@ def upload_place(row):
     name = str(row.get("Name", "")).strip()
     address = str(row.get("Address", "")).strip()
     old_address = str(row.get("OldAddress", "")).strip()
-    phone = str(row.get("Phone", "")).strip()
+    phone = get_optional_value(row, "Phone")
+    website = get_optional_value(row, "Website", "website")
 
     lat = float(row.get("Latitude"))
     lng = float(row.get("Longitude"))
@@ -145,8 +153,8 @@ def upload_place(row):
         "photos": [],
         "startDate": datetime.now(UTC).isoformat(),
         "endDate": datetime.now(UTC).isoformat(),
-        "phoneNumber": phone or None,
-        "website": None,
+        "phoneNumber": phone,
+        "website": website,
         "businessHours": [],
         "geometry": {
             "type": "Point",
@@ -242,6 +250,7 @@ if uploaded_file:
                     "name": row.get("Name"),
                     "address": row.get("Address"),
                     "phone": row.get("Phone"),
+                    "website": row.get("Website", row.get("website")),
                     "lat": row.get("Latitude"),
                     "lng": row.get("Longitude"),
                     "tags": row.get("Tags"),

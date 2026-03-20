@@ -2,11 +2,41 @@ import json
 import math
 import os
 import re
+import sys
 import time
 from datetime import datetime
 
-from openpyxl import Workbook
-from playwright.sync_api import sync_playwright
+
+def bootstrap_project_site_packages():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_dir)))
+    candidate_paths = [
+        os.path.join(project_root, "venv", ".venv", "Lib", "site-packages"),
+        os.path.join(os.path.dirname(project_root), "venv", ".venv", "Lib", "site-packages"),
+    ]
+
+    for candidate in candidate_paths:
+        if os.path.isdir(candidate) and candidate not in sys.path:
+            sys.path.insert(0, candidate)
+
+
+bootstrap_project_site_packages()
+
+try:
+    from openpyxl import Workbook
+except ModuleNotFoundError as exc:
+    raise ModuleNotFoundError(
+        "Khong tim thay module 'openpyxl'. "
+        "Hay chay script bang interpreter cua project hoac cai openpyxl vao interpreter hien tai."
+    ) from exc
+
+try:
+    from playwright.sync_api import sync_playwright
+except ModuleNotFoundError as exc:
+    raise ModuleNotFoundError(
+        "Khong tim thay module 'playwright'. "
+        "Hay chay script bang interpreter cua project hoac cai playwright vao interpreter hien tai."
+    ) from exc
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))

@@ -1,6 +1,3 @@
-2026/03/19-16:17:47.100 5114 Reusing MANIFEST c:\Users\Admin Data\PycharmProjects\pythonProject1\github\Code_python\venv\Google map\google_profile\Default\Local Storage\leveldb/MANIFEST-000001
-2026/03/19-16:17:47.118 5114 Recovering log #4
-2026/03/19-16:17:47.129 5114 Reusing old log c:\Users\Admin Data\PycharmProjects\pythonProject1\github\Code_python\venv\Google map\google_profile\Default\Local Storage\leveldb/000004.log 
-2026/03/19-16:24:22.889 5114 Level-0 table #8: started
-2026/03/19-16:24:22.904 5114 Level-0 table #8: 9558 bytes OK
-2026/03/19-16:24:22.908 5114 Delete type=0 #4
+2026/03/20-13:45:32.885 2df8 Reusing MANIFEST c:\Users\Admin Data\PycharmProjects\pythonProject1\github\Code_python\venv\Google map\google_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/03/20-13:45:32.891 2df8 Recovering log #10
+2026/03/20-13:45:32.895 2df8 Reusing old log c:\Users\Admin Data\PycharmProjects\pythonProject1\github\Code_python\venv\Google map\google_profile\Default\Local Storage\leveldb/000010.log 

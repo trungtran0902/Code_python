@@ -17,6 +17,19 @@ REQUIRED_COLUMNS = [
 ]
 OPTIONAL_COLUMNS = ["Tags", "Phone", "Website", "website"]
 REQUIRED_ROW_FIELDS = ["Name", "Address", "OldAddress", "Latitude", "Longitude", "Type"]
+LOG_COLUMNS = [
+    "time",
+    "status",
+    "id",
+    "message",
+    "name",
+    "address",
+    "phone",
+    "website",
+    "lat",
+    "lng",
+    "tags",
+]
 
 st.set_page_config(page_title="Map4D Import POI Tool", layout="wide")
 
@@ -260,6 +273,7 @@ if uploaded_file:
             progress.progress((i + 1) / total)
 
         result_df = pd.DataFrame(results)
+        result_df = result_df.reindex(columns=LOG_COLUMNS)
 
         st.success("Import completed")
         st.dataframe(result_df, use_container_width=True)
@@ -293,12 +307,11 @@ if uploaded_file:
             st.write(f"Rows with errors: {len(error_df)}/{total}")
             st.dataframe(error_df, use_container_width=True)
 
-        csv_buffer = io.StringIO()
-        result_df.to_csv(csv_buffer, index=False)
+        csv_bytes = result_df.to_csv(index=False, encoding="utf-8-sig").encode("utf-8-sig")
 
         st.download_button(
             "Download Log CSV",
-            csv_buffer.getvalue(),
+            csv_bytes,
             "upload_log.csv",
             "text/csv",
         )

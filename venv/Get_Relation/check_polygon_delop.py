@@ -1,5 +1,10 @@
 import json
+import os
+import tempfile
+import zipfile
+from io import BytesIO
 
+import geopandas as gpd
 import streamlit as st
 from shapely.geometry import GeometryCollection, MultiPolygon, Polygon, mapping, shape
 from shapely.ops import unary_union
@@ -149,6 +154,71 @@ def fix_geojson(data):
     return fixed_data, fixed_count, removed_count
 
 
+def sanitize_column_name(name, used_names):
+    sanitized = "".join(char if char.isalnum() or char == "_" else "_" for char in str(name))
+    sanitized = sanitized[:10] or "field"
+
+    candidate = sanitized
+    suffix = 1
+    while candidate.lower() in used_names:
+        suffix_text = str(suffix)
+        candidate = f"{sanitized[:10 - len(suffix_text)]}{suffix_text}"
+        suffix += 1
+
+    used_names.add(candidate.lower())
+    return candidate
+
+
+def build_shapefile_zip(fixed_data, base_name):
+    features = fixed_data.get("features", [])
+    if not features:
+        raise ValueError("Khong co feature hop le de xuat shapefile.")
+
+    gdf = gpd.GeoDataFrame.from_features(features)
+    if gdf.empty:
+        raise ValueError("Khong tao duoc du lieu shapefile tu GeoJSON da fix.")
+
+    gdf = gdf.set_geometry("geometry")
+    if gdf.crs is None:
+        gdf = gdf.set_crs("EPSG:4326")
+
+    used_names = set()
+    rename_map = {}
+    for column in gdf.columns:
+        if column == "geometry":
+            continue
+        rename_map[column] = sanitize_column_name(column, used_names)
+
+    if rename_map:
+        gdf = gdf.rename(columns=rename_map)
+
+    for column in gdf.columns:
+        if column == "geometry":
+            continue
+        gdf[column] = gdf[column].apply(
+            lambda value: json.dumps(value, ensure_ascii=False)
+            if isinstance(value, (dict, list))
+            else value
+        )
+
+    safe_name = os.path.splitext(base_name)[0].replace(" ", "_")
+    if not safe_name:
+        safe_name = "fixed_geometry"
+
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        shp_path = os.path.join(tmp_dir, f"{safe_name}.shp")
+        gdf.to_file(shp_path, driver="ESRI Shapefile", encoding="UTF-8")
+
+        zip_buffer = BytesIO()
+        with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as zip_file:
+            for extension in (".shp", ".shx", ".dbf", ".prj", ".cpg"):
+                file_path = os.path.join(tmp_dir, f"{safe_name}{extension}")
+                if os.path.exists(file_path):
+                    zip_file.write(file_path, arcname=os.path.basename(file_path))
+
+        return zip_buffer.getvalue()
+
+
 uploaded_files = st.file_uploader(
     "Upload nhieu file GeoJSON",
     type=["geojson"],
@@ -204,6 +274,19 @@ if uploaded_files:
                     mime="application/geo+json",
                     key=f"download_{uploaded_file.name}",
                 )
+
+                try:
+                    shapefile_zip = build_shapefile_zip(fixed_data, fixed_name)
+                    zip_name = uploaded_file.name.replace(".geojson", "_fixed_shapefile.zip")
+                    st.download_button(
+                        label=f"Tai shapefile zip - {uploaded_file.name}",
+                        data=shapefile_zip,
+                        file_name=zip_name,
+                        mime="application/zip",
+                        key=f"download_shp_{uploaded_file.name}",
+                    )
+                except Exception as export_error:
+                    st.warning(f"Khong xuat duoc shapefile zip: {export_error}")
         except Exception as e:
             st.error(f"Khong doc duoc file: {e}")
 

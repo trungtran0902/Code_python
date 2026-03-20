@@ -231,12 +231,16 @@ uploaded_files = st.file_uploader(
     accept_multiple_files=True,
 )
 
+if "fixed_results" not in st.session_state:
+    st.session_state.fixed_results = {}
+
 if uploaded_files:
     st.info(f"Tim thay {len(uploaded_files)} file GeoJSON")
 
     for uploaded_file in uploaded_files:
         st.markdown("---")
         st.subheader(f"File: {uploaded_file.name}")
+        file_key = f"{uploaded_file.name}_{uploaded_file.size}"
 
         try:
             data = json.load(uploaded_file)
@@ -254,45 +258,63 @@ if uploaded_files:
             if st.button(f"Fix geometry - {uploaded_file.name}", key=f"fix_{uploaded_file.name}"):
                 fixed_data, fixed_count, removed_count = fix_geojson(data)
                 remaining_issues = check_geojson(fixed_data)
-
-                if fixed_count == 0:
-                    st.warning("Khong fix duoc geometry nao")
-                else:
-                    st.success(f"Da fix {fixed_count} feature")
-
-                if removed_count > 0:
-                    st.info(
-                        f"Da loai {removed_count} feature khong con geometry polygon sau khi fix."
-                    )
-
-                if remaining_issues:
-                    st.warning(f"Con lai {len(remaining_issues)} feature chua fix duoc")
-                else:
-                    st.success("File tai xuong chi giu geometry Polygon/MultiPolygon hop le")
-
                 fixed_content = json.dumps(fixed_data, ensure_ascii=False, indent=2)
                 fixed_name = uploaded_file.name.replace(".geojson", "_fixed.geojson")
 
+                shapefile_zip = None
+                shapefile_error = None
+                try:
+                    shapefile_zip = build_shapefile_zip(fixed_data, fixed_name)
+                except Exception as export_error:
+                    shapefile_error = str(export_error)
+
+                st.session_state.fixed_results[file_key] = {
+                    "fixed_data": fixed_data,
+                    "fixed_count": fixed_count,
+                    "removed_count": removed_count,
+                    "remaining_issue_count": len(remaining_issues),
+                    "fixed_content": fixed_content,
+                    "fixed_name": fixed_name,
+                    "shapefile_zip": shapefile_zip,
+                    "shapefile_error": shapefile_error,
+                }
+
+            result = st.session_state.fixed_results.get(file_key)
+            if result:
+                if result["fixed_count"] == 0:
+                    st.warning("Khong fix duoc geometry nao")
+                else:
+                    st.success(f"Da fix {result['fixed_count']} feature")
+
+                if result["removed_count"] > 0:
+                    st.info(
+                        f"Da loai {result['removed_count']} feature khong con geometry polygon sau khi fix."
+                    )
+
+                if result["remaining_issue_count"] > 0:
+                    st.warning(f"Con lai {result['remaining_issue_count']} feature chua fix duoc")
+                else:
+                    st.success("File tai xuong chi giu geometry Polygon/MultiPolygon hop le")
+
                 st.download_button(
                     label=f"Tai file da fix - {uploaded_file.name}",
-                    data=fixed_content.encode("utf-8"),
-                    file_name=fixed_name,
+                    data=result["fixed_content"].encode("utf-8"),
+                    file_name=result["fixed_name"],
                     mime="application/geo+json",
                     key=f"download_{uploaded_file.name}",
                 )
 
-                try:
-                    shapefile_zip = build_shapefile_zip(fixed_data, fixed_name)
+                if result["shapefile_zip"] is not None:
                     zip_name = uploaded_file.name.replace(".geojson", "_fixed_shapefile.zip")
                     st.download_button(
                         label=f"Tai shapefile zip - {uploaded_file.name}",
-                        data=shapefile_zip,
+                        data=result["shapefile_zip"],
                         file_name=zip_name,
                         mime="application/zip",
                         key=f"download_shp_{uploaded_file.name}",
                     )
-                except Exception as export_error:
-                    st.warning(f"Khong xuat duoc shapefile zip: {export_error}")
+                elif result["shapefile_error"]:
+                    st.warning(f"Khong xuat duoc shapefile zip: {result['shapefile_error']}")
         except Exception as e:
             st.error(f"Khong doc duoc file: {e}")
 

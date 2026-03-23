@@ -1,5 +1,6 @@
 import io
 import json
+import os
 import re
 import unicodedata
 from pathlib import Path
@@ -194,6 +195,13 @@ def normalize_name(value):
     return re.sub(r"[^a-z0-9]+", "", text)
 
 
+def normalize_input_path(path_text):
+    cleaned = str(path_text).strip().strip('"').strip("'")
+    cleaned = os.path.expandvars(cleaned)
+    cleaned = os.path.expanduser(cleaned)
+    return Path(cleaned)
+
+
 def find_best_matching_column(columns, candidates):
     normalized_columns = {normalize_name(col): col for col in columns}
 
@@ -223,9 +231,14 @@ def auto_detect_excel_columns(df):
 
 
 def collect_geojson_groups(geojson_root):
-    geojson_root = Path(geojson_root)
+    geojson_root = normalize_input_path(geojson_root)
     if not geojson_root.exists():
-        raise ValueError(f"GeoJSON root folder does not exist: {geojson_root}")
+        raise ValueError(
+            f"GeoJSON root folder does not exist: {geojson_root} "
+            f"(current working dir: {Path.cwd()})"
+        )
+    if not geojson_root.is_dir():
+        raise ValueError(f"GeoJSON root is not a folder: {geojson_root}")
 
     grouped = {}
     for province_dir in geojson_root.iterdir():
@@ -253,9 +266,14 @@ def collect_geojson_groups(geojson_root):
 
 
 def collect_excel_files(excel_root):
-    excel_root = Path(excel_root)
+    excel_root = normalize_input_path(excel_root)
     if not excel_root.exists():
-        raise ValueError(f"Excel folder does not exist: {excel_root}")
+        raise ValueError(
+            f"Excel folder does not exist: {excel_root} "
+            f"(current working dir: {Path.cwd()})"
+        )
+    if not excel_root.is_dir():
+        raise ValueError(f"Excel path is not a folder: {excel_root}")
 
     excel_files = []
     for pattern in ("*.xlsx", "*.xls"):
@@ -335,7 +353,7 @@ def run_batch_processing(
     geojson_groups = collect_geojson_groups(geojson_root)
     excel_files = collect_excel_files(excel_root)
 
-    output_root_path = Path(output_root)
+    output_root_path = normalize_input_path(output_root)
     output_root_path.mkdir(parents=True, exist_ok=True)
 
     summary_rows = []

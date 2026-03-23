@@ -73,13 +73,30 @@ def normalize_old_address_column(df):
     return df
 
 
-def validate_input_columns(df):
-    required_cols = ["Latitude", "Longitude", "Oldaddress"]
-    missing_cols = [col for col in required_cols if col not in df.columns]
+def get_default_column(columns, candidates):
+    normalized_map = {str(col).strip().lower(): col for col in columns}
 
-    if missing_cols:
+    for candidate in candidates:
+        match = normalized_map.get(candidate.lower())
+        if match is not None:
+            return match
+
+    return columns[0] if len(columns) > 0 else None
+
+
+def validate_selected_columns(oldaddress_col, latitude_col, longitude_col):
+    missing_fields = []
+
+    if not oldaddress_col:
+        missing_fields.append("Oldaddress")
+    if not latitude_col:
+        missing_fields.append("Latitude")
+    if not longitude_col:
+        missing_fields.append("Longitude")
+
+    if missing_fields:
         raise ValueError(
-            "Excel is missing required columns: " + ", ".join(missing_cols)
+            "Please select columns for: " + ", ".join(missing_fields)
         )
 
 
@@ -97,12 +114,29 @@ def build_new_address(row):
     return f"{house_part}, {str(row['ward_address']).strip()}"
 
 
-def process_files(excel_file, uploaded_geojson_files):
+def process_files(
+    excel_file,
+    uploaded_geojson_files,
+    oldaddress_col,
+    latitude_col,
+    longitude_col,
+):
     wards_gdf = load_geojson_files(uploaded_geojson_files)
 
     df = pd.read_excel(excel_file)
     df = normalize_old_address_column(df)
-    validate_input_columns(df)
+    validate_selected_columns(oldaddress_col, latitude_col, longitude_col)
+
+    df = df.copy()
+    df["Oldaddress"] = df[oldaddress_col]
+    df["Latitude"] = pd.to_numeric(df[latitude_col], errors="coerce")
+    df["Longitude"] = pd.to_numeric(df[longitude_col], errors="coerce")
+
+    missing_coordinates = df["Latitude"].isna() | df["Longitude"].isna()
+    if missing_coordinates.any():
+        raise ValueError(
+            "Some rows have invalid Latitude/Longitude values in the selected columns."
+        )
 
     geometry = [Point(xy) for xy in zip(df["Longitude"], df["Latitude"])]
     points_gdf = gpd.GeoDataFrame(df, geometry=geometry, crs="EPSG:4326")
@@ -115,8 +149,8 @@ def process_files(excel_file, uploaded_geojson_files):
 
 st.markdown("### Input file format")
 st.info(
-    "Excel file needs these columns: Latitude, Longitude, Oldaddress. "
-    "The app also accepts OldAddress and will map it automatically."
+    "Upload an Excel file, then choose which columns should be used for "
+    "Oldaddress, Latitude, and Longitude."
 )
 
 sample_input_df = pd.DataFrame(
@@ -156,10 +190,43 @@ if excel_file:
     st.dataframe(preview_df, use_container_width=True)
     st.write(f"Total rows: {len(preview_df)}")
 
+    excel_columns = list(preview_df.columns)
+    oldaddress_col = st.selectbox(
+        "Select column for Oldaddress",
+        options=excel_columns,
+        index=excel_columns.index(
+            get_default_column(excel_columns, ["Oldaddress", "OldAddress"])
+        ),
+    )
+    latitude_col = st.selectbox(
+        "Select column for Latitude",
+        options=excel_columns,
+        index=excel_columns.index(
+            get_default_column(excel_columns, ["Latitude", "lat", "y"])
+        ),
+    )
+    longitude_col = st.selectbox(
+        "Select column for Longitude",
+        options=excel_columns,
+        index=excel_columns.index(
+            get_default_column(excel_columns, ["Longitude", "lng", "lon", "x"])
+        ),
+    )
+else:
+    oldaddress_col = None
+    latitude_col = None
+    longitude_col = None
+
 if st.button("Start Processing", disabled=not uploaded_geojson_files or not excel_file):
     try:
         with st.spinner("Processing data..."):
-            result_df = process_files(excel_file, uploaded_geojson_files)
+            result_df = process_files(
+                excel_file,
+                uploaded_geojson_files,
+                oldaddress_col,
+                latitude_col,
+                longitude_col,
+            )
 
         st.success("Processing completed successfully.")
         st.dataframe(result_df, use_container_width=True)

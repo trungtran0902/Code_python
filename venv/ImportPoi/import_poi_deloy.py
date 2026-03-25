@@ -38,13 +38,6 @@ LOG_COLUMNS = [
     "status",
     "id",
     "message",
-    "name",
-    "address",
-    "phone",
-    "website",
-    "lat",
-    "lng",
-    "tags",
 ]
 
 st.set_page_config(page_title="Map4D Import POI Tool", layout="wide")
@@ -191,7 +184,46 @@ def checkpoint_to_dataframe(checkpoint_data):
     result_df = pd.DataFrame(checkpoint_data.get("results", []))
     if result_df.empty:
         return pd.DataFrame(columns=LOG_COLUMNS)
-    return result_df.reindex(columns=LOG_COLUMNS)
+    return result_df
+
+
+def format_progress_text(processed_count, total_count, status_text):
+    if total_count <= 0:
+        return f"Trang thai: {status_text} | 0/0 dong | 0.00%"
+
+    percent = (processed_count / total_count) * 100
+    return (
+        f"Trang thai: {status_text} | "
+        f"{processed_count}/{total_count} dong | {percent:.2f}%"
+    )
+
+
+def build_result_row(row, status, place_id, message):
+    row_data = {}
+    if hasattr(row, "to_dict"):
+        row_data = row.to_dict()
+    elif isinstance(row, dict):
+        row_data = dict(row)
+
+    row_data.update(
+        {
+            "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "status": status,
+            "id": place_id,
+            "message": message,
+        }
+    )
+    return row_data
+
+
+def build_result_dataframe(results, input_columns):
+    result_df = pd.DataFrame(results)
+    appended_columns = ["time", "status", "id", "message"]
+    ordered_columns = list(input_columns) + [
+        col for col in appended_columns if col in result_df.columns
+    ]
+    remaining_columns = [col for col in result_df.columns if col not in ordered_columns]
+    return result_df.reindex(columns=ordered_columns + remaining_columns)
 
 
 def get_optional_value(row, *column_names):
@@ -339,10 +371,22 @@ if uploaded_file:
     if checkpoint_data:
         processed_count = len(checkpoint_data.get("processed_indices", []))
         checkpoint_status = checkpoint_data.get("status", "in_progress")
+        status_label_map = {
+            "in_progress": "dang chay",
+            "paused": "dang tam dung",
+            "completed": "da hoan thanh",
+        }
         st.info(
             "Phat hien checkpoint truoc do: "
             f"{processed_count}/{checkpoint_data.get('total_rows', total)} dong da xu ly. "
             f"Trang thai: {checkpoint_status}."
+        )
+        st.caption(
+            format_progress_text(
+                processed_count,
+                checkpoint_data.get("total_rows", total),
+                status_label_map.get(checkpoint_status, checkpoint_status),
+            )
         )
         if checkpoint_data.get("last_error"):
             st.warning(f"Loi gan nhat: {checkpoint_data['last_error']}")
@@ -377,6 +421,10 @@ if uploaded_file:
         start_count = len(processed_indices)
 
         progress = st.progress(start_count / total if total else 0)
+        status_placeholder = st.empty()
+        status_placeholder.info(
+            format_progress_text(start_count, total, "dang xu ly")
+        )
         interrupted = False
 
         for i, row in df.iterrows():
@@ -385,19 +433,7 @@ if uploaded_file:
 
             status, place_id, message, should_stop = upload_place(row)
 
-            row_result = {
-                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "status": status,
-                "id": place_id,
-                "message": message,
-                "name": row.get("Name"),
-                "address": row.get("Address"),
-                "phone": row.get("Phone"),
-                "website": row.get("Website", row.get("website")),
-                "lat": row.get("Latitude"),
-                "lng": row.get("Longitude"),
-                "tags": row.get("Tags"),
-            }
+            row_result = build_result_row(row, status, place_id, message)
             results.append(row_result)
             processed_indices.add(i)
 
@@ -408,10 +444,17 @@ if uploaded_file:
             checkpoint_data["status"] = "paused" if should_stop else "in_progress"
             save_checkpoint(file_key, checkpoint_data)
 
-            progress.progress(len(processed_indices) / total if total else 1)
+            current_count = len(processed_indices)
+            progress.progress(current_count / total if total else 1)
+            status_placeholder.info(
+                format_progress_text(current_count, total, "dang xu ly")
+            )
 
             if should_stop:
                 interrupted = True
+                status_placeholder.warning(
+                    format_progress_text(current_count, total, "dang tam dung")
+                )
                 st.error(
                     "Import tam dung do loi ket noi/request. "
                     "Ban co the bam 'Resume Import' de chay tiep tu dong chua xong."
@@ -423,9 +466,11 @@ if uploaded_file:
             checkpoint_data["last_error"] = None
             checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             save_checkpoint(file_key, checkpoint_data)
+            status_placeholder.success(
+                format_progress_text(len(processed_indices), total, "da hoan thanh")
+            )
 
-        result_df = pd.DataFrame(results)
-        result_df = result_df.reindex(columns=LOG_COLUMNS)
+        result_df = build_result_dataframe(results, df.columns)
 
         if interrupted:
             st.warning(
@@ -443,19 +488,13 @@ if uploaded_file:
             st.subheader("Imported records")
             st.write(f"Successful imports: {len(success_df)}/{total}")
             st.dataframe(
-                success_df[["id", "name", "address", "phone", "lat", "lng", "tags"]],
+                success_df,
                 use_container_width=True,
             )
 
-            st.text("Created IDs")
-            st.code("\n".join(success_df["id"].fillna("NO_ID").astype(str).tolist()))
-
             print("Import completed successfully.")
             print("Created records:")
-            print(
-                success_df[["id", "name", "address", "phone", "lat", "lng", "tags"]]
-                .to_string(index=False)
-            )
+            print(success_df.to_string(index=False))
         else:
             st.warning("Import finished but no records were created successfully.")
             print("Import finished but no records were created successfully.")

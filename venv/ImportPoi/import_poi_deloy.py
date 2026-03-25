@@ -1,23 +1,10 @@
 import io
-import importlib.util
 from datetime import UTC, datetime
-from pathlib import Path
 
 import pandas as pd
 import requests
 import streamlit as st
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-BUSINESS_HOURS_MODULE_PATH = (
-    PROJECT_ROOT / "venv" / "foody" / "shoppefood" / "category" / "xu_ly_categories.py"
-)
-business_hours_spec = importlib.util.spec_from_file_location(
-    "xu_ly_categories",
-    BUSINESS_HOURS_MODULE_PATH,
-)
-business_hours_module = importlib.util.module_from_spec(business_hours_spec)
-business_hours_spec.loader.exec_module(business_hours_module)
-get_business_hours = business_hours_module.get_business_hours
+from business_hours_utils import get_business_hours
 
 API_URL = "https://api-data.map4d.vn/map/manage/place"
 REQUEST_TIMEOUT = 30

@@ -139,23 +139,23 @@ def normalize_time_value(value):
         return None
 
     if isinstance(value, pd.Timestamp):
-        return value.strftime("%H:%M")
+        return value.strftime("%H%M")
 
     if isinstance(value, datetime):
-        return value.strftime("%H:%M")
+        return value.strftime("%H%M")
 
     if isinstance(value, time):
-        return value.strftime("%H:%M")
+        return value.strftime("%H%M")
 
     if isinstance(value, date):
-        return "00:00"
+        return "0000"
 
     if isinstance(value, (int, float)) and not isinstance(value, bool):
         if 0 <= float(value) < 1:
             total_minutes = round(float(value) * 24 * 60)
             hours, minutes = divmod(total_minutes, 60)
             hours %= 24
-            return f"{hours:02d}:{minutes:02d}"
+            return f"{hours:02d}{minutes:02d}"
 
         text_value = f"{float(value):g}".strip()
     else:
@@ -163,12 +163,15 @@ def normalize_time_value(value):
 
     for fmt in ("%H:%M", "%H:%M:%S", "%I:%M %p", "%I:%M:%S %p"):
         try:
-            return datetime.strptime(text_value, fmt).strftime("%H:%M")
+            return datetime.strptime(text_value, fmt).strftime("%H%M")
         except ValueError:
             continue
 
-    if len(text_value) == 5 and text_value[2] == ":":
+    if len(text_value) == 4 and text_value.isdigit():
         return text_value
+
+    if len(text_value) == 5 and text_value[2] == ":":
+        return text_value.replace(":", "")
 
     raise ValueError(f"Khong doc duoc dinh dang gio: {value}")
 

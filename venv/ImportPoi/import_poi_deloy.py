@@ -1,5 +1,7 @@
+import ast
 import io
-from datetime import UTC, datetime
+import json
+from datetime import UTC, date, datetime, time
 
 import pandas as pd
 import requests
@@ -15,7 +17,18 @@ REQUIRED_COLUMNS = [
     "Longitude",
     "Type",
 ]
-OPTIONAL_COLUMNS = ["Tags", "Phone", "Website", "website"]
+OPTIONAL_COLUMNS = [
+    "Tags",
+    "Phone",
+    "Website",
+    "website",
+    "BusinessHours",
+    "businessHours",
+    "Time",
+    "time",
+    "Hours",
+    "hours",
+]
 REQUIRED_ROW_FIELDS = ["Name", "Address", "OldAddress", "Latitude", "Longitude", "Type"]
 LOG_COLUMNS = [
     "time",
@@ -51,7 +64,8 @@ headers = {
 st.markdown("### Input file format")
 st.info(
     "Excel file bat buoc co 6 cot: Name, Address, OldAddress, Latitude, "
-    "Longitude, Type. Cac cot khong bat buoc co the co: Tags, Phone, Website."
+    "Longitude, Type. Cac cot khong bat buoc co the co: Tags, Phone, Website, "
+    "BusinessHours/Time."
 )
 
 sample_columns_df = pd.DataFrame(
@@ -65,6 +79,9 @@ sample_columns_df = pd.DataFrame(
             "Type": "restaurant",
             "Tags": "sample-tag",
             "Phone": "0123456789",
+            "BusinessHours": (
+                "[{'day': 1, 'start_time': '08:00', 'end_time': '17:30'}]"
+            ),
         }
     ]
 )
@@ -117,6 +134,177 @@ def get_optional_value(row, *column_names):
     return None
 
 
+def normalize_time_value(value):
+    if is_blank(value):
+        return None
+
+    if isinstance(value, pd.Timestamp):
+        return value.strftime("%H:%M")
+
+    if isinstance(value, datetime):
+        return value.strftime("%H:%M")
+
+    if isinstance(value, time):
+        return value.strftime("%H:%M")
+
+    if isinstance(value, date):
+        return "00:00"
+
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        if 0 <= float(value) < 1:
+            total_minutes = round(float(value) * 24 * 60)
+            hours, minutes = divmod(total_minutes, 60)
+            hours %= 24
+            return f"{hours:02d}:{minutes:02d}"
+
+        text_value = f"{float(value):g}".strip()
+    else:
+        text_value = str(value).strip()
+
+    for fmt in ("%H:%M", "%H:%M:%S", "%I:%M %p", "%I:%M:%S %p"):
+        try:
+            return datetime.strptime(text_value, fmt).strftime("%H:%M")
+        except ValueError:
+            continue
+
+    if len(text_value) == 5 and text_value[2] == ":":
+        return text_value
+
+    raise ValueError(f"Khong doc duoc dinh dang gio: {value}")
+
+
+def normalize_day_value(value):
+    if is_blank(value):
+        raise ValueError("Thieu gia tri day cho businessHours.")
+
+    if isinstance(value, str):
+        normalized = value.strip().lower()
+        day_aliases = {
+            "0": 0,
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 5,
+            "6": 6,
+            "sun": 0,
+            "sunday": 0,
+            "cn": 0,
+            "mon": 1,
+            "monday": 1,
+            "thu2": 1,
+            "t2": 1,
+            "tue": 2,
+            "tuesday": 2,
+            "thu3": 2,
+            "t3": 2,
+            "wed": 3,
+            "wednesday": 3,
+            "thu4": 3,
+            "t4": 3,
+            "thu": 4,
+            "thursday": 4,
+            "thu5": 4,
+            "t5": 4,
+            "fri": 5,
+            "friday": 5,
+            "thu6": 5,
+            "t6": 5,
+            "sat": 6,
+            "saturday": 6,
+            "thu7": 6,
+            "t7": 6,
+        }
+        if normalized in day_aliases:
+            return day_aliases[normalized]
+
+    try:
+        day_value = int(float(value))
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"Gia tri day khong hop le: {value}") from exc
+
+    if not 0 <= day_value <= 6:
+        raise ValueError(f"Day phai nam trong khoang 0-6, nhan duoc {value}")
+
+    return day_value
+
+
+def parse_business_hours_value(raw_value):
+    if is_blank(raw_value):
+        return []
+
+    parsed_value = raw_value
+    if isinstance(raw_value, str):
+        text_value = raw_value.strip()
+        if not text_value:
+            return []
+
+        try:
+            parsed_value = json.loads(text_value)
+        except json.JSONDecodeError:
+            try:
+                parsed_value = ast.literal_eval(text_value)
+            except (ValueError, SyntaxError) as exc:
+                raise ValueError(
+                    "BusinessHours/Time phai la JSON hoac Python list/dict hop le."
+                ) from exc
+
+    if isinstance(parsed_value, dict):
+        parsed_items = [parsed_value]
+    elif isinstance(parsed_value, list):
+        parsed_items = parsed_value
+    else:
+        raise ValueError("BusinessHours/Time phai la list hoac dict.")
+
+    normalized_items = []
+    for item in parsed_items:
+        if not isinstance(item, dict):
+            raise ValueError("Moi businessHours item phai la object/dict.")
+
+        if "open" in item and "close" in item:
+            open_payload = item["open"]
+            close_payload = item["close"]
+            if not isinstance(open_payload, dict) or not isinstance(close_payload, dict):
+                raise ValueError("open/close trong businessHours phai la dict.")
+
+            day_open = normalize_day_value(open_payload.get("day"))
+            day_close = normalize_day_value(close_payload.get("day"))
+            time_open = normalize_time_value(open_payload.get("time"))
+            time_close = normalize_time_value(close_payload.get("time"))
+        else:
+            day_open = normalize_day_value(
+                item.get("open_day", item.get("start_day", item.get("day")))
+            )
+            day_close = normalize_day_value(
+                item.get("close_day", item.get("end_day", item.get("day")))
+            )
+            time_open = normalize_time_value(
+                item.get("open_time", item.get("start_time", item.get("from")))
+            )
+            time_close = normalize_time_value(
+                item.get("close_time", item.get("end_time", item.get("to")))
+            )
+
+        normalized_items.append(
+            {
+                "open": {"day": day_open, "time": time_open},
+                "close": {"day": day_close, "time": time_close},
+            }
+        )
+
+    return normalized_items
+
+
+def get_business_hours(row):
+    raw_business_hours = None
+    for column_name in ("BusinessHours", "businessHours", "Time", "time", "Hours", "hours"):
+        if column_name in row and not is_blank(row.get(column_name)):
+            raw_business_hours = row.get(column_name)
+            break
+
+    return parse_business_hours_value(raw_business_hours)
+
+
 def validate_row(row):
     missing_fields = [field for field in REQUIRED_ROW_FIELDS if is_blank(row.get(field))]
     if missing_fields:
@@ -133,6 +321,11 @@ def validate_row(row):
 
     if not (-180 <= lng <= 180):
         return False, "Longitude phai nam trong khoang -180 den 180."
+
+    try:
+        get_business_hours(row)
+    except ValueError as exc:
+        return False, str(exc)
 
     return True, ""
 
@@ -153,6 +346,7 @@ def upload_place(row):
 
     types = [str(row["Type"]).strip()] if pd.notna(row.get("Type")) else []
     tags = [str(row["Tags"]).strip()] if pd.notna(row.get("Tags")) else []
+    business_hours = get_business_hours(row)
 
     place = {
         "location": {"lng": lng, "lat": lat},
@@ -168,7 +362,6 @@ def upload_place(row):
         "endDate": datetime.now(UTC).isoformat(),
         "phoneNumber": phone,
         "website": website,
-        "businessHours": [],
         "geometry": {
             "type": "Point",
             "coordinates": [lng, lat],
@@ -178,6 +371,9 @@ def upload_place(row):
         "source": None,
         "metadata": [],
     }
+
+    if business_hours:
+        place["businessHours"] = business_hours
 
     try:
         response = requests.post(API_URL, headers=headers, json=place, timeout=REQUEST_TIMEOUT)

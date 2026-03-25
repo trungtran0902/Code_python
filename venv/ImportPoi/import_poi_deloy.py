@@ -1,5 +1,8 @@
 import io
+import json
+import hashlib
 from datetime import UTC, datetime
+from pathlib import Path
 
 import pandas as pd
 import requests
@@ -8,6 +11,7 @@ from business_hours_utils import get_business_hours
 
 API_URL = "https://api-data.map4d.vn/map/manage/place"
 REQUEST_TIMEOUT = 30
+CHECKPOINT_DIR = Path(__file__).resolve().parent / "checkpoints"
 REQUIRED_COLUMNS = [
     "Name",
     "Address",
@@ -46,6 +50,8 @@ LOG_COLUMNS = [
 st.set_page_config(page_title="Map4D Import POI Tool", layout="wide")
 
 st.title("Map4D Import POI Tool")
+
+CHECKPOINT_DIR.mkdir(exist_ok=True)
 
 # ===== TOKEN INPUT =====
 token = st.text_input(
@@ -124,6 +130,68 @@ def validate_dataframe_columns(df):
     accepted_columns = set(REQUIRED_COLUMNS + OPTIONAL_COLUMNS)
     extra_columns = [col for col in df.columns if col not in accepted_columns]
     return missing_columns, extra_columns
+
+
+def sanitize_token_for_state(auth_token):
+    token_value = (auth_token or "").strip()
+    if not token_value:
+        return ""
+    return hashlib.sha256(token_value.encode("utf-8")).hexdigest()[:16]
+
+
+def build_file_key(file_bytes, auth_token):
+    file_hash = hashlib.sha256(file_bytes).hexdigest()[:16]
+    token_hash = sanitize_token_for_state(auth_token)
+    return f"{file_hash}_{token_hash or 'no_token'}"
+
+
+def get_checkpoint_path(file_key):
+    return CHECKPOINT_DIR / f"{file_key}.json"
+
+
+def load_checkpoint(file_key):
+    checkpoint_path = get_checkpoint_path(file_key)
+    if not checkpoint_path.exists():
+        return None
+
+    try:
+        return json.loads(checkpoint_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def save_checkpoint(file_key, checkpoint_data):
+    checkpoint_path = get_checkpoint_path(file_key)
+    checkpoint_path.write_text(
+        json.dumps(checkpoint_data, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+def delete_checkpoint(file_key):
+    checkpoint_path = get_checkpoint_path(file_key)
+    if checkpoint_path.exists():
+        checkpoint_path.unlink()
+
+
+def init_checkpoint(file_key, total_rows):
+    checkpoint_data = {
+        "status": "in_progress",
+        "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "total_rows": total_rows,
+        "results": [],
+        "processed_indices": [],
+        "last_error": None,
+    }
+    save_checkpoint(file_key, checkpoint_data)
+    return checkpoint_data
+
+
+def checkpoint_to_dataframe(checkpoint_data):
+    result_df = pd.DataFrame(checkpoint_data.get("results", []))
+    if result_df.empty:
+        return pd.DataFrame(columns=LOG_COLUMNS)
+    return result_df.reindex(columns=LOG_COLUMNS)
 
 
 def get_optional_value(row, *column_names):
@@ -206,10 +274,10 @@ def upload_place(row):
     try:
         response = requests.post(API_URL, headers=headers, json=place, timeout=REQUEST_TIMEOUT)
     except requests.RequestException as e:
-        return "ERROR", None, str(e)
+        return "ERROR", None, str(e), True
 
     if response.status_code not in (200, 201):
-        return "FAIL", None, f"{response.status_code}: {response.text}"
+        return "FAIL", None, f"{response.status_code}: {response.text}", False
 
     try:
         resp_json = response.json()
@@ -217,7 +285,7 @@ def upload_place(row):
         return "FAIL", None, (
             "API tra ve thanh cong nhung response khong phai JSON, "
             f"khong doc duoc id. Chi tiet: {e}"
-        )
+        ), False
 
     place_id = None
     if isinstance(resp_json, dict):
@@ -230,15 +298,18 @@ def upload_place(row):
         return "FAIL", None, (
             "API tra ve thanh cong nhung khong phat sinh id. "
             "Ban ghi chua duoc coi la import thanh cong."
-        )
+        ), False
 
-    return "OK", place_id, "Uploaded"
+    return "OK", place_id, "Uploaded", False
 
 
 # ===== PROCESS FILE =====
 if uploaded_file:
+    file_bytes = uploaded_file.getvalue()
+    file_key = build_file_key(file_bytes, token)
+
     try:
-        df = pd.read_excel(uploaded_file, dtype={"Phone": str})
+        df = pd.read_excel(io.BytesIO(file_bytes), dtype={"Phone": str})
     except ImportError:
         st.error(
             "Missing Excel dependency in deployment environment. "
@@ -264,7 +335,30 @@ if uploaded_file:
     total = len(df)
     st.write(f"Total rows: {total}")
 
-    if st.button("Start Import"):
+    checkpoint_data = load_checkpoint(file_key)
+    if checkpoint_data:
+        processed_count = len(checkpoint_data.get("processed_indices", []))
+        checkpoint_status = checkpoint_data.get("status", "in_progress")
+        st.info(
+            "Phat hien checkpoint truoc do: "
+            f"{processed_count}/{checkpoint_data.get('total_rows', total)} dong da xu ly. "
+            f"Trang thai: {checkpoint_status}."
+        )
+        if checkpoint_data.get("last_error"):
+            st.warning(f"Loi gan nhat: {checkpoint_data['last_error']}")
+
+        if checkpoint_status == "completed":
+            completed_df = checkpoint_to_dataframe(checkpoint_data)
+            st.subheader("Saved import result")
+            st.dataframe(completed_df, use_container_width=True)
+
+        restart_import = st.button("Start New Import")
+        resume_import = checkpoint_status != "completed" and st.button("Resume Import")
+    else:
+        restart_import = st.button("Start Import")
+        resume_import = False
+
+    if restart_import or resume_import:
         token_valid, token_message = validate_token(token)
         if not token_valid:
             st.error(token_message)
@@ -272,34 +366,74 @@ if uploaded_file:
 
         st.success(token_message)
 
-        progress = st.progress(0)
-        results = []
+        if restart_import:
+            delete_checkpoint(file_key)
+            checkpoint_data = init_checkpoint(file_key, total)
+        elif checkpoint_data is None:
+            checkpoint_data = init_checkpoint(file_key, total)
+
+        processed_indices = set(checkpoint_data.get("processed_indices", []))
+        results = checkpoint_data.get("results", [])
+        start_count = len(processed_indices)
+
+        progress = st.progress(start_count / total if total else 0)
+        interrupted = False
 
         for i, row in df.iterrows():
-            status, place_id, message = upload_place(row)
+            if i in processed_indices:
+                continue
 
-            results.append(
-                {
-                    "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "status": status,
-                    "id": place_id,
-                    "message": message,
-                    "name": row.get("Name"),
-                    "address": row.get("Address"),
-                    "phone": row.get("Phone"),
-                    "website": row.get("Website", row.get("website")),
-                    "lat": row.get("Latitude"),
-                    "lng": row.get("Longitude"),
-                    "tags": row.get("Tags"),
-                }
-            )
+            status, place_id, message, should_stop = upload_place(row)
 
-            progress.progress((i + 1) / total)
+            row_result = {
+                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "status": status,
+                "id": place_id,
+                "message": message,
+                "name": row.get("Name"),
+                "address": row.get("Address"),
+                "phone": row.get("Phone"),
+                "website": row.get("Website", row.get("website")),
+                "lat": row.get("Latitude"),
+                "lng": row.get("Longitude"),
+                "tags": row.get("Tags"),
+            }
+            results.append(row_result)
+            processed_indices.add(i)
+
+            checkpoint_data["results"] = results
+            checkpoint_data["processed_indices"] = sorted(processed_indices)
+            checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            checkpoint_data["last_error"] = message if should_stop else None
+            checkpoint_data["status"] = "paused" if should_stop else "in_progress"
+            save_checkpoint(file_key, checkpoint_data)
+
+            progress.progress(len(processed_indices) / total if total else 1)
+
+            if should_stop:
+                interrupted = True
+                st.error(
+                    "Import tam dung do loi ket noi/request. "
+                    "Ban co the bam 'Resume Import' de chay tiep tu dong chua xong."
+                )
+                break
+
+        if not interrupted:
+            checkpoint_data["status"] = "completed"
+            checkpoint_data["last_error"] = None
+            checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            save_checkpoint(file_key, checkpoint_data)
 
         result_df = pd.DataFrame(results)
         result_df = result_df.reindex(columns=LOG_COLUMNS)
 
-        st.success("Import completed")
+        if interrupted:
+            st.warning(
+                f"Da xu ly {len(processed_indices)}/{total} dong. "
+                "Tien do da duoc luu de resume."
+            )
+        else:
+            st.success("Import completed")
         st.dataframe(result_df, use_container_width=True)
 
         success_df = result_df[result_df["status"] == "OK"].copy()

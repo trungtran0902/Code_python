@@ -7,11 +7,12 @@ from pathlib import Path
 import pandas as pd
 import requests
 import streamlit as st
-from business_hours_utils import get_business_hours
+from business_hours_utils import BUSINESS_HOURS_COLUMNS, get_business_hours
 
 API_URL = "https://api-data.map4d.vn/map/manage/place"
 REQUEST_TIMEOUT = 30
 CHECKPOINT_DIR = Path(__file__).resolve().parent / "checkpoints"
+IMPORT_CHUNK_SIZE = 25
 REQUIRED_COLUMNS = [
     "Name",
     "Address",
@@ -38,6 +39,9 @@ LOG_COLUMNS = [
     "status",
     "id",
     "message",
+    "error_type",
+    "error_column",
+    "error_value",
 ]
 
 st.set_page_config(page_title="Map4D Import POI Tool", layout="wide")
@@ -125,6 +129,22 @@ def validate_dataframe_columns(df):
     return missing_columns, extra_columns
 
 
+def summarize_value(value, max_length=200):
+    if pd.isna(value):
+        return ""
+    text = str(value).strip()
+    if len(text) <= max_length:
+        return text
+    return f"{text[:max_length]}..."
+
+
+def get_business_hours_source(row):
+    for column_name in BUSINESS_HOURS_COLUMNS:
+        if column_name in row and not is_blank(row.get(column_name)):
+            return column_name, row.get(column_name)
+    return None, None
+
+
 def sanitize_token_for_state(auth_token):
     token_value = (auth_token or "").strip()
     if not token_value:
@@ -136,6 +156,10 @@ def build_file_key(file_bytes, auth_token):
     file_hash = hashlib.sha256(file_bytes).hexdigest()[:16]
     token_hash = sanitize_token_for_state(auth_token)
     return f"{file_hash}_{token_hash or 'no_token'}"
+
+
+def get_control_state_key(file_key):
+    return f"import_control_state_{file_key}"
 
 
 def get_checkpoint_path(file_key):
@@ -198,7 +222,7 @@ def format_progress_text(processed_count, total_count, status_text):
     )
 
 
-def build_result_row(row, status, place_id, message):
+def build_result_row(row, status, place_id, message, diagnostics=None):
     row_data = {}
     if hasattr(row, "to_dict"):
         row_data = row.to_dict()
@@ -211,6 +235,9 @@ def build_result_row(row, status, place_id, message):
             "status": status,
             "id": place_id,
             "message": message,
+            "error_type": (diagnostics or {}).get("error_type"),
+            "error_column": (diagnostics or {}).get("error_column"),
+            "error_value": (diagnostics or {}).get("error_value"),
         }
     )
     return row_data
@@ -233,35 +260,77 @@ def get_optional_value(row, *column_names):
     return None
 
 
+def parse_multi_value_cell(value):
+    if is_blank(value):
+        return []
+    return [item.strip() for item in str(value).split(",") if item.strip()]
+
+
 def validate_row(row):
     missing_fields = [field for field in REQUIRED_ROW_FIELDS if is_blank(row.get(field))]
     if missing_fields:
-        return False, f"Thieu du lieu bat buoc: {', '.join(missing_fields)}"
+        first_missing = missing_fields[0]
+        return False, (
+            f"Thieu du lieu bat buoc o cot '{first_missing}'."
+        ), {
+            "error_type": "missing_required_value",
+            "error_column": first_missing,
+            "error_value": summarize_value(row.get(first_missing)),
+        }
 
     try:
         lat = float(row.get("Latitude"))
         lng = float(row.get("Longitude"))
     except (TypeError, ValueError):
-        return False, "Latitude hoac Longitude khong dung dinh dang so."
+        invalid_column = "Latitude"
+        invalid_value = row.get("Latitude")
+        try:
+            float(row.get("Latitude"))
+        except (TypeError, ValueError):
+            invalid_column = "Latitude"
+            invalid_value = row.get("Latitude")
+        else:
+            invalid_column = "Longitude"
+            invalid_value = row.get("Longitude")
+        return False, (
+            f"Cot '{invalid_column}' co gia tri khong dung dinh dang so."
+        ), {
+            "error_type": "invalid_number",
+            "error_column": invalid_column,
+            "error_value": summarize_value(invalid_value),
+        }
 
     if not (-90 <= lat <= 90):
-        return False, "Latitude phai nam trong khoang -90 den 90."
+        return False, "Latitude phai nam trong khoang -90 den 90.", {
+            "error_type": "out_of_range",
+            "error_column": "Latitude",
+            "error_value": summarize_value(row.get("Latitude")),
+        }
 
     if not (-180 <= lng <= 180):
-        return False, "Longitude phai nam trong khoang -180 den 180."
+        return False, "Longitude phai nam trong khoang -180 den 180.", {
+            "error_type": "out_of_range",
+            "error_column": "Longitude",
+            "error_value": summarize_value(row.get("Longitude")),
+        }
 
     try:
         get_business_hours(row)
     except ValueError as exc:
-        return False, str(exc)
+        source_column, source_value = get_business_hours_source(row)
+        return False, str(exc), {
+            "error_type": "invalid_structure",
+            "error_column": source_column or "BusinessHours",
+            "error_value": summarize_value(source_value),
+        }
 
-    return True, ""
+    return True, "", {}
 
 
 def upload_place(row):
-    row_valid, row_message = validate_row(row)
+    row_valid, row_message, diagnostics = validate_row(row)
     if not row_valid:
-        return "INVALID", None, row_message
+        return "INVALID", None, row_message, False, diagnostics
 
     name = str(row.get("Name", "")).strip()
     address = str(row.get("Address", "")).strip()
@@ -272,8 +341,8 @@ def upload_place(row):
     lat = float(row.get("Latitude"))
     lng = float(row.get("Longitude"))
 
-    types = [str(row["Type"]).strip()] if pd.notna(row.get("Type")) else []
-    tags = [str(row["Tags"]).strip()] if pd.notna(row.get("Tags")) else []
+    types = parse_multi_value_cell(row.get("Type"))
+    tags = parse_multi_value_cell(row.get("Tags"))
     business_hours = get_business_hours(row)
 
     place = {
@@ -306,10 +375,18 @@ def upload_place(row):
     try:
         response = requests.post(API_URL, headers=headers, json=place, timeout=REQUEST_TIMEOUT)
     except requests.RequestException as e:
-        return "ERROR", None, str(e), True
+        return "ERROR", None, str(e), True, {
+            "error_type": "request_exception",
+            "error_column": None,
+            "error_value": summarize_value(e),
+        }
 
     if response.status_code not in (200, 201):
-        return "FAIL", None, f"{response.status_code}: {response.text}", False
+        return "FAIL", None, f"{response.status_code}: {response.text}", False, {
+            "error_type": "api_error",
+            "error_column": None,
+            "error_value": summarize_value(response.text),
+        }
 
     try:
         resp_json = response.json()
@@ -317,7 +394,11 @@ def upload_place(row):
         return "FAIL", None, (
             "API tra ve thanh cong nhung response khong phai JSON, "
             f"khong doc duoc id. Chi tiet: {e}"
-        ), False
+        ), False, {
+            "error_type": "invalid_api_response",
+            "error_column": None,
+            "error_value": summarize_value(response.text),
+        }
 
     place_id = None
     if isinstance(resp_json, dict):
@@ -330,15 +411,20 @@ def upload_place(row):
         return "FAIL", None, (
             "API tra ve thanh cong nhung khong phat sinh id. "
             "Ban ghi chua duoc coi la import thanh cong."
-        ), False
+        ), False, {
+            "error_type": "missing_id_in_response",
+            "error_column": "Type/BusinessHours/payload",
+            "error_value": summarize_value(resp_json),
+        }
 
-    return "OK", place_id, "Uploaded", False
+    return "OK", place_id, "Uploaded", False, {}
 
 
 # ===== PROCESS FILE =====
 if uploaded_file:
     file_bytes = uploaded_file.getvalue()
     file_key = build_file_key(file_bytes, token)
+    control_state_key = get_control_state_key(file_key)
 
     try:
         df = pd.read_excel(io.BytesIO(file_bytes), dtype={"Phone": str})
@@ -354,7 +440,8 @@ if uploaded_file:
     if missing_columns:
         st.error(
             "File Excel sai ten cot hoac thieu cot bat buoc. "
-            f"Thieu: {', '.join(missing_columns)}"
+            f"Thieu: {', '.join(missing_columns)}. "
+            f"Cac cot hien co: {', '.join(df.columns.astype(str).tolist())}"
         )
         st.stop()
 
@@ -368,9 +455,19 @@ if uploaded_file:
     st.write(f"Total rows: {total}")
 
     checkpoint_data = load_checkpoint(file_key)
+    checkpoint_status = checkpoint_data.get("status", "in_progress") if checkpoint_data else "idle"
+    current_control_status = st.session_state.get(control_state_key)
+    if current_control_status is None:
+        if checkpoint_status == "completed":
+            current_control_status = "completed"
+        elif checkpoint_data:
+            current_control_status = "paused"
+        else:
+            current_control_status = "idle"
+        st.session_state[control_state_key] = current_control_status
+
     if checkpoint_data:
         processed_count = len(checkpoint_data.get("processed_indices", []))
-        checkpoint_status = checkpoint_data.get("status", "in_progress")
         status_label_map = {
             "in_progress": "dang chay",
             "paused": "dang tam dung",
@@ -397,12 +494,38 @@ if uploaded_file:
             st.dataframe(completed_df, use_container_width=True)
 
         restart_import = st.button("Start New Import")
-        resume_import = checkpoint_status != "completed" and st.button("Resume Import")
+        pause_import = current_control_status == "running" and st.button("Pause Import")
+        resume_import = (
+            checkpoint_status != "completed"
+            and current_control_status != "running"
+            and st.button("Resume Import")
+        )
     else:
         restart_import = st.button("Start Import")
+        pause_import = False
         resume_import = False
 
-    if restart_import or resume_import:
+    if pause_import:
+        st.session_state[control_state_key] = "paused"
+        checkpoint_data = checkpoint_data or init_checkpoint(file_key, total)
+        checkpoint_data["status"] = "paused"
+        checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        save_checkpoint(file_key, checkpoint_data)
+        st.rerun()
+
+    if restart_import:
+        delete_checkpoint(file_key)
+        checkpoint_data = init_checkpoint(file_key, total)
+        st.session_state[control_state_key] = "running"
+        current_control_status = "running"
+
+    if resume_import:
+        if checkpoint_data is None:
+            checkpoint_data = init_checkpoint(file_key, total)
+        st.session_state[control_state_key] = "running"
+        current_control_status = "running"
+
+    if current_control_status == "running":
         token_valid, token_message = validate_token(token)
         if not token_valid:
             st.error(token_message)
@@ -410,10 +533,7 @@ if uploaded_file:
 
         st.success(token_message)
 
-        if restart_import:
-            delete_checkpoint(file_key)
-            checkpoint_data = init_checkpoint(file_key, total)
-        elif checkpoint_data is None:
+        if checkpoint_data is None:
             checkpoint_data = init_checkpoint(file_key, total)
 
         processed_indices = set(checkpoint_data.get("processed_indices", []))
@@ -426,16 +546,18 @@ if uploaded_file:
             format_progress_text(start_count, total, "dang xu ly")
         )
         interrupted = False
+        rows_processed_this_run = 0
 
         for i, row in df.iterrows():
             if i in processed_indices:
                 continue
 
-            status, place_id, message, should_stop = upload_place(row)
+            status, place_id, message, should_stop, diagnostics = upload_place(row)
 
-            row_result = build_result_row(row, status, place_id, message)
+            row_result = build_result_row(row, status, place_id, message, diagnostics)
             results.append(row_result)
             processed_indices.add(i)
+            rows_processed_this_run += 1
 
             checkpoint_data["results"] = results
             checkpoint_data["processed_indices"] = sorted(processed_indices)
@@ -452,6 +574,7 @@ if uploaded_file:
 
             if should_stop:
                 interrupted = True
+                st.session_state[control_state_key] = "paused"
                 status_placeholder.warning(
                     format_progress_text(current_count, total, "dang tam dung")
                 )
@@ -461,14 +584,23 @@ if uploaded_file:
                 )
                 break
 
-        if not interrupted:
+            if rows_processed_this_run >= IMPORT_CHUNK_SIZE:
+                break
+
+        if len(processed_indices) >= total:
             checkpoint_data["status"] = "completed"
             checkpoint_data["last_error"] = None
             checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             save_checkpoint(file_key, checkpoint_data)
+            st.session_state[control_state_key] = "completed"
             status_placeholder.success(
                 format_progress_text(len(processed_indices), total, "da hoan thanh")
             )
+        elif not interrupted:
+            checkpoint_data["status"] = "in_progress"
+            checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            save_checkpoint(file_key, checkpoint_data)
+            st.session_state[control_state_key] = "running"
 
         result_df = build_result_dataframe(results, df.columns)
 
@@ -477,8 +609,13 @@ if uploaded_file:
                 f"Da xu ly {len(processed_indices)}/{total} dong. "
                 "Tien do da duoc luu de resume."
             )
-        else:
+        elif len(processed_indices) >= total:
             st.success("Import completed")
+        else:
+            st.info(
+                f"He thong dang chay tiep theo tung dot. "
+                f"Da xu ly {len(processed_indices)}/{total} dong."
+            )
         st.dataframe(result_df, use_container_width=True)
 
         success_df = result_df[result_df["status"] == "OK"].copy()
@@ -512,3 +649,10 @@ if uploaded_file:
             "upload_log.csv",
             "text/csv",
         )
+
+        if (
+            st.session_state.get(control_state_key) == "running"
+            and len(processed_indices) < total
+            and not interrupted
+        ):
+            st.rerun()

@@ -223,6 +223,9 @@ def normalize_day_value(value):
     except (TypeError, ValueError) as exc:
         raise ValueError(f"Gia tri day khong hop le: {value}") from exc
 
+    if 1 <= day_value <= 7:
+        return 0 if day_value == 7 else day_value
+
     if not 0 <= day_value <= 6:
         raise ValueError(f"Day phai nam trong khoang 0-6, nhan duoc {value}")
 
@@ -273,10 +276,16 @@ def parse_business_hours_value(raw_value):
             time_close = normalize_time_value(close_payload.get("time"))
         else:
             day_open = normalize_day_value(
-                item.get("open_day", item.get("start_day", item.get("day")))
+                item.get(
+                    "open_day",
+                    item.get("start_day", item.get("day", item.get("week_day"))),
+                )
             )
             day_close = normalize_day_value(
-                item.get("close_day", item.get("end_day", item.get("day")))
+                item.get(
+                    "close_day",
+                    item.get("end_day", item.get("day", item.get("week_day"))),
+                )
             )
             time_open = normalize_time_value(
                 item.get("open_time", item.get("start_time", item.get("from")))

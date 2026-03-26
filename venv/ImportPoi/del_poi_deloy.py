@@ -203,9 +203,22 @@ if mode == "Upload file CSV / Excel":
         st.write("Preview du lieu")
         st.dataframe(df, use_container_width=True)
 
-        if "id" not in df.columns:
-            st.error("File phai co cot 'id'.")
+        id_like_columns = [column for column in df.columns if "id" in str(column).lower()]
+        st.text_input(
+            "So cot co chua 'id'",
+            value=str(len(id_like_columns)),
+            disabled=True,
+        )
+
+        if not id_like_columns:
+            st.error("Khong tim thay cot nao co chua 'id' trong file.")
             st.stop()
+
+        selected_id_column = st.selectbox(
+            "Chon cot ID de xoa",
+            options=id_like_columns,
+            index=0,
+        )
 
         file_key = get_file_key(uploaded_file.name, file_bytes, auth_token)
         control_state_key = get_control_state_key(file_key)
@@ -307,9 +320,9 @@ if mode == "Upload file CSV / Excel":
                 if i in processed_indices:
                     continue
 
-                place_id = str(row.get("id", "")).strip()
+                place_id = str(row.get(selected_id_column, "")).strip()
                 if not place_id or place_id.lower() == "nan":
-                    message = "Thieu place id"
+                    message = f"Thieu place id trong cot {selected_id_column}"
                     result_row = row.to_dict()
                     result_row.update(
                         {

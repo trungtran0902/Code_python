@@ -1,26 +1,23 @@
-import streamlit as st
-import pandas as pd
-from io import BytesIO
-from unidecode import unidecode
-from rapidfuzz import fuzz
-from geopy.distance import geodesic
 import math
+from io import BytesIO
 
-# ======================================================
-# INIT SESSION STATE
-# ======================================================
+import pandas as pd
+import streamlit as st
+from geopy.distance import geodesic
+from rapidfuzz import fuzz
+from unidecode import unidecode
+
+
 if "result_df" not in st.session_state:
     st.session_state.result_df = None
+if "filter_conditions" not in st.session_state:
+    st.session_state.filter_conditions = []
 
-# ======================================================
-# PAGE CONFIG
-# ======================================================
-st.set_page_config(page_title="Excel Tool – Compare & View", layout="wide")
-st.title("📊 Excel Tool – So sánh & Xem file")
 
-# ======================================================
-# HELPERS
-# ======================================================
+st.set_page_config(page_title="Excel Tool - Compare & View", layout="wide")
+st.title("Excel Tool - So sanh & Xem file")
+
+
 def normalize_text(text):
     if pd.isna(text):
         return ""
@@ -29,32 +26,41 @@ def normalize_text(text):
         text = text.replace(ch, " ")
     return " ".join(text.split())
 
-def safe_float(x):
-    if pd.isna(x):
+
+def safe_float(value):
+    if pd.isna(value):
         return None
     try:
-        v = float(str(x).replace(",", "."))
-        if math.isnan(v) or math.isinf(v):
+        numeric = float(str(value).replace(",", "."))
+        if math.isnan(numeric) or math.isinf(numeric):
             return None
-        return v
-    except:
+        return numeric
+    except Exception:
         return None
+
 
 def calc_distance(lat1, lng1, lat2, lng2):
     if any(v is None for v in [lat1, lng1, lat2, lng2]):
         return None
     try:
         return round(geodesic((lat1, lng1), (lat2, lng2)).meters, 2)
-    except:
+    except Exception:
         return None
+
 
 def run_compare(
     df,
-    col_name_1, col_name_2,
-    col_addr_1, col_addr_2,
-    col_lat_1, col_lng_1,
-    col_lat_2, col_lng_2,
-    name_thr, addr_thr, dist_thr
+    col_name_1,
+    col_name_2,
+    col_addr_1,
+    col_addr_2,
+    col_lat_1,
+    col_lng_1,
+    col_lat_2,
+    col_lng_2,
+    name_thr,
+    addr_thr,
+    dist_thr,
 ):
     df = df.copy()
 
@@ -73,52 +79,80 @@ def run_compare(
         name_exact = row["ten_norm"] == row["name_norm"] and row["ten_norm"] != ""
 
         if name_exact:
-            return pd.Series(["Trùng quán (tên chính xác)", 100, name_score, None])
+            return pd.Series(["Trung quan (ten chinh xac)", 100, name_score, None])
         if name_score >= name_thr:
-            return pd.Series(["Trùng quán (tên gần đúng)", name_score, name_score, None])
+            return pd.Series(["Trung quan (ten gan dung)", name_score, name_score, None])
 
         addr_score = fuzz.token_set_ratio(row["addr1_norm"], row["addr2_norm"])
         if addr_score >= addr_thr:
-            return pd.Series(["Trùng địa chỉ", addr_score, name_score, None])
+            return pd.Series(["Trung dia chi", addr_score, name_score, None])
 
-        distance_m = calc_distance(
-            row["lat1"], row["lng1"], row["lat2"], row["lng2"]
-        )
+        distance_m = calc_distance(row["lat1"], row["lng1"], row["lat2"], row["lng2"])
 
         if distance_m is not None and distance_m <= dist_thr:
-            return pd.Series(["Gần nhau nhưng khác địa chỉ", 40, name_score, distance_m])
+            return pd.Series(["Gan nhau nhung khac dia chi", 40, name_score, distance_m])
         if distance_m is not None:
-            return pd.Series(["Khác", 0, name_score, distance_m])
+            return pd.Series(["Khac", 0, name_score, distance_m])
 
-        return pd.Series(["Thiếu tọa độ", 0, name_score, None])
+        return pd.Series(["Thieu toa do", 0, name_score, None])
 
-    df[["Kết luận", "Độ tin cậy (%)", "Điểm giống tên", "Khoảng cách (m)"]] = df.apply(compare, axis=1)
+    df[["Ket luan", "Do tin cay (%)", "Diem giong ten", "Khoang cach (m)"]] = df.apply(compare, axis=1)
 
-    df.drop(columns=[
-        "ten_norm", "name_norm",
-        "addr1_norm", "addr2_norm",
-        "lat1", "lng1", "lat2", "lng2"
-    ], inplace=True)
+    df.drop(
+        columns=[
+            "ten_norm",
+            "name_norm",
+            "addr1_norm",
+            "addr2_norm",
+            "lat1",
+            "lng1",
+            "lat2",
+            "lng2",
+        ],
+        inplace=True,
+    )
 
     return df
 
-def color_result(val):
-    if "Trùng quán" in val:
+
+def color_result(value):
+    text = str(value)
+    if "Trung quan" in text:
         return "background-color: #C8E6C9"
-    if "Trùng địa chỉ" in val:
+    if "Trung dia chi" in text:
         return "background-color: #FFF9C4"
-    if "Khác" in val:
+    if "Khac" in text:
         return "background-color: #FFCDD2"
     return ""
 
-# ======================================================
-# B1 – UPLOAD FILE
-# ======================================================
-uploaded_file = st.file_uploader("📂 B1. Chọn file Excel", type=["xlsx", "xls"])
+
+def show_dataframe(df_to_show, use_result_style=False):
+    if use_result_style and "Ket luan" in df_to_show.columns:
+        try:
+            st.dataframe(
+                df_to_show.style.applymap(color_result, subset=["Ket luan"]),
+                use_container_width=True,
+            )
+            return
+        except Exception:
+            pass
+
+    st.dataframe(df_to_show, use_container_width=True)
+
+
+def reset_filters_if_needed(current_mode):
+    previous_mode = st.session_state.get("tool_mode")
+    if previous_mode != current_mode:
+        st.session_state.filter_conditions = []
+    st.session_state["tool_mode"] = current_mode
+
+
+filtered_df = None
+uploaded_file = st.file_uploader("B1. Chon file Excel", type=["xlsx", "xls"])
 
 if uploaded_file:
     df = pd.read_excel(uploaded_file)
-    df.columns = df.columns.str.strip()
+    df.columns = df.columns.astype(str).str.strip()
     columns = df.columns.tolist()
 
     total_rows = len(df)
@@ -126,127 +160,102 @@ if uploaded_file:
 
     c1, c2 = st.columns(2)
     with c1:
-        st.metric("📄 Tổng số dòng", f"{total_rows:,}")
+        st.metric("Tong so dong", f"{total_rows:,}")
     with c2:
-        st.metric("📊 Tổng số cột", f"{total_cols}")
+        st.metric("Tong so cot", f"{total_cols}")
 
-    # ==================================================
-    # B2 – CHỌN CHỨC NĂNG
-    # ==================================================
     mode = st.radio(
-        "📌 B2. Chọn chức năng",
-        ["TH1 – So sánh & xem file", "TH2 – Chỉ xem file Excel"]
+        "B2. Chon chuc nang",
+        ["TH1 - So sanh & xem file", "TH2 - Chi xem file Excel"],
     )
+    reset_filters_if_needed(mode)
 
-    # ==================================================
-    # TH1 – SO SÁNH & XEM FILE
-    # ==================================================
     if mode.startswith("TH1"):
-        st.subheader("🧠 Chọn cột để so sánh")
+        st.subheader("Chon cot de so sanh")
 
         c1, c2 = st.columns(2)
         with c1:
-            col_name_1 = st.selectbox("Tên (nguồn 1)", columns, key="c_n1")
-            col_addr_1 = st.selectbox("Địa chỉ (nguồn 1)", columns, key="c_a1")
-            col_lat_1  = st.selectbox("Lat (nguồn 1)", columns, key="c_lat1")
-            col_lng_1  = st.selectbox("Lng (nguồn 1)", columns, key="c_lng1")
+            col_name_1 = st.selectbox("Ten (nguon 1)", columns, key="c_n1")
+            col_addr_1 = st.selectbox("Dia chi (nguon 1)", columns, key="c_a1")
+            col_lat_1 = st.selectbox("Lat (nguon 1)", columns, key="c_lat1")
+            col_lng_1 = st.selectbox("Lng (nguon 1)", columns, key="c_lng1")
         with c2:
-            col_name_2 = st.selectbox("Tên (nguồn 2)", columns, key="c_n2")
-            col_addr_2 = st.selectbox("Địa chỉ (nguồn 2)", columns, key="c_a2")
-            col_lat_2  = st.selectbox("Lat (nguồn 2)", columns, key="c_lat2")
-            col_lng_2  = st.selectbox("Lng (nguồn 2)", columns, key="c_lng2")
+            col_name_2 = st.selectbox("Ten (nguon 2)", columns, key="c_n2")
+            col_addr_2 = st.selectbox("Dia chi (nguon 2)", columns, key="c_a2")
+            col_lat_2 = st.selectbox("Lat (nguon 2)", columns, key="c_lat2")
+            col_lng_2 = st.selectbox("Lng (nguon 2)", columns, key="c_lng2")
 
-        name_thr = st.slider("Ngưỡng giống TÊN", 0, 100, 90)
-        addr_thr = st.slider("Ngưỡng giống ĐỊA CHỈ", 0, 100, 90)
-        dist_thr = st.slider("Ngưỡng khoảng cách (m)", 0, 500, 30)
+        name_thr = st.slider("Nguong giong ten", 0, 100, 90)
+        addr_thr = st.slider("Nguong giong dia chi", 0, 100, 90)
+        dist_thr = st.slider("Nguong khoang cach (m)", 0, 500, 30)
 
-        if st.button("▶️ Chạy so sánh"):
+        if st.button("Chay so sanh"):
             st.session_state.result_df = run_compare(
                 df,
-                col_name_1, col_name_2,
-                col_addr_1, col_addr_2,
-                col_lat_1, col_lng_1,
-                col_lat_2, col_lng_2,
-                name_thr, addr_thr, dist_thr
+                col_name_1,
+                col_name_2,
+                col_addr_1,
+                col_addr_2,
+                col_lat_1,
+                col_lng_1,
+                col_lat_2,
+                col_lng_2,
+                name_thr,
+                addr_thr,
+                dist_thr,
             )
 
         if st.session_state.result_df is not None:
             result_df = st.session_state.result_df
 
-            # ======================================================
-            # LỌC KẾT QUẢ - THÊM ĐIỀU KIỆN LỌC
-            # ======================================================
-            if 'filter_conditions' not in st.session_state:
-                st.session_state.filter_conditions = []
-
-            # Thêm điều kiện lọc mới khi nhấn nút
-            if st.button("➕ Thêm điều kiện lọc"):
-                # Mỗi điều kiện sẽ là một tuple gồm (column_name, selected_values)
+            if st.button("Them dieu kien loc"):
                 st.session_state.filter_conditions.append({"column": None, "values": []})
 
-            # Hiển thị các bộ lọc hiện tại
             for idx, condition in enumerate(st.session_state.filter_conditions):
-                col_name = st.selectbox(
-                    f"Chọn cột để lọc - Điều kiện {idx + 1}",
-                    columns,
-                    key=f"filter_col_{idx}"
+                selected_column = st.selectbox(
+                    f"Chon cot de loc - Dieu kien {idx + 1}",
+                    result_df.columns.tolist(),
+                    key=f"filter_col_{idx}",
                 )
                 selected_values = st.multiselect(
-                    f"Chọn giá trị cho {col_name} - Điều kiện {idx + 1}",
-                    df[col_name].dropna().astype(str).unique().tolist(),
-                    default=df[col_name].dropna().astype(str).unique().tolist(),
-                    key=f"filter_values_{idx}"
+                    f"Chon gia tri cho {selected_column} - Dieu kien {idx + 1}",
+                    result_df[selected_column].dropna().astype(str).unique().tolist(),
+                    default=result_df[selected_column].dropna().astype(str).unique().tolist(),
+                    key=f"filter_values_{idx}",
                 )
-
-                # Lưu lại giá trị đã chọn
-                st.session_state.filter_conditions[idx]["column"] = col_name
+                st.session_state.filter_conditions[idx]["column"] = selected_column
                 st.session_state.filter_conditions[idx]["values"] = selected_values
 
-            # Lọc dữ liệu theo các điều kiện đã chọn (Áp dụng theo kiểu "và" - AND)
             filtered_df = result_df.copy()
-
-            # Duyệt qua tất cả các điều kiện lọc và áp dụng "và" (AND)
             for condition in st.session_state.filter_conditions:
                 if condition["column"] and condition["values"]:
-                    # Áp dụng lọc với "và" (AND) - chỉ chọn những bản ghi thỏa mãn tất cả các điều kiện
-                    filtered_df = filtered_df[filtered_df[condition["column"]].isin(condition["values"])]
+                    filtered_df = filtered_df[
+                        filtered_df[condition["column"]].astype(str).isin(condition["values"])
+                    ]
 
-            # Hiển thị bảng dữ liệu đã lọc
-            st.subheader("🔎 Lọc kết quả")
-            st.dataframe(filtered_df.style.applymap(color_result, subset=["Kết luận"]), use_container_width=True)
+            st.subheader("Loc ket qua")
+            show_dataframe(filtered_df, use_result_style=True)
 
-    # ==================================================
-    # TH2 – CHỈ XEM FILE EXCEL
-    # ==================================================
     else:
-        st.subheader("👀 Xem & lọc file Excel")
+        st.subheader("Xem & loc file Excel")
 
-        filter_col = st.selectbox("Chọn cột để lọc", columns, key="f2")
+        filter_col = st.selectbox("Chon cot de loc", columns, key="f2")
         values = df[filter_col].dropna().astype(str).unique().tolist()
-        selected = st.multiselect("Chọn giá trị", values, default=values)
+        selected = st.multiselect("Chon gia tri", values, default=values)
 
         filtered_df = df[df[filter_col].astype(str).isin(selected)]
-        st.dataframe(
-            filtered_df.style.applymap(color_result, subset=["Kết luận"]),
-            use_container_width=True
+        show_dataframe(filtered_df, use_result_style=False)
+
+    if filtered_df is not None:
+        buffer = BytesIO()
+        with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
+            filtered_df.to_excel(writer, index=False, sheet_name="Filtered")
+
+        st.download_button(
+            "Tai Excel da loc",
+            data=buffer.getvalue(),
+            file_name="excel_da_loc.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         )
-
-    # ==================================================
-    # EXPORT (CHUNG CHO CẢ 2 TH)
-    # ==================================================
-    buffer = BytesIO()
-    with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
-        filtered_df.to_excel(writer, index=False, sheet_name="Filtered")
-
-    st.download_button(
-        "⬇️ Tải Excel đã lọc",
-        data=buffer.getvalue(),
-        file_name="excel_da_loc.xlsx",
-        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    )
-
 else:
-    st.info("👆 Vui lòng chọn file Excel để bắt đầu.")
-
-
-#=== dùng lệnh "streamlit run sosanh_loc_xem_file.py" chạy trong ternimal==
+    st.info("Vui long chon file Excel de bat dau.")

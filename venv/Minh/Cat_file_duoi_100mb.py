@@ -152,12 +152,20 @@ class GeoJsonSplitApp:
         self.zip_path_var = StringVar()
         self.max_size_var = StringVar(value=str(MAX_PART_SIZE_MB))
         self.progress_var = StringVar(value="San sang.")
+        self.progress_percent_var = StringVar(value="0%")
 
         self.build_ui()
 
     def build_ui(self):
         frame = ttk.Frame(self.root, padding=16)
         frame.pack(fill="both", expand=True)
+
+        style = ttk.Style()
+        try:
+            style.theme_use(style.theme_use())
+        except Exception:
+            pass
+        style.configure("Visible.Horizontal.TProgressbar", thickness=18)
 
         ttk.Label(frame, text="B1: Chon file GeoJSON tren 100MB").pack(anchor="w")
         ttk.Button(frame, text="Chon file", command=self.choose_files).pack(anchor="w", pady=(6, 10))
@@ -182,7 +190,16 @@ class GeoJsonSplitApp:
 
         ttk.Button(frame, text="Bat dau xu ly", command=self.run).pack(anchor="w", pady=(0, 12))
 
-        self.progress_bar = ttk.Progressbar(frame, mode="indeterminate")
+        progress_row = ttk.Frame(frame)
+        progress_row.pack(fill="x", pady=(0, 8))
+        ttk.Label(progress_row, text="Tien do").pack(side="left")
+        ttk.Label(progress_row, textvariable=self.progress_percent_var).pack(side="right")
+
+        self.progress_bar = ttk.Progressbar(
+            frame,
+            mode="indeterminate",
+            style="Visible.Horizontal.TProgressbar",
+        )
         self.progress_bar.pack(fill="x", pady=(0, 8))
         ttk.Label(frame, textvariable=self.progress_var).pack(anchor="w", pady=(0, 12))
 
@@ -196,6 +213,10 @@ class GeoJsonSplitApp:
         self.status_box.insert("", END, values=(message,))
         self.status_box.yview_moveto(1)
         self.progress_var.set(message)
+        self.root.update()
+
+    def set_progress_percent(self, value):
+        self.progress_percent_var.set(value)
         self.root.update()
 
     def choose_files(self):
@@ -248,8 +269,12 @@ class GeoJsonSplitApp:
         with tempfile.TemporaryDirectory(prefix="geojson_split_") as temp_dir:
             try:
                 self.progress_bar.start(10)
+                self.set_progress_percent("Dang xu ly...")
+                total_input_files = len(self.selected_files)
                 for file_path in self.selected_files:
+                    current_index = self.selected_files.index(file_path) + 1
                     size_mb = Path(file_path).stat().st_size / (1024 * 1024)
+                    self.set_progress_percent(f"{current_index}/{total_input_files} file")
                     self.append_status(f"Dang xu ly {Path(file_path).name} ({size_mb:.2f} MB)")
                     created_files = split_geojson_parts(
                         file_path,
@@ -261,10 +286,13 @@ class GeoJsonSplitApp:
                     self.append_status(f"  -> Tao {len(created_files)} file")
 
                 self.append_status("Dang dong goi file ZIP ...")
+                self.set_progress_percent("Dang dong goi ZIP")
                 zip_file = build_zip(zip_path, all_created_files, progress_callback=self.append_status)
                 self.append_status(f"Hoan thanh. ZIP: {zip_file}")
+                self.set_progress_percent("100%")
             except Exception as exc:
                 self.progress_bar.stop()
+                self.set_progress_percent("Loi")
                 messagebox.showerror("Loi", f"Xu ly that bai:\n{exc}")
                 self.append_status(f"Loi: {exc}")
                 return

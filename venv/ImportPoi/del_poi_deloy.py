@@ -1,5 +1,6 @@
 import hashlib
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 
@@ -12,6 +13,7 @@ API_BASE_URL = "https://api-data.map4d.vn/map/manage/place/delete/"
 REQUEST_TIMEOUT = 30
 CHECKPOINT_DIR = Path(__file__).resolve().parent / "checkpoints"
 DELETE_CHUNK_SIZE = 25
+MAX_PARALLEL_REQUESTS = 3
 LOG_COLUMNS = ["source_row", "time", "id", "status", "message"]
 
 st.set_page_config(page_title="Map4D POI Delete Tool", layout="wide")
@@ -103,7 +105,13 @@ def build_result_dataframe(results, original_columns):
         if column not in result_df.columns:
             result_df[column] = None
 
-    return result_df[ordered_columns]
+    result_df = result_df[ordered_columns]
+    if "source_row" in result_df.columns:
+        sortable = result_df.copy()
+        sortable["__source_row_sort"] = pd.to_numeric(sortable["source_row"], errors="coerce")
+        sortable = sortable.sort_values("__source_row_sort", kind="stable", na_position="last")
+        result_df = sortable.drop(columns=["__source_row_sort"])
+    return result_df
 
 
 def get_candidate_delete_rows(df, selected_id_column):
@@ -162,6 +170,21 @@ def delete_place(place_id, token):
 
     message = f"{response.status_code} - {response.text}"
     return False, message, False
+
+
+def delete_candidate(candidate_index, original_index, row_data, place_id, token):
+    success, message, should_stop = delete_place(place_id, token)
+    result_row = dict(row_data)
+    result_row.update(
+        {
+            "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "source_row": int(original_index) + 1,
+            "id": place_id,
+            "status": "success" if success else "error",
+            "message": message,
+        }
+    )
+    return candidate_index, result_row, should_stop, message
 
 
 auth_token = st.text_input(
@@ -245,6 +268,7 @@ if mode == "Upload file CSV / Excel":
         control_state_key = get_control_state_key(file_key)
         total = len(candidate_rows)
         st.write(f"Total delete rows: {total}")
+        st.caption(f"Toi da {MAX_PARALLEL_REQUESTS} request song song. Pause la dung mem giua cac dot.")
 
         checkpoint_data = load_checkpoint(file_key)
         checkpoint_status = checkpoint_data.get("status", "in_progress") if checkpoint_data else "idle"
@@ -337,50 +361,75 @@ if mode == "Upload file CSV / Excel":
             interrupted = False
             rows_processed_this_run = 0
 
-            for candidate_index, (original_index, row, place_id) in enumerate(candidate_rows):
-                if candidate_index in processed_indices:
-                    continue
+            remaining_candidates = [
+                (candidate_index, original_index, row.to_dict(), place_id)
+                for candidate_index, (original_index, row, place_id) in enumerate(candidate_rows)
+                if candidate_index not in processed_indices
+            ]
 
-                success, message, should_stop = delete_place(place_id, auth_token)
-                result_row = row.to_dict()
-                result_row.update(
-                    {
-                        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                        "source_row": int(original_index) + 1,
-                        "id": place_id,
-                        "status": "success" if success else "error",
-                        "message": message,
-                    }
+            pending_pointer = 0
+            while pending_pointer < len(remaining_candidates) and rows_processed_this_run < DELETE_CHUNK_SIZE:
+                wave_size = min(
+                    MAX_PARALLEL_REQUESTS,
+                    DELETE_CHUNK_SIZE - rows_processed_this_run,
+                    len(remaining_candidates) - pending_pointer,
                 )
-                results.append(result_row)
-                processed_indices.add(candidate_index)
-                rows_processed_this_run += 1
+                current_wave = remaining_candidates[pending_pointer: pending_pointer + wave_size]
+                pending_pointer += wave_size
 
-                checkpoint_data["results"] = results
-                checkpoint_data["processed_indices"] = sorted(processed_indices)
-                checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                checkpoint_data["last_error"] = message if should_stop else None
-                checkpoint_data["status"] = "paused" if should_stop else "in_progress"
-                save_checkpoint(file_key, checkpoint_data)
+                with ThreadPoolExecutor(max_workers=MAX_PARALLEL_REQUESTS) as executor:
+                    future_map = {
+                        executor.submit(
+                            delete_candidate,
+                            candidate_index,
+                            original_index,
+                            row_data,
+                            place_id,
+                            auth_token,
+                        ): candidate_index
+                        for candidate_index, original_index, row_data, place_id in current_wave
+                    }
 
-                current_count = len(processed_indices)
-                progress.progress(current_count / total if total else 1)
-                status_placeholder.info(format_progress_text(current_count, total, "dang xu ly"))
+                    wave_should_pause = False
+                    wave_last_error = None
 
-                if should_stop:
-                    interrupted = True
-                    st.session_state[control_state_key] = "paused"
-                    status_placeholder.warning(
-                        format_progress_text(current_count, total, "dang tam dung")
-                    )
-                    st.error(
-                        "Delete tam dung do loi ket noi/request. "
-                        "Ban co the bam 'Resume Delete' de chay tiep tu dong chua xong."
-                    )
-                    break
+                    for future in as_completed(future_map):
+                        candidate_index, result_row, should_stop, message = future.result()
+                        results.append(result_row)
+                        processed_indices.add(candidate_index)
+                        rows_processed_this_run += 1
 
-                if rows_processed_this_run >= DELETE_CHUNK_SIZE:
-                    break
+                        checkpoint_data["results"] = results
+                        checkpoint_data["processed_indices"] = sorted(processed_indices)
+                        checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        checkpoint_data["last_error"] = message if should_stop else None
+                        checkpoint_data["status"] = "paused" if should_stop else "in_progress"
+                        save_checkpoint(file_key, checkpoint_data)
+
+                        current_count = len(processed_indices)
+                        progress.progress(current_count / total if total else 1)
+                        status_placeholder.info(format_progress_text(current_count, total, "dang xu ly"))
+
+                        if should_stop:
+                            wave_should_pause = True
+                            wave_last_error = message
+
+                    if wave_should_pause:
+                        interrupted = True
+                        checkpoint_data["status"] = "paused"
+                        checkpoint_data["last_error"] = wave_last_error
+                        checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        save_checkpoint(file_key, checkpoint_data)
+                        st.session_state[control_state_key] = "paused"
+                        current_count = len(processed_indices)
+                        status_placeholder.warning(
+                            format_progress_text(current_count, total, "dang tam dung")
+                        )
+                        st.error(
+                            "Delete tam dung do loi ket noi/request. "
+                            "Ban co the bam 'Resume Delete' de chay tiep tu dong chua xong."
+                        )
+                        break
 
             if len(processed_indices) >= total:
                 checkpoint_data["status"] = "completed"

@@ -1,4 +1,5 @@
 import os
+import re
 import subprocess
 import tempfile
 import zipfile
@@ -8,7 +9,6 @@ from tkinter import ttk
 
 
 MAX_PART_SIZE_MB = 100
-FEATURES_TOKEN = '"features":['
 LOG_FEATURE_INTERVAL = 5000
 
 
@@ -18,12 +18,15 @@ def sanitize_filename(name):
     return cleaned.strip(" .") or "output"
 
 
-def extract_feature_texts_from_content(content, progress_callback=None, log_prefix=""):
-    feature_token_index = content.find(FEATURES_TOKEN)
-    if feature_token_index == -1:
+def find_features_array_bounds(content):
+    match = re.search(r'"features"\s*:\s*\[', content)
+    if not match:
         raise ValueError("Khong tim thay mang features.")
+    return match.start(), match.end()
 
-    feature_start = feature_token_index + len(FEATURES_TOKEN)
+
+def extract_feature_texts_from_content(content, progress_callback=None, log_prefix=""):
+    _, feature_start = find_features_array_bounds(content)
     in_string = False
     escape = False
     depth = 0
@@ -91,13 +94,9 @@ def split_geojson_parts(
     if percent_callback:
         percent_callback(file_progress_offset + file_progress_span * 0.2)
 
-    feature_token_index = content.find(FEATURES_TOKEN)
-    if feature_token_index == -1:
-        raise ValueError(f"Khong tim thay mang features trong {input_path.name}")
-
-    prefix = content[: feature_token_index + len(FEATURES_TOKEN)]
+    _, feature_start = find_features_array_bounds(content)
+    prefix = content[:feature_start]
     suffix = "]}"
-    feature_start = feature_token_index + len(FEATURES_TOKEN)
 
     part_index = 1
     current_features = []

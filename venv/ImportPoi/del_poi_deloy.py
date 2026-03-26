@@ -12,7 +12,7 @@ API_BASE_URL = "https://api-data.map4d.vn/map/manage/place/delete/"
 REQUEST_TIMEOUT = 30
 CHECKPOINT_DIR = Path(__file__).resolve().parent / "checkpoints"
 DELETE_CHUNK_SIZE = 25
-LOG_COLUMNS = ["time", "id", "status", "message"]
+LOG_COLUMNS = ["source_row", "time", "id", "status", "message"]
 
 st.set_page_config(page_title="Map4D POI Delete Tool", layout="wide")
 st.title("Map4D POI Delete Tool")
@@ -36,11 +36,12 @@ def get_file_hash(uploaded_file_bytes):
     return hashlib.md5(uploaded_file_bytes).hexdigest()
 
 
-def get_file_key(uploaded_file_name, uploaded_file_bytes, token):
+def get_file_key(uploaded_file_name, uploaded_file_bytes, token, selected_id_column=""):
     file_hash = get_file_hash(uploaded_file_bytes)
     token_hash = hashlib.md5(token.encode("utf-8")).hexdigest()[:12] if token else "no_token"
     safe_name = Path(uploaded_file_name).stem.replace(" ", "_")
-    return f"delete_{safe_name}_{file_hash}_{token_hash}"
+    column_hash = hashlib.md5(selected_id_column.encode("utf-8")).hexdigest()[:8] if selected_id_column else "no_column"
+    return f"delete_{safe_name}_{file_hash}_{token_hash}_{column_hash}"
 
 
 def get_control_state_key(file_key):
@@ -103,6 +104,15 @@ def build_result_dataframe(results, original_columns):
             result_df[column] = None
 
     return result_df[ordered_columns]
+
+
+def get_candidate_delete_rows(df, selected_id_column):
+    candidate_rows = []
+    for original_index, row in df.iterrows():
+        place_id = str(row.get(selected_id_column, "")).strip()
+        if place_id and place_id.lower() != "nan":
+            candidate_rows.append((original_index, row, place_id))
+    return candidate_rows
 
 
 def check_token(token, show_message=True):
@@ -220,10 +230,21 @@ if mode == "Upload file CSV / Excel":
             index=0,
         )
 
-        file_key = get_file_key(uploaded_file.name, file_bytes, auth_token)
+        candidate_rows = get_candidate_delete_rows(df, selected_id_column)
+        st.text_input(
+            "So dong co gia tri ID de xoa",
+            value=str(len(candidate_rows)),
+            disabled=True,
+        )
+
+        if not candidate_rows:
+            st.warning(f"Khong co dong nao co gia tri trong cot {selected_id_column}.")
+            st.stop()
+
+        file_key = get_file_key(uploaded_file.name, file_bytes, auth_token, selected_id_column)
         control_state_key = get_control_state_key(file_key)
-        total = len(df)
-        st.write(f"Total rows: {total}")
+        total = len(candidate_rows)
+        st.write(f"Total delete rows: {total}")
 
         checkpoint_data = load_checkpoint(file_key)
         checkpoint_status = checkpoint_data.get("status", "in_progress") if checkpoint_data else "idle"
@@ -316,37 +337,8 @@ if mode == "Upload file CSV / Excel":
             interrupted = False
             rows_processed_this_run = 0
 
-            for i, row in df.iterrows():
-                if i in processed_indices:
-                    continue
-
-                place_id = str(row.get(selected_id_column, "")).strip()
-                if not place_id or place_id.lower() == "nan":
-                    message = f"Thieu place id trong cot {selected_id_column}"
-                    result_row = row.to_dict()
-                    result_row.update(
-                        {
-                            "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                            "id": place_id,
-                            "status": "invalid",
-                            "message": message,
-                        }
-                    )
-                    results.append(result_row)
-                    processed_indices.add(i)
-                    checkpoint_data["results"] = results
-                    checkpoint_data["processed_indices"] = sorted(processed_indices)
-                    checkpoint_data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    checkpoint_data["last_error"] = None
-                    checkpoint_data["status"] = "in_progress"
-                    save_checkpoint(file_key, checkpoint_data)
-                    progress.progress(len(processed_indices) / total if total else 1)
-                    status_placeholder.info(
-                        format_progress_text(len(processed_indices), total, "dang xu ly")
-                    )
-                    rows_processed_this_run += 1
-                    if rows_processed_this_run >= DELETE_CHUNK_SIZE:
-                        break
+            for candidate_index, (original_index, row, place_id) in enumerate(candidate_rows):
+                if candidate_index in processed_indices:
                     continue
 
                 success, message, should_stop = delete_place(place_id, auth_token)
@@ -354,13 +346,14 @@ if mode == "Upload file CSV / Excel":
                 result_row.update(
                     {
                         "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        "source_row": int(original_index) + 1,
                         "id": place_id,
                         "status": "success" if success else "error",
                         "message": message,
                     }
                 )
                 results.append(result_row)
-                processed_indices.add(i)
+                processed_indices.add(candidate_index)
                 rows_processed_this_run += 1
 
                 checkpoint_data["results"] = results

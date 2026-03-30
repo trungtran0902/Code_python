@@ -43,32 +43,33 @@ def ask_for_inputs() -> tuple[Path, list[Path], Path] | None:
     root = Tk()
     root.withdraw()
     root.attributes("-topmost", True)
+    try:
+        line_file = filedialog.askopenfilename(
+            title="Chon file duong dang GeoJSON",
+            filetypes=[("GeoJSON", "*.geojson *.json"), ("All files", "*.*")],
+        )
+        if not line_file:
+            return None
 
-    line_file = filedialog.askopenfilename(
-        title="Chon file duong dang GeoJSON",
-        filetypes=[("GeoJSON", "*.geojson *.json"), ("All files", "*.*")],
-    )
-    if not line_file:
-        return None
+        polygon_files = filedialog.askopenfilenames(
+            title="Chon cac file polygon ranh gioi tinh",
+            filetypes=[("GeoJSON", "*.geojson *.json"), ("All files", "*.*")],
+        )
+        if not polygon_files:
+            return None
 
-    polygon_files = filedialog.askopenfilenames(
-        title="Chon cac file polygon ranh gioi tinh",
-        filetypes=[("GeoJSON", "*.geojson *.json"), ("All files", "*.*")],
-    )
-    if not polygon_files:
-        return None
+        default_output = str(Path(line_file).with_name(f"{Path(line_file).stem}_by_province"))
+        output_dir = filedialog.askdirectory(
+            title="Chon thu muc output",
+            mustexist=False,
+            initialdir=default_output,
+        )
+        if not output_dir:
+            return None
 
-    default_output = str(Path(line_file).with_name(f"{Path(line_file).stem}_by_province"))
-    output_dir = filedialog.askdirectory(
-        title="Chon thu muc output",
-        mustexist=False,
-        initialdir=default_output,
-    )
-    if not output_dir:
-        return None
-
-    root.destroy()
-    return Path(line_file), [Path(path) for path in polygon_files], Path(output_dir)
+        return Path(line_file), [Path(path) for path in polygon_files], Path(output_dir)
+    finally:
+        root.destroy()
 
 
 def detect_province_name(polygon_gdf: gpd.GeoDataFrame, fallback: str) -> str:
@@ -145,7 +146,7 @@ def clip_lines_to_polygon(
     return candidates.reset_index(drop=True)
 
 
-def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) -> list[Path]:
+def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) -> tuple[list[Path], int]:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Doc line file: {line_path}")
@@ -153,6 +154,7 @@ def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) 
     print(f"So line features hop le: {len(lines_gdf):,}")
 
     exported_files: list[Path] = []
+    skipped_count = 0
 
     for polygon_path in polygon_paths:
         print(f"\nDang xu ly polygon: {polygon_path}")
@@ -164,6 +166,7 @@ def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) 
 
         if polygon_gdf.empty:
             print("Bo qua: file polygon khong co Polygon/MultiPolygon.")
+            skipped_count += 1
             continue
 
         if polygon_gdf.crs is None:
@@ -178,6 +181,7 @@ def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) 
 
         if clipped_gdf.empty:
             print(f"Khong co line nam trong {province_name}.")
+            skipped_count += 1
             continue
 
         output_path = output_dir / f"{slugify_filename(province_name)}.geojson"
@@ -185,7 +189,7 @@ def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) 
         exported_files.append(output_path)
         print(f"Da ghi {len(clipped_gdf):,} line vao: {output_path}")
 
-    return exported_files
+    return exported_files, skipped_count
 
 
 def main() -> None:
@@ -197,18 +201,17 @@ def main() -> None:
     line_path, polygon_paths, output_dir = selection
 
     try:
-        exported_files = process_files(line_path, polygon_paths, output_dir)
+        exported_files, skipped_count = process_files(line_path, polygon_paths, output_dir)
     except Exception as exc:
         messagebox.showerror("Loi", str(exc))
         raise
 
-    if exported_files:
-        messagebox.showinfo(
-            "Hoan tat",
-            f"Da tao {len(exported_files)} file GeoJSON trong thu muc:\n{output_dir}",
-        )
-    else:
-        messagebox.showwarning("Khong co du lieu", "Khong tao duoc file output nao.")
+    print("\n================ HOAN TAT ================")
+    print(f"Tong so polygon dau vao: {len(polygon_paths)}")
+    print(f"So file GeoJSON da tao: {len(exported_files)}")
+    print(f"So polygon khong co output: {skipped_count}")
+    print(f"Thu muc output: {output_dir}")
+    print("==========================================")
 
 
 if __name__ == "__main__":

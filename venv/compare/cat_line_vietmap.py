@@ -39,7 +39,40 @@ def union_all_geometries(series):
     return series.unary_union
 
 
-def ask_for_inputs() -> tuple[Path, list[Path], Path] | None:
+def ask_for_polygon_mode() -> str | None:
+    answer = messagebox.askyesnocancel(
+        "Chon kieu cat",
+        "Yes = Cat theo tinh/thanh\n"
+        "No = Cat theo phuong/xa (quet de quy theo thu muc con)\n"
+        "Cancel = Huy",
+    )
+    if answer is None:
+        return None
+    return "tinh_thanh" if answer else "phuong_xa"
+
+
+def collect_polygon_jobs(polygon_dir_path: Path, mode: str) -> list[tuple[Path, Path]]:
+    if mode == "tinh_thanh":
+        polygon_files = sorted(
+            path
+            for path in polygon_dir_path.iterdir()
+            if path.is_file() and path.suffix.lower() in {".geojson", ".json"}
+        )
+        return [(path, Path(f"{path.stem}.geojson")) for path in polygon_files]
+
+    polygon_files = sorted(
+        path
+        for path in polygon_dir_path.rglob("*")
+        if path.is_file() and path.suffix.lower() in {".geojson", ".json"}
+    )
+    jobs: list[tuple[Path, Path]] = []
+    for path in polygon_files:
+        relative_parent = path.relative_to(polygon_dir_path).parent
+        jobs.append((path, relative_parent / f"{path.stem}.geojson"))
+    return jobs
+
+
+def ask_for_inputs() -> tuple[Path, list[tuple[Path, Path]], Path] | None:
     root = Tk()
     root.withdraw()
     root.attributes("-topmost", True)
@@ -51,12 +84,26 @@ def ask_for_inputs() -> tuple[Path, list[Path], Path] | None:
         if not line_file:
             return None
 
-        polygon_files = filedialog.askopenfilenames(
-            title="Chon cac file polygon ranh gioi tinh",
-            filetypes=[("GeoJSON", "*.geojson *.json"), ("All files", "*.*")],
-        )
-        if not polygon_files:
+        polygon_mode = ask_for_polygon_mode()
+        if polygon_mode is None:
             return None
+
+        polygon_dir = filedialog.askdirectory(
+            title=(
+                "Chon thu muc chua cac file polygon ranh gioi tinh"
+                if polygon_mode == "tinh_thanh"
+                else "Chon thu muc cha XaPhuong de quet de quy cac file polygon"
+            ),
+            mustexist=True,
+            initialdir=str(Path(line_file).parent),
+        )
+        if not polygon_dir:
+            return None
+
+        polygon_dir_path = Path(polygon_dir)
+        polygon_jobs = collect_polygon_jobs(polygon_dir_path, polygon_mode)
+        if not polygon_jobs:
+            raise ValueError(f"Khong tim thay file GeoJSON/JSON nao trong thu muc: {polygon_dir_path}")
 
         default_output = str(Path(line_file).with_name(f"{Path(line_file).stem}_by_province"))
         output_dir = filedialog.askdirectory(
@@ -67,7 +114,7 @@ def ask_for_inputs() -> tuple[Path, list[Path], Path] | None:
         if not output_dir:
             return None
 
-        return Path(line_file), [Path(path) for path in polygon_files], Path(output_dir)
+        return Path(line_file), polygon_jobs, Path(output_dir)
     finally:
         root.destroy()
 
@@ -146,7 +193,7 @@ def clip_lines_to_polygon(
     return candidates.reset_index(drop=True)
 
 
-def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) -> tuple[list[Path], int]:
+def process_files(line_path: Path, polygon_jobs: list[tuple[Path, Path]], output_dir: Path) -> tuple[list[Path], int, list[str]]:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Doc line file: {line_path}")
@@ -155,41 +202,53 @@ def process_files(line_path: Path, polygon_paths: list[Path], output_dir: Path) 
 
     exported_files: list[Path] = []
     skipped_count = 0
+    failed_items: list[str] = []
 
-    for polygon_path in polygon_paths:
+    for polygon_path, relative_output_path in polygon_jobs:
         print(f"\nDang xu ly polygon: {polygon_path}")
-        polygon_gdf = gpd.read_file(polygon_path)
-        polygon_gdf = polygon_gdf[polygon_gdf.geometry.notna()].copy()
-        polygon_gdf = polygon_gdf[
-            polygon_gdf.geometry.geom_type.isin(["Polygon", "MultiPolygon"])
-        ].copy()
+        try:
+            print("  - Dang doc polygon...")
+            polygon_gdf = gpd.read_file(polygon_path)
+            polygon_gdf = polygon_gdf[polygon_gdf.geometry.notna()].copy()
+            polygon_gdf = polygon_gdf[
+                polygon_gdf.geometry.geom_type.isin(["Polygon", "MultiPolygon"])
+            ].copy()
 
-        if polygon_gdf.empty:
-            print("Bo qua: file polygon khong co Polygon/MultiPolygon.")
-            skipped_count += 1
-            continue
+            if polygon_gdf.empty:
+                print("Bo qua: file polygon khong co Polygon/MultiPolygon.")
+                skipped_count += 1
+                continue
 
-        if polygon_gdf.crs is None:
-            polygon_gdf = polygon_gdf.set_crs("EPSG:4326")
+            if polygon_gdf.crs is None:
+                polygon_gdf = polygon_gdf.set_crs("EPSG:4326")
 
-        if polygon_gdf.crs != lines_gdf.crs:
-            polygon_gdf = polygon_gdf.to_crs(lines_gdf.crs)
+            if polygon_gdf.crs != lines_gdf.crs:
+                print("  - Dang doi he toa do polygon...")
+                polygon_gdf = polygon_gdf.to_crs(lines_gdf.crs)
 
-        province_name = detect_province_name(polygon_gdf, polygon_path.stem)
-        province_geom = union_all_geometries(polygon_gdf.geometry)
-        clipped_gdf = clip_lines_to_polygon(lines_gdf, province_geom, province_name)
+            province_name = detect_province_name(polygon_gdf, polygon_path.stem)
+            print("  - Dang union polygon...")
+            province_geom = union_all_geometries(polygon_gdf.geometry)
+            print("  - Dang clip line theo polygon...")
+            clipped_gdf = clip_lines_to_polygon(lines_gdf, province_geom, province_name)
 
-        if clipped_gdf.empty:
-            print(f"Khong co line nam trong {province_name}.")
-            skipped_count += 1
-            continue
+            if clipped_gdf.empty:
+                print(f"Khong co line nam trong {province_name}.")
+                skipped_count += 1
+                continue
 
-        output_path = output_dir / f"{slugify_filename(province_name)}.geojson"
-        clipped_gdf.to_file(output_path, driver="GeoJSON")
-        exported_files.append(output_path)
-        print(f"Da ghi {len(clipped_gdf):,} line vao: {output_path}")
+            output_path = output_dir / relative_output_path
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            print("  - Dang ghi file output...")
+            clipped_gdf.to_file(output_path, driver="GeoJSON")
+            exported_files.append(output_path)
+            print(f"Da ghi {len(clipped_gdf):,} line vao: {output_path}")
+        except Exception as exc:
+            error_message = f"{polygon_path} | {exc}"
+            print(f"  - Loi, bo qua polygon nay: {exc}")
+            failed_items.append(error_message)
 
-    return exported_files, skipped_count
+    return exported_files, skipped_count, failed_items
 
 
 def main() -> None:
@@ -198,16 +257,22 @@ def main() -> None:
         print("Da huy thao tac.")
         return
 
-    line_path, polygon_paths, output_dir = selection
+    line_path, polygon_jobs, output_dir = selection
 
     try:
-        exported_files, skipped_count = process_files(line_path, polygon_paths, output_dir)
+        exported_files, skipped_count, failed_items = process_files(line_path, polygon_jobs, output_dir)
     except Exception as exc:
         messagebox.showerror("Loi", str(exc))
         raise
 
+    if failed_items:
+        failed_log_path = output_dir / "failed_polygons.txt"
+        failed_log_path.write_text("\n".join(failed_items), encoding="utf-8")
+        print(f"So polygon loi: {len(failed_items)}")
+        print(f"Log loi: {failed_log_path}")
+
     print("\n================ HOAN TAT ================")
-    print(f"Tong so polygon dau vao: {len(polygon_paths)}")
+    print(f"Tong so polygon dau vao: {len(polygon_jobs)}")
     print(f"So file GeoJSON da tao: {len(exported_files)}")
     print(f"So polygon khong co output: {skipped_count}")
     print(f"Thu muc output: {output_dir}")

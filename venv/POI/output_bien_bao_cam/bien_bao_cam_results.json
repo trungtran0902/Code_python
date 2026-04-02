@@ -1,0 +1,98 @@
+[
+  {
+    "file_name": "gps_overlay.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775011915\\gps_overlay.png",
+    "ma_bien": "NOT_FOUND",
+    "ten_bien": "Khong tim thay bien bao cam ro rang",
+    "do_tin_cay": "0.00",
+    "ghi_chu": "Khong tim thay cum mau do dang tron du lon"
+  },
+  {
+    "file_name": "latlng.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775011915\\latlng.png",
+    "ma_bien": "NOT_FOUND",
+    "ten_bien": "Khong tim thay bien bao cam ro rang",
+    "do_tin_cay": "0.00",
+    "ghi_chu": "Khong tim thay cum mau do dang tron du lon"
+  },
+  {
+    "file_name": "sign_addr.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775011915\\sign_addr.png",
+    "ma_bien": "NOT_FOUND",
+    "ten_bien": "Khong tim thay bien bao cam ro rang",
+    "do_tin_cay": "0.00",
+    "ghi_chu": "Khong tim thay cum mau do dang tron du lon"
+  },
+  {
+    "file_name": "sign_full.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775011915\\sign_full.png",
+    "ma_bien": "NOT_FOUND",
+    "ten_bien": "Khong tim thay bien bao cam ro rang",
+    "do_tin_cay": "0.00",
+    "ghi_chu": "Khong tim thay cum mau do dang tron du lon"
+  },
+  {
+    "file_name": "sign_name.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775011915\\sign_name.png",
+    "ma_bien": "NOT_FOUND",
+    "ten_bien": "Khong tim thay bien bao cam ro rang",
+    "do_tin_cay": "0.00",
+    "ghi_chu": "Khong tim thay cum mau do dang tron du lon"
+  },
+  {
+    "file_name": "gps_overlay.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775012904\\gps_overlay.png",
+    "ma_bien": "NOT_FOUND",
+    "ten_bien": "Khong tim thay bien bao cam ro rang",
+    "do_tin_cay": "0.00",
+    "ghi_chu": "Khong tim thay cum mau do dang tron du lon"
+  },
+  {
+    "file_name": "latlng.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775012904\\latlng.png",
+    "ma_bien": "NOT_FOUND",
+    "ten_bien": "Khong tim thay bien bao cam ro rang",
+    "do_tin_cay": "0.00",
+    "ghi_chu": "Khong tim thay cum mau do dang tron du lon"
+  },
+  {
+    "file_name": "sign_addr.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775012904\\sign_addr.png",
+    "ma_bien": "P.103c",
+    "ten_bien": "Cam xe o to re trai",
+    "do_tin_cay": "0.96",
+    "ghi_chu": "circle_balance=0.86; slash_desc=0.36; slash_asc=0.44; arrow=left; turn_arrow=none; car=yes; blue_face=0.00"
+  },
+  {
+    "file_name": "sign_full.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775012904\\sign_full.png",
+    "ma_bien": "P.123b",
+    "ten_bien": "Cam re phai",
+    "do_tin_cay": "0.93",
+    "ghi_chu": "circle_balance=0.90; slash_desc=0.25; slash_asc=0.19; arrow=none; turn_arrow=left; car=no; blue_face=0.00"
+  },
+  {
+    "file_name": "sign_name.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\output_ocr_anh\\debug_crops\\screenshot_1775012904\\sign_name.png",
+    "ma_bien": "P.123b",
+    "ten_bien": "Cam re phai",
+    "do_tin_cay": "0.93",
+    "ghi_chu": "circle_balance=0.88; slash_desc=0.27; slash_asc=0.21; arrow=none; turn_arrow=left; car=no; blue_face=0.00"
+  },
+  {
+    "file_name": "screenshot_1775011915.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\screenshot_1775011915.png",
+    "ma_bien": "P.103a",
+    "ten_bien": "Cam xe o to",
+    "do_tin_cay": "0.84",
+    "ghi_chu": "circle_balance=0.91; slash_desc=0.24; slash_asc=0.28; arrow=none; turn_arrow=left; car=yes; blue_face=0.00"
+  },
+  {
+    "file_name": "screenshot_1775012904.png",
+    "file_path": "C:\\Users\\Admin Data\\PycharmProjects\\pythonProject1\\github\\Code_python\\venv\\POI\\screenshot_1775012904.png",
+    "ma_bien": "P.123b",
+    "ten_bien": "Cam re phai",
+    "do_tin_cay": "0.93",
+    "ghi_chu": "circle_balance=0.90; slash_desc=0.21; slash_asc=0.23; arrow=none; turn_arrow=left; car=no; blue_face=0.00"
+  }
+]

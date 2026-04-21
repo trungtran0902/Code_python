@@ -91,10 +91,18 @@ sample_columns_df = pd.DataFrame(
 st.caption("Example input row")
 st.dataframe(sample_columns_df, use_container_width=True)
 
-uploaded_file = st.file_uploader(
-    "Upload Excel file",
-    type=["xlsx", "xls"],
-)
+col1, col2 = st.columns(2)
+with col1:
+    uploaded_file = st.file_uploader(
+        "Upload Excel file",
+        type=["xlsx", "xls"],
+    )
+with col2:
+    uploaded_checkpoint = st.file_uploader(
+        "Khôi phục Checkpoint JSON (Tùy chọn)",
+        type=["json"],
+        help="Upload file .json bạn đã tải về để chạy tiếp trên Server bị mất dữ liệu."
+    )
 
 
 def is_blank(value):
@@ -426,6 +434,13 @@ if uploaded_file:
     file_key = build_file_key(file_bytes, token)
     control_state_key = get_control_state_key(file_key)
 
+    if uploaded_checkpoint:
+        try:
+            chk_data = json.loads(uploaded_checkpoint.getvalue().decode('utf-8'))
+            save_checkpoint(file_key, chk_data)
+        except Exception as e:
+            st.error(f"Lỗi đọc JSON Checkpoint: {e}")
+
     try:
         df = pd.read_excel(io.BytesIO(file_bytes), dtype={"Phone": str})
     except ImportError:
@@ -487,6 +502,15 @@ if uploaded_file:
         )
         if checkpoint_data.get("last_error"):
             st.warning(f"Loi gan nhat: {checkpoint_data['last_error']}")
+
+        chk_json_str = json.dumps(checkpoint_data, ensure_ascii=False, indent=2)
+        st.download_button(
+            "💾 Tải file Checkpoint (.json) về máy",
+            data=chk_json_str,
+            file_name=f"checkpoint_{file_key}.json",
+            mime="application/json",
+            help="Tải file này về máy để lưu tiến trình. Hôm sau upload .json này ở phía trên để tiếp tục.",
+        )
 
         if checkpoint_status == "completed":
             completed_df = checkpoint_to_dataframe(checkpoint_data)

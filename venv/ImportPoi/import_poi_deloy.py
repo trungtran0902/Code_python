@@ -11,7 +11,7 @@ from business_hours_utils import BUSINESS_HOURS_COLUMNS, get_business_hours
 
 API_URL = "https://api-data.map4d.vn/map/manage/place"
 REQUEST_TIMEOUT = 30
-CHECKPOINT_DIR = Path(__file__).resolve().parent / "checkpoints"
+CHECKPOINT_DIR = Path(__file__).resolve().parent
 IMPORT_CHUNK_SIZE = 25
 REQUIRED_COLUMNS = [
     "Name",

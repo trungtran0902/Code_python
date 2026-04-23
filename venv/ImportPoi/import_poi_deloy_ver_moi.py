@@ -435,11 +435,17 @@ if uploaded_file:
     control_state_key = get_control_state_key(file_key)
 
     if uploaded_checkpoint:
-        try:
-            chk_data = json.loads(uploaded_checkpoint.getvalue().decode('utf-8'))
-            save_checkpoint(file_key, chk_data)
-        except Exception as e:
-            st.error(f"Lỗi đọc JSON Checkpoint: {e}")
+        chk_bytes = uploaded_checkpoint.getvalue()
+        chk_hash = hashlib.sha256(chk_bytes).hexdigest()
+        # Chỉ nạp checkpoint nếu đây là file mới (tránh việc rerun của Streamlit ghi đè ngược dữ liệu cũ)
+        if st.session_state.get(f"loaded_chk_{file_key}") != chk_hash:
+            try:
+                chk_data = json.loads(chk_bytes.decode('utf-8'))
+                save_checkpoint(file_key, chk_data)
+                st.session_state[f"loaded_chk_{file_key}"] = chk_hash
+                st.success("Đã nạp checkpoint từ file thành công. Bạn có thể bấm Resume để tiếp tục.")
+            except Exception as e:
+                st.error(f"Lỗi đọc JSON Checkpoint: {e}")
 
     try:
         df = pd.read_excel(io.BytesIO(file_bytes), dtype={"Phone": str})

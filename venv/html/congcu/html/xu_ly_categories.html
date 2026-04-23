@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xử Lý Categories Foody -> Map4D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="../css/xu_ly_categories.css">
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-5xl">
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="bg-orange-500 p-3 rounded-lg shadow-lg shadow-orange-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-slate-800">Xử Lý Categories Foody</h1>
+                    <p class="text-slate-500">Mapping danh mục từ Foody sang Map4D sử dụng Fuzzy Matching.</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
+                <p class="text-sm text-blue-700 font-medium">Lưu ý: File Excel/CSV cần có cột <span class="font-bold underline">Category</span> để thực hiện so khớp.</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center border-3 border-dashed border-slate-200 rounded-3xl p-12 bg-slate-50 hover:bg-slate-100 transition-all cursor-pointer group" id="dropZone">
+                <input type="file" id="excelInput" accept=".xlsx,.xls,.csv" class="hidden">
+                <div class="bg-white p-4 rounded-full shadow-md group-hover:scale-110 transition-transform mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0l-4-4m4 4v12" />
+                    </svg>
+                </div>
+                <p class="text-lg font-semibold text-slate-700">Click để chọn hoặc kéo thả file Excel vào đây</p>
+                <p class="text-sm text-slate-400 mt-2">Hỗ trợ .xlsx, .xls, .csv</p>
+            </div>
+
+            <div id="processContainer" class="mt-8 hidden">
+                <div class="flex items-center justify-between p-4 bg-slate-800 rounded-xl text-white">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span id="fileNameDisplay" class="font-medium">filename.xlsx</span>
+                    </div>
+                    <button id="startBtn" class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-lg font-bold transition-colors">Bắt Đầu Xử Lý</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultContainer" class="mt-8 bg-white rounded-2xl shadow-xl p-8 border border-slate-100 hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-slate-800">Kết quả xử lý</h2>
+                <button id="downloadBtn" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Tải File Excel (.xlsx)
+                </button>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-50 text-slate-600 text-sm font-bold uppercase">
+                        <tr>
+                            <th class="px-6 py-4">STT</th>
+                            <th class="px-6 py-4">Foody Category</th>
+                            <th class="px-6 py-4">Map4D Ten</th>
+                            <th class="px-6 py-4">Map4D Dinh Danh</th>
+                            <th class="px-6 py-4">Độ Khớp (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody" class="divide-y divide-slate-100 text-slate-700"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../js/xu_ly_categories.js"></script>
+</body>
+</html>

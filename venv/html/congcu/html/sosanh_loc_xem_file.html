@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Sánh & Lọc File Excel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="../css/sosanh_loc_xem_file.css">
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2">So Sánh & Lọc File Excel</h1>
+            <p class="text-gray-500 font-medium">Công cụ so sánh dữ liệu dựa trên tọa độ (Haversine) và Tên (Fuzzy Match)</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+            <!-- Left: Config -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm">1</span>
+                        Nguồn Dữ Liệu
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase mb-1">File Gốc (Dòng cần check)</label>
+                            <input type="file" id="fileGoc" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase mb-1">File So Sánh (Dữ liệu mẫu)</label>
+                            <input type="file" id="fileSoSanh" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-sm">2</span>
+                        Tham Số So Khớp
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Khoảng cách tối đa (mét)</label>
+                            <input type="number" id="distThreshold" value="30" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-400 uppercase mb-1">Độ khớp tên tối thiểu (%)</label>
+                            <input type="number" id="nameThreshold" value="80" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <button id="processBtn" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-blue-200 transition-all active:scale-95">Bắt Đầu So Sánh</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Columns Mapping (Show after file upload) -->
+            <div id="mappingSection" class="lg:col-span-2 bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hidden">
+                <h2 class="text-xl font-bold mb-6">3. Ánh Xạ Cột Dữ Liệu</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-bold text-blue-600 border-b pb-2">File Gốc</h3>
+                        <div class="grid grid-cols-1 gap-3" id="gocCols">
+                            <!-- JS injected -->
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-bold text-indigo-600 border-b pb-2">File So Sánh</h3>
+                        <div class="grid grid-cols-1 gap-3" id="sosanhCols">
+                            <!-- JS injected -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div id="progressContainer" class="mb-10 hidden">
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-sm font-bold text-blue-600 uppercase tracking-wider" id="statusText">Đang xử lý...</span>
+                <span class="text-sm font-bold text-gray-400" id="percentText">0%</span>
+            </div>
+            <div class="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+                <div id="progressBar" class="h-full bg-blue-600 transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div id="resultSection" class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hidden">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                <h2 class="text-xl font-bold">Kết Quả Phân Tích</h2>
+                <div class="flex gap-3">
+                    <select id="filterStatus" class="bg-white border border-gray-200 rounded-lg px-4 py-2 text-sm font-bold outline-none">
+                        <option value="all">Tất cả</option>
+                        <option value="Trung quan (chinh xac)">Chính xác</option>
+                        <option value="Trung quan (gan dung)">Gần đúng</option>
+                        <option value="Trung dia chi">Trùng địa chỉ</option>
+                        <option value="Khac">Khác</option>
+                    </select>
+                    <button id="exportBtn" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-lg text-sm flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                        Xuất Excel
+                    </button>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-gray-50 text-gray-400 font-bold uppercase text-[10px] tracking-widest">
+                        <tr id="tableHead"></tr>
+                    </thead>
+                    <tbody id="tableBody" class="divide-y divide-gray-50"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../js/sosanh_loc_xem_file.js"></script>
+</body>
+</html>

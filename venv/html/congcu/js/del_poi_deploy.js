@@ -1,12 +1,12 @@
 const API_BASE_URL = "https://api-data.map4d.vn/map/manage/place/delete/";
-const MAX_PARALLEL_REQUESTS = 20; // Tăng luồng song song lên 20
-const DELETE_CHUNK_SIZE = 100; // Xử lý 100 dòng mỗi đợt
+const MAX_PARALLEL_REQUESTS = 20; 
+const DELETE_CHUNK_SIZE = 100; 
 
 let globalData = [];
 let globalHeaders = [];
 let candidateRows = [];
 let processState = {
-    status: 'idle', // idle, running, paused, completed
+    status: 'idle', 
     processedIndices: new Set(),
     results: [],
     total: 0,
@@ -58,8 +58,10 @@ async function checkToken(showPopup = true) {
     }
 
     if(showPopup) {
-        document.getElementById('btnCheckTokenText').classList.add('hidden');
-        document.getElementById('btnCheckTokenLoader').classList.remove('hidden');
+        const textEl = document.getElementById('btnCheckTokenText');
+        const loaderEl = document.getElementById('btnCheckTokenLoader');
+        if(textEl) textEl.classList.add('hidden');
+        if(loaderEl) loaderEl.classList.remove('hidden');
     }
 
     try {
@@ -69,8 +71,10 @@ async function checkToken(showPopup = true) {
         });
         
         if (showPopup) {
-            document.getElementById('btnCheckTokenText').classList.remove('hidden');
-            document.getElementById('btnCheckTokenLoader').classList.add('hidden');
+            const textEl = document.getElementById('btnCheckTokenText');
+            const loaderEl = document.getElementById('btnCheckTokenLoader');
+            if(textEl) textEl.classList.remove('hidden');
+            if(loaderEl) loaderEl.classList.add('hidden');
         }
 
         if (res.status === 401) {
@@ -87,8 +91,10 @@ async function checkToken(showPopup = true) {
 
     } catch (err) {
         if (showPopup) {
-            document.getElementById('btnCheckTokenText').classList.remove('hidden');
-            document.getElementById('btnCheckTokenLoader').classList.add('hidden');
+            const textEl = document.getElementById('btnCheckTokenText');
+            const loaderEl = document.getElementById('btnCheckTokenLoader');
+            if(textEl) textEl.classList.remove('hidden');
+            if(loaderEl) loaderEl.classList.add('hidden');
         }
         tokenStatusMessage.textContent = `Lỗi kết nối: ${err.message}`;
         tokenStatusMessage.className = 'mt-2 text-sm text-red-600 block';
@@ -114,7 +120,7 @@ async function deletePlace(id) {
 }
 
 // Event Listeners
-btnCheckToken.addEventListener('click', () => checkToken(true));
+if(btnCheckToken) btnCheckToken.addEventListener('click', () => checkToken(true));
 
 modeRadios.forEach(radio => {
     radio.addEventListener('change', (e) => {
@@ -128,7 +134,7 @@ modeRadios.forEach(radio => {
     });
 });
 
-btnDeleteManual.addEventListener('click', async () => {
+if(btnDeleteManual) btnDeleteManual.addEventListener('click', async () => {
     const id = manualIdInput.value.trim();
     if (!id) return Swal.fire('Lỗi', 'Vui lòng nhập Place ID', 'error');
     const isValid = await checkToken(false);
@@ -151,29 +157,42 @@ btnDeleteManual.addEventListener('click', async () => {
     }
 });
 
-checkpointInput.addEventListener('change', (e) => {
+if(checkpointInput) checkpointInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if(!file) return;
     const reader = new FileReader();
     reader.onload = (ev) => {
         try {
-            const data = JSON.parse(ev.target.result);
+            // Xử lý lỗi NaN từ Python (JSON chuẩn không hỗ trợ NaN)
+            const sanitized = ev.target.result.replace(/\bNaN\b/g, "null");
+            let data = JSON.parse(sanitized);
+            
             if(!processState.fileKey) {
                 Swal.fire('Lỗi', 'Vui lòng upload file Excel/CSV trước khi nạp checkpoint!', 'error');
                 checkpointInput.value = '';
                 return;
             }
+
+            // Chuẩn hóa dữ liệu từ bản Python sang JS
+            if (data.processed_indices && !data.processedIndices) {
+                data.processedIndices = data.processed_indices;
+            }
+            if (data.total_rows && !data.total) {
+                data.total = data.total_rows;
+            }
+
             localStorage.setItem(processState.fileKey, JSON.stringify(data));
             loadCheckpoint();
-            Swal.fire('Thành công', 'Đã nạp checkpoint thành công!', 'success');
+            Swal.fire('Thành công', 'Đã nạp checkpoint thành công từ file!', 'success');
         } catch(err) {
-            Swal.fire('Lỗi', 'File Checkpoint không hợp lệ!', 'error');
+            console.error("Checkpoint Load Error:", err);
+            Swal.fire('Lỗi', 'File Checkpoint không đúng định dạng JSON hoặc bị lỗi: ' + err.message, 'error');
         }
     };
     reader.readAsText(file);
 });
 
-fileInput.addEventListener('change', (e) => {
+if(fileInput) fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if (!file) {
         filePreviewContainer.classList.add('hidden');
@@ -222,7 +241,7 @@ fileInput.addEventListener('change', (e) => {
     reader.readAsArrayBuffer(file);
 });
 
-idColumnSelect.addEventListener('change', updateCandidateCount);
+if(idColumnSelect) idColumnSelect.addEventListener('change', updateCandidateCount);
 
 function updateCandidateCount() {
     const col = idColumnSelect.value;
@@ -248,21 +267,27 @@ function renderPreviewTable(headers, data) {
 function loadCheckpoint() {
     const saved = localStorage.getItem(processState.fileKey);
     if (saved) {
-        const parsed = JSON.parse(saved);
-        processState.status = parsed.status === 'running' ? 'paused' : parsed.status;
-        processState.processedIndices = new Set(parsed.processedIndices);
-        processState.results = parsed.results || [];
-        
-        if (processState.processedIndices.size > 0) {
-            Swal.fire({
-                title: 'Phát hiện tiến trình cũ',
-                text: `Bạn đã xử lý ${processState.processedIndices.size}/${processState.total} dòng trước đó.`,
-                icon: 'info',
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
+        try {
+            const parsed = JSON.parse(saved);
+            processState.status = parsed.status === 'running' ? 'paused' : parsed.status;
+            
+            const indices = parsed.processedIndices || parsed.processed_indices || [];
+            processState.processedIndices = new Set(indices);
+            processState.results = parsed.results || [];
+            
+            if (processState.processedIndices.size > 0) {
+                Swal.fire({
+                    title: 'Phát hiện tiến trình cũ',
+                    text: `Bạn đã xử lý ${processState.processedIndices.size}/${processState.total} dòng trước đó.`,
+                    icon: 'info',
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            }
+        } catch(e) {
+            console.error("Error loading checkpoint from localStorage:", e);
         }
     } else {
         processState.status = 'idle';
@@ -291,36 +316,38 @@ function updateProgressUI() {
     const total = processState.total;
     const percent = total > 0 ? ((count / total) * 100).toFixed(2) : 0;
     
-    progressCountText.textContent = `${count}/${total} dòng | ${percent}%`;
-    progressBar.style.width = `${percent}%`;
+    if(progressCountText) progressCountText.textContent = `${count}/${total} dòng | ${percent}%`;
+    if(progressBar) progressBar.style.width = `${percent}%`;
     
     let statusText = 'Đang chờ';
     if (processState.status === 'running') statusText = 'Đang chạy';
     else if (processState.status === 'paused') statusText = 'Tạm dừng';
     else if (processState.status === 'completed') statusText = 'Hoàn thành';
     
-    progressStatusText.textContent = `Trạng thái: ${statusText}`;
+    if(progressStatusText) progressStatusText.textContent = `Trạng thái: ${statusText}`;
 
-    btnStartDelete.classList.toggle('hidden', processState.status === 'running' || (processState.status === 'paused' && count > 0) || processState.status === 'completed');
-    if (count > 0 && processState.status !== 'completed' && processState.status !== 'running') {
-        btnStartDelete.classList.remove('hidden');
-        btnStartDelete.textContent = "Restart New";
-    } else {
-        btnStartDelete.textContent = "Start Delete";
+    if(btnStartDelete) {
+        btnStartDelete.classList.toggle('hidden', processState.status === 'running' || (processState.status === 'paused' && count > 0) || processState.status === 'completed');
+        if (count > 0 && processState.status !== 'completed' && processState.status !== 'running') {
+            btnStartDelete.classList.remove('hidden');
+            btnStartDelete.textContent = "Restart New";
+        } else {
+            btnStartDelete.textContent = "Start Delete";
+        }
     }
 
-    btnPauseDelete.classList.toggle('hidden', processState.status !== 'running');
-    btnResumeDelete.classList.toggle('hidden', processState.status !== 'paused' || count === 0);
+    if(btnPauseDelete) btnPauseDelete.classList.toggle('hidden', processState.status !== 'running');
+    if(btnResumeDelete) btnResumeDelete.classList.toggle('hidden', processState.status !== 'paused' || count === 0);
     
     if (processState.results.length > 0) {
-        btnDownloadResult.classList.remove('hidden');
-        btnDownloadCheckpoint.classList.remove('hidden');
+        if(btnDownloadResult) btnDownloadResult.classList.remove('hidden');
+        if(btnDownloadCheckpoint) btnDownloadCheckpoint.classList.remove('hidden');
         renderResultTable();
-        resultContainer.classList.remove('hidden');
+        if(resultContainer) resultContainer.classList.remove('hidden');
     }
 }
 
-btnStartDelete.addEventListener('click', async () => {
+if(btnStartDelete) btnStartDelete.addEventListener('click', async () => {
     const isValid = await checkToken();
     if (!isValid) return;
 
@@ -345,14 +372,14 @@ btnStartDelete.addEventListener('click', async () => {
     processQueue();
 });
 
-btnPauseDelete.addEventListener('click', () => {
+if(btnPauseDelete) btnPauseDelete.addEventListener('click', () => {
     processState.shouldStop = true;
     processState.status = 'paused';
     saveCheckpoint();
     updateProgressUI();
 });
 
-btnResumeDelete.addEventListener('click', async () => {
+if(btnResumeDelete) btnResumeDelete.addEventListener('click', async () => {
     const isValid = await checkToken();
     if (!isValid) return;
 
@@ -440,11 +467,13 @@ function renderResultTable() {
     const logCols = ['source_row', 'time', 'id', 'status', 'message'];
     const allHeaders = [...globalHeaders, ...logCols.filter(c => !globalHeaders.includes(c))];
     
-    document.getElementById('resultTableHead').innerHTML = `<tr>${allHeaders.map(h => `<th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">${h}</th>`).join('')}</tr>`;
+    const headEl = document.getElementById('resultTableHead');
+    if(headEl) headEl.innerHTML = `<tr>${allHeaders.map(h => `<th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">${h}</th>`).join('')}</tr>`;
     
     const displayData = [...processState.results].reverse().slice(0, 50);
     
-    document.getElementById('resultTableBody').innerHTML = displayData.map(row => 
+    const bodyEl = document.getElementById('resultTableBody');
+    if(bodyEl) bodyEl.innerHTML = displayData.map(row => 
         `<tr>${allHeaders.map(h => {
             let val = row[h] === undefined || row[h] === null ? '' : row[h];
             let cls = "px-4 py-2 whitespace-nowrap text-gray-700";
@@ -455,7 +484,7 @@ function renderResultTable() {
     ).join('');
 }
 
-btnDownloadResult.addEventListener('click', () => {
+if(btnDownloadResult) btnDownloadResult.addEventListener('click', () => {
     if (processState.results.length === 0) return;
     
     const logCols = ['source_row', 'time', 'id', 'status', 'message'];
@@ -485,7 +514,7 @@ btnDownloadResult.addEventListener('click', () => {
     document.body.removeChild(link);
 });
 
-btnDownloadCheckpoint.addEventListener('click', () => {
+if(btnDownloadCheckpoint) btnDownloadCheckpoint.addEventListener('click', () => {
     if(!processState.fileKey) return;
     const dataStr = localStorage.getItem(processState.fileKey);
     if(!dataStr) return;

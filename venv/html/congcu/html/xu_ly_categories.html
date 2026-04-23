@@ -11,7 +11,7 @@
 </head>
 <body class="bg-slate-50 min-h-screen">
     <div class="container mx-auto px-4 py-8 max-w-5xl">
-        <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 mb-8">
             <div class="flex items-center gap-4 mb-8">
                 <div class="bg-orange-500 p-3 rounded-lg shadow-lg shadow-orange-200">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -19,41 +19,39 @@
                     </svg>
                 </div>
                 <div>
-                    <h1 class="text-2xl font-bold text-slate-800">Xử Lý Categories Foody</h1>
-                    <p class="text-slate-500">Mapping danh mục từ Foody sang Map4D sử dụng Fuzzy Matching.</p>
+                    <h1 class="text-2xl font-bold text-slate-800">Xử Lý Categories Foody -> Map4D</h1>
+                    <p class="text-slate-500">Mapping danh mục sử dụng file Type Map4D chuẩn.</p>
                 </div>
             </div>
 
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
-                <p class="text-sm text-blue-700 font-medium">Lưu ý: File Excel/CSV cần có cột <span class="font-bold underline">Category</span> để thực hiện so khớp.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- Source File -->
+                <div class="p-6 border-2 border-dashed border-slate-200 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <label class="block text-sm font-bold text-slate-700 mb-2">1. File nguồn (Cần chuyển đổi)</label>
+                    <input type="file" id="sourceInput" accept=".xlsx,.xls,.csv" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
+                    <div id="sourceStatus" class="mt-2 text-xs text-slate-500">Chưa chọn file</div>
+                </div>
+
+                <!-- Map4D Type File -->
+                <div class="p-6 border-2 border-dashed border-slate-200 rounded-2xl hover:bg-slate-50 transition-colors">
+                    <label class="block text-sm font-bold text-slate-700 mb-2">2. File Type Map4D chuẩn</label>
+                    <input type="file" id="map4dInput" accept=".xlsx,.xls,.csv" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    <div id="map4dStatus" class="mt-2 text-xs text-slate-500">Chưa chọn file</div>
+                </div>
             </div>
 
-            <div class="flex flex-col items-center justify-center border-3 border-dashed border-slate-200 rounded-3xl p-12 bg-slate-50 hover:bg-slate-100 transition-all cursor-pointer group" id="dropZone">
-                <input type="file" id="excelInput" accept=".xlsx,.xls,.csv" class="hidden">
-                <div class="bg-white p-4 rounded-full shadow-md group-hover:scale-110 transition-transform mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0l-4-4m4 4v12" />
-                    </svg>
-                </div>
-                <p class="text-lg font-semibold text-slate-700">Click để chọn hoặc kéo thả file Excel vào đây</p>
-                <p class="text-sm text-slate-400 mt-2">Hỗ trợ .xlsx, .xls, .csv</p>
-            </div>
-
-            <div id="processContainer" class="mt-8 hidden">
-                <div class="flex items-center justify-between p-4 bg-slate-800 rounded-xl text-white">
-                    <div class="flex items-center gap-3">
-                        <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span id="fileNameDisplay" class="font-medium">filename.xlsx</span>
-                    </div>
-                    <button id="startBtn" class="bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-lg font-bold transition-colors">Bắt Đầu Xử Lý</button>
-                </div>
+            <div class="flex items-center gap-4">
+                <button id="btnProcess" disabled class="flex-1 bg-orange-500 hover:bg-orange-600 disabled:bg-slate-300 text-white font-bold py-4 rounded-xl shadow-lg transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2">
+                    <span>Bắt Đầu Xử Lý</span>
+                    <div id="loaderProcess" class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                </button>
             </div>
         </div>
 
-        <div id="resultContainer" class="mt-8 bg-white rounded-2xl shadow-xl p-8 border border-slate-100 hidden">
+        <div id="resultContainer" class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-bold text-slate-800">Kết quả xử lý</h2>
-                <button id="downloadBtn" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                <button id="btnDownload" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
@@ -62,16 +60,8 @@
             </div>
             <div class="overflow-x-auto rounded-xl border border-slate-200">
                 <table class="w-full text-left border-collapse">
-                    <thead class="bg-slate-50 text-slate-600 text-sm font-bold uppercase">
-                        <tr>
-                            <th class="px-6 py-4">STT</th>
-                            <th class="px-6 py-4">Foody Category</th>
-                            <th class="px-6 py-4">Map4D Ten</th>
-                            <th class="px-6 py-4">Map4D Dinh Danh</th>
-                            <th class="px-6 py-4">Độ Khớp (%)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody" class="divide-y divide-slate-100 text-slate-700"></tbody>
+                    <thead class="bg-slate-50 text-slate-600 text-sm font-bold uppercase" id="resultHead"></thead>
+                    <tbody id="resultBody" class="divide-y divide-slate-100 text-slate-700 text-sm"></tbody>
                 </table>
             </div>
         </div>

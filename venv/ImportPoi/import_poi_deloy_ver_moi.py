@@ -187,8 +187,20 @@ def load_checkpoint(file_key):
 
 def save_checkpoint(file_key, checkpoint_data):
     checkpoint_path = get_checkpoint_path(file_key)
+    
+    # Deep clean NaN values before saving to JSON
+    def clean_nans(obj):
+        if isinstance(obj, dict):
+            return {k: clean_nans(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [clean_nans(v) for v in obj]
+        elif pd.isna(obj):
+            return None
+        return obj
+
+    clean_data = clean_nans(checkpoint_data)
     checkpoint_path.write_text(
-        json.dumps(checkpoint_data, ensure_ascii=False, indent=2),
+        json.dumps(clean_data, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
@@ -509,7 +521,13 @@ if uploaded_file:
         if checkpoint_data.get("last_error"):
             st.warning(f"Loi gan nhat: {checkpoint_data['last_error']}")
 
-        chk_json_str = json.dumps(checkpoint_data, ensure_ascii=False, indent=2)
+        # Clean NaNs before providing download
+        def clean_nans(obj):
+            if isinstance(obj, dict): return {k: clean_nans(v) for k, v in obj.items()}
+            if isinstance(obj, list): return [clean_nans(v) for v in obj]
+            if pd.isna(obj): return None
+            return obj
+        chk_json_str = json.dumps(clean_nans(checkpoint_data), ensure_ascii=False, indent=2)
         st.download_button(
             "💾 Tải file Checkpoint (.json) về máy",
             data=chk_json_str,

@@ -1,17 +1,16 @@
 const geojsonInput = document.getElementById('geojsonInput');
 const excelInput = document.getElementById('excelInput');
 const geojsonStatus = document.getElementById('geojsonStatus');
-const columnSelection = document.getElementById('columnSelection');
-const colOldAddress = document.getElementById('colOldAddress');
-const colLat = document.getElementById('colLat');
-const colLng = document.getElementById('colLng');
-const btnProcess = document.getElementById('btnProcess');
-const loaderProcess = document.getElementById('loaderProcess');
-const resultContainer = document.getElementById('resultContainer');
-const resultHead = document.getElementById('resultHead');
-const resultBody = document.getElementById('resultBody');
-const btnDownload = document.getElementById('btnDownload');
-const matchCount = document.getElementById('matchCount');
+const excelStatus = document.getElementById('excelStatus');
+const columnMapping = document.getElementById('columnMapping');
+const addrCol = document.getElementById('addrCol');
+const latCol = document.getElementById('latCol');
+const lngCol = document.getElementById('lngCol');
+const processBtn = document.getElementById('processBtn');
+const resultCard = document.getElementById('resultCard');
+const tableHead = document.getElementById('tableHead');
+const tableBody = document.getElementById('tableBody');
+const downloadBtn = document.getElementById('downloadBtn');
 
 let geojsonFeatures = [];
 let excelData = [];
@@ -22,17 +21,18 @@ geojsonInput.addEventListener('change', async (e) => {
     const files = e.target.files;
     geojsonFeatures = [];
     if(files.length === 0) {
-        geojsonStatus.textContent = 'Chưa có file nào được chọn.';
+        geojsonStatus.textContent = 'Chưa chọn file';
         checkReady();
         return;
     }
     
-    geojsonStatus.textContent = `Đang đọc ${files.length} file GeoJSON...`;
+    geojsonStatus.textContent = `Đang đọc ${files.length} file...`;
     
     try {
         for(let i=0; i<files.length; i++) {
             const text = await files[i].text();
             try {
+                // Remove trailing commas in JSON if any (common in some exports)
                 const sanitized = text.replace(/,\s*([}\]])/g, "$1");
                 const data = JSON.parse(sanitized);
                 if(data.features && Array.isArray(data.features)) {
@@ -47,9 +47,9 @@ geojsonInput.addEventListener('change', async (e) => {
                 console.error(`Lỗi đọc file ${files[i].name}:`, err);
             }
         }
-        geojsonStatus.textContent = `Đã nạp ${geojsonFeatures.length} vùng polygon từ ${files.length} file.`;
+        geojsonStatus.textContent = `Đã nạp ${geojsonFeatures.length} vùng polygon.`;
     } catch(err) {
-        geojsonStatus.textContent = `Lỗi đọc file: ${err.message}`;
+        geojsonStatus.textContent = `Lỗi: ${err.message}`;
     }
     checkReady();
 });
@@ -57,25 +57,34 @@ geojsonInput.addEventListener('change', async (e) => {
 excelInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if(!file) {
-        columnSelection.classList.add('hidden');
+        columnMapping.classList.add('hidden');
         excelData = [];
+        excelStatus.textContent = 'Chưa chọn file';
         checkReady();
         return;
     }
     
+    excelStatus.textContent = 'Đang đọc file...';
     const reader = new FileReader();
     reader.onload = (ev) => {
-        const data = new Uint8Array(ev.target.result);
-        const workbook = XLSX.read(data, {type: 'array'});
-        const sheetName = workbook.SheetNames[0];
-        excelData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {defval: ""});
-        
-        if(excelData.length > 0) {
-            excelHeaders = Object.keys(excelData[0]);
-            populateSelects();
-            columnSelection.classList.remove('hidden');
-        } else {
-            Swal.fire('Lỗi', 'File Excel trống', 'error');
+        try {
+            const data = new Uint8Array(ev.target.result);
+            const workbook = XLSX.read(data, {type: 'array'});
+            const sheetName = workbook.SheetNames[0];
+            excelData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {defval: ""});
+            
+            if(excelData.length > 0) {
+                excelHeaders = Object.keys(excelData[0]);
+                populateSelects();
+                columnMapping.classList.remove('hidden');
+                excelStatus.textContent = `Đã nạp ${excelData.length} dòng.`;
+            } else {
+                excelStatus.textContent = 'File trống';
+                Swal.fire('Lỗi', 'File Excel trống', 'error');
+            }
+        } catch(err) {
+            excelStatus.textContent = 'Lỗi đọc file';
+            Swal.fire('Lỗi', 'Không thể đọc file Excel', 'error');
         }
         checkReady();
     };
@@ -99,7 +108,7 @@ function autoDetect(selectElement, keywords) {
 }
 
 function populateSelects() {
-    [colOldAddress, colLat, colLng].forEach(sel => {
+    [addrCol, latCol, lngCol].forEach(sel => {
         sel.innerHTML = '';
         excelHeaders.forEach(h => {
             const opt = document.createElement('option');
@@ -109,27 +118,28 @@ function populateSelects() {
         });
     });
     
-    autoDetect(colOldAddress, ["Oldaddress", "OldAddress", "Address", "DiaChi", "DiaChiCu"]);
-    autoDetect(colLat, ["Latitude", "Lat", "ViDo", "Y"]);
-    autoDetect(colLng, ["Longitude", "Lng", "Lon", "KinhDo", "X"]);
+    autoDetect(addrCol, ["Oldaddress", "OldAddress", "Address", "DiaChi", "DiaChiCu", "FullAddress"]);
+    autoDetect(latCol, ["Latitude", "Lat", "ViDo", "Y"]);
+    autoDetect(lngCol, ["Longitude", "Lng", "Lon", "KinhDo", "X"]);
 }
 
 function checkReady() {
-    btnProcess.disabled = geojsonFeatures.length === 0 || excelData.length === 0;
+    processBtn.disabled = geojsonFeatures.length === 0 || excelData.length === 0;
 }
 
-btnProcess.addEventListener('click', async () => {
-    btnProcess.disabled = true;
-    loaderProcess.classList.remove('hidden');
-    resultContainer.classList.add('hidden');
+processBtn.addEventListener('click', async () => {
+    processBtn.disabled = true;
+    const originalText = processBtn.textContent;
+    processBtn.textContent = 'Đang xử lý...';
+    resultCard.classList.add('hidden');
     
     setTimeout(() => {
         try {
             processedData = excelData.map(row => {
                 let newRow = {...row};
-                const oldAddr = newRow[colOldAddress.value] || "";
-                let lat = parseFloat(newRow[colLat.value]);
-                let lng = parseFloat(newRow[colLng.value]);
+                const oldAddr = newRow[addrCol.value] || "";
+                let lat = parseFloat(newRow[latCol.value]);
+                let lng = parseFloat(newRow[lngCol.value]);
                 
                 let wardAddress = "";
                 
@@ -137,10 +147,12 @@ btnProcess.addEventListener('click', async () => {
                     const pt = turf.point([lng, lat]);
                     for(let f of geojsonFeatures) {
                         if(f.geometry && (f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon')) {
-                            if(turf.booleanPointInPolygon(pt, f)) {
-                                wardAddress = f.properties.ward_address || "";
-                                break;
-                            }
+                            try {
+                                if(turf.booleanPointInPolygon(pt, f)) {
+                                    wardAddress = f.properties.ward_address || f.properties.address || "";
+                                    break;
+                                }
+                            } catch(e) {}
                         }
                     }
                 }
@@ -148,7 +160,7 @@ btnProcess.addEventListener('click', async () => {
                 let housePart = String(oldAddr).split(',')[0].trim();
                 if(!wardAddress) {
                     newRow.NewAddress = oldAddr;
-                } else if (!housePart) {
+                } else if (!housePart || housePart.toLowerCase() === 'null') {
                     newRow.NewAddress = wardAddress;
                 } else {
                     newRow.NewAddress = `${housePart}, ${wardAddress}`;
@@ -158,17 +170,14 @@ btnProcess.addEventListener('click', async () => {
                 return newRow;
             });
             
-            const matched = processedData.filter(r => r.ward_address).length;
-            matchCount.textContent = `${matched}/${processedData.length}`;
             renderResult();
-            
-            resultContainer.classList.remove('hidden');
-            Swal.fire('Thành công', 'Đã xử lý xong dữ liệu.', 'success');
+            resultCard.classList.remove('hidden');
+            Swal.fire('Thành công', `Đã xử lý xong ${processedData.length} dòng.`, 'success');
         } catch(err) {
             Swal.fire('Lỗi xử lý', err.message, 'error');
         } finally {
-            btnProcess.disabled = false;
-            loaderProcess.classList.add('hidden');
+            processBtn.disabled = false;
+            processBtn.textContent = originalText;
         }
     }, 100);
 });
@@ -176,15 +185,15 @@ btnProcess.addEventListener('click', async () => {
 function renderResult() {
     if(processedData.length === 0) return;
     const headers = Object.keys(processedData[0]);
-    resultHead.innerHTML = `<tr>${headers.map(h => `<th class="px-4 py-2">${h}</th>`).join('')}</tr>`;
+    tableHead.innerHTML = `<tr>${headers.map(h => `<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">${h}</th>`).join('')}</tr>`;
     
     const display = processedData.slice(0, 50);
-    resultBody.innerHTML = display.map(row => 
-        `<tr class="border-b">${headers.map(h => `<td class="px-4 py-2 whitespace-nowrap">${row[h]||''}</td>`).join('')}</tr>`
+    tableBody.innerHTML = display.map(row => 
+        `<tr class="border-b">${headers.map(h => `<td class="px-6 py-4 whitespace-nowrap text-gray-700">${row[h]||''}</td>`).join('')}</tr>`
     ).join('');
 }
 
-btnDownload.addEventListener('click', () => {
+downloadBtn.addEventListener('click', () => {
     const ws = XLSX.utils.json_to_sheet(processedData);
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "Result");

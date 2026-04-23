@@ -35,6 +35,7 @@ const MANUAL_CATEGORY_MAP = {
 let sourceData = [];
 let map4dData = [];
 let resultData = [];
+let sourceHeaders = [];
 
 function checkReady() {
     btnProcess.disabled = sourceData.length === 0 || map4dData.length === 0;
@@ -48,11 +49,17 @@ sourceInput.addEventListener('change', (e) => {
         const data = new Uint8Array(ev.target.result);
         const workbook = XLSX.read(data, {type: 'array'});
         sourceData = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], {defval: ""});
-        if(sourceData.length > 0 && sourceData[0].categories === undefined && sourceData[0].Categories === undefined) {
-            Swal.fire('Lỗi', "File nguồn thiếu cột 'categories'", 'error');
-            sourceData = [];
-        } else {
-            sourceStatus.textContent = `Đã nạp ${sourceData.length} dòng.`;
+        if(sourceData.length > 0) {
+            sourceHeaders = Object.keys(sourceData[0]);
+            // Check for 'categories' (case insensitive)
+            const hasCat = sourceHeaders.some(h => h.toLowerCase() === 'categories');
+            if(!hasCat) {
+                Swal.fire('Lỗi', "File nguồn thiếu cột 'categories'", 'error');
+                sourceData = [];
+                sourceStatus.textContent = "Thiếu cột 'categories'";
+            } else {
+                sourceStatus.textContent = `Đã nạp ${sourceData.length} dòng.`;
+            }
         }
         checkReady();
     };
@@ -82,6 +89,7 @@ map4dInput.addEventListener('change', (e) => {
             map4dStatus.textContent = `Đã nạp ${map4dData.length} danh mục Map4D.`;
         } else {
             Swal.fire('Lỗi', "File Type Map4D thiếu cột 'Tên' hoặc 'Định danh'", 'error');
+            map4dStatus.textContent = "Sai định dạng cột.";
         }
         checkReady();
     };
@@ -91,37 +99,58 @@ map4dInput.addEventListener('change', (e) => {
 function normalizeText(text) {
     if(!text) return "";
     let str = String(text).trim().toLowerCase();
+    // Normalize unicode (loại bỏ dấu)
     str = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     str = str.replace(/đ/g, "d");
+    // Thay thế ký tự đặc biệt bằng dấu cách
     str = str.replace(/[\/,\_\-\\]+/g, " ");
     return str.replace(/\s+/g, " ").trim();
 }
 
+// Levenshtein / SequenceMatcher equivalent
+function getSimilarity(s1, s2) {
+    if (!s1 || !s2) return 0;
+    const len1 = s1.length;
+    const len2 = s2.length;
+    const matrix = Array(len1 + 1).fill(null).map(() => Array(len2 + 1).fill(0));
+    for (let i = 0; i <= len1; i++) matrix[i][0] = i;
+    for (let j = 0; j <= len2; j++) matrix[0][j] = j;
+    for (let i = 1; i <= len1; i++) {
+        for (let j = 1; j <= len2; j++) {
+            const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
+            matrix[i][j] = Math.min(matrix[i - 1][j] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j - 1] + cost);
+        }
+    }
+    const dist = matrix[len1][len2];
+    return 1 - (dist / Math.max(len1, len2));
+}
+
+// Matches RapidFuzz fuzz.token_set_ratio (returns 0-1 scale for scoreCandidate)
 function tokenSetRatio(s1, s2) {
     if (!s1 || !s2) return 0;
-    const tokens1 = new Set(s1.split(' '));
-    const tokens2 = new Set(s2.split(' '));
-    const intersection = new Set([...tokens1].filter(x => tokens2.has(x)));
-    return intersection.size / Math.max(tokens1.size, tokens2.size, 1);
+    const tokens1 = new Set(s1.split(' ').filter(s=>s));
+    const tokens2 = new Set(s2.split(' ').filter(s=>s));
+    if (tokens1.size === 0 || tokens2.size === 0) return 0;
+
+    const intersect = [...tokens1].filter(x => tokens2.has(x)).sort();
+    const diff1 = [...tokens1].filter(x => !tokens2.has(x)).sort();
+    const diff2 = [...tokens2].filter(x => !tokens1.has(x)).sort();
+
+    const t0 = intersect.join(' ');
+    const t1 = (intersect.concat(diff1)).join(' ');
+    const t2 = (intersect.concat(diff2)).join(' ');
+
+    const r1 = t0 ? getSimilarity(t0, t1) : 0;
+    const r2 = t0 ? getSimilarity(t0, t2) : 0;
+    const r3 = getSimilarity(t1, t2);
+
+    return Math.max(r1, r2, r3); // 0-1 scale (scoreCandidate expects this)
 }
 
 function scoreCandidate(normalizedCategory, normalizedName) {
     if(!normalizedCategory || !normalizedName) return 0;
     
-    // Simple levenshtein
-    const track = Array(normalizedName.length + 1).fill(null).map(() => Array(normalizedCategory.length + 1).fill(null));
-    for (let i = 0; i <= normalizedCategory.length; i += 1) track[0][i] = i;
-    for (let j = 0; j <= normalizedName.length; j += 1) track[j][0] = j;
-    
-    for (let j = 1; j <= normalizedName.length; j += 1) {
-        for (let i = 1; i <= normalizedCategory.length; i += 1) {
-            const indicator = normalizedCategory[i - 1] === normalizedName[j - 1] ? 0 : 1;
-            track[j][i] = Math.min(track[j][i - 1] + 1, track[j - 1][i] + 1, track[j - 1][i - 1] + indicator);
-        }
-    }
-    const dist = track[normalizedName.length][normalizedCategory.length];
-    const maxLen = Math.max(normalizedCategory.length, normalizedName.length);
-    const ratio = maxLen === 0 ? 1 : (maxLen - dist) / maxLen;
+    const ratio = getSimilarity(normalizedCategory, normalizedName);
     const tScore = tokenSetRatio(normalizedCategory, normalizedName);
     const containsBonus = (normalizedCategory.includes(normalizedName) || normalizedName.includes(normalizedCategory)) ? 0.15 : 0;
     
@@ -135,7 +164,9 @@ function findManualMatch(normCat, map4dLookup) {
             if(map4dLookup[identifier]) {
                 return {
                     matched_name: map4dLookup[identifier]["Tên"],
-                    identifier: identifier
+                    identifier: identifier,
+                    score: 1.0,
+                    match_type: "manual"
                 };
             }
         }
@@ -162,7 +193,9 @@ function mapSingleCategory(categoryValue, map4dLookup) {
     if(!bestRow) return null;
     return {
         matched_name: bestRow["Tên"],
-        identifier: bestRow["Định danh"]
+        identifier: bestRow["Định danh"],
+        score: bestScore,
+        match_type: "fuzzy"
     };
 }
 
@@ -175,15 +208,19 @@ btnProcess.addEventListener('click', () => {
         let map4dLookup = {};
         map4dData.forEach(r => map4dLookup[r["Định danh"]] = r);
         
+        // Find column name for categories (case insensitive)
+        const catColName = sourceHeaders.find(h => h.toLowerCase() === 'categories');
+
         resultData = sourceData.map(row => {
             let newRow = {...row};
-            let catCol = row.categories !== undefined ? row.categories : row.Categories;
+            let catVal = row[catColName];
             
             let matchedNames = [];
             let matchedIds = [];
             
-            if(catCol) {
-                let parts = String(catCol).split(',').map(s=>s.trim()).filter(s=>s);
+            if(catVal) {
+                // Split by comma
+                let parts = String(catVal).split(',').map(s=>s.trim()).filter(s=>s);
                 parts.forEach(p => {
                     let mapped = mapSingleCategory(p, map4dLookup);
                     if(mapped && !matchedIds.includes(mapped.identifier)) {
@@ -198,7 +235,7 @@ btnProcess.addEventListener('click', () => {
             return newRow;
         });
         
-        renderResult();
+        renderResult(catColName);
         resultContainer.classList.remove('hidden');
         btnProcess.disabled = false;
         loaderProcess.classList.add('hidden');
@@ -206,18 +243,18 @@ btnProcess.addEventListener('click', () => {
     }, 100);
 });
 
-function renderResult() {
+function renderResult(catColName) {
     if(resultData.length === 0) return;
     const headers = ["categories", "map4d_ten", "map4d_dinh_danh"];
-    resultHead.innerHTML = `<tr>${headers.map(h => `<th class="px-4 py-2">${h}</th>`).join('')}</tr>`;
+    resultHead.innerHTML = `<tr>${headers.map(h => `<th class="px-6 py-4">${h}</th>`).join('')}</tr>`;
     
     const display = resultData.slice(0, 50);
     resultBody.innerHTML = display.map(row => {
-        let catCol = row.categories !== undefined ? row.categories : (row.Categories || '');
-        return `<tr class="border-b">
-            <td class="px-4 py-2 whitespace-nowrap">${catCol}</td>
-            <td class="px-4 py-2 whitespace-nowrap text-green-600">${row.map4d_ten||''}</td>
-            <td class="px-4 py-2 whitespace-nowrap text-blue-600">${row.map4d_dinh_danh||''}</td>
+        let catVal = row[catColName] || '';
+        return `<tr>
+            <td class="px-6 py-4">${catVal}</td>
+            <td class="px-6 py-4 font-semibold text-green-600">${row.map4d_ten||''}</td>
+            <td class="px-6 py-4 text-blue-600">${row.map4d_dinh_danh||''}</td>
         </tr>`;
     }).join('');
 }

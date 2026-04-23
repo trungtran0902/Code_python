@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Map4D Excel Tool + Map</title>
+  <!-- SheetJS -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/geocode_map4d.css">
+</head>
+
+<body>
+<div class="layout">
+  <!-- LEFT -->
+  <div class="left">
+    <h1>Map4D Geocode Tool</h1>
+
+    <!-- Mode Selection -->
+    <div class="card">
+      <div class="card-title"><span>🛠️</span> Chọn chức năng</div>
+      <div class="mode-group">
+        <label class="mode-option">
+          <input type="radio" name="mode" value="forward" checked>
+          <span>Địa chỉ → Tọa độ (Forward)</span>
+        </label>
+        <label class="mode-option">
+          <input type="radio" name="mode" value="reverse">
+          <span>Tọa độ → Địa chỉ (Reverse)</span>
+        </label>
+        <label class="mode-option">
+          <input type="radio" name="mode" value="nearby">
+          <span>Tìm xung quanh (Nearby)</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- API Key -->
+    <div class="card">
+      <div class="card-title"><span>🔑</span> API Key</div>
+      <input id="apiKey" type="text" placeholder="Nhập key hoặc alias (dev/pro/test)...">
+      <div class="hint">Geocode / Places + Map JS SDK</div>
+    </div>
+
+    <!-- File Input -->
+    <div class="card">
+      <div class="card-title"><span>📁</span> Nguồn dữ liệu</div>
+      <input type="file" id="fileInput" accept=".xlsx,.xls">
+      <div id="fileInfo" class="hint">Chưa chọn file Excel</div>
+    </div>
+
+    <!-- Mode Specific Cards -->
+    <div class="card hidden" id="forwardCard">
+      <div class="card-title"><span>📝</span> Cột địa chỉ</div>
+      <div class="hint" style="margin-bottom:10px">Chọn các cột chứa thành phần địa chỉ:</div>
+      <div id="columnsContainer"></div>
+    </div>
+
+    <div class="card hidden" id="reverseCard">
+      <div class="card-title"><span>📍</span> Cột tọa độ</div>
+      <div style="display:flex; gap:10px">
+        <div style="flex:1">
+          <label class="hint">Latitude (Vĩ độ)</label>
+          <select id="latColumn"></select>
+        </div>
+        <div style="flex:1">
+          <label class="hint">Longitude (Kinh độ)</label>
+          <select id="lngColumn"></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="card hidden" id="nearbyCard">
+      <div class="card-title"><span>🔍</span> Tham số tìm kiếm</div>
+      <div style="margin-bottom:10px">
+        <label class="hint">Cột Keyword</label>
+        <select id="keywordColumn"></select>
+      </div>
+      <div style="display:flex; gap:10px; margin-bottom:10px">
+        <div style="flex:1">
+          <label class="hint">Cột Lat</label>
+          <select id="nearbyLatColumn"></select>
+        </div>
+        <div style="flex:1">
+          <label class="hint">Cột Lng</label>
+          <select id="nearbyLngColumn"></select>
+        </div>
+      </div>
+      <div>
+        <label class="hint">Bán kính (mét)</label>
+        <input id="nearbyRadius" type="number" value="300">
+      </div>
+    </div>
+
+    <!-- Action Card -->
+    <div class="card hidden" id="runCard">
+      <div class="card-title"><span>⚡</span> Điều khiển</div>
+      
+      <div class="btn-group" style="margin-bottom:16px">
+        <button id="runBtn"><span>▶️</span> Bắt đầu xử lý</button>
+        <button id="pauseBtn" disabled><span>⏸️</span> Tạm dừng</button>
+        <button id="drawBtn"><span>🗺️</span> Hiển thị POI</button>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px">
+        <span class="hint">Độ trễ (ms):</span>
+        <input id="delayMs" type="number" value="250" style="width:100px">
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-label">Tổng cộng</div>
+          <div class="stat-value" id="totalRows">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Đã xong</div>
+          <div class="stat-value" id="processedRows">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Thành công</div>
+          <div class="stat-value" id="successRows" style="color:var(--secondary)">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Lỗi</div>
+          <div class="stat-value" id="errorRows" style="color:var(--danger)">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Log Card -->
+    <div class="card hidden" id="logCard">
+      <div class="card-title"><span>💻</span> Console Log</div>
+      <div id="status" style="margin-bottom:16px"></div>
+      
+      <div class="btn-group">
+        <button id="downloadBtn" disabled><span>📊</span> Xuất Excel</button>
+        <button id="clearCheckpointBtn" disabled><span>🗑️</span> Xóa Checkpoint</button>
+      </div>
+      <div id="checkpointInfo" class="hint">Chưa có dữ liệu checkpoint.</div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right">
+    <div id="mapContainer">
+      <div id="map"></div>
+      <div id="mapOverlay" class="map-overlay">
+        <div class="map-placeholder">
+          <img src="https://maptile.s3-sgn10.fptcloud.com/data/images/69831a19243d2c9758957366.png" alt="Map4D">
+          <div class="map-placeholder-text">
+            Bản đồ sẽ được kích hoạt khi bạn bấm Bắt đầu xử lý
+          </div>
+          <div class="hint" style="margin-top:10px">Cần nhập API Key hợp lệ để tải bản đồ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/geocode_map4d.js"></script>
+</body>
+</html>

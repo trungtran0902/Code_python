@@ -163,30 +163,42 @@ if(checkpointInput) checkpointInput.addEventListener('change', (e) => {
     const reader = new FileReader();
     reader.onload = (ev) => {
         try {
-            // Xử lý lỗi NaN từ Python (JSON chuẩn không hỗ trợ NaN)
             const sanitized = ev.target.result.replace(/\bNaN\b/g, "null");
             let data = JSON.parse(sanitized);
-            
             if(!processState.fileKey) {
                 Swal.fire('Lỗi', 'Vui lòng upload file Excel/CSV trước khi nạp checkpoint!', 'error');
                 checkpointInput.value = '';
                 return;
             }
+            if (data.processed_indices && !data.processedIndices) data.processedIndices = data.processed_indices;
+            if (data.total_rows && !data.total) data.total = data.total_rows;
 
-            // Chuẩn hóa dữ liệu từ bản Python sang JS
-            if (data.processed_indices && !data.processedIndices) {
-                data.processedIndices = data.processed_indices;
-            }
-            if (data.total_rows && !data.total) {
-                data.total = data.total_rows;
-            }
+            // Load into memory directly (NOT localStorage to avoid 5MB limit)
+            const indices = data.processedIndices || [];
+            processState.processedIndices = new Set(indices);
+            processState.results = (data.results || []).map(r => ({
+                source_row: r.source_row || 0,
+                id: r.id || '',
+                time: r.time || '',
+                status: r.status || '',
+                message: r.message || ''
+            }));
+            processState.status = 'paused';
+            processState.total = candidateRows.length || data.total || 0;
 
-            localStorage.setItem(processState.fileKey, JSON.stringify(data));
-            loadCheckpoint();
-            Swal.fire('Thành công', 'Đã nạp checkpoint thành công từ file!', 'success');
+            try {
+                localStorage.removeItem(processState.fileKey);
+                localStorage.setItem(processState.fileKey, JSON.stringify({
+                    status: 'paused',
+                    processedIndices: indices
+                }));
+            } catch(e) { console.warn('localStorage save skipped'); }
+
+            updateProgressUI(true);
+            Swal.fire('Thành công', `Đã nạp checkpoint: ${indices.length} dòng đã xử lý.`, 'success');
         } catch(err) {
             console.error("Checkpoint Load Error:", err);
-            Swal.fire('Lỗi', 'File Checkpoint không đúng định dạng JSON hoặc bị lỗi: ' + err.message, 'error');
+            Swal.fire('Lỗi', 'File Checkpoint không hợp lệ: ' + err.message, 'error');
         }
     };
     reader.readAsText(file);
@@ -299,11 +311,22 @@ function loadCheckpoint() {
 
 function saveCheckpoint() {
     if(!processState.fileKey) return;
-    localStorage.setItem(processState.fileKey, JSON.stringify({
+    const data = JSON.stringify({
         status: processState.status,
-        processedIndices: Array.from(processState.processedIndices),
-        results: processState.results
-    }));
+        processedIndices: Array.from(processState.processedIndices)
+    });
+    try {
+        localStorage.setItem(processState.fileKey, data);
+    } catch(e) {
+        console.warn('localStorage quota exceeded, clearing old data...');
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith('map4d_')) keysToRemove.push(key);
+        }
+        keysToRemove.forEach(k => localStorage.removeItem(k));
+        try { localStorage.setItem(processState.fileKey, data); } catch(e2) {}
+    }
 }
 
 function clearCheckpoint() {
@@ -311,7 +334,21 @@ function clearCheckpoint() {
     localStorage.removeItem(processState.fileKey);
 }
 
-function updateProgressUI() {
+// Startup: purge old bloated checkpoints
+(function purgeOldCheckpoints() {
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith('map4d_')) {
+            try {
+                const val = localStorage.getItem(key);
+                if (val && val.length > 500000) localStorage.removeItem(key);
+            } catch(e) {}
+        }
+    }
+})();
+
+let _lastUIUpdate = 0;
+function updateProgressUI(forceRender = false) {
     const count = processState.processedIndices.size;
     const total = processState.total;
     const percent = total > 0 ? ((count / total) * 100).toFixed(2) : 0;
@@ -342,7 +379,11 @@ function updateProgressUI() {
     if (processState.results.length > 0) {
         if(btnDownloadResult) btnDownloadResult.classList.remove('hidden');
         if(btnDownloadCheckpoint) btnDownloadCheckpoint.classList.remove('hidden');
-        renderResultTable();
+        const now = Date.now();
+        if (forceRender || now - _lastUIUpdate > 2000) {
+            _lastUIUpdate = now;
+            renderResultTable();
+        }
         if(resultContainer) resultContainer.classList.remove('hidden');
     }
 }
@@ -407,46 +448,36 @@ async function processQueue() {
 
         const promises = wave.map(async (item) => {
             const result = await deletePlace(item.id);
-            
             if (!processState.shouldStop) {
                 processState.processedIndices.add(item.candidateIndex);
                 rowsProcessedThisRun++;
-                
-                const logRow = {
+                processState.results.push({
                     source_row: item.originalIndex + 2, 
                     time: new Date().toLocaleString('vi-VN'),
                     id: item.id,
                     status: result.success ? 'success' : 'error',
                     message: result.message
-                };
-                
-                processState.results.push({ ...item.rowData, ...logRow });
-                updateProgressUI();
+                });
             }
-
             return { item, result };
         });
 
         const waveResults = await Promise.all(promises);
-        
         let waveStopped = false;
         let stopReason = "";
-
         waveResults.forEach(({ item, result }) => {
-            if (result.stop) {
-                waveStopped = true;
-                stopReason = result.message;
-            }
+            if (result.stop) { waveStopped = true; stopReason = result.message; }
         });
 
+        updateProgressUI(false);
         saveCheckpoint();
 
         if (waveStopped) {
             processState.shouldStop = true;
             processState.status = 'paused';
             saveCheckpoint();
-            updateProgressUI();
-            Swal.fire('Lỗi mạng', `Tiến trình đã tạm dừng do lỗi: ${stopReason}`, 'error');
+            updateProgressUI(true);
+            Swal.fire('Lỗi mạng', `Tạm dừng: ${stopReason}`, 'error');
             break;
         }
     }
@@ -454,8 +485,8 @@ async function processQueue() {
     if (processState.processedIndices.size >= processState.total) {
         processState.status = 'completed';
         saveCheckpoint();
-        updateProgressUI();
-        Swal.fire('Hoàn thành', 'Đã xử lý xong tất cả dữ liệu!', 'success');
+        updateProgressUI(true);
+        Swal.fire('Hoàn thành', 'Đã xử lý xong tất cả!', 'success');
     } else if (!processState.shouldStop) {
         setTimeout(processQueue, 50); 
     }
@@ -463,18 +494,13 @@ async function processQueue() {
 
 function renderResultTable() {
     if (processState.results.length === 0) return;
-    
-    const logCols = ['source_row', 'time', 'id', 'status', 'message'];
-    const allHeaders = [...globalHeaders, ...logCols.filter(c => !globalHeaders.includes(c))];
-    
+    const logHeaders = ['source_row', 'time', 'id', 'status', 'message'];
     const headEl = document.getElementById('resultTableHead');
-    if(headEl) headEl.innerHTML = `<tr>${allHeaders.map(h => `<th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">${h}</th>`).join('')}</tr>`;
-    
-    const displayData = [...processState.results].reverse().slice(0, 50);
-    
+    if(headEl) headEl.innerHTML = `<tr>${logHeaders.map(h => `<th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">${h}</th>`).join('')}</tr>`;
+    const displayData = [...processState.results].reverse().slice(0, 30);
     const bodyEl = document.getElementById('resultTableBody');
     if(bodyEl) bodyEl.innerHTML = displayData.map(row => 
-        `<tr>${allHeaders.map(h => {
+        `<tr>${logHeaders.map(h => {
             let val = row[h] === undefined || row[h] === null ? '' : row[h];
             let cls = "px-4 py-2 whitespace-nowrap text-gray-700";
             if(h === 'status' && val === 'success') cls += " text-green-600 font-bold";
@@ -486,44 +512,32 @@ function renderResultTable() {
 
 if(btnDownloadResult) btnDownloadResult.addEventListener('click', () => {
     if (processState.results.length === 0) return;
-    
-    const logCols = ['source_row', 'time', 'id', 'status', 'message'];
-    const allHeaders = [...globalHeaders, ...logCols.filter(c => !globalHeaders.includes(c))];
-    
-    let csvContent = "\uFEFF"; 
-    csvContent += allHeaders.join(",") + "\n";
-    
-    processState.results.sort((a,b) => a.source_row - b.source_row).forEach(row => {
-        const rowArray = allHeaders.map(h => {
+    const logHeaders = ['source_row', 'time', 'id', 'status', 'message'];
+    let csvContent = "\uFEFF" + logHeaders.join(",") + "\n";
+    [...processState.results].sort((a,b) => a.source_row - b.source_row).forEach(row => {
+        const rowArray = logHeaders.map(h => {
             let val = row[h] === undefined || row[h] === null ? '' : String(row[h]);
-            if (val.includes(',') || val.includes('"') || val.includes('\n')) {
-                val = `"${val.replace(/"/g, '""')}"`;
-            }
+            if (val.includes(',') || val.includes('"') || val.includes('\n')) val = `"${val.replace(/"/g, '""')}"`;
             return val;
         });
         csvContent += rowArray.join(",") + "\n";
     });
-    
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("download", "delete_result.csv");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const link = document.createElement("a"); link.setAttribute("href", url); link.setAttribute("download", "delete_result.csv");
+    document.body.appendChild(link); link.click(); document.body.removeChild(link);
 });
 
 if(btnDownloadCheckpoint) btnDownloadCheckpoint.addEventListener('click', () => {
     if(!processState.fileKey) return;
-    const dataStr = localStorage.getItem(processState.fileKey);
-    if(!dataStr) return;
+    const fullCheckpoint = {
+        status: processState.status,
+        processedIndices: Array.from(processState.processedIndices),
+        results: processState.results
+    };
+    const dataStr = JSON.stringify(fullCheckpoint, null, 2);
     const blob = new Blob([dataStr], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `checkpoint_${processState.fileKey}.json`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const link = document.createElement("a"); link.href = url; link.download = `checkpoint_${processState.fileKey}.json`;
+    document.body.appendChild(link); link.click(); document.body.removeChild(link);
 });

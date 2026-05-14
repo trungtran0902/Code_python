@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Overlay Map</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="../css/json_overlay_map.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="layout">
+      <aside class="left">
+        <section class="hero-card card">
+          <div class="hero-top">
+            <div class="hero-logo">JS</div>
+            <div>
+              <div class="eyebrow">Map4D Data Tools</div>
+              <h1>JSON Overlay Map</h1>
+              <p class="hero-desc">Load file JSON, tự quét lat/long hoặc GeoJSON coordinates và overlay trực tiếp lên basemap.</p>
+            </div>
+          </div>
+          <div class="hero-tags">
+            <span>JSON Viewer</span>
+            <span>Lat/Lng Scanner</span>
+            <span>Basemap Overlay</span>
+          </div>
+        </section>
+
+        <div class="section-label">Nguồn dữ liệu</div>
+
+        <div class="card">
+          <div class="card-title"><span>📁</span> Chọn file JSON</div>
+          <label class="field-label" for="jsonFileInput">File dữ liệu đầu vào</label>
+          <input type="file" id="jsonFileInput" accept=".json,application/json,.geojson,application/geo+json,text/plain">
+          <div id="fileInfo" class="file-info">Chưa chọn file JSON/GeoJSON</div>
+          <div class="hint">Hỗ trợ JSON chuẩn, GeoJSON, NDJSON và nhiều JSON object nối tiếp nhau. Dữ liệu lớn sẽ được convert sang GeoJSON trong background và giới hạn overlay để tránh treo trình duyệt.</div>
+        </div>
+
+        <div class="section-label hidden" id="resultSectionLabel">Kết quả quét</div>
+
+        <div class="card hidden" id="summaryCard">
+          <div class="card-title"><span>📊</span> Thống kê</div>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-label">Dòng xem</div>
+              <div class="stat-value" id="rowCount">0</div>
+            </div>
+            <div class="stat-box success">
+              <div class="stat-label">Điểm tọa độ</div>
+              <div class="stat-value" id="pointCount">0</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Cột bảng</div>
+              <div class="stat-value" id="columnCount">0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card hidden" id="controlCard">
+          <div class="card-title"><span>🗺️</span> Điều khiển bản đồ</div>
+          <div class="btn-group action-buttons">
+            <button id="fitMapBtn"><span>🎯</span> Fit tất cả điểm</button>
+            <button id="clearMapBtn" class="secondary"><span>🧹</span> Xóa marker</button>
+            <button id="exportGeoJsonBtn" class="secondary"><span>⬇️</span> Tải GeoJSON</button>
+          </div>
+          <div class="control-strip">
+            <div>
+              <div class="control-label">Basemap</div>
+              <div class="control-sub">Chọn nền bản đồ để kiểm tra vị trí.</div>
+            </div>
+            <select id="baseLayerSelect">
+              <option value="osm">OpenStreetMap</option>
+              <option value="googleRoad">Google Road</option>
+              <option value="googleSatellite">Google Satellite</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card hidden" id="tableCard">
+          <div class="card-title"><span>🔎</span> Tìm kiếm dữ liệu</div>
+          <label class="field-label" for="searchInput">Lọc nhanh trong bảng</label>
+          <input id="searchInput" type="text" placeholder="Nhập từ khóa để lọc...">
+          <div class="hint">Bảng chỉ render tối đa 200 dòng đầu để giữ hiệu suất trình duyệt.</div>
+        </div>
+
+        <div class="card hidden" id="logCard">
+          <div class="card-title"><span>💻</span> Nhật ký</div>
+          <div id="statusLog" class="status-log">Chưa có dữ liệu.</div>
+        </div>
+      </aside>
+
+      <section class="right">
+        <div class="map-panel-header">
+          <div>
+            <div class="map-panel-kicker">Map preview</div>
+            <div class="map-panel-title">Basemap overlay từ JSON</div>
+            <div class="map-panel-subtitle" id="mapSubtitle">Marker sẽ hiển thị sau khi chọn file JSON có lat/long hợp lệ.</div>
+          </div>
+          <div class="map-status" id="mapState">
+            <span class="map-status-dot"></span>
+            <span id="mapStateText">Sẵn sàng</span>
+          </div>
+        </div>
+
+        <div id="mapContainer">
+          <div class="map-floating-card" id="floatingGuide">
+            <div class="floating-label">Workflow</div>
+            <strong>Load JSON → Scan tọa độ → Overlay</strong>
+            <span>Hỗ trợ lat/lng, latitude/longitude, x/y và GeoJSON Point/coordinates. Dữ liệu lớn được render bằng Canvas.</span>
+          </div>
+          <div id="map"></div>
+        </div>
+
+        <div class="data-panel hidden" id="dataPanel">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="points">Điểm tọa độ</button>
+            <button class="tab-btn" data-tab="table">Bảng dữ liệu</button>
+            <button class="tab-btn" data-tab="preview">JSON Preview</button>
+          </div>
+
+          <div class="tab-content active" id="tab-points">
+            <div class="table-wrap">
+              <table>
+                <thead id="pointsHead"></thead>
+                <tbody id="pointsBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-table">
+            <div class="table-wrap">
+              <table>
+                <thead id="dataHead"></thead>
+                <tbody id="dataBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-preview">
+            <pre id="jsonPreview" class="json-preview"></pre>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="../js/json_overlay_map.js"></script>
+</body>
+</html>

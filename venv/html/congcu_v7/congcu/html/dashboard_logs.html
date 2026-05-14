@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Log Thao tác</title>
+  <link rel="stylesheet" href="../css/dashboard_logs.css">
+</head>
+<body>
+  <main class="dashboard-page">
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow">Map4D Data Tools</p>
+        <h1>Dashboard Log Thao tác</h1>
+        <p class="hero-desc">Theo dõi lịch sử Import POI, Delete POI và Geocode theo ngày, khu vực, số dòng, số thành công và số lỗi.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="btnSeedSample" class="btn ghost">Tạo log mẫu</button>
+        <button id="btnExportCsv" class="btn secondary">Export CSV</button>
+        <button id="btnClearLogs" class="btn danger">Xóa log</button>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card"><span>Tổng log</span><strong id="statTotalLogs">0</strong></div>
+      <div class="stat-card"><span>Tổng dòng</span><strong id="statTotalRows">0</strong></div>
+      <div class="stat-card"><span>Thành công</span><strong id="statSuccessRows">0</strong></div>
+      <div class="stat-card"><span>Lỗi</span><strong id="statErrorRows">0</strong></div>
+    </section>
+
+    <section class="filter-card">
+      <div class="filter-grid">
+        <label>Từ ngày<input type="date" id="filterFrom"></label>
+        <label>Đến ngày<input type="date" id="filterTo"></label>
+        <label>Loại thao tác
+          <select id="filterAction">
+            <option value="all">Tất cả</option>
+            <option value="import_poi">Import POI</option>
+            <option value="delete_poi">Delete POI</option>
+            <option value="import_poi">Import POI</option>
+            <option value="delete_poi">Delete POI</option>
+            <option value="geocode">Geocode địa chỉ</option>
+            <option value="reverse_geocode">Reverse Geocode</option>
+            <option value="nearby_search">Nearby Search</option>
+          </select>
+        </label>
+        <label>Tìm kiếm<input type="text" id="filterKeyword" placeholder="VD: ĐN, QN, import, del, geocode, tên file..."></label>
+      </div>
+    </section>
+
+    <section class="manual-card">
+      <div class="section-title">
+        <h2>Thêm log nhanh</h2>
+        <p>Dùng cho demo hoặc nhập tay log Import POI / Delete POI / Geocode khi cần.</p>
+      </div>
+      <div class="manual-grid">
+        <label>Thao tác
+          <select id="manualAction">
+            <option value="import_poi">Import POI</option>
+            <option value="delete_poi">Delete POI</option>
+            <option value="geocode">Geocode địa chỉ</option>
+            <option value="reverse_geocode">Reverse Geocode</option>
+            <option value="nearby_search">Nearby Search</option>
+          </select>
+        </label>
+        <label>Khu vực<input id="manualArea" placeholder="VD: ĐN, QN, HCM"></label>
+        <label>Số dòng<input id="manualPoiCount" type="number" min="0" value="1000"></label>
+        <label>Tên file<input id="manualFileName" placeholder="VD: mapped_categories_result (1).xlsx"></label>
+        <label class="manual-message">Nội dung log<input id="manualMessage" placeholder="VD: Import file ĐN 1.000 POI"></label>
+        <button id="btnAddManualLog" class="btn primary">Thêm log</button>
+      </div>
+    </section>
+
+    <section class="log-card">
+      <div class="section-title">
+        <h2>Log theo ngày</h2>
+        <p id="resultSummary">Đang tải log...</p>
+      </div>
+      <div id="logTimeline" class="timeline"></div>
+    </section>
+  </main>
+
+  <script src="../js/app_log_store.js"></script>
+  <script src="../js/dashboard_logs.js"></script>
+</body>
+</html>

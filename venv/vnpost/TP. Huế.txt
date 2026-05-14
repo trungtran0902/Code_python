@@ -1,0 +1,162 @@
+[
+    {
+        "CommunesFullName": "P. An Cựu",
+        "CommuneID": "49129"
+    },
+    {
+        "CommunesFullName": "P. Dương Nỗ",
+        "CommuneID": "49142"
+    },
+    {
+        "CommunesFullName": "P. Hóa Châu",
+        "CommuneID": "49134"
+    },
+    {
+        "CommunesFullName": "P. Hương An",
+        "CommuneID": "49136"
+    },
+    {
+        "CommunesFullName": "P. Hương Thủy",
+        "CommuneID": "49620"
+    },
+    {
+        "CommunesFullName": "P. Hương Trà",
+        "CommuneID": "49422"
+    },
+    {
+        "CommunesFullName": "P. Kim Long",
+        "CommuneID": "49122"
+    },
+    {
+        "CommunesFullName": "P. Kim Trà",
+        "CommuneID": "49423"
+    },
+    {
+        "CommunesFullName": "P. Mỹ Thượng",
+        "CommuneID": "49927"
+    },
+    {
+        "CommunesFullName": "P. Phong Dinh",
+        "CommuneID": "49325"
+    },
+    {
+        "CommunesFullName": "P. Phong Phú",
+        "CommuneID": "49309"
+    },
+    {
+        "CommunesFullName": "P. Phong Quảng",
+        "CommuneID": "49324"
+    },
+    {
+        "CommunesFullName": "P. Phong Thái",
+        "CommuneID": "49323"
+    },
+    {
+        "CommunesFullName": "P. Phong Điền",
+        "CommuneID": "49322"
+    },
+    {
+        "CommunesFullName": "P. Phú Bài",
+        "CommuneID": "49612"
+    },
+    {
+        "CommunesFullName": "P. Phú Xuân",
+        "CommuneID": "49133"
+    },
+    {
+        "CommunesFullName": "P. Thanh Thủy",
+        "CommuneID": "49619"
+    },
+    {
+        "CommunesFullName": "P. Thuận An",
+        "CommuneID": "49141"
+    },
+    {
+        "CommunesFullName": "P. Thuận Hóa",
+        "CommuneID": "49135"
+    },
+    {
+        "CommunesFullName": "P. Thủy Xuân",
+        "CommuneID": "49131"
+    },
+    {
+        "CommunesFullName": "P. Vỹ Dạ",
+        "CommuneID": "49107"
+    },
+    {
+        "CommunesFullName": "X. A Lưới 1",
+        "CommuneID": "49527"
+    },
+    {
+        "CommunesFullName": "X. A Lưới 2",
+        "CommuneID": "49528"
+    },
+    {
+        "CommunesFullName": "X. A Lưới 3",
+        "CommuneID": "49529"
+    },
+    {
+        "CommunesFullName": "X. A Lưới 4",
+        "CommuneID": "49530"
+    },
+    {
+        "CommunesFullName": "X. A Lưới 5",
+        "CommuneID": "49531"
+    },
+    {
+        "CommunesFullName": "X. Bình Điền",
+        "CommuneID": "49424"
+    },
+    {
+        "CommunesFullName": "X. Chân Mây - Lăng Cô",
+        "CommuneID": "49825"
+    },
+    {
+        "CommunesFullName": "X. Hưng Lộc",
+        "CommuneID": "49828"
+    },
+    {
+        "CommunesFullName": "X. Khe Tre",
+        "CommuneID": "49706"
+    },
+    {
+        "CommunesFullName": "X. Long Quảng",
+        "CommuneID": "49826"
+    },
+    {
+        "CommunesFullName": "X. Lộc An",
+        "CommuneID": "49814"
+    },
+    {
+        "CommunesFullName": "X. Nam Đông",
+        "CommuneID": "49827"
+    },
+    {
+        "CommunesFullName": "X. Phú Hồ",
+        "CommuneID": "49925"
+    },
+    {
+        "CommunesFullName": "X. Phú Lộc",
+        "CommuneID": "49806"
+    },
+    {
+        "CommunesFullName": "X. Phú Vang",
+        "CommuneID": "49929"
+    },
+    {
+        "CommunesFullName": "X. Phú Vinh",
+        "CommuneID": "49928"
+    },
+    {
+        "CommunesFullName": "X. Quảng Điền",
+        "CommuneID": "49217"
+    },
+    {
+        "CommunesFullName": "X. Vinh Lộc",
+        "CommuneID": "49824"
+    },
+    {
+        "CommunesFullName": "X. Đan Điền",
+        "CommuneID": "49218"
+    }
+]

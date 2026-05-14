@@ -1,0 +1,154 @@
+[
+    {
+        "CommunesFullName": "P. Tân Phong",
+        "CommuneID": "30110"
+    },
+    {
+        "CommunesFullName": "P. Đoàn Kết",
+        "CommuneID": "30109"
+    },
+    {
+        "CommunesFullName": "X. Bum Nưa",
+        "CommuneID": "30407"
+    },
+    {
+        "CommunesFullName": "X. Bum Tở",
+        "CommuneID": "30416"
+    },
+    {
+        "CommunesFullName": "X. Bình Lư",
+        "CommuneID": "30207"
+    },
+    {
+        "CommunesFullName": "X. Bản Bo",
+        "CommuneID": "30219"
+    },
+    {
+        "CommunesFullName": "X. Dào San",
+        "CommuneID": "30309"
+    },
+    {
+        "CommunesFullName": "X. Hua Bum",
+        "CommuneID": "30512"
+    },
+    {
+        "CommunesFullName": "X. Hồng Thu",
+        "CommuneID": "30611"
+    },
+    {
+        "CommunesFullName": "X. Khoen On",
+        "CommuneID": "30814"
+    },
+    {
+        "CommunesFullName": "X. Khun Há",
+        "CommuneID": "30217"
+    },
+    {
+        "CommunesFullName": "X. Khổng Lào",
+        "CommuneID": "30307"
+    },
+    {
+        "CommunesFullName": "X. Lê Lợi",
+        "CommuneID": "30516"
+    },
+    {
+        "CommunesFullName": "X. Mù Cả",
+        "CommuneID": "30413"
+    },
+    {
+        "CommunesFullName": "X. Mường Khoa",
+        "CommuneID": "30708"
+    },
+    {
+        "CommunesFullName": "X. Mường Kim",
+        "CommuneID": "30816"
+    },
+    {
+        "CommunesFullName": "X. Mường Mô",
+        "CommuneID": "30513"
+    },
+    {
+        "CommunesFullName": "X. Mường Than",
+        "CommuneID": "30818"
+    },
+    {
+        "CommunesFullName": "X. Mường Tè",
+        "CommuneID": "30414"
+    },
+    {
+        "CommunesFullName": "X. Nậm Cuổi",
+        "CommuneID": "30622"
+    },
+    {
+        "CommunesFullName": "X. Nậm Hàng",
+        "CommuneID": "30507"
+    },
+    {
+        "CommunesFullName": "X. Nậm Mạ",
+        "CommuneID": "30618"
+    },
+    {
+        "CommunesFullName": "X. Nậm Sỏ",
+        "CommuneID": "30711"
+    },
+    {
+        "CommunesFullName": "X. Nậm Tăm",
+        "CommuneID": "30626"
+    },
+    {
+        "CommunesFullName": "X. Pa Tần",
+        "CommuneID": "30610"
+    },
+    {
+        "CommunesFullName": "X. Pa Ủ",
+        "CommuneID": "30409"
+    },
+    {
+        "CommunesFullName": "X. Phong Thổ",
+        "CommuneID": "30306"
+    },
+    {
+        "CommunesFullName": "X. Pu Sam Cáp",
+        "CommuneID": "30624"
+    },
+    {
+        "CommunesFullName": "X. Pắc Ta",
+        "CommuneID": "30713"
+    },
+    {
+        "CommunesFullName": "X. Sin Suối Hồ",
+        "CommuneID": "30323"
+    },
+    {
+        "CommunesFullName": "X. Sì Lở Lầu",
+        "CommuneID": "30313"
+    },
+    {
+        "CommunesFullName": "X. Sìn Hồ",
+        "CommuneID": "30606"
+    },
+    {
+        "CommunesFullName": "X. Than Uyên",
+        "CommuneID": "30806"
+    },
+    {
+        "CommunesFullName": "X. Thu Lũm",
+        "CommuneID": "30411"
+    },
+    {
+        "CommunesFullName": "X. Tà Tổng",
+        "CommuneID": "30417"
+    },
+    {
+        "CommunesFullName": "X. Tân Uyên",
+        "CommuneID": "30706"
+    },
+    {
+        "CommunesFullName": "X. Tả Lèng",
+        "CommuneID": "30211"
+    },
+    {
+        "CommunesFullName": "X. Tủa Sín Chải",
+        "CommuneID": "30617"
+    }
+]

@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Cesium GLB Viewer with Map4D and Drag</title>
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Cesium.js"></script>
+  <link
+    href="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Widgets/widgets.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    html, body, #cesiumContainer {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #status {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.75);
+      color: #00ff66;
+      padding: 10px;
+      font-size: 13px;
+      max-width: 560px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    #controls {
+      position: absolute;
+      top: 140px;
+      left: 10px;
+      z-index: 999;
+      background: rgba(0, 0, 0, 0.78);
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+      max-width: 720px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+      border-radius: 6px;
+    }
+
+    button {
+      margin: 3px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    input {
+      margin: 3px;
+      padding: 5px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      margin: 10px 0;
+    }
+
+    .value-box {
+      display: inline-block;
+      min-width: 90px;
+      padding: 4px 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    .row {
+      margin-top: 6px;
+    }
+
+    .input-small {
+      width: 130px;
+    }
+
+    .hint {
+      color: #cccccc;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cesiumContainer"></div>
+
+  <div id="status">Loading...</div>
+
+  <div id="controls">
+    <div><b>Base map:</b></div>
+    <button onclick="setGoogleSatellite()">Google Satellite</button>
+    <button onclick="setGoogleRoad()">Google Road</button>
+    <button onclick="setOSM()">OSM</button>
+    <button onclick="setMap4D()">Map4D</button>
+    <button onclick="overlayMap4D()">Overlay Map4D</button>
+    <button onclick="removeMap4DOverlay()">Remove Overlay</button>
+
+    <hr />
+
+    <div><b>Model scale:</b></div>
+    <button onclick="setPrimitiveScale(0.01)">0.01</button>
+    <button onclick="setPrimitiveScale(0.05)">0.05</button>
+    <button onclick="setPrimitiveScale(0.1)">0.1</button>
+    <button onclick="setPrimitiveScale(0.2)">0.2</button>
+    <button onclick="setPrimitiveScale(0.5)">0.5</button>
+    <button onclick="setPrimitiveScale(1)">1</button>
+    <button onclick="setPrimitiveScale(2)">2</button>
+    <button onclick="setPrimitiveScale(5)">5</button>
+
+    <hr />
+
+    <div>
+      <b>Rotate heading:</b>
+      <span id="headingValue" class="value-box">0°</span>
+    </div>
+    <button onclick="adjustHeading(-10)">-10°</button>
+    <button onclick="adjustHeading(-5)">-5°</button>
+    <button onclick="adjustHeading(-1)">-1°</button>
+    <button onclick="adjustHeading(1)">+1°</button>
+    <button onclick="adjustHeading(5)">+5°</button>
+    <button onclick="adjustHeading(10)">+10°</button>
+    <button onclick="setHeading(0)">Reset 0°</button>
+
+    <hr />
+
+    <div><b>Position / Height:</b></div>
+
+    <div class="row">
+      Lat:
+      <input id="latInput" class="input-small" type="number" step="0.000001" />
+      Lon:
+      <input id="lonInput" class="input-small" type="number" step="0.000001" />
+      Height:
+      <input id="heightInput" class="input-small" type="number" step="1" />
+      m
+    </div>
+
+    <div class="row">
+      <button onclick="applyPositionFromInput()">Apply Position</button>
+      <button onclick="flyToModelPosition()">Fly to marker</button>
+      <button onclick="flyToModelBounding()">Fly to model</button>
+    </div>
+
+    <div class="row">
+      <button onclick="adjustHeight(-10)">Height -10m</button>
+      <button onclick="adjustHeight(-5)">-5m</button>
+      <button onclick="adjustHeight(-1)">-1m</button>
+      <button onclick="adjustHeight(1)">+1m</button>
+      <button onclick="adjustHeight(5)">+5m</button>
+      <button onclick="adjustHeight(10)">+10m</button>
+    </div>
+
+    <hr />
+
+    <div>
+      <b>Drag model:</b>
+      <span id="dragStatus" class="value-box">OFF</span>
+    </div>
+    <button onclick="toggleDragMode()">Enable / Disable Drag</button>
+    <div class="hint">Bật Drag ON → click giữ vào model hoặc marker đỏ → kéo thả để đổi vị trí.</div>
+
+    <hr />
+
+    <button onclick="toggleMarker()">Show / Hide marker</button>
+  </div>
+
+  <script>
+    // ==============================
+    // 1. CONFIG
+    // ==============================
+
+    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlNmVhNDYwYS1mN2YxLTQ4ZjYtYTExNy03ZGVmMWYyMzYyYjkiLCJpZCI6NDMwNDA3LCJzdWIiOiJ0cnVuZ3RyYW4wOTAyIiwiaXNzIjoiaHR0cHM6Ly9pb24uY2VzaXVtLmNvbSIsImF1ZCI6IlVudGl0bGVkIiwiaWF0IjoxNzc4NTY2MTc5fQ.1pEOu9gk673XIb58ab_Lcmtp3i1RHv8ZT4_9288mYmc";
+
+    const assetId = 4763088;
+
+    // Tọa độ ban đầu WGS84
+    // Cesium dùng fromDegrees(longitude, latitude, height)
+    let latitude = 11.537137;
+    let longitude = 106.896225;
+    let height = 30;
+
+    let currentScale = 1;
+
+    let currentHeadingDeg = 0;
+    let currentPitchDeg = 0;
+    let currentRollDeg = 0;
+
+    // ==============================
+    // 2. GLOBAL VARIABLES
+    // ==============================
+
+    let viewer = null;
+    let primitiveModel = null;
+    let modelPosition = null;
+    let markerEntity = null;
+    let markerVisible = true;
+
+    let map4dOverlayLayer = null;
+
+    let dragModeEnabled = false;
+    let isDraggingModel = false;
+    let dragHandler = null;
+
+    const statusBox = document.getElementById("status");
+    const headingValueBox = document.getElementById("headingValue");
+    const dragStatusBox = document.getElementById("dragStatus");
+
+    const latInput = document.getElementById("latInput");
+    const lonInput = document.getElementById("lonInput");
+    const heightInput = document.getElementById("heightInput");
+
+    function log(message) {
+      console.log(message);
+      statusBox.innerHTML += "<br>" + message;
+      statusBox.scrollTop = statusBox.scrollHeight;
+    }
+
+    function updateHeadingDisplay() {
+      headingValueBox.textContent = currentHeadingDeg.toFixed(1) + "°";
+    }
+
+    function updateDragStatus() {
+      dragStatusBox.textContent = dragModeEnabled ? "ON" : "OFF";
+      dragStatusBox.style.color = dragModeEnabled ? "#00ff66" : "#ffffff";
+    }
+
+    function initPositionInputs() {
+      latInput.value = latitude.toFixed(9);
+      lonInput.value = longitude.toFixed(9);
+      heightInput.value = height;
+    }
+
+    function syncPositionInputs() {
+      latInput.value = latitude.toFixed(9);
+      lonInput.value = longitude.toFixed(9);
+      heightInput.value = height;
+    }
+
+    // ==============================
+    // 3. BASE MAP PROVIDERS
+    // ==============================
+
+    function createGoogleSatelliteProvider() {
+      return new Cesium.UrlTemplateImageryProvider({
+        url: "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+        maximumLevel: 20,
+        tilingScheme: new Cesium.WebMercatorTilingScheme()
+      });
+    }
+
+    function createGoogleRoadProvider() {
+      return new Cesium.UrlTemplateImageryProvider({
+        url: "https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+        maximumLevel: 20,
+        tilingScheme: new Cesium.WebMercatorTilingScheme()
+      });
+    }
+
+    function createOSMProvider() {
+      return new Cesium.OpenStreetMapImageryProvider({
+        url: "https://tile.openstreetmap.org/"
+      });
+    }
+
+    function createMap4DProvider() {
+      return new Cesium.UrlTemplateImageryProvider({
+        url: "https://rtile.map4d.vn/all/2d/{z}/{x}/{y}.png",
+        maximumLevel: 20,
+        tilingScheme: new Cesium.WebMercatorTilingScheme()
+      });
+    }
+
+    function clearImageryLayers() {
+      if (!viewer) return;
+      viewer.imageryLayers.removeAll();
+      map4dOverlayLayer = null;
+    }
+
+    function setGoogleSatellite() {
+      clearImageryLayers();
+      viewer.imageryLayers.addImageryProvider(createGoogleSatelliteProvider());
+      log("Base map changed: Google Satellite");
+    }
+
+    function setGoogleRoad() {
+      clearImageryLayers();
+      viewer.imageryLayers.addImageryProvider(createGoogleRoadProvider());
+      log("Base map changed: Google Road");
+    }
+
+    function setOSM() {
+      clearImageryLayers();
+      viewer.imageryLayers.addImageryProvider(createOSMProvider());
+      log("Base map changed: OSM");
+    }
+
+    function setMap4D() {
+      clearImageryLayers();
+      viewer.imageryLayers.addImageryProvider(createMap4DProvider());
+      log("Base map changed: Map4D");
+    }
+
+    function overlayMap4D() {
+      if (!viewer) return;
+
+      if (map4dOverlayLayer) {
+        log("Map4D overlay already exists");
+        return;
+      }
+
+      map4dOverlayLayer = viewer.imageryLayers.addImageryProvider(
+        createMap4DProvider()
+      );
+
+      map4dOverlayLayer.alpha = 0.65;
+
+      log("Map4D overlay added, alpha=0.65");
+    }
+
+    function removeMap4DOverlay() {
+      if (!viewer || !map4dOverlayLayer) {
+        log("No Map4D overlay to remove");
+        return;
+      }
+
+      viewer.imageryLayers.remove(map4dOverlayLayer, true);
+      map4dOverlayLayer = null;
+
+      log("Map4D overlay removed");
+    }
+
+    // ==============================
+    // 4. INIT VIEWER
+    // ==============================
+
+    async function main() {
+      log("Creating Cesium viewer...");
+
+      viewer = new Cesium.Viewer("cesiumContainer", {
+        imageryProvider: createGoogleSatelliteProvider(),
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(),
+
+        animation: false,
+        timeline: false,
+        geocoder: false,
+        baseLayerPicker: false,
+        homeButton: true,
+        sceneModePicker: true,
+        navigationHelpButton: true,
+        shouldAnimate: true
+      });
+
+      viewer.scene.globe.enableLighting = false;
+      viewer.scene.fog.enabled = false;
+      viewer.scene.skyAtmosphere.show = true;
+
+      // Click map để lấy tọa độ WGS84 khi không bật drag
+      viewer.screenSpaceEventHandler.setInputAction(function(click) {
+        if (dragModeEnabled) return;
+
+        const cartesian = viewer.camera.pickEllipsoid(
+          click.position,
+          viewer.scene.globe.ellipsoid
+        );
+
+        if (!cartesian) return;
+
+        const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+        const lon = Cesium.Math.toDegrees(cartographic.longitude);
+        const lat = Cesium.Math.toDegrees(cartographic.latitude);
+
+        log("Clicked WGS84: lon=" + lon.toFixed(6) + ", lat=" + lat.toFixed(6));
+      }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+      initPositionInputs();
+      updateHeadingDisplay();
+      updateDragStatus();
+
+      await loadGlbModel();
+    }
+
+    // ==============================
+    // 5. LOAD GLB MODEL
+    // ==============================
+
+    async function loadGlbModel() {
+      try {
+        log("Start loading asset: " + assetId);
+
+        const resource = await Cesium.IonResource.fromAssetId(assetId);
+        log("Ion resource loaded");
+
+        modelPosition = Cesium.Cartesian3.fromDegrees(
+          longitude,
+          latitude,
+          height
+        );
+
+        addPositionMarker(modelPosition);
+
+        primitiveModel = await Cesium.Model.fromGltfAsync({
+          url: resource,
+          modelMatrix: buildModelMatrix(),
+          scale: currentScale,
+          debugShowBoundingVolume: false,
+          allowPicking: true
+        });
+
+        viewer.scene.primitives.add(primitiveModel);
+
+        window.debugModel = primitiveModel;
+        window.viewer = viewer;
+
+        log("Primitive model added");
+        log("Initial scale: " + currentScale);
+
+        setTimeout(function() {
+          printBoundingInfo();
+          flyToModelBounding();
+        }, 1200);
+
+        flyToModelPosition();
+
+      } catch (error) {
+        console.error(error);
+        statusBox.style.color = "red";
+        statusBox.innerHTML += "<br>ERROR: " + error.message;
+      }
+    }
+
+    function buildModelMatrix() {
+      const heading = Cesium.Math.toRadians(currentHeadingDeg);
+      const pitch = Cesium.Math.toRadians(currentPitchDeg);
+      const roll = Cesium.Math.toRadians(currentRollDeg);
+
+      return Cesium.Transforms.headingPitchRollToFixedFrame(
+        modelPosition,
+        new Cesium.HeadingPitchRoll(heading, pitch, roll)
+      );
+    }
+
+    function updateModelTransform() {
+      if (!primitiveModel || !modelPosition) return;
+
+      primitiveModel.modelMatrix = buildModelMatrix();
+
+      log(
+        "Transform updated: heading=" +
+        currentHeadingDeg.toFixed(1) +
+        "°, lat=" +
+        latitude.toFixed(9) +
+        ", lon=" +
+        longitude.toFixed(9) +
+        ", height=" +
+        height +
+        "m"
+      );
+
+      setTimeout(function() {
+        printBoundingInfo();
+      }, 300);
+    }
+
+    // ==============================
+    // 6. MARKER
+    // ==============================
+
+    function addPositionMarker(position) {
+      markerEntity = viewer.entities.add({
+        name: "WGS84 Model Position",
+        position: position,
+        point: {
+          pixelSize: 16,
+          color: Cesium.Color.RED,
+          outlineColor: Cesium.Color.WHITE,
+          outlineWidth: 3,
+          disableDepthTestDistance: Number.POSITIVE_INFINITY
+        },
+        label: {
+          text:
+            "MODEL HERE\nlat=" +
+            latitude.toFixed(9) +
+            "\nlon=" +
+            longitude.toFixed(9) +
+            "\nheight=" +
+            height +
+            "m",
+          font: "15px sans-serif",
+          fillColor: Cesium.Color.YELLOW,
+          outlineColor: Cesium.Color.BLACK,
+          outlineWidth: 3,
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          pixelOffset: new Cesium.Cartesian2(0, -60),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY
+        }
+      });
+
+      log("Marker added at WGS84 position");
+    }
+
+    function updateMarker() {
+      if (!markerEntity) return;
+
+      markerEntity.position = modelPosition;
+
+      markerEntity.label.text =
+        "MODEL HERE\nlat=" +
+        latitude.toFixed(9) +
+        "\nlon=" +
+        longitude.toFixed(9) +
+        "\nheight=" +
+        height +
+        "m";
+    }
+
+    function toggleMarker() {
+      if (!markerEntity) return;
+
+      markerVisible = !markerVisible;
+      markerEntity.show = markerVisible;
+
+      log("Marker visible: " + markerVisible);
+    }
+
+    // ==============================
+    // 7. POSITION / HEIGHT CONTROL
+    // ==============================
+
+    function applyPositionFromInput() {
+      const newLat = parseFloat(latInput.value);
+      const newLon = parseFloat(lonInput.value);
+      const newHeight = parseFloat(heightInput.value);
+
+      if (
+        Number.isNaN(newLat) ||
+        Number.isNaN(newLon) ||
+        Number.isNaN(newHeight)
+      ) {
+        alert("Lat/Lon/Height không hợp lệ");
+        return;
+      }
+
+      latitude = newLat;
+      longitude = newLon;
+      height = newHeight;
+
+      updateModelPosition();
+    }
+
+    function adjustHeight(delta) {
+      height = height + delta;
+      heightInput.value = height;
+
+      updateModelPosition();
+    }
+
+    function updateModelPosition() {
+      if (!viewer || !primitiveModel) {
+        log("Model chưa sẵn sàng để cập nhật vị trí");
+        return;
+      }
+
+      modelPosition = Cesium.Cartesian3.fromDegrees(
+        longitude,
+        latitude,
+        height
+      );
+
+      primitiveModel.modelMatrix = buildModelMatrix();
+
+      updateMarker();
+      syncPositionInputs();
+
+      log(
+        "Position updated: lat=" +
+        latitude.toFixed(9) +
+        ", lon=" +
+        longitude.toFixed(9) +
+        ", height=" +
+        height +
+        "m"
+      );
+
+      setTimeout(function() {
+        printBoundingInfo();
+      }, 300);
+    }
+
+    // ==============================
+    // 8. DRAG MODEL
+    // ==============================
+
+    function toggleDragMode() {
+      dragModeEnabled = !dragModeEnabled;
+      updateDragStatus();
+
+      if (dragModeEnabled) {
+        enableModelDrag();
+        log("Drag mode enabled");
+      } else {
+        disableModelDrag();
+        log("Drag mode disabled");
+      }
+    }
+
+    function enableModelDrag() {
+      if (!viewer) return;
+
+      if (dragHandler) {
+        dragHandler.destroy();
+        dragHandler = null;
+      }
+
+      dragHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+
+      dragHandler.setInputAction(function(click) {
+        if (!dragModeEnabled) return;
+
+        const picked = viewer.scene.pick(click.position);
+
+        const pickedPrimitive = picked && picked.primitive;
+        const pickedId = picked && picked.id;
+
+        const clickedModel = pickedPrimitive === primitiveModel;
+        const clickedMarker = pickedId === markerEntity;
+
+        if (clickedModel || clickedMarker) {
+          isDraggingModel = true;
+
+          viewer.scene.screenSpaceCameraController.enableRotate = false;
+          viewer.scene.screenSpaceCameraController.enableTranslate = false;
+          viewer.scene.screenSpaceCameraController.enableZoom = false;
+          viewer.scene.screenSpaceCameraController.enableTilt = false;
+          viewer.scene.screenSpaceCameraController.enableLook = false;
+
+          log("Start dragging model");
+        }
+      }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
+
+      dragHandler.setInputAction(function(movement) {
+        if (!dragModeEnabled || !isDraggingModel) return;
+
+        const cartesian = viewer.camera.pickEllipsoid(
+          movement.endPosition,
+          viewer.scene.globe.ellipsoid
+        );
+
+        if (!cartesian) return;
+
+        const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+
+        longitude = Cesium.Math.toDegrees(cartographic.longitude);
+        latitude = Cesium.Math.toDegrees(cartographic.latitude);
+
+        modelPosition = Cesium.Cartesian3.fromDegrees(
+          longitude,
+          latitude,
+          height
+        );
+
+        if (primitiveModel) {
+          primitiveModel.modelMatrix = buildModelMatrix();
+        }
+
+        updateMarker();
+        syncPositionInputs();
+
+      }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+      dragHandler.setInputAction(function() {
+        if (!isDraggingModel) return;
+
+        isDraggingModel = false;
+
+        viewer.scene.screenSpaceCameraController.enableRotate = true;
+        viewer.scene.screenSpaceCameraController.enableTranslate = true;
+        viewer.scene.screenSpaceCameraController.enableZoom = true;
+        viewer.scene.screenSpaceCameraController.enableTilt = true;
+        viewer.scene.screenSpaceCameraController.enableLook = true;
+
+        log(
+          "Drag finished: lat=" +
+          latitude.toFixed(9) +
+          ", lon=" +
+          longitude.toFixed(9) +
+          ", height=" +
+          height +
+          "m"
+        );
+
+        printBoundingInfo();
+
+      }, Cesium.ScreenSpaceEventType.LEFT_UP);
+    }
+
+    function disableModelDrag() {
+      isDraggingModel = false;
+
+      if (dragHandler) {
+        dragHandler.destroy();
+        dragHandler = null;
+      }
+
+      if (viewer) {
+        viewer.scene.screenSpaceCameraController.enableRotate = true;
+        viewer.scene.screenSpaceCameraController.enableTranslate = true;
+        viewer.scene.screenSpaceCameraController.enableZoom = true;
+        viewer.scene.screenSpaceCameraController.enableTilt = true;
+        viewer.scene.screenSpaceCameraController.enableLook = true;
+      }
+    }
+
+    // ==============================
+    // 9. CAMERA
+    // ==============================
+
+    function flyToModelPosition() {
+      if (!viewer) return;
+
+      viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(
+          longitude,
+          latitude,
+          700
+        ),
+        orientation: {
+          heading: Cesium.Math.toRadians(0),
+          pitch: Cesium.Math.toRadians(-55),
+          roll: 0
+        },
+        duration: 1.5
+      });
+
+      log("Camera moved to WGS84 position");
+    }
+
+    function flyToModelBounding() {
+      if (
+        !viewer ||
+        !primitiveModel ||
+        !primitiveModel.boundingSphere ||
+        !primitiveModel.boundingSphere.radius
+      ) {
+        log("Model bounding sphere not ready yet");
+        return;
+      }
+
+      const radius = primitiveModel.boundingSphere.radius;
+      const range = Math.max(radius * 2.5, 80);
+
+      viewer.camera.flyToBoundingSphere(primitiveModel.boundingSphere, {
+        offset: new Cesium.HeadingPitchRange(
+          Cesium.Math.toRadians(0),
+          Cesium.Math.toRadians(-35),
+          range
+        ),
+        duration: 1.5
+      });
+
+      log("Camera zoomed to model bounding sphere, radius=" + radius);
+    }
+
+    // ==============================
+    // 10. SCALE + ROTATE + DEBUG
+    // ==============================
+
+    function setPrimitiveScale(scaleValue) {
+      if (!primitiveModel) {
+        alert("Model chưa load xong");
+        return;
+      }
+
+      currentScale = scaleValue;
+      primitiveModel.scale = scaleValue;
+
+      log("Primitive scale changed to: " + scaleValue);
+
+      setTimeout(function() {
+        printBoundingInfo();
+        flyToModelBounding();
+      }, 500);
+    }
+
+    function adjustHeading(delta) {
+      currentHeadingDeg += delta;
+      updateHeadingDisplay();
+      updateModelTransform();
+    }
+
+    function setHeading(value) {
+      currentHeadingDeg = value;
+      updateHeadingDisplay();
+      updateModelTransform();
+    }
+
+    function printBoundingInfo() {
+      if (
+        !primitiveModel ||
+        !primitiveModel.boundingSphere ||
+        !primitiveModel.boundingSphere.radius
+      ) {
+        log("Bounding sphere not ready");
+        return;
+      }
+
+      const radius = primitiveModel.boundingSphere.radius;
+      const center = primitiveModel.boundingSphere.center;
+
+      log("Model bounding radius: " + radius);
+
+      const cartographic = Cesium.Cartographic.fromCartesian(center);
+      const centerLon = Cesium.Math.toDegrees(cartographic.longitude);
+      const centerLat = Cesium.Math.toDegrees(cartographic.latitude);
+      const centerHeight = cartographic.height;
+
+      log(
+        "Model bounding center WGS84: lon=" +
+        centerLon.toFixed(6) +
+        ", lat=" +
+        centerLat.toFixed(6) +
+        ", height=" +
+        centerHeight.toFixed(2)
+      );
+    }
+
+    // ==============================
+    // 11. START
+    // ==============================
+
+    main().catch(function(error) {
+      console.error(error);
+      statusBox.style.color = "red";
+      statusBox.innerHTML += "<br>ERROR: " + error.message;
+    });
+  </script>
+</body>
+</html>

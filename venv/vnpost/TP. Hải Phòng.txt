@@ -1,0 +1,458 @@
+[
+    {
+        "CommunesFullName": "P. An Biên",
+        "CommuneID": "04707"
+    },
+    {
+        "CommunesFullName": "P. An Dương",
+        "CommuneID": "04422"
+    },
+    {
+        "CommunesFullName": "P. An Hải",
+        "CommuneID": "04423"
+    },
+    {
+        "CommunesFullName": "P. An Phong",
+        "CommuneID": "04424"
+    },
+    {
+        "CommunesFullName": "P. Bạch Đằng",
+        "CommuneID": "04318"
+    },
+    {
+        "CommunesFullName": "P. Bắc An Phụ",
+        "CommuneID": "03434"
+    },
+    {
+        "CommunesFullName": "P. Chu Văn An",
+        "CommuneID": "03526"
+    },
+    {
+        "CommunesFullName": "P. Chí Linh",
+        "CommuneID": "03527"
+    },
+    {
+        "CommunesFullName": "P. Dương Kinh",
+        "CommuneID": "04912"
+    },
+    {
+        "CommunesFullName": "P. Gia Viên",
+        "CommuneID": "04213"
+    },
+    {
+        "CommunesFullName": "P. Hoà Bình",
+        "CommuneID": "04308"
+    },
+    {
+        "CommunesFullName": "P. Hưng Đạo",
+        "CommuneID": "04907"
+    },
+    {
+        "CommunesFullName": "P. Hải An",
+        "CommuneID": "04814"
+    },
+    {
+        "CommunesFullName": "P. Hải Dương",
+        "CommuneID": "03127"
+    },
+    {
+        "CommunesFullName": "P. Hồng An",
+        "CommuneID": "04118"
+    },
+    {
+        "CommunesFullName": "P. Hồng Bàng",
+        "CommuneID": "04117"
+    },
+    {
+        "CommunesFullName": "P. Kinh Môn",
+        "CommuneID": "03431"
+    },
+    {
+        "CommunesFullName": "P. Kiến An",
+        "CommuneID": "04616"
+    },
+    {
+        "CommunesFullName": "P. Lê Chân",
+        "CommuneID": "04721"
+    },
+    {
+        "CommunesFullName": "P. Lê Thanh Nghị",
+        "CommuneID": "03112"
+    },
+    {
+        "CommunesFullName": "P. Lê Ích Mộc",
+        "CommuneID": "04346"
+    },
+    {
+        "CommunesFullName": "P. Lê Đại Hành",
+        "CommuneID": "03531"
+    },
+    {
+        "CommunesFullName": "P. Lưu Kiếm",
+        "CommuneID": "04330"
+    },
+    {
+        "CommunesFullName": "P. Nam Triệu",
+        "CommuneID": "04345"
+    },
+    {
+        "CommunesFullName": "P. Nam Đồ Sơn",
+        "CommuneID": "05013"
+    },
+    {
+        "CommunesFullName": "P. Nam Đồng",
+        "CommuneID": "03121"
+    },
+    {
+        "CommunesFullName": "P. Nguyễn Trãi",
+        "CommuneID": "03529"
+    },
+    {
+        "CommunesFullName": "P. Nguyễn Đại Năng",
+        "CommuneID": "03432"
+    },
+    {
+        "CommunesFullName": "P. Ngô Quyền",
+        "CommuneID": "04219"
+    },
+    {
+        "CommunesFullName": "P. Nhị Chiểu",
+        "CommuneID": "03436"
+    },
+    {
+        "CommunesFullName": "P. Phù Liễn",
+        "CommuneID": "04617"
+    },
+    {
+        "CommunesFullName": "P. Phạm Sư Mạnh",
+        "CommuneID": "03435"
+    },
+    {
+        "CommunesFullName": "P. Thiên Hương",
+        "CommuneID": "04338"
+    },
+    {
+        "CommunesFullName": "P. Thành Đông",
+        "CommuneID": "03128"
+    },
+    {
+        "CommunesFullName": "P. Thạch Khôi",
+        "CommuneID": "03119"
+    },
+    {
+        "CommunesFullName": "P. Thủy Nguyên",
+        "CommuneID": "04344"
+    },
+    {
+        "CommunesFullName": "P. Trần Hưng Đạo",
+        "CommuneID": "03528"
+    },
+    {
+        "CommunesFullName": "P. Trần Liễu",
+        "CommuneID": "03433"
+    },
+    {
+        "CommunesFullName": "P. Trần Nhân Tông",
+        "CommuneID": "03530"
+    },
+    {
+        "CommunesFullName": "P. Tân Hưng",
+        "CommuneID": "03120"
+    },
+    {
+        "CommunesFullName": "P. Tứ Minh",
+        "CommuneID": "03126"
+    },
+    {
+        "CommunesFullName": "P. Việt Hòa",
+        "CommuneID": "03125"
+    },
+    {
+        "CommunesFullName": "P. Ái Quốc",
+        "CommuneID": "03122"
+    },
+    {
+        "CommunesFullName": "P. Đông Hải",
+        "CommuneID": "04815"
+    },
+    {
+        "CommunesFullName": "P. Đồ Sơn",
+        "CommuneID": "05014"
+    },
+    {
+        "CommunesFullName": "X. An Hưng",
+        "CommuneID": "04523"
+    },
+    {
+        "CommunesFullName": "X. An Khánh",
+        "CommuneID": "04524"
+    },
+    {
+        "CommunesFullName": "X. An Lão",
+        "CommuneID": "04506"
+    },
+    {
+        "CommunesFullName": "X. An Phú",
+        "CommuneID": "03557"
+    },
+    {
+        "CommunesFullName": "X. An Quang",
+        "CommuneID": "04525"
+    },
+    {
+        "CommunesFullName": "X. An Thành",
+        "CommuneID": "03327"
+    },
+    {
+        "CommunesFullName": "X. An Trường",
+        "CommuneID": "04526"
+    },
+    {
+        "CommunesFullName": "X. Bình Giang",
+        "CommuneID": "03724"
+    },
+    {
+        "CommunesFullName": "X. Bắc Thanh Miện",
+        "CommuneID": "03775"
+    },
+    {
+        "CommunesFullName": "X. Chí Minh",
+        "CommuneID": "03907"
+    },
+    {
+        "CommunesFullName": "X. Chấn Hưng",
+        "CommuneID": "05230"
+    },
+    {
+        "CommunesFullName": "X. Cẩm Giang",
+        "CommuneID": "03606"
+    },
+    {
+        "CommunesFullName": "X. Cẩm Giàng",
+        "CommuneID": "03626"
+    },
+    {
+        "CommunesFullName": "X. Gia Lộc",
+        "CommuneID": "03656"
+    },
+    {
+        "CommunesFullName": "X. Gia Phúc",
+        "CommuneID": "03657"
+    },
+    {
+        "CommunesFullName": "X. Hà Bắc",
+        "CommuneID": "03232"
+    },
+    {
+        "CommunesFullName": "X. Hà Nam",
+        "CommuneID": "03233"
+    },
+    {
+        "CommunesFullName": "X. Hà Tây",
+        "CommuneID": "03231"
+    },
+    {
+        "CommunesFullName": "X. Hà Đông",
+        "CommuneID": "03234"
+    },
+    {
+        "CommunesFullName": "X. Hùng Thắng",
+        "CommuneID": "05224"
+    },
+    {
+        "CommunesFullName": "X. Hải Hưng",
+        "CommuneID": "03776"
+    },
+    {
+        "CommunesFullName": "X. Hồng Châu",
+        "CommuneID": "03837"
+    },
+    {
+        "CommunesFullName": "X. Hợp Tiến",
+        "CommuneID": "03564"
+    },
+    {
+        "CommunesFullName": "X. Khúc Thừa Dụ",
+        "CommuneID": "03835"
+    },
+    {
+        "CommunesFullName": "X. Kim Thành",
+        "CommuneID": "03328"
+    },
+    {
+        "CommunesFullName": "X. Kiến Hưng",
+        "CommuneID": "05115"
+    },
+    {
+        "CommunesFullName": "X. Kiến Hải",
+        "CommuneID": "05126"
+    },
+    {
+        "CommunesFullName": "X. Kiến Minh",
+        "CommuneID": "05125"
+    },
+    {
+        "CommunesFullName": "X. Kiến Thụy",
+        "CommuneID": "05124"
+    },
+    {
+        "CommunesFullName": "X. Kẻ Sặt",
+        "CommuneID": "03706"
+    },
+    {
+        "CommunesFullName": "X. Lai Khê",
+        "CommuneID": "03312"
+    },
+    {
+        "CommunesFullName": "X. Lạc Phượng",
+        "CommuneID": "03924"
+    },
+    {
+        "CommunesFullName": "X. Mao Điền",
+        "CommuneID": "03625"
+    },
+    {
+        "CommunesFullName": "X. Nam An Phụ",
+        "CommuneID": "03437"
+    },
+    {
+        "CommunesFullName": "X. Nam Sách",
+        "CommuneID": "03556"
+    },
+    {
+        "CommunesFullName": "X. Nam Thanh Miện",
+        "CommuneID": "03778"
+    },
+    {
+        "CommunesFullName": "X. Nghi Dương",
+        "CommuneID": "05127"
+    },
+    {
+        "CommunesFullName": "X. Nguyên Giáp",
+        "CommuneID": "03928"
+    },
+    {
+        "CommunesFullName": "X. Nguyễn Bỉnh Khiêm",
+        "CommuneID": "05336"
+    },
+    {
+        "CommunesFullName": "X. Nguyễn Lương Bằng",
+        "CommuneID": "03777"
+    },
+    {
+        "CommunesFullName": "X. Ninh Giang",
+        "CommuneID": "03806"
+    },
+    {
+        "CommunesFullName": "X. Phú Thái",
+        "CommuneID": "03306"
+    },
+    {
+        "CommunesFullName": "X. Quyết Thắng",
+        "CommuneID": "05229"
+    },
+    {
+        "CommunesFullName": "X. Thanh Hà",
+        "CommuneID": "03206"
+    },
+    {
+        "CommunesFullName": "X. Thanh Miện",
+        "CommuneID": "03756"
+    },
+    {
+        "CommunesFullName": "X. Thái Tân",
+        "CommuneID": "03570"
+    },
+    {
+        "CommunesFullName": "X. Thượng Hồng",
+        "CommuneID": "03726"
+    },
+    {
+        "CommunesFullName": "X. Tiên Lãng",
+        "CommuneID": "05206"
+    },
+    {
+        "CommunesFullName": "X. Tiên Minh",
+        "CommuneID": "05218"
+    },
+    {
+        "CommunesFullName": "X. Trường Tân",
+        "CommuneID": "03679"
+    },
+    {
+        "CommunesFullName": "X. Trần Phú",
+        "CommuneID": "03566"
+    },
+    {
+        "CommunesFullName": "X. Tuệ Tĩnh",
+        "CommuneID": "03627"
+    },
+    {
+        "CommunesFullName": "X. Tân An",
+        "CommuneID": "03836"
+    },
+    {
+        "CommunesFullName": "X. Tân Kỳ",
+        "CommuneID": "03916"
+    },
+    {
+        "CommunesFullName": "X. Tân Minh",
+        "CommuneID": "05217"
+    },
+    {
+        "CommunesFullName": "X. Tứ Kỳ",
+        "CommuneID": "03906"
+    },
+    {
+        "CommunesFullName": "X. Việt Khê",
+        "CommuneID": "04343"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Am",
+        "CommuneID": "05337"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Bảo",
+        "CommuneID": "05306"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Hòa",
+        "CommuneID": "05314"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Hải",
+        "CommuneID": "05319"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Lại",
+        "CommuneID": "03834"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Thuận",
+        "CommuneID": "05339"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Thịnh",
+        "CommuneID": "05338"
+    },
+    {
+        "CommunesFullName": "X. Yết Kiêu",
+        "CommuneID": "03665"
+    },
+    {
+        "CommunesFullName": "X. Đường An",
+        "CommuneID": "03725"
+    },
+    {
+        "CommunesFullName": "X. Đại Sơn",
+        "CommuneID": "03912"
+    },
+    {
+        "CommunesFullName": "Đặc khu Bạch Long Vĩ",
+        "CommuneID": "05506"
+    },
+    {
+        "CommunesFullName": "Đặc khu Cát Hải",
+        "CommuneID": "05418"
+    }
+]

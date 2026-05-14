@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map4D Route Simulation</title>
+    <link rel="stylesheet" href="../css/map4d_route_simulation.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-logo">4D</div><div><h1>Mô phỏng xe chạy theo Route</h1><p>AutoSuggest + Route API + Web SDK</p></div></div>
+      <div class="card">
+        <div class="card-title"><span>🔑</span> API Key</div>
+        <div class="field">
+          <label for="apiKey">Khóa truy cập / alias</label>
+          <input id="apiKey" type="text" placeholder="Nhập key hoặc alias (dev/pro/test)..." autocomplete="off">
+          <div class="hint">Logic giống Geocode Studio: có thể nhập key thật hoặc alias như <span class="small-code">dev</span>, <span class="small-code">pro</span>, <span class="small-code">trung</span>, <span class="small-code">test</span>. Dùng chung cho AutoSuggest, Route API và Map JS SDK.</div>
+        </div>
+        <button class="btn-secondary" id="loadMapBtn" type="button" style="width:100%" onclick="loadMapFromApiKey()">Tải bản đồ / áp dụng key</button>
+      </div>
+      <div class="card">
+        <div class="field"><label for="originInput">Điểm A - Origin</label><input id="originInput" value="10.776889,106.700806" placeholder="Nhập tên địa điểm hoặc lat,lng" autocomplete="off"><div id="originSuggestions" class="suggestions"></div><div id="originCoord" class="coord-chip">A: 10.776889,106.700806</div><div class="hint">Gõ tên POI/địa chỉ để gọi AutoSuggest. Click kết quả để lấy lat/lng đưa vào Route API.</div></div>
+        <div class="field"><label for="destinationInput">Điểm B - Destination</label><input id="destinationInput" value="10.762622,106.660172" placeholder="Nhập tên địa điểm hoặc lat,lng" autocomplete="off"><div id="destinationSuggestions" class="suggestions"></div><div id="destinationCoord" class="coord-chip">B: 10.762622,106.660172</div><div class="hint">Có thể nhập trực tiếp <span class="small-code">lat,lng</span> hoặc chọn POI từ danh sách gợi ý.</div></div>
+        <div class="two-cols">
+          <div class="field"><label for="speedInput">Tốc độ mô phỏng</label><select id="speedInput"><option value="20">20 km/h</option><option value="40" selected>40 km/h</option><option value="60">60 km/h</option><option value="80">80 km/h</option></select></div>
+          <div class="field"><label for="modeInput">Phương tiện</label><select id="modeInput"><option value="car" selected>Ô tô</option><option value="motorcycle">Xe máy</option><option value="bike">Xe đạp</option><option value="foot">Đi bộ</option></select></div>
+        </div>
+        <div class="field"><label for="vehicleStyleInput">Icon phương tiện</label><select id="vehicleStyleInput"><option value="auto" selected>Tự động theo phương tiện</option><option value="moto_blue">Moto xanh</option><option value="moto_red">Moto đỏ</option><option value="scooter_dark">Scooter đen</option><option value="delivery_orange">Xe giao hàng cam</option><option value="car_blue">Ô tô xanh</option><option value="bike_green">Xe đạp xanh lá</option><option value="walk_purple">Người đi bộ tím</option></select><div class="hint">Bạn có thể chọn icon đẹp hơn, hoặc để chế độ tự động theo loại route.</div></div>
+        <div class="field"><label for="pickTargetInput">Click trên map sẽ gán vào</label><select id="pickTargetInput"><option value="origin">Điểm A</option><option value="destination">Điểm B</option></select><div class="hint">Nếu SDK trả về tọa độ click, bạn có thể click map/POI để set A hoặc B nhanh.</div></div>
+        <label class="check-field"><input id="followCarInput" type="checkbox"> Camera đi theo xe khi mô phỏng</label>
+        <button class="btn-primary" id="findRouteBtn" style="width:100%" onclick="findRouteAndDraw()">Tìm đường & mô phỏng</button>
+        <div class="btn-row"><button class="btn-success" onclick="resumeSimulation()">Tiếp tục</button><button class="btn-secondary" onclick="pauseSimulation()">Tạm dừng</button><button class="btn-secondary" onclick="restartSimulation()">Chạy lại</button><button class="btn-danger" onclick="resetMapObjects()">Xóa tuyến</button></div>
+      </div>
+      <div class="card"><div class="stats"><div class="stat"><span>Khoảng cách</span><strong id="distanceText">--</strong></div><div class="stat"><span>Tiến độ</span><strong id="progressText">--</strong></div><div class="stat"><span>Tốc độ</span><strong id="speedText">40 km/h</strong></div><div class="stat"><span>Trạng thái</span><strong id="stateText">Chưa chạy</strong></div></div></div>
+      <div class="card"><label>Log xử lý</label><div id="status">Nhập API key hoặc alias để tải bản đồ và sử dụng AutoSuggest/Route API.</div><div class="hint" style="margin-top:12px">V7: API key xử lý giống Geocode Studio. Nhập key thật hoặc alias trước khi tìm POI/chạy route.</div></div>
+    </aside>
+    <main id="mapWrap"><div class="map-panel" id="mapPanel"><div id="map"></div><svg id="routeOverlay" aria-hidden="true"><path id="routeShadow" d="" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity=".95"></path><path id="routeSvgPath" d="" fill="none" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="dom-point point-a" id="domPointA">A</div><div class="dom-point point-b" id="domPointB">B</div><div id="domCar"></div><div class="map-badge">🚗 <b>AutoSuggest</b> Route Simulation</div></div></main>
+  </div>
+    <script src="../js/map4d_route_simulation.js"></script>
+</body>
+</html>

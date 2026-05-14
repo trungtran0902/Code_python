@@ -1,0 +1,386 @@
+[
+    {
+        "CommunesFullName": "P. An Tịnh",
+        "CommuneID": "80916"
+    },
+    {
+        "CommunesFullName": "P. Bình Minh",
+        "CommuneID": "80115"
+    },
+    {
+        "CommunesFullName": "P. Gia Lộc",
+        "CommuneID": "80907"
+    },
+    {
+        "CommunesFullName": "P. Gò Dầu",
+        "CommuneID": "80706"
+    },
+    {
+        "CommunesFullName": "P. Hòa Thành",
+        "CommuneID": "80614"
+    },
+    {
+        "CommunesFullName": "P. Khánh Hậu",
+        "CommuneID": "82113"
+    },
+    {
+        "CommunesFullName": "P. Kiến Tường",
+        "CommuneID": "83014"
+    },
+    {
+        "CommunesFullName": "P. Long An",
+        "CommuneID": "82120"
+    },
+    {
+        "CommunesFullName": "P. Long Hoa",
+        "CommuneID": "80606"
+    },
+    {
+        "CommunesFullName": "P. Ninh Thạnh",
+        "CommuneID": "80111"
+    },
+    {
+        "CommunesFullName": "P. Thanh Điền",
+        "CommuneID": "80615"
+    },
+    {
+        "CommunesFullName": "P. Trảng Bàng",
+        "CommuneID": "80906"
+    },
+    {
+        "CommunesFullName": "P. Tân An",
+        "CommuneID": "82121"
+    },
+    {
+        "CommunesFullName": "P. Tân Ninh",
+        "CommuneID": "80116"
+    },
+    {
+        "CommunesFullName": "X. An Lục Long",
+        "CommuneID": "82218"
+    },
+    {
+        "CommunesFullName": "X. An Ninh",
+        "CommuneID": "82726"
+    },
+    {
+        "CommunesFullName": "X. Bình Hiệp",
+        "CommuneID": "83009"
+    },
+    {
+        "CommunesFullName": "X. Bình Hòa",
+        "CommuneID": "83113"
+    },
+    {
+        "CommunesFullName": "X. Bình Thành",
+        "CommuneID": "82917"
+    },
+    {
+        "CommunesFullName": "X. Bình Đức",
+        "CommuneID": "82615"
+    },
+    {
+        "CommunesFullName": "X. Bến Cầu",
+        "CommuneID": "80806"
+    },
+    {
+        "CommunesFullName": "X. Bến Lức",
+        "CommuneID": "82606"
+    },
+    {
+        "CommunesFullName": "X. Châu Thành",
+        "CommuneID": "80506"
+    },
+    {
+        "CommunesFullName": "X. Cần Giuộc",
+        "CommuneID": "82506"
+    },
+    {
+        "CommunesFullName": "X. Cần Đước",
+        "CommuneID": "82406"
+    },
+    {
+        "CommunesFullName": "X. Cầu Khởi",
+        "CommuneID": "80210"
+    },
+    {
+        "CommunesFullName": "X. Dương Minh Châu",
+        "CommuneID": "80206"
+    },
+    {
+        "CommunesFullName": "X. Hiệp Hòa",
+        "CommuneID": "82713"
+    },
+    {
+        "CommunesFullName": "X. Hoà Hội",
+        "CommuneID": "80514"
+    },
+    {
+        "CommunesFullName": "X. Hòa Khánh",
+        "CommuneID": "82727"
+    },
+    {
+        "CommunesFullName": "X. Hưng Thuận",
+        "CommuneID": "80909"
+    },
+    {
+        "CommunesFullName": "X. Hưng Điền",
+        "CommuneID": "83311"
+    },
+    {
+        "CommunesFullName": "X. Hảo Đước",
+        "CommuneID": "80509"
+    },
+    {
+        "CommunesFullName": "X. Hậu Nghĩa",
+        "CommuneID": "82706"
+    },
+    {
+        "CommunesFullName": "X. Hậu Thạnh",
+        "CommuneID": "83419"
+    },
+    {
+        "CommunesFullName": "X. Khánh Hưng",
+        "CommuneID": "83210"
+    },
+    {
+        "CommunesFullName": "X. Long Cang",
+        "CommuneID": "82420"
+    },
+    {
+        "CommunesFullName": "X. Long Chữ",
+        "CommuneID": "80808"
+    },
+    {
+        "CommunesFullName": "X. Long Hựu",
+        "CommuneID": "82424"
+    },
+    {
+        "CommunesFullName": "X. Long Thuận",
+        "CommuneID": "80812"
+    },
+    {
+        "CommunesFullName": "X. Lương Hòa",
+        "CommuneID": "82614"
+    },
+    {
+        "CommunesFullName": "X. Lộc Ninh",
+        "CommuneID": "80212"
+    },
+    {
+        "CommunesFullName": "X. Mộc Hóa",
+        "CommuneID": "83114"
+    },
+    {
+        "CommunesFullName": "X. Mỹ An",
+        "CommuneID": "83514"
+    },
+    {
+        "CommunesFullName": "X. Mỹ Hạnh",
+        "CommuneID": "82729"
+    },
+    {
+        "CommunesFullName": "X. Mỹ Lệ",
+        "CommuneID": "82408"
+    },
+    {
+        "CommunesFullName": "X. Mỹ Lộc",
+        "CommuneID": "82509"
+    },
+    {
+        "CommunesFullName": "X. Mỹ Quý",
+        "CommuneID": "82817"
+    },
+    {
+        "CommunesFullName": "X. Mỹ Thạnh",
+        "CommuneID": "83513"
+    },
+    {
+        "CommunesFullName": "X. Mỹ Yên",
+        "CommuneID": "82607"
+    },
+    {
+        "CommunesFullName": "X. Nhơn Hòa Lập",
+        "CommuneID": "83410"
+    },
+    {
+        "CommunesFullName": "X. Nhơn Ninh",
+        "CommuneID": "83416"
+    },
+    {
+        "CommunesFullName": "X. Nhựt Tảo",
+        "CommuneID": "82318"
+    },
+    {
+        "CommunesFullName": "X. Ninh Điền",
+        "CommuneID": "80517"
+    },
+    {
+        "CommunesFullName": "X. Phước Chỉ",
+        "CommuneID": "80914"
+    },
+    {
+        "CommunesFullName": "X. Phước Lý",
+        "CommuneID": "82511"
+    },
+    {
+        "CommunesFullName": "X. Phước Thạnh",
+        "CommuneID": "80708"
+    },
+    {
+        "CommunesFullName": "X. Phước Vinh",
+        "CommuneID": "80511"
+    },
+    {
+        "CommunesFullName": "X. Phước Vĩnh Tây",
+        "CommuneID": "82518"
+    },
+    {
+        "CommunesFullName": "X. Rạch Kiến",
+        "CommuneID": "82423"
+    },
+    {
+        "CommunesFullName": "X. Thuận Mỹ",
+        "CommuneID": "82210"
+    },
+    {
+        "CommunesFullName": "X. Thạnh Bình",
+        "CommuneID": "80407"
+    },
+    {
+        "CommunesFullName": "X. Thạnh Hóa",
+        "CommuneID": "82906"
+    },
+    {
+        "CommunesFullName": "X. Thạnh Lợi",
+        "CommuneID": "82612"
+    },
+    {
+        "CommunesFullName": "X. Thạnh Phước",
+        "CommuneID": "82911"
+    },
+    {
+        "CommunesFullName": "X. Thạnh Đức",
+        "CommuneID": "80712"
+    },
+    {
+        "CommunesFullName": "X. Thủ Thừa",
+        "CommuneID": "83506"
+    },
+    {
+        "CommunesFullName": "X. Truông Mít",
+        "CommuneID": "80211"
+    },
+    {
+        "CommunesFullName": "X. Trà Vong",
+        "CommuneID": "80415"
+    },
+    {
+        "CommunesFullName": "X. Tuyên Bình",
+        "CommuneID": "83215"
+    },
+    {
+        "CommunesFullName": "X. Tuyên Thạnh",
+        "CommuneID": "83012"
+    },
+    {
+        "CommunesFullName": "X. Tân Biên",
+        "CommuneID": "80406"
+    },
+    {
+        "CommunesFullName": "X. Tân Châu",
+        "CommuneID": "80306"
+    },
+    {
+        "CommunesFullName": "X. Tân Hòa",
+        "CommuneID": "80309"
+    },
+    {
+        "CommunesFullName": "X. Tân Hưng",
+        "CommuneID": "83306"
+    },
+    {
+        "CommunesFullName": "X. Tân Hội",
+        "CommuneID": "80313"
+    },
+    {
+        "CommunesFullName": "X. Tân Long",
+        "CommuneID": "83508"
+    },
+    {
+        "CommunesFullName": "X. Tân Lân",
+        "CommuneID": "82407"
+    },
+    {
+        "CommunesFullName": "X. Tân Lập",
+        "CommuneID": "80409"
+    },
+    {
+        "CommunesFullName": "X. Tân Phú",
+        "CommuneID": "80316"
+    },
+    {
+        "CommunesFullName": "X. Tân Thành",
+        "CommuneID": "80308"
+    },
+    {
+        "CommunesFullName": "X. Tân Thạnh",
+        "CommuneID": "83406"
+    },
+    {
+        "CommunesFullName": "X. Tân Trụ",
+        "CommuneID": "82306"
+    },
+    {
+        "CommunesFullName": "X. Tân Tây",
+        "CommuneID": "82915"
+    },
+    {
+        "CommunesFullName": "X. Tân Tập",
+        "CommuneID": "82522"
+    },
+    {
+        "CommunesFullName": "X. Tân Đông",
+        "CommuneID": "80311"
+    },
+    {
+        "CommunesFullName": "X. Tầm Vu",
+        "CommuneID": "82206"
+    },
+    {
+        "CommunesFullName": "X. Vàm Cỏ",
+        "CommuneID": "82317"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Châu",
+        "CommuneID": "83319"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Công",
+        "CommuneID": "82214"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Hưng",
+        "CommuneID": "83206"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Thạnh",
+        "CommuneID": "83318"
+    },
+    {
+        "CommunesFullName": "X. Đông Thành",
+        "CommuneID": "82806"
+    },
+    {
+        "CommunesFullName": "X. Đức Huệ",
+        "CommuneID": "82818"
+    },
+    {
+        "CommunesFullName": "X. Đức Hòa",
+        "CommuneID": "82722"
+    },
+    {
+        "CommunesFullName": "X. Đức Lập",
+        "CommuneID": "82728"
+    }
+]

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import re
 from pathlib import Path
 from tkinter import Tk, filedialog, messagebox
@@ -72,6 +73,51 @@ def collect_polygon_jobs(polygon_dir_path: Path, mode: str) -> list[tuple[Path, 
     return jobs
 
 
+def build_arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="Cat line GeoJSON theo cac file polygon VietMap."
+    )
+    parser.add_argument("--line-file", type=Path, help="Duong dan file line GeoJSON/JSON.")
+    parser.add_argument(
+        "--polygon-dir",
+        type=Path,
+        help="Thu muc chua polygon. Quet thu muc con neu mode=phuong_xa.",
+    )
+    parser.add_argument(
+        "--mode",
+        choices=["tinh_thanh", "phuong_xa"],
+        help="Kieu quet polygon.",
+    )
+    parser.add_argument("--output-dir", type=Path, help="Thu muc output.")
+    parser.add_argument(
+        "--no-gui",
+        action="store_true",
+        help="Khong mo hop thoai chon file; bat buoc truyen du tham so dau vao.",
+    )
+    return parser
+
+
+def resolve_selection_from_args(
+    line_path: Path,
+    polygon_dir_path: Path,
+    polygon_mode: str,
+    output_dir: Path | None,
+) -> tuple[Path, list[tuple[Path, Path]], Path]:
+    if not line_path.is_file():
+        raise ValueError(f"Khong tim thay file line: {line_path}")
+    if not polygon_dir_path.is_dir():
+        raise ValueError(f"Khong tim thay thu muc polygon: {polygon_dir_path}")
+
+    polygon_jobs = collect_polygon_jobs(polygon_dir_path, polygon_mode)
+    if not polygon_jobs:
+        raise ValueError(f"Khong tim thay file GeoJSON/JSON nao trong thu muc: {polygon_dir_path}")
+
+    if output_dir is None:
+        output_dir = line_path.with_name(f"{line_path.stem}_by_province")
+
+    return line_path, polygon_jobs, output_dir
+
+
 def ask_for_inputs() -> tuple[Path, list[tuple[Path, Path]], Path] | None:
     root = Tk()
     root.withdraw()
@@ -115,6 +161,8 @@ def ask_for_inputs() -> tuple[Path, list[tuple[Path, Path]], Path] | None:
             return None
 
         return Path(line_file), polygon_jobs, Path(output_dir)
+    except KeyboardInterrupt:
+        return None
     finally:
         root.destroy()
 
@@ -252,7 +300,36 @@ def process_files(line_path: Path, polygon_jobs: list[tuple[Path, Path]], output
 
 
 def main() -> None:
-    selection = ask_for_inputs()
+    args = build_arg_parser().parse_args()
+
+    if args.no_gui:
+        missing_args = [
+            name
+            for name, value in (
+                ("--line-file", args.line_file),
+                ("--polygon-dir", args.polygon_dir),
+                ("--mode", args.mode),
+            )
+            if value is None
+        ]
+        if missing_args:
+            raise SystemExit(f"Thieu tham so khi dung --no-gui: {', '.join(missing_args)}")
+        selection = resolve_selection_from_args(
+            args.line_file,
+            args.polygon_dir,
+            args.mode,
+            args.output_dir,
+        )
+    elif args.line_file and args.polygon_dir and args.mode:
+        selection = resolve_selection_from_args(
+            args.line_file,
+            args.polygon_dir,
+            args.mode,
+            args.output_dir,
+        )
+    else:
+        selection = ask_for_inputs()
+
     if selection is None:
         print("Da huy thao tac.")
         return

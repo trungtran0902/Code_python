@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indoor 3D Navigation - OSM</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; overflow: hidden; font-family: Inter, Arial, sans-serif; background: #080d18; color: #e8edf7; }
+    #app { display: flex; height: 100vh; width: 100vw; }
+    #sidebar {
+      width: 330px; min-width: 330px; height: 100%; background: #0c111d; border-right: 1px solid #243044;
+      display: flex; flex-direction: column; overflow: hidden; box-shadow: 8px 0 26px rgba(0,0,0,.25); z-index: 5;
+    }
+    #header { padding: 18px 16px 14px; border-bottom: 1px solid #1f2a3b; }
+    #title { margin: 0; font-size: 15px; font-weight: 800; color: #67d3ff; display: flex; gap: 8px; align-items: center; }
+    #subtitle { margin-top: 6px; color: #a5adbd; font-size: 12px; }
+    #panel { padding: 16px; overflow-y: auto; }
+    .section { margin-bottom: 18px; }
+    .label { font-size: 11px; font-weight: 800; letter-spacing: .08em; color: #7f899c; text-transform: uppercase; margin-bottom: 8px; }
+    .floor-buttons { display: flex; gap: 7px; flex-wrap: wrap; }
+    button, select, input[type="file"] {
+      width: 100%; border: 1px solid #293549; background: #161b27; color: #e8edf7; border-radius: 7px;
+      padding: 10px 12px; outline: none; font-size: 13px;
+    }
+    select { cursor: pointer; }
+    button { cursor: pointer; transition: all .15s ease; font-weight: 700; }
+    button:hover { border-color: #3a8cff; filter: brightness(1.1); }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .floor-btn { width: auto; min-width: 50px; padding: 8px 12px; color: #b7c0d1; }
+    .floor-btn.active { background: #22314d; border-color: #3a8cff; color: #fff; }
+    .primary { background: linear-gradient(180deg, #328dff, #2478e9); border-color: #3a8cff; color: white; box-shadow: 0 8px 18px rgba(47, 129, 247, .18); }
+    .secondary { background: #151a24; color: #aeb7c8; }
+    .danger { color: #ff8585; border-color: #8b3b3b; background: #2a151a; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .algo { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .algo button.active { background: #203451; border-color: #3a8cff; color: #8fd4ff; }
+    #viewer { flex: 1; position: relative; background: radial-gradient(circle at center, #111828 0%, #07101d 65%, #050912 100%); }
+    #canvas { width: 100%; height: 100%; display: block; }
+    #statusBar {
+      position: absolute; left: 18px; bottom: 16px; right: 18px; display: flex; gap: 10px; align-items: center; pointer-events: none;
+      color: #9facbf; font-size: 12px;
+    }
+    .pill { background: rgba(12,17,29,.82); border: 1px solid rgba(80,100,130,.4); padding: 7px 10px; border-radius: 999px; backdrop-filter: blur(8px); }
+    #legend { margin-top: 10px; font-size: 12px; color: #b1bacb; }
+    .legend-item { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+    .line { width: 28px; height: 3px; border-radius: 99px; }
+    .blue { background: #61a8ff; } .yellow { background: #ffd060; } .green { background: #61db79; } .red { background: #ff6b6b; } .white { background: #fff; }
+    #result { border: 1px solid #26543e; background: rgba(17, 63, 43, .32); border-radius: 9px; padding: 12px; font-size: 12px; color: #c9f5d9; }
+    #result.empty { border-color: #6d3940; background: rgba(90, 27, 34, .35); color: #ffc1c1; }
+    .path-list { margin: 10px 0 0; padding: 0; list-style: none; max-height: 210px; overflow: auto; }
+    .path-list li { display: grid; grid-template-columns: 14px 1fr auto; gap: 8px; padding: 7px 6px; border-radius: 7px; color: #dce6f8; align-items: center; }
+    .path-list li.active { background: rgba(58, 140, 255, .16); border: 1px solid rgba(58,140,255,.28); }
+    .dot { width: 8px; height: 8px; border-radius: 99px; background: #61a8ff; }
+    .dist { color: #96a0b3; font-size: 11px; }
+    .hint { font-size: 12px; color: #8994a8; line-height: 1.5; }
+    #tooltip {
+      position: absolute; display: none; pointer-events: none; background: rgba(8,13,24,.94); border: 1px solid #33445f;
+      color: #e8edf7; padding: 8px 10px; border-radius: 8px; font-size: 12px; z-index: 10; max-width: 260px;
+    }
+    .small { font-size: 11px; color: #8d96a9; margin-top: 8px; line-height: 1.45; }
+    .file { padding: 10px; border: 1px dashed #33445f; border-radius: 8px; background: #111827; }
+  </style>
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div id="header">
+      <h1 id="title">🏢 Indoor 3D Navigation</h1>
+      <div id="subtitle">Đang tải building.osm...</div>
+    </div>
+    <div id="panel">
+      <div class="section">
+        <div class="label">File OSM</div>
+        <div class="file">
+          <input id="fileInput" type="file" accept=".osm,.xml" />
+          <div class="small">Mặc định hệ thống sẽ tự load <b>building.osm</b> cùng thư mục với file HTML. Nếu lỗi CORS, hãy chạy qua localhost.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Tầng hiển thị</div>
+        <div id="floorButtons" class="floor-buttons"></div>
+        <button id="hideBtn" class="danger" style="margin-top:10px;">× Không hiển thị</button>
+      </div>
+
+      <div class="section">
+        <div class="label">Điểm bắt đầu</div>
+        <select id="startSelect"></select>
+      </div>
+
+      <div class="section">
+        <div class="label">Điểm đến</div>
+        <select id="endSelect"></select>
+      </div>
+
+      <div class="section">
+        <div class="label">Thuật toán</div>
+        <div class="algo">
+          <button id="dijkstraBtn" class="active">Dijkstra</button>
+          <button id="astarBtn">A*</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <button id="findBtn" class="primary">▶ Tìm đường</button>
+      </div>
+      <div class="section">
+        <button id="clearBtn" class="secondary">× Xóa đường</button>
+      </div>
+
+      <div class="section">
+        <div class="label">Kết quả hành trình</div>
+        <div id="result" class="empty">Chưa có hành trình.</div>
+      </div>
+
+      <div class="section">
+        <div class="label">Chú thích</div>
+        <div id="legend">
+          <div class="legend-item"><span class="line blue"></span>Hành lang / lối đi</div>
+          <div class="legend-item"><span class="line yellow"></span>Cầu thang</div>
+          <div class="legend-item"><span class="line green"></span>Thang máy / kết nối đứng</div>
+          <div class="legend-item"><span class="line red"></span>Đường đi tìm được</div>
+          <div class="legend-item"><span class="line white"></span>Vòng focus node</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Điều khiển camera</div>
+        <div class="hint">Kéo trái: xoay<br/>Kéo phải: di chuyển<br/>Cuộn chuột: zoom in/out<br/>Click node: xem thông tin</div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="viewer">
+    <canvas id="canvas"></canvas>
+    <div id="tooltip"></div>
+    <div id="statusBar">
+      <span class="pill" id="cameraStatus">Camera ready</span>
+      <span class="pill" id="hoverStatus">Click node để xem thông tin</span>
+    </div>
+  </main>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const CONFIG = {
+  osmFile: 'building.osm',
+  floorHeight: 4,
+  nodeRadius: 0.16,
+  edgeWidth: 0.08,
+  pathWidth: 0.18,
+  meterScale: 1,
+  colors: {
+    background: 0x080d18,
+    grid: 0x263244,
+    corridor: 0x5aa7ff,
+    stairs: 0xffd15c,
+    elevator: 0x57dc76,
+    path: 0xff5757,
+    node: 0xffffff,
+    start: 0xff4f4f,
+    end: 0xffd15c,
+    floor: 0x27364d
+  }
+};
+
+let scene, camera, renderer, controls;
+let graph = { nodes: new Map(), edges: [], adjacency: new Map(), floors: [] };
+let nodeObjects = new Map();
+let edgeObjects = [];
+let pathObjects = [];
+let focusRing = null;
+let selectedFloor = 'all';
+let algorithm = 'dijkstra';
+let raycaster = new THREE.Raycaster();
+let mouse = new THREE.Vector2();
+let centerLat = 0, centerLon = 0;
+
+const el = {
+  subtitle: document.getElementById('subtitle'),
+  floorButtons: document.getElementById('floorButtons'),
+  startSelect: document.getElementById('startSelect'),
+  endSelect: document.getElementById('endSelect'),
+  result: document.getElementById('result'),
+  findBtn: document.getElementById('findBtn'),
+  clearBtn: document.getElementById('clearBtn'),
+  hideBtn: document.getElementById('hideBtn'),
+  dijkstraBtn: document.getElementById('dijkstraBtn'),
+  astarBtn: document.getElementById('astarBtn'),
+  fileInput: document.getElementById('fileInput'),
+  tooltip: document.getElementById('tooltip'),
+  hoverStatus: document.getElementById('hoverStatus'),
+};
+
+init3D();
+loadOSMFromUrl(CONFIG.osmFile);
+
+el.findBtn.addEventListener('click', findRoute);
+el.clearBtn.addEventListener('click', clearPath);
+el.hideBtn.addEventListener('click', () => setFloor('none'));
+el.dijkstraBtn.addEventListener('click', () => setAlgorithm('dijkstra'));
+el.astarBtn.addEventListener('click', () => setAlgorithm('astar'));
+el.fileInput.addEventListener('change', async (e) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+  const text = await file.text();
+  loadOSMText(text, file.name);
+});
+
+function init3D() {
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(CONFIG.colors.background);
+
+  const canvas = document.getElementById('canvas');
+  camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 2000);
+  camera.position.set(18, 18, 22);
+
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(document.getElementById('viewer').clientWidth, document.getElementById('viewer').clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = .08;
+  controls.target.set(0, 2, 0);
+
+  const amb = new THREE.AmbientLight(0xffffff, .7);
+  scene.add(amb);
+  const dir = new THREE.DirectionalLight(0xffffff, .75);
+  dir.position.set(10, 20, 10);
+  scene.add(dir);
+
+  const grid = new THREE.GridHelper(80, 80, CONFIG.colors.grid, CONFIG.colors.grid);
+  grid.material.opacity = .28;
+  grid.material.transparent = true;
+  scene.add(grid);
+
+  renderer.domElement.addEventListener('click', onCanvasClick);
+  renderer.domElement.addEventListener('mousemove', onMouseMove);
+  window.addEventListener('resize', onResize);
+  animate();
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+function onResize() {
+  const viewer = document.getElementById('viewer');
+  camera.aspect = viewer.clientWidth / viewer.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(viewer.clientWidth, viewer.clientHeight);
+}
+
+async function loadOSMFromUrl(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+    loadOSMText(text, url);
+  } catch (err) {
+    el.subtitle.textContent = 'Không tự load được building.osm. Hãy chọn file OSM thủ công.';
+    el.result.className = 'empty';
+    el.result.innerHTML = `Không load được <b>${url}</b>.<br/>Cách chạy đúng: <code>python -m http.server 8000</code>, sau đó mở <code>http://localhost:8000</code>.`;
+    console.error(err);
+  }
+}
+
+function loadOSMText(text, name = 'building.osm') {
+  clearSceneData();
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(text, 'text/xml');
+  const err = xml.querySelector('parsererror');
+  if (err) throw new Error('OSM/XML không hợp lệ');
+
+  graph = parseOSM(xml);
+  buildAdjacency();
+  drawGraph();
+  buildControls();
+  zoomToFit();
+  el.subtitle.textContent = `${graph.nodes.size} nodes · ${graph.edges.length} edges · ${name}`;
+  el.result.className = 'empty';
+  el.result.textContent = 'Đã load dữ liệu. Chọn điểm bắt đầu và điểm đến để tìm đường.';
+}
+
+function clearSceneData() {
+  for (const obj of [...nodeObjects.values(), ...edgeObjects, ...pathObjects]) scene.remove(obj);
+  if (focusRing) scene.remove(focusRing);
+  nodeObjects.clear(); edgeObjects = []; pathObjects = []; focusRing = null;
+}
+
+function parseOSM(xml) {
+  const osmNodes = new Map();
+  const rawNodes = [...xml.querySelectorAll('node')];
+  centerLat = avg(rawNodes.map(n => Number(n.getAttribute('lat'))));
+  centerLon = avg(rawNodes.map(n => Number(n.getAttribute('lon'))));
+
+  for (const n of rawNodes) {
+    const id = n.getAttribute('id');
+    const lat = Number(n.getAttribute('lat'));
+    const lon = Number(n.getAttribute('lon'));
+    const tags = getTags(n);
+    const level = normalizeLevel(tags.level ?? tags.floor ?? tags['repeat_on'] ?? '1');
+    const pos = latLonToMeters(lat, lon, centerLat, centerLon, level);
+    osmNodes.set(id, { id, lat, lon, level, tags, pos, label: getNodeLabel(id, tags, level) });
+  }
+
+  const usedNodes = new Set();
+  const edges = [];
+  const ways = [...xml.querySelectorAll('way')];
+
+  for (const w of ways) {
+    const tags = getTags(w);
+    const nds = [...w.querySelectorAll('nd')].map(nd => nd.getAttribute('ref')).filter(ref => osmNodes.has(ref));
+    if (nds.length < 2) continue;
+
+    const kind = classifyWay(tags);
+    if (!kind.route) continue;
+
+    for (let i = 0; i < nds.length - 1; i++) {
+      const a = osmNodes.get(nds[i]);
+      const b = osmNodes.get(nds[i + 1]);
+      if (!a || !b) continue;
+      usedNodes.add(a.id); usedNodes.add(b.id);
+      edges.push({
+        id: `${w.getAttribute('id')}_${i}`,
+        wayId: w.getAttribute('id'),
+        a: a.id,
+        b: b.id,
+        kind: kind.type,
+        tags,
+        distance: distance3D(a.pos, b.pos)
+      });
+    }
+  }
+
+  const nodes = new Map();
+  for (const id of usedNodes) nodes.set(id, osmNodes.get(id));
+
+  const floors = [...new Set([...nodes.values()].map(n => n.level))].sort((a,b) => a-b);
+  return { nodes, edges, adjacency: new Map(), floors };
+}
+
+function getTags(element) {
+  const tags = {};
+  for (const t of element.querySelectorAll('tag')) tags[t.getAttribute('k')] = t.getAttribute('v');
+  return tags;
+}
+
+function normalizeLevel(v) {
+  if (v === undefined || v === null || v === '') return 1;
+  const s = String(v).split(';')[0].split(',')[0].trim();
+  const n = Number(s.replace(/[FfTt]/g, ''));
+  return Number.isFinite(n) ? n : 1;
+}
+
+function classifyWay(tags) {
+  const highway = tags.highway;
+  const indoor = tags.indoor;
+  const room = tags.room;
+  const buildingpart = tags.building || tags['building:part'];
+  const routeCandidates = ['corridor', 'footway', 'path', 'steps', 'service', 'pedestrian'];
+
+  if (tags.highway === 'steps' || tags.stairs === 'yes' || indoor === 'stairs') return { route: true, type: 'stairs' };
+  if (tags.highway === 'elevator' || tags.elevator === 'yes' || indoor === 'elevator') return { route: true, type: 'elevator' };
+  if (routeCandidates.includes(highway) || indoor === 'corridor' || indoor === 'room' || indoor === 'area') return { route: true, type: 'corridor' };
+
+  // Nếu file OSM indoor chưa tag rõ lối đi, cho phép lấy way không phải polygon tường/phòng làm cạnh graph.
+  if (!buildingpart && !room && !tags.wall && !tags.barrier && !tags.area) return { route: true, type: 'corridor' };
+  return { route: false, type: 'other' };
+}
+
+function getNodeLabel(id, tags, level) {
+  const name = tags.name || tags.ref || tags['addr:housenumber'];
+  return name ? `${name} (T${level})` : `Node ${id} (T${level})`;
+}
+
+function latLonToMeters(lat, lon, centerLat, centerLon, level) {
+  const earth = 6378137;
+  const x = (lon - centerLon) * Math.PI / 180 * earth * Math.cos(centerLat * Math.PI / 180) * CONFIG.meterScale;
+  const z = -(lat - centerLat) * Math.PI / 180 * earth * CONFIG.meterScale;
+  const y = (level - 1) * CONFIG.floorHeight;
+  return new THREE.Vector3(x, y, z);
+}
+
+function avg(arr) { return arr.reduce((s, v) => s + v, 0) / Math.max(arr.length, 1); }
+function distance3D(a, b) { return a.distanceTo(b); }
+
+function buildAdjacency() {
+  graph.adjacency = new Map();
+  for (const id of graph.nodes.keys()) graph.adjacency.set(id, []);
+  for (const e of graph.edges) {
+    graph.adjacency.get(e.a)?.push({ node: e.b, edge: e, cost: e.distance });
+    graph.adjacency.get(e.b)?.push({ node: e.a, edge: e, cost: e.distance });
+  }
+}
+
+function drawGraph() {
+  drawFloorPlanes();
+  for (const e of graph.edges) drawEdge(e);
+  for (const n of graph.nodes.values()) drawNode(n);
+}
+
+function drawFloorPlanes() {
+  const box = computeBounds();
+  const width = Math.max(12, box.max.x - box.min.x + 6);
+  const depth = Math.max(12, box.max.z - box.min.z + 6);
+  const cx = (box.min.x + box.max.x) / 2;
+  const cz = (box.min.z + box.max.z) / 2;
+
+  for (const floor of graph.floors) {
+    const geo = new THREE.PlaneGeometry(width, depth);
+    const mat = new THREE.MeshBasicMaterial({ color: CONFIG.colors.floor, transparent: true, opacity: .08, side: THREE.DoubleSide });
+    const plane = new THREE.Mesh(geo, mat);
+    plane.rotation.x = -Math.PI / 2;
+    plane.position.set(cx, (floor - 1) * CONFIG.floorHeight - .03, cz);
+    plane.userData = { type: 'floor', floor };
+    scene.add(plane);
+    edgeObjects.push(plane);
+  }
+}
+
+function drawEdge(e) {
+  const a = graph.nodes.get(e.a), b = graph.nodes.get(e.b);
+  if (!a || !b) return;
+  const color = e.kind === 'stairs' ? CONFIG.colors.stairs : e.kind === 'elevator' ? CONFIG.colors.elevator : CONFIG.colors.corridor;
+  const obj = makeTube(a.pos, b.pos, CONFIG.edgeWidth, color, .8);
+  obj.userData = { type: 'edge', edge: e, floor: a.level };
+  scene.add(obj);
+  edgeObjects.push(obj);
+}
+
+function drawNode(n) {
+  const geo = new THREE.SphereGeometry(CONFIG.nodeRadius, 16, 16);
+  const mat = new THREE.MeshStandardMaterial({ color: CONFIG.colors.node, emissive: 0x222222, roughness: .45 });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.copy(n.pos);
+  mesh.userData = { type: 'node', nodeId: n.id, floor: n.level };
+  scene.add(mesh);
+  nodeObjects.set(n.id, mesh);
+}
+
+function makeTube(start, end, radius, color, opacity = 1) {
+  const curve = new THREE.LineCurve3(start, end);
+  const geo = new THREE.TubeGeometry(curve, 1, radius, 10, false);
+  const mat = new THREE.MeshStandardMaterial({ color, transparent: opacity < 1, opacity, roughness: .35, metalness: .05 });
+  return new THREE.Mesh(geo, mat);
+}
+
+function buildControls() {
+  el.floorButtons.innerHTML = '';
+  const allBtn = makeFloorButton('Tất cả', 'all');
+  el.floorButtons.appendChild(allBtn);
+  for (const f of graph.floors) el.floorButtons.appendChild(makeFloorButton(`T${f}`, f));
+  setFloor('all');
+
+  const options = [...graph.nodes.values()].sort((a,b) => a.level - b.level || a.id.localeCompare(b.id));
+  el.startSelect.innerHTML = options.map(n => `<option value="${n.id}">${escapeHtml(n.label)}</option>`).join('');
+  el.endSelect.innerHTML = options.map(n => `<option value="${n.id}">${escapeHtml(n.label)}</option>`).join('');
+  if (options.length > 1) {
+    el.startSelect.value = options[0].id;
+    el.endSelect.value = options[options.length - 1].id;
+  }
+}
+
+function makeFloorButton(text, value) {
+  const btn = document.createElement('button');
+  btn.className = 'floor-btn';
+  btn.textContent = text;
+  btn.dataset.floor = value;
+  btn.addEventListener('click', () => setFloor(value));
+  return btn;
+}
+
+function setFloor(floor) {
+  selectedFloor = floor;
+  document.querySelectorAll('.floor-btn').forEach(b => b.classList.toggle('active', String(b.dataset.floor) === String(floor)));
+  const visibleAll = floor === 'all';
+  const hideAll = floor === 'none';
+
+  for (const [id, obj] of nodeObjects) {
+    const n = graph.nodes.get(id);
+    obj.visible = !hideAll && (visibleAll || n.level === Number(floor));
+  }
+  for (const obj of edgeObjects) {
+    const floorValue = obj.userData.floor;
+    obj.visible = !hideAll && (visibleAll || floorValue === Number(floor));
+  }
+  for (const obj of pathObjects) obj.visible = !hideAll && (visibleAll || obj.userData.floor === Number(floor));
+}
+
+function setAlgorithm(name) {
+  algorithm = name;
+  el.dijkstraBtn.classList.toggle('active', name === 'dijkstra');
+  el.astarBtn.classList.toggle('active', name === 'astar');
+}
+
+function findRoute() {
+  const start = el.startSelect.value;
+  const end = el.endSelect.value;
+  if (!start || !end || start === end) return;
+  clearPath();
+
+  const result = algorithm === 'astar' ? astar(start, end) : dijkstra(start, end);
+  if (!result.path.length) {
+    el.result.className = 'empty';
+    el.result.textContent = 'Không tìm thấy đường đi. Kiểm tra các way trong building.osm đã được nối node với nhau chưa.';
+    return;
+  }
+  drawPath(result.path);
+  renderResult(result);
+  highlightEndpoints(start, end);
+  zoomToPath(result.path);
+}
+
+function dijkstra(start, end) {
+  const dist = new Map(), prev = new Map(), visited = new Set();
+  for (const id of graph.nodes.keys()) dist.set(id, Infinity);
+  dist.set(start, 0);
+
+  while (visited.size < graph.nodes.size) {
+    let current = null, best = Infinity;
+    for (const [id, d] of dist) if (!visited.has(id) && d < best) { best = d; current = id; }
+    if (!current || current === end) break;
+    visited.add(current);
+    for (const nb of graph.adjacency.get(current) || []) {
+      const nd = dist.get(current) + nb.cost;
+      if (nd < dist.get(nb.node)) { dist.set(nb.node, nd); prev.set(nb.node, current); }
+    }
+  }
+  return reconstruct(start, end, prev, dist.get(end), visited.size);
+}
+
+function astar(start, end) {
+  const open = new Set([start]);
+  const came = new Map();
+  const g = new Map(), f = new Map();
+  for (const id of graph.nodes.keys()) { g.set(id, Infinity); f.set(id, Infinity); }
+  g.set(start, 0); f.set(start, heuristic(start, end));
+  let steps = 0;
+
+  while (open.size) {
+    let current = [...open].sort((a,b) => f.get(a) - f.get(b))[0];
+    steps++;
+    if (current === end) return reconstruct(start, end, came, g.get(end), steps);
+    open.delete(current);
+    for (const nb of graph.adjacency.get(current) || []) {
+      const tentative = g.get(current) + nb.cost;
+      if (tentative < g.get(nb.node)) {
+        came.set(nb.node, current);
+        g.set(nb.node, tentative);
+        f.set(nb.node, tentative + heuristic(nb.node, end));
+        open.add(nb.node);
+      }
+    }
+  }
+  return { path: [], distance: Infinity, steps };
+}
+
+function heuristic(aId, bId) {
+  const a = graph.nodes.get(aId), b = graph.nodes.get(bId);
+  return a && b ? distance3D(a.pos, b.pos) : 0;
+}
+
+function reconstruct(start, end, prev, distance, steps) {
+  const path = [];
+  let cur = end;
+  while (cur) {
+    path.unshift(cur);
+    if (cur === start) break;
+    cur = prev.get(cur);
+  }
+  if (path[0] !== start) return { path: [], distance: Infinity, steps };
+  return { path, distance, steps };
+}
+
+function drawPath(path) {
+  for (let i = 0; i < path.length - 1; i++) {
+    const a = graph.nodes.get(path[i]), b = graph.nodes.get(path[i+1]);
+    const obj = makeTube(a.pos, b.pos, CONFIG.pathWidth, CONFIG.colors.path, .92);
+    obj.userData = { type: 'path', floor: a.level };
+    scene.add(obj);
+    pathObjects.push(obj);
+  }
+  setFloor(selectedFloor);
+}
+
+function clearPath() {
+  for (const obj of pathObjects) scene.remove(obj);
+  pathObjects = [];
+  for (const [id, obj] of nodeObjects) obj.material.color.setHex(CONFIG.colors.node);
+  el.result.className = 'empty';
+  el.result.textContent = 'Chưa có hành trình.';
+}
+
+function highlightEndpoints(start, end) {
+  nodeObjects.get(start)?.material.color.setHex(CONFIG.colors.start);
+  nodeObjects.get(end)?.material.color.setHex(CONFIG.colors.end);
+}
+
+function renderResult({ path, distance, steps }) {
+  const lis = path.map((id, i) => {
+    const n = graph.nodes.get(id);
+    const segment = i === 0 ? 'Xuất phát' : `${graph.nodes.get(path[i-1]).pos.distanceTo(n.pos).toFixed(2)}m`;
+    const active = i === path.length - 1 ? 'active' : '';
+    return `<li class="${active}"><span class="dot"></span><span>${escapeHtml(n.label)}</span><span class="dist">${segment}</span></li>`;
+  }).join('');
+
+  el.result.className = '';
+  el.result.innerHTML = `<b>✓ Tìm thấy:</b> ${distance.toFixed(2)}m · ${path.length - 1} bước · ${algorithm}<br/>
+    <span class="small">Đã duyệt ${steps} node. Click node để focus 3D.</span>
+    <ul class="path-list">${lis}</ul>`;
+}
+
+function onCanvasClick(event) {
+  const intersects = pickNode(event);
+  if (!intersects.length) return;
+  const obj = intersects[0].object;
+  const id = obj.userData.nodeId;
+  const n = graph.nodes.get(id);
+  focusNode(n);
+  el.hoverStatus.textContent = `${n.label} · lat ${n.lat.toFixed(7)}, lon ${n.lon.toFixed(7)}`;
+}
+
+function onMouseMove(event) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+  mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObjects([...nodeObjects.values()].filter(o => o.visible), false);
+  if (intersects.length) {
+    const n = graph.nodes.get(intersects[0].object.userData.nodeId);
+    el.tooltip.style.display = 'block';
+    el.tooltip.style.left = `${event.clientX + 12}px`;
+    el.tooltip.style.top = `${event.clientY + 12}px`;
+    el.tooltip.innerHTML = `<b>${escapeHtml(n.label)}</b><br/>Tầng: T${n.level}<br/>Lat/Lon: ${n.lat.toFixed(7)}, ${n.lon.toFixed(7)}`;
+  } else {
+    el.tooltip.style.display = 'none';
+  }
+}
+
+function pickNode(event) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+  mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(mouse, camera);
+  return raycaster.intersectObjects([...nodeObjects.values()].filter(o => o.visible), false);
+}
+
+function focusNode(n) {
+  if (focusRing) scene.remove(focusRing);
+  const geo = new THREE.TorusGeometry(.65, .055, 12, 64);
+  const mat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  focusRing = new THREE.Mesh(geo, mat);
+  focusRing.rotation.x = Math.PI / 2;
+  focusRing.position.copy(n.pos).add(new THREE.Vector3(0, .45, 0));
+  scene.add(focusRing);
+
+  controls.target.copy(n.pos);
+  camera.position.copy(n.pos.clone().add(new THREE.Vector3(8, 8, 8)));
+}
+
+function computeBounds(ids = null) {
+  const points = ids ? ids.map(id => graph.nodes.get(id).pos) : [...graph.nodes.values()].map(n => n.pos);
+  const box = new THREE.Box3();
+  for (const p of points) box.expandByPoint(p);
+  if (points.length === 0) box.expandByPoint(new THREE.Vector3(0,0,0));
+  return box;
+}
+
+function zoomToFit() {
+  const box = computeBounds();
+  const center = box.getCenter(new THREE.Vector3());
+  const size = box.getSize(new THREE.Vector3()).length();
+  controls.target.copy(center);
+  camera.position.copy(center.clone().add(new THREE.Vector3(size * .55 + 8, size * .45 + 8, size * .55 + 8)));
+}
+
+function zoomToPath(path) {
+  const box = computeBounds(path);
+  const center = box.getCenter(new THREE.Vector3());
+  const size = Math.max(10, box.getSize(new THREE.Vector3()).length());
+  controls.target.copy(center);
+  camera.position.copy(center.clone().add(new THREE.Vector3(size * .55, size * .45, size * .55)));
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>'"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[c]));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+[
+    {
+        "CommunesFullName": "P. Nùng Trí Cao",
+        "CommuneID": "21118"
+    },
+    {
+        "CommunesFullName": "P. Thục Phán",
+        "CommuneID": "21117"
+    },
+    {
+        "CommunesFullName": "P. Tân Giang",
+        "CommuneID": "21112"
+    },
+    {
+        "CommunesFullName": "X. Bạch Đằng",
+        "CommuneID": "21166"
+    },
+    {
+        "CommunesFullName": "X. Bảo Lâm",
+        "CommuneID": "21420"
+    },
+    {
+        "CommunesFullName": "X. Bảo Lạc",
+        "CommuneID": "21356"
+    },
+    {
+        "CommunesFullName": "X. Bế Văn Đàn",
+        "CommuneID": "21926"
+    },
+    {
+        "CommunesFullName": "X. Ca Thành",
+        "CommuneID": "21512"
+    },
+    {
+        "CommunesFullName": "X. Canh Tân",
+        "CommuneID": "21614"
+    },
+    {
+        "CommunesFullName": "X. Cô Ba",
+        "CommuneID": "21357"
+    },
+    {
+        "CommunesFullName": "X. Cần Yên",
+        "CommuneID": "21229"
+    },
+    {
+        "CommunesFullName": "X. Cốc Pàng",
+        "CommuneID": "21359"
+    },
+    {
+        "CommunesFullName": "X. Huy Giáp",
+        "CommuneID": "21368"
+    },
+    {
+        "CommunesFullName": "X. Hà Quảng",
+        "CommuneID": "21226"
+    },
+    {
+        "CommunesFullName": "X. Hòa An",
+        "CommuneID": "21177"
+    },
+    {
+        "CommunesFullName": "X. Hưng Đạo",
+        "CommuneID": "21363"
+    },
+    {
+        "CommunesFullName": "X. Hạ Lang",
+        "CommuneID": "21720"
+    },
+    {
+        "CommunesFullName": "X. Hạnh Phúc",
+        "CommuneID": "21918"
+    },
+    {
+        "CommunesFullName": "X. Khánh Xuân",
+        "CommuneID": "21372"
+    },
+    {
+        "CommunesFullName": "X. Kim Đồng",
+        "CommuneID": "21613"
+    },
+    {
+        "CommunesFullName": "X. Lý Bôn",
+        "CommuneID": "21410"
+    },
+    {
+        "CommunesFullName": "X. Lý Quốc",
+        "CommuneID": "21709"
+    },
+    {
+        "CommunesFullName": "X. Lũng Nặm",
+        "CommuneID": "21212"
+    },
+    {
+        "CommunesFullName": "X. Minh Khai",
+        "CommuneID": "21615"
+    },
+    {
+        "CommunesFullName": "X. Minh Tâm",
+        "CommuneID": "21524"
+    },
+    {
+        "CommunesFullName": "X. Nam Quang",
+        "CommuneID": "21414"
+    },
+    {
+        "CommunesFullName": "X. Nam Tuấn",
+        "CommuneID": "21157"
+    },
+    {
+        "CommunesFullName": "X. Nguyên Bình",
+        "CommuneID": "21506"
+    },
+    {
+        "CommunesFullName": "X. Nguyễn Huệ",
+        "CommuneID": "21172"
+    },
+    {
+        "CommunesFullName": "X. Phan Thanh",
+        "CommuneID": "21516"
+    },
+    {
+        "CommunesFullName": "X. Phục Hòa",
+        "CommuneID": "21665"
+    },
+    {
+        "CommunesFullName": "X. Quang Hán",
+        "CommuneID": "21830"
+    },
+    {
+        "CommunesFullName": "X. Quang Long",
+        "CommuneID": "21707"
+    },
+    {
+        "CommunesFullName": "X. Quang Trung",
+        "CommuneID": "21828"
+    },
+    {
+        "CommunesFullName": "X. Quảng Lâm",
+        "CommuneID": "21416"
+    },
+    {
+        "CommunesFullName": "X. Quảng Uyên",
+        "CommuneID": "21906"
+    },
+    {
+        "CommunesFullName": "X. Sơn Lộ",
+        "CommuneID": "21365"
+    },
+    {
+        "CommunesFullName": "X. Tam Kim",
+        "CommuneID": "21520"
+    },
+    {
+        "CommunesFullName": "X. Thanh Long",
+        "CommuneID": "21233"
+    },
+    {
+        "CommunesFullName": "X. Thành Công",
+        "CommuneID": "21517"
+    },
+    {
+        "CommunesFullName": "X. Thông Nông",
+        "CommuneID": "21225"
+    },
+    {
+        "CommunesFullName": "X. Thạch An",
+        "CommuneID": "21622"
+    },
+    {
+        "CommunesFullName": "X. Trà Lĩnh",
+        "CommuneID": "21826"
+    },
+    {
+        "CommunesFullName": "X. Trùng Khánh",
+        "CommuneID": "21806"
+    },
+    {
+        "CommunesFullName": "X. Trường Hà",
+        "CommuneID": "21214"
+    },
+    {
+        "CommunesFullName": "X. Tĩnh Túc",
+        "CommuneID": "21514"
+    },
+    {
+        "CommunesFullName": "X. Tổng Cọt",
+        "CommuneID": "21224"
+    },
+    {
+        "CommunesFullName": "X. Vinh Quý",
+        "CommuneID": "21715"
+    },
+    {
+        "CommunesFullName": "X. Xuân Trường",
+        "CommuneID": "21370"
+    },
+    {
+        "CommunesFullName": "X. Yên Thổ",
+        "CommuneID": "21418"
+    },
+    {
+        "CommunesFullName": "X. Đoài Dương",
+        "CommuneID": "21818"
+    },
+    {
+        "CommunesFullName": "X. Đàm Thủy",
+        "CommuneID": "21825"
+    },
+    {
+        "CommunesFullName": "X. Đình Phong",
+        "CommuneID": "21808"
+    },
+    {
+        "CommunesFullName": "X. Đông Khê",
+        "CommuneID": "21606"
+    },
+    {
+        "CommunesFullName": "X. Độc Lập",
+        "CommuneID": "21907"
+    },
+    {
+        "CommunesFullName": "X. Đức Long",
+        "CommuneID": "21608"
+    }
+]

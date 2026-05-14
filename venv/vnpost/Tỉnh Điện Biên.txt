@@ -1,0 +1,182 @@
+[
+    {
+        "CommunesFullName": "P. Mường Lay",
+        "CommuneID": "32709"
+    },
+    {
+        "CommunesFullName": "P. Mường Thanh",
+        "CommuneID": "32119"
+    },
+    {
+        "CommunesFullName": "P. Điện Biên Phủ",
+        "CommuneID": "32120"
+    },
+    {
+        "CommunesFullName": "X. Búng Lao",
+        "CommuneID": "32415"
+    },
+    {
+        "CommunesFullName": "X. Chiềng Sinh",
+        "CommuneID": "32521"
+    },
+    {
+        "CommunesFullName": "X. Chà Tở",
+        "CommuneID": "32810"
+    },
+    {
+        "CommunesFullName": "X. Mường Chà",
+        "CommuneID": "32821"
+    },
+    {
+        "CommunesFullName": "X. Mường Luân",
+        "CommuneID": "32319"
+    },
+    {
+        "CommunesFullName": "X. Mường Lạn",
+        "CommuneID": "32413"
+    },
+    {
+        "CommunesFullName": "X. Mường Mùn",
+        "CommuneID": "32516"
+    },
+    {
+        "CommunesFullName": "X. Mường Nhà",
+        "CommuneID": "32228"
+    },
+    {
+        "CommunesFullName": "X. Mường Nhé",
+        "CommuneID": "32906"
+    },
+    {
+        "CommunesFullName": "X. Mường Phăng",
+        "CommuneID": "32116"
+    },
+    {
+        "CommunesFullName": "X. Mường Pồn",
+        "CommuneID": "32214"
+    },
+    {
+        "CommunesFullName": "X. Mường Toong",
+        "CommuneID": "32916"
+    },
+    {
+        "CommunesFullName": "X. Mường Tùng",
+        "CommuneID": "32763"
+    },
+    {
+        "CommunesFullName": "X. Mường Ảng",
+        "CommuneID": "32406"
+    },
+    {
+        "CommunesFullName": "X. Na Sang",
+        "CommuneID": "32766"
+    },
+    {
+        "CommunesFullName": "X. Na Son",
+        "CommuneID": "32310"
+    },
+    {
+        "CommunesFullName": "X. Nà Bủng",
+        "CommuneID": "32819"
+    },
+    {
+        "CommunesFullName": "X. Nà Hỳ",
+        "CommuneID": "32806"
+    },
+    {
+        "CommunesFullName": "X. Nà Tấu",
+        "CommuneID": "32118"
+    },
+    {
+        "CommunesFullName": "X. Núa Ngam",
+        "CommuneID": "32226"
+    },
+    {
+        "CommunesFullName": "X. Nậm Kè",
+        "CommuneID": "32912"
+    },
+    {
+        "CommunesFullName": "X. Nậm Nèn",
+        "CommuneID": "32758"
+    },
+    {
+        "CommunesFullName": "X. Pa Ham",
+        "CommuneID": "32759"
+    },
+    {
+        "CommunesFullName": "X. Phình Giàng",
+        "CommuneID": "32314"
+    },
+    {
+        "CommunesFullName": "X. Pu Nhi",
+        "CommuneID": "32311"
+    },
+    {
+        "CommunesFullName": "X. Pú Nhung",
+        "CommuneID": "32513"
+    },
+    {
+        "CommunesFullName": "X. Quài Tở",
+        "CommuneID": "32524"
+    },
+    {
+        "CommunesFullName": "X. Quảng Lâm",
+        "CommuneID": "32913"
+    },
+    {
+        "CommunesFullName": "X. Sam Mứn",
+        "CommuneID": "32231"
+    },
+    {
+        "CommunesFullName": "X. Si Pa Phìn",
+        "CommuneID": "32807"
+    },
+    {
+        "CommunesFullName": "X. Sáng Nhè",
+        "CommuneID": "32618"
+    },
+    {
+        "CommunesFullName": "X. Sín Chải",
+        "CommuneID": "32612"
+    },
+    {
+        "CommunesFullName": "X. Sín Thầu",
+        "CommuneID": "32911"
+    },
+    {
+        "CommunesFullName": "X. Sính Phình",
+        "CommuneID": "32617"
+    },
+    {
+        "CommunesFullName": "X. Thanh An",
+        "CommuneID": "32208"
+    },
+    {
+        "CommunesFullName": "X. Thanh Nưa",
+        "CommuneID": "32216"
+    },
+    {
+        "CommunesFullName": "X. Thanh Yên",
+        "CommuneID": "32220"
+    },
+    {
+        "CommunesFullName": "X. Tuần Giáo",
+        "CommuneID": "32506"
+    },
+    {
+        "CommunesFullName": "X. Tìa Dình",
+        "CommuneID": "32316"
+    },
+    {
+        "CommunesFullName": "X. Tủa Chùa",
+        "CommuneID": "32606"
+    },
+    {
+        "CommunesFullName": "X. Tủa Thàng",
+        "CommuneID": "32610"
+    },
+    {
+        "CommunesFullName": "X. Xa Dung",
+        "CommuneID": "32309"
+    }
+]

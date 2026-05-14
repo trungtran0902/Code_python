@@ -1,0 +1,218 @@
+[
+    {
+        "CommunesFullName": "P. An Sinh",
+        "CommuneID": "02419"
+    },
+    {
+        "CommunesFullName": "P. Bãi Cháy",
+        "CommuneID": "01119"
+    },
+    {
+        "CommunesFullName": "P. Bình Khê",
+        "CommuneID": "02418"
+    },
+    {
+        "CommunesFullName": "P. Cao Xanh",
+        "CommuneID": "01117"
+    },
+    {
+        "CommunesFullName": "P. Cẩm Phả",
+        "CommuneID": "01222"
+    },
+    {
+        "CommunesFullName": "P. Cửa Ông",
+        "CommuneID": "01214"
+    },
+    {
+        "CommunesFullName": "P. Hiệp Hòa",
+        "CommuneID": "02215"
+    },
+    {
+        "CommunesFullName": "P. Hoàng Quế",
+        "CommuneID": "02414"
+    },
+    {
+        "CommunesFullName": "P. Hoành Bồ",
+        "CommuneID": "01126"
+    },
+    {
+        "CommunesFullName": "P. Hà An",
+        "CommuneID": "02207"
+    },
+    {
+        "CommunesFullName": "P. Hà Lầm",
+        "CommuneID": "01111"
+    },
+    {
+        "CommunesFullName": "P. Hà Tu",
+        "CommuneID": "01114"
+    },
+    {
+        "CommunesFullName": "P. Hạ Long",
+        "CommuneID": "01139"
+    },
+    {
+        "CommunesFullName": "P. Hồng Gai",
+        "CommuneID": "01106"
+    },
+    {
+        "CommunesFullName": "P. Liên Hòa",
+        "CommuneID": "02222"
+    },
+    {
+        "CommunesFullName": "P. Móng Cái 1",
+        "CommuneID": "01524"
+    },
+    {
+        "CommunesFullName": "P. Móng Cái 2",
+        "CommuneID": "01525"
+    },
+    {
+        "CommunesFullName": "P. Móng Cái 3",
+        "CommuneID": "01526"
+    },
+    {
+        "CommunesFullName": "P. Mông Dương",
+        "CommuneID": "01217"
+    },
+    {
+        "CommunesFullName": "P. Mạo Khê",
+        "CommuneID": "02411"
+    },
+    {
+        "CommunesFullName": "P. Phong Cốc",
+        "CommuneID": "02219"
+    },
+    {
+        "CommunesFullName": "P. Quang Hanh",
+        "CommuneID": "01219"
+    },
+    {
+        "CommunesFullName": "P. Quảng Yên",
+        "CommuneID": "02206"
+    },
+    {
+        "CommunesFullName": "P. Tuần Châu",
+        "CommuneID": "01125"
+    },
+    {
+        "CommunesFullName": "P. Uông Bí",
+        "CommuneID": "02318"
+    },
+    {
+        "CommunesFullName": "P. Việt Hưng",
+        "CommuneID": "01123"
+    },
+    {
+        "CommunesFullName": "P. Vàng Danh",
+        "CommuneID": "02309"
+    },
+    {
+        "CommunesFullName": "P. Yên Tử",
+        "CommuneID": "02317"
+    },
+    {
+        "CommunesFullName": "P. Đông Mai",
+        "CommuneID": "02212"
+    },
+    {
+        "CommunesFullName": "P. Đông Triều",
+        "CommuneID": "02427"
+    },
+    {
+        "CommunesFullName": "X. Ba Chẽ",
+        "CommuneID": "02006"
+    },
+    {
+        "CommunesFullName": "X. Bình Liêu",
+        "CommuneID": "01706"
+    },
+    {
+        "CommunesFullName": "X. Cái Chiên",
+        "CommuneID": "01621"
+    },
+    {
+        "CommunesFullName": "X. Hoành Mô",
+        "CommuneID": "01709"
+    },
+    {
+        "CommunesFullName": "X. Hải Hòa",
+        "CommuneID": "01215"
+    },
+    {
+        "CommunesFullName": "X. Hải Lạng",
+        "CommuneID": "01916"
+    },
+    {
+        "CommunesFullName": "X. Hải Ninh",
+        "CommuneID": "01523"
+    },
+    {
+        "CommunesFullName": "X. Hải Sơn",
+        "CommuneID": "01513"
+    },
+    {
+        "CommunesFullName": "X. Kỳ Thượng",
+        "CommuneID": "01133"
+    },
+    {
+        "CommunesFullName": "X. Lương Minh",
+        "CommuneID": "02010"
+    },
+    {
+        "CommunesFullName": "X. Lục Hồn",
+        "CommuneID": "01711"
+    },
+    {
+        "CommunesFullName": "X. Quảng Hà",
+        "CommuneID": "01606"
+    },
+    {
+        "CommunesFullName": "X. Quảng La",
+        "CommuneID": "01137"
+    },
+    {
+        "CommunesFullName": "X. Quảng Tân",
+        "CommuneID": "01807"
+    },
+    {
+        "CommunesFullName": "X. Quảng Đức",
+        "CommuneID": "01610"
+    },
+    {
+        "CommunesFullName": "X. Thống Nhất",
+        "CommuneID": "01130"
+    },
+    {
+        "CommunesFullName": "X. Tiên Yên",
+        "CommuneID": "01906"
+    },
+    {
+        "CommunesFullName": "X. Vĩnh Thực",
+        "CommuneID": "01519"
+    },
+    {
+        "CommunesFullName": "X. Điền Xá",
+        "CommuneID": "01914"
+    },
+    {
+        "CommunesFullName": "X. Đông Ngũ",
+        "CommuneID": "01909"
+    },
+    {
+        "CommunesFullName": "X. Đường Hoa",
+        "CommuneID": "01612"
+    },
+    {
+        "CommunesFullName": "X. Đầm Hà",
+        "CommuneID": "01815"
+    },
+    {
+        "CommunesFullName": "Đặc khu Cô Tô",
+        "CommuneID": "01409"
+    },
+    {
+        "CommunesFullName": "Đặc khu Vân Đồn",
+        "CommuneID": "01318"
+    }
+]

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="indoor-editor">
+  <node id="50001" version="1" lat="10.0006492" lon="106.0002328">
+    <tag k="level" v="1"/>
+  </node>
+  <node id="50002" version="1" lat="10.0004785" lon="106.0002318">
+    <tag k="level" v="1"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <node id="50003" version="1" lat="10.0004073" lon="106.0002314">
+    <tag k="level" v="1"/>
+  </node>
+  <node id="50004" version="1" lat="10.0004775" lon="106.0002679">
+    <tag k="level" v="1"/>
+    <tag k="highway" v="steps"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <node id="50006" version="1" lat="10.0004773" lon="106.0002329">
+    <tag k="level" v="2"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <node id="50007" version="1" lat="10.0004768" lon="106.0002683">
+    <tag k="level" v="2"/>
+    <tag k="highway" v="steps"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <node id="50008" version="1" lat="10.0004076" lon="106.0002343">
+    <tag k="level" v="2"/>
+  </node>
+  <node id="50009" version="1" lat="10.0005416" lon="106.0002338">
+    <tag k="level" v="2"/>
+  </node>
+  <node id="50010" version="1" lat="10.0005425" lon="106.0002343">
+    <tag k="level" v="3"/>
+  </node>
+  <node id="50011" version="1" lat="10.0004768" lon="106.0002333">
+    <tag k="level" v="3"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <node id="50012" version="1" lat="10.0004081" lon="106.0002343">
+    <tag k="level" v="3"/>
+  </node>
+  <node id="50013" version="1" lat="10.0004750" lon="106.0002692">
+    <tag k="level" v="3"/>
+    <tag k="highway" v="steps"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <node id="50014" version="1" lat="10.0005416" lon="106.0002343">
+    <tag k="level" v="4"/>
+  </node>
+  <node id="50015" version="1" lat="10.0004782" lon="106.0002315">
+    <tag k="level" v="4"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <node id="50016" version="1" lat="10.0004081" lon="106.0002338">
+    <tag k="level" v="4"/>
+  </node>
+  <node id="50017" version="1" lat="10.0004755" lon="106.0002697">
+    <tag k="level" v="4"/>
+    <tag k="highway" v="steps"/>
+    <tag k="indoor" v="yes"/>
+  </node>
+  <way id="60000" version="1">
+    <nd ref="50001"/>
+    <nd ref="50002"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="1"/>
+  </way>
+  <way id="60001" version="1">
+    <nd ref="50002"/>
+    <nd ref="50003"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="1"/>
+  </way>
+  <way id="60002" version="1">
+    <nd ref="50004"/>
+    <nd ref="50002"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="1"/>
+  </way>
+  <way id="60003" version="1">
+    <nd ref="50009"/>
+    <nd ref="50006"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="2"/>
+  </way>
+  <way id="60004" version="1">
+    <nd ref="50006"/>
+    <nd ref="50008"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="2"/>
+  </way>
+  <way id="60005" version="1">
+    <nd ref="50006"/>
+    <nd ref="50007"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="2"/>
+  </way>
+  <way id="60006" version="1">
+    <nd ref="50010"/>
+    <nd ref="50011"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="3"/>
+  </way>
+  <way id="60007" version="1">
+    <nd ref="50011"/>
+    <nd ref="50012"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="3"/>
+  </way>
+  <way id="60008" version="1">
+    <nd ref="50011"/>
+    <nd ref="50013"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="3"/>
+  </way>
+  <way id="60009" version="1">
+    <nd ref="50014"/>
+    <nd ref="50015"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="4"/>
+  </way>
+  <way id="60010" version="1">
+    <nd ref="50015"/>
+    <nd ref="50016"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="4"/>
+  </way>
+  <way id="60011" version="1">
+    <nd ref="50015"/>
+    <nd ref="50017"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="4"/>
+  </way>
+  <way id="60012" version="1">
+    <nd ref="50017"/>
+    <nd ref="50013"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+    <tag k="level" v="3;4"/>
+  </way>
+  <way id="60013" version="1">
+    <nd ref="50007"/>
+    <nd ref="50004"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+    <tag k="level" v="1;2"/>
+  </way>
+  <way id="60014" version="1">
+    <nd ref="50006"/>
+    <nd ref="50011"/>
+    <tag k="highway" v="footway"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="2;3"/>
+  </way>
+  <way id="60015" version="1">
+    <nd ref="50002"/>
+    <nd ref="50006"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+    <tag k="level" v="1;2"/>
+  </way>
+  <way id="60016" version="1">
+    <nd ref="50006"/>
+    <nd ref="50011"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+    <tag k="level" v="2;3"/>
+  </way>
+  <way id="60017" version="1">
+    <nd ref="50011"/>
+    <nd ref="50015"/>
+    <tag k="highway" v="elevator"/>
+    <tag k="indoor" v="yes"/>
+    <tag k="level" v="3;4"/>
+  </way>
+  <way id="60018" version="1">
+    <nd ref="50004"/>
+    <nd ref="50007"/>
+    <tag k="highway" v="steps"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="1;2"/>
+  </way>
+  <way id="60019" version="1">
+    <nd ref="50007"/>
+    <nd ref="50013"/>
+    <tag k="highway" v="steps"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="2;3"/>
+  </way>
+  <way id="60020" version="1">
+    <nd ref="50013"/>
+    <nd ref="50017"/>
+    <tag k="highway" v="steps"/>
+    <tag k="indoor" v="corridor"/>
+    <tag k="level" v="3;4"/>
+  </way>
+</osm>

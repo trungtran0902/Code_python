@@ -1,7 +1,6 @@
-streamlit
+flask
 geopandas
 fiona
 shapely
 pyogrio
 folium
-streamlit-folium

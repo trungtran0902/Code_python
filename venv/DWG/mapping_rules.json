@@ -1,0 +1,42 @@
+{
+  "templates": {
+    "HienTrang": {
+      "path": "G:\\Minh\\01.HaNoi.CTDL_QuyHoachDTNT_TT16_VN2000_105-00_gdb_template\\HienTrang.gdb",
+      "rules": []
+    },
+    "MocGioi": {
+      "path": "G:\\Minh\\01.HaNoi.CTDL_QuyHoachDTNT_TT16_VN2000_105-00_gdb_template\\MocGioi.gdb",
+      "rules": []
+    },
+    "NenDiaHinh": {
+      "path": "G:\\Minh\\01.HaNoi.CTDL_QuyHoachDTNT_TT16_VN2000_105-00_gdb_template\\NenDiaHinh.gdb",
+      "rules": []
+    },
+    "QuyHoach": {
+      "path": "G:\\Minh\\01.HaNoi.CTDL_QuyHoachDTNT_TT16_VN2000_105-00_gdb_template\\QuyHoach.gdb",
+      "rules": []
+    }
+  },
+  "rule_examples": [
+    {
+      "description": "Vi du anh xa polygon CAD sang feature class quy hoach",
+      "template": "QuyHoach",
+      "source_layer": "QH_DAT_O",
+      "target_layer": "CongTrinh_A",
+      "geometry_types": [
+        "Polygon",
+        "MultiPolygon"
+      ]
+    },
+    {
+      "description": "Vi du anh xa line CAD sang feature class nen dia hinh",
+      "template": "NenDiaHinh",
+      "source_layer": "DUONG_DONG_MUC",
+      "target_layer": "DuongDongMuc_L",
+      "geometry_types": [
+        "LineString",
+        "MultiLineString"
+      ]
+    }
+  ]
+}

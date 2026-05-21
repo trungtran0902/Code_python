@@ -2,8 +2,14 @@ import os
 import glob
 import shutil
 import subprocess
+import sys
 import tkinter as tk
 from tkinter import filedialog, messagebox
+
+
+# Đặt True nếu muốn hiện thông báo popup khi hoàn tất/lỗi.
+# Đặt False để tool chạy xong là thoát luôn, tránh bị treo vì messagebox.
+SHOW_MESSAGEBOX = False
 
 
 def choose_input_shp():
@@ -15,6 +21,7 @@ def choose_input_shp():
     root.attributes("-topmost", True)
 
     shp_path = filedialog.askopenfilename(
+        parent=root,
         title="B1 - Chọn file .shp đầu vào",
         filetypes=[
             ("Shapefile", "*.shp"),
@@ -35,11 +42,32 @@ def choose_output_folder():
     root.attributes("-topmost", True)
 
     folder = filedialog.askdirectory(
+        parent=root,
         title="B2 - Chọn thư mục xuất Shapefile đã lọc"
     )
 
     root.destroy()
     return folder
+
+
+def show_popup(kind, title, msg):
+    """
+    Hiện popup có root riêng rồi destroy root sau khi người dùng bấm OK.
+    Mặc định không dùng popup để tool tự thoát sau khi chạy xong.
+    """
+    if not SHOW_MESSAGEBOX:
+        return
+
+    root = tk.Tk()
+    root.withdraw()
+    root.attributes("-topmost", True)
+
+    if kind == "error":
+        messagebox.showerror(title, msg, parent=root)
+    else:
+        messagebox.showinfo(title, msg, parent=root)
+
+    root.destroy()
 
 
 def find_gdal_tool(tool_name):
@@ -132,15 +160,10 @@ def get_feature_count(ogrinfo_path, shp_path):
 
 def filter_cao_toc_bridge(input_shp, output_shp):
     """
-    Chức năng chính:
     Lọc các tuyến có:
-    - trường name chứa Cao Tốc
-    - trường other_tags có '"bridge"=>"yes"'
-
-    Dữ liệu trong ảnh của bạn có field name và other_tags,
-    nên điều kiện này phù hợp với file Shapefile vừa convert.
+    - highway = motorway
+    - other_tags có '"bridge"=>"yes"'
     """
-
     ogr2ogr = find_gdal_tool("ogr2ogr")
     ogrinfo = find_gdal_tool("ogrinfo")
 
@@ -151,14 +174,13 @@ def filter_cao_toc_bridge(input_shp, output_shp):
         raise FileNotFoundError("Không tìm thấy ogrinfo.exe. Hãy kiểm tra QGIS/GDAL.")
 
     setup_gdal_env(ogr2ogr)
-
     remove_old_shapefile(output_shp)
 
     where_expr = (
-    "highway = 'motorway' "
-    "AND "
-    "other_tags LIKE '%\"bridge\"=>\"yes\"%'"
-)
+        "highway = 'motorway' "
+        "AND "
+        "other_tags LIKE '%\"bridge\"=>\"yes\"%'"
+    )
 
     cmd = [
         ogr2ogr,
@@ -174,7 +196,7 @@ def filter_cao_toc_bridge(input_shp, output_shp):
 
     print("\n🚀 Đang lọc dữ liệu...")
     print("Lệnh chạy:")
-    print(" ".join(f'"{x}"' if " " in x else x for x in cmd))
+    print(" ".join(f'\"{x}\"' if " " in x else x for x in cmd))
     print()
 
     subprocess.run(cmd, check=True)
@@ -186,31 +208,27 @@ def filter_cao_toc_bridge(input_shp, output_shp):
 def main():
     print("=== TOOL LỌC CAO TỐC CÓ bridge=yes TỪ SHAPEFILE ===\n")
 
-    # B1: Chọn bộ Shapefile đầu vào
     input_shp = choose_input_shp()
-
     if not input_shp:
         print("❌ Bạn chưa chọn file .shp.")
-        return
+        return 1
 
     if not os.path.isfile(input_shp):
         print("❌ File .shp không tồn tại.")
         print(input_shp)
-        return
+        return 1
 
     print(f"✅ Shapefile đầu vào:\n{input_shp}")
 
-    # B2: Chọn thư mục xuất
     output_folder = choose_output_folder()
-
     if not output_folder:
         print("❌ Bạn chưa chọn thư mục xuất.")
-        return
+        return 1
 
     if not os.path.isdir(output_folder):
         print("❌ Thư mục xuất không tồn tại.")
         print(output_folder)
-        return
+        return 1
 
     input_name = os.path.splitext(os.path.basename(input_shp))[0]
     output_name = f"{input_name}_cao_toc_bridge.shp"
@@ -221,33 +239,27 @@ def main():
     try:
         count = filter_cao_toc_bridge(input_shp, output_shp)
 
+        msg = f"Đã lọc xong!\n\nFile kết quả:\n{output_shp}\n\nSố đối tượng: {count}"
         print("\n✅ HOÀN TẤT!")
         print(f"📄 File kết quả:\n{output_shp}")
         print(f"🔢 Số đối tượng lọc được: {count}")
 
-        messagebox.showinfo(
-            "Hoàn tất",
-            f"Đã lọc xong!\n\nFile kết quả:\n{output_shp}\n\nSố đối tượng: {count}"
-        )
+        show_popup("info", "Hoàn tất", msg)
+        return 0
 
     except subprocess.CalledProcessError as e:
+        msg = "Lỗi khi chạy ogr2ogr. Xem cửa sổ terminal để biết chi tiết."
         print("\n❌ Lỗi khi chạy ogr2ogr.")
         print(e)
-
-        messagebox.showerror(
-            "Lỗi",
-            "Lỗi khi chạy ogr2ogr.\nXem cửa sổ terminal để biết chi tiết."
-        )
+        show_popup("error", "Lỗi", msg)
+        return 1
 
     except Exception as e:
         print("\n❌ Lỗi:")
         print(e)
-
-        messagebox.showerror(
-            "Lỗi",
-            str(e)
-        )
+        show_popup("error", "Lỗi", str(e))
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

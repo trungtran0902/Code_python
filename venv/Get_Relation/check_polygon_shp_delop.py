@@ -4,6 +4,8 @@ import hashlib
 import os
 import tempfile
 import zipfile
+import time
+from datetime import datetime
 from io import BytesIO, StringIO
 
 import streamlit as st
@@ -325,13 +327,17 @@ def collect_projected(data):
     return indices, geoms, inverse, crs.to_string()
 
 
-def topology_scan(data, max_report=200000):
+def topology_scan(data, max_report=200000, progress_callback=None):
     """Find enclosed holes in the union. Return projected geometries for repair."""
     indices, geometries, inverse, metric_crs = collect_projected(data)
+    if progress_callback:
+        progress_callback(0, "Đang hợp nhất các Polygon để xác định lỗ khép kín...")
     merged = unary_union(geometries)
     dissolved_parts = ([merged] if isinstance(merged, Polygon) else
                        list(merged.geoms) if isinstance(merged, MultiPolygon) else [])
     holes = [Polygon(ring) for poly in dissolved_parts for ring in poly.interiors]
+    if progress_callback:
+        progress_callback(0.08, f"Đã xác định {len(holes):,} lỗ khép kín; đang lập chỉ mục cạnh...")
     if len(holes) > max_report:
         raise ValueError(f"Co hon {max_report:,} lo hong; du lieu qua lon de tao report tren Streamlit.")
     # Index short boundary pieces rather than intersecting huge whole-feature
@@ -349,8 +355,13 @@ def topology_scan(data, max_report=200000):
                         edge_segments.append(LineString(part))
                         segment_owners.append(feature_idx)
     tree = STRtree(edge_segments)
+    if progress_callback:
+        progress_callback(0.17, f"Đã lập chỉ mục {len(edge_segments):,} đoạn cạnh; đang đối chiếu lân cận...")
     rows, records = [], []
     for gap_num, hole in enumerate(holes, 1):
+        if progress_callback and (gap_num == 1 or gap_num % 500 == 0 or gap_num == len(holes)):
+            progress_callback(0.17 + 0.83 * gap_num / max(1, len(holes)),
+                              f"Đã kiểm tra {gap_num:,}/{len(holes):,} lỗ khép kín")
         if hole.is_empty or hole.area <= 0:
             continue
         neighbor_lengths = {}
@@ -384,7 +395,7 @@ def topology_scan(data, max_report=200000):
             "crs": metric_crs, "feature_count": len(indices)}
 
 
-def fill_topology_gaps(data, scan, threshold_m2, min_share=0.5):
+def fill_topology_gaps(data, scan, threshold_m2, min_share=0.5, progress_callback=None):
     """Batch merge eligible enclosed seam gaps into their best adjacent feature.
 
     Batch union once per affected feature to avoid extremely slow repeated unions
@@ -406,7 +417,10 @@ def fill_topology_gaps(data, scan, threshold_m2, min_share=0.5):
         groups.setdefault(target, []).append((n, hole))
 
     filled_area = 0.0
-    for target, members in groups.items():
+    for k, (target, members) in enumerate(groups.items(), 1):
+        if progress_callback and (k == 1 or k % 25 == 0 or k == len(groups)):
+            progress_callback(k / max(1, len(groups)),
+                              f"Đang gộp Gap vào Feature: {k:,}/{len(groups):,} Feature")
         try:
             old = geometries[target]
             new = unary_union([old] + [g for _, g in members])
@@ -464,127 +478,226 @@ def export_files(data, display_name):
             "shp_name": f"{base}_fixed_shapefile.zip", "error": error}
 
 
-st.caption("Kiem tra geometry tung Feature va Gap topology nam kin ben trong vung phu. Gap mo ra bien ngoai can ranh tham chieu de phat hien.")
-with st.expander("Cau hinh Topology Gap", expanded=True):
-    st.info("Che do mac dinh chi SCAN, khong tu y sua ranh. Don vi dien tich: m² (UTM dia phuong).")
-    gap_threshold = st.selectbox("Chi lap Gap co dien tich khong vuot qua", [0.1, 1.0, 5.0, 10.0], index=1, format_func=lambda v: f"{v:g} m²")
-    min_share = st.slider("Ty le canh chung toi thieu cua Feature duoc nhan Gap", 0.5, 1.0, 0.5, 0.05,
-                          help="Chi lap vao Feature tiep giap co do dai canh chung lon nhat, va dat ty le nay.")
+st.caption("Kiểm tra Geometry từng Feature và Topology Gap khép kín. Gap thông ra ranh ngoài cần ranh tham chiếu để phát hiện.")
 
-uploaded_files = st.file_uploader("Upload nhieu file GeoJSON", type=["geojson"], accept_multiple_files=True)
+with st.expander("Cấu hình xử lý", expanded=True):
+    c1, c2 = st.columns(2)
+    with c1:
+        process_mode = st.radio(
+            "Chế độ chạy",
+            ["Chỉ kiểm tra và xuất báo cáo", "Kiểm tra + tự lấp Gap đủ điều kiện"],
+            index=0,
+            help="Mặc định không thay đổi ranh giới; chế độ lấp Gap cần chọn chủ động.",
+        )
+    with c2:
+        gap_threshold = st.selectbox(
+            "Diện tích Gap tối đa được lấp",
+            [0.1, 1.0, 5.0, 10.0], index=1,
+            format_func=lambda value: f"{value:g} m²",
+        )
+        min_share = st.slider(
+            "Tỷ lệ cạnh chung tối thiểu của Feature nhận Gap",
+            0.5, 1.0, 0.5, 0.05,
+            help="Chỉ lấp Gap khép kín giữa ít nhất 2 Feature, khi Feature nhận Gap có tỷ lệ cạnh chung đạt ngưỡng.",
+        )
+    st.info("Tool sẽ tự chạy tuần tự: đọc dữ liệu → kiểm tra → fix geometry nếu cần → scan Gap → lấp Gap nếu đã chọn → kiểm tra lại → xuất kết quả. Diện tích tính bằng m² (UTM địa phương).")
+
+uploaded_files = st.file_uploader("Upload nhiều file GeoJSON", type=["geojson"], accept_multiple_files=True)
 uploaded_shapefile_zips = st.file_uploader(
-    "Hoac upload Shapefile ZIP (.shp + .shx + .dbf, khuyen nghi co .prj)",
-    type=["zip"], accept_multiple_files=True)
+    "Hoặc upload Shapefile ZIP (.shp + .shx + .dbf; nên có .prj)",
+    type=["zip"], accept_multiple_files=True,
+)
 
-if "results_v2" not in st.session_state:
-    st.session_state.results_v2 = {}
+@st.cache_data(show_spinner=False, max_entries=8)
+def cached_read_shp_zip(raw, name):
+    return read_shapefiles_from_zip(raw, name)
+
+@st.cache_data(show_spinner=False, max_entries=8)
+def cached_export(data_as_json, name):
+    return export_files(json.loads(data_as_json), name)
 
 input_datasets = []
-for uploaded_file in uploaded_files:
+for upload in uploaded_files:
     try:
-        raw = uploaded_file.getvalue()
+        raw = upload.getvalue()
         data = json.loads(raw)
-        checksum = hashlib.sha256(raw).hexdigest()[:16]
-        input_datasets.append((uploaded_file.name, data, f"geo_{checksum}"))
-    except Exception as error:
-        st.error(f"Khong doc duoc GeoJSON {uploaded_file.name}: {error}")
-
-for uploaded_zip in uploaded_shapefile_zips:
+        if not isinstance(data, dict) or data.get("type") != "FeatureCollection":
+            raise ValueError("Yêu cầu GeoJSON FeatureCollection")
+        digest = hashlib.sha256(raw).hexdigest()[:16]
+        input_datasets.append((upload.name, data, f"geo_{digest}"))
+    except Exception as exc:
+        st.error(f"Không đọc được GeoJSON {upload.name}: {exc}")
+for upload in uploaded_shapefile_zips:
     try:
-        raw = uploaded_zip.getvalue()
-        checksum = hashlib.sha256(raw).hexdigest()[:16]
-        for name, data in read_shapefiles_from_zip(raw, uploaded_zip.name):
-            input_datasets.append((name, data, f"shp_{checksum}_{name}"))
-    except Exception as error:
-        st.error(f"Khong doc duoc ZIP {uploaded_zip.name}: {error}")
+        raw = upload.getvalue()
+        digest = hashlib.sha256(raw).hexdigest()[:16]
+        for name, data in cached_read_shp_zip(raw, upload.name):
+            input_datasets.append((name, data, f"shp_{digest}_{name}"))
+    except Exception as exc:
+        st.error(f"Không đọc được ZIP {upload.name}: {exc}")
+
+if "run_results_v3" not in st.session_state:
+    st.session_state.run_results_v3 = {}
 
 if input_datasets:
-    st.info(f"Tim thay {len(input_datasets)} bo du lieu Polygon")
+    st.write(f"**Đã nhận {len(input_datasets)} bộ Polygon:** " + ", ".join(n for n, _, _ in input_datasets[:6]) + ("…" if len(input_datasets) > 6 else ""))
+else:
+    st.info("Hãy upload GeoJSON hoặc Shapefile ZIP để bắt đầu.")
 
-for display_name, source_data, file_key in input_datasets:
-    st.divider()
-    st.subheader(f"File: {display_name}")
-    if file_key not in st.session_state.results_v2:
-        st.session_state.results_v2[file_key] = {}
-    result = st.session_state.results_v2[file_key]
-    initial_issues = check_geojson(source_data)
-    st.write(f"So Feature ban dau: **{len(source_data.get('features', []))}**; Geometry invalid: **{len(initial_issues)}**")
-    if initial_issues:
-        with st.expander(f"Xem chi tiet {len(initial_issues)} loi geometry"):
-            for idx, typ, msg in initial_issues[:300]:
-                st.write(f"- Feature {idx} ({typ}): {msg}")
-            if len(initial_issues) > 300:
-                st.caption("Chi hien thi 300 loi dau.")
-    else:
-        st.success("Geometry: khong phat hien feature invalid. Chua co nghia topology khong Gap.")
+run_clicked = st.button("▶ BẮT ĐẦU XỬ LÝ", type="primary", use_container_width=True, disabled=not input_datasets)
 
-    if st.button(f"1. Fix geometry (co che cu) - {display_name}", key=f"fix_{file_key}"):
-        fixed, count, removed = fix_geojson(source_data)
-        remaining = check_geojson(fixed)
-        result.clear()
-        result.update({"data": fixed, "fixed_count": count, "removed_count": removed,
-                       "remaining": len(remaining)})
-    if "data" in result:
-        st.write(f"Da fix **{result['fixed_count']}** feature; da loai **{result['removed_count']}** (theo logic cu); con **{result['remaining']}** loi geometry.")
+if run_clicked:
+    # Every run is intentional and independent of older session results.
+    st.session_state.run_results_v3 = {}
+    overall_progress = st.progress(0, text="Khởi tạo phiên xử lý...")
+    current_status = st.empty()
+    live_log = st.empty()
+    log_lines = []
+    start_total = time.perf_counter()
 
-    working = result.get("data", source_data)
-    working_issues = check_geojson(working)
-    if st.button(f"2. Scan Topology Gap - {display_name}", key=f"scan_{file_key}",
-                 disabled=bool(working_issues)):
+    def write_log(message, level="INFO"):
+        stamp = datetime.now().strftime("%H:%M:%S")
+        log_lines.append(f"[{stamp}] [{level}] {message}")
+        # cap text displayed to prevent excessive Streamlit rerender overhead
+        live_log.code("\n".join(log_lines[-45:]), language="text")
+
+    write_log(f"Bắt đầu: {len(input_datasets)} bộ dữ liệu; chế độ: {process_mode}")
+    for n, (display_name, source_data, file_key) in enumerate(input_datasets):
+        t0 = time.perf_counter()
+        base_progress = n / len(input_datasets)
+        span = 1 / len(input_datasets)
+        def update(frac, detail):
+            frac = max(0.0, min(1.0, frac))
+            overall_progress.progress(min(1., base_progress + span * frac), text=f"Bộ {n+1}/{len(input_datasets)} • {detail}")
+            current_status.info(f"Đang xử lý: {display_name} — {detail}")
+
+        result = {"name": display_name, "logs": [], "status": "error"}
+        st.session_state.run_results_v3[file_key] = result
+        def step(message, level="INFO"):
+            result["logs"].append(message)
+            write_log(f"[{n+1}/{len(input_datasets)}] {display_name}: {message}", level)
+
+        step("Đọc dữ liệu thành công")
         try:
-            with st.spinner("Dang tinh union va quet cac vung trong khep kin..."):
-                scan = topology_scan(working)
-            result["scan"] = scan
-            result.pop("topology_data", None)
-            result.pop("topology_summary", None)
-        except Exception as exc:
-            st.error(f"Scan Gap that bai: {exc}")
+            update(0.03, "kiểm tra geometry")
+            initial_count = len(source_data.get("features", []))
+            initial_issues = check_geojson(source_data)
+            result["initial_count"] = initial_count
+            result["initial_issues"] = initial_issues
+            step(f"Feature ban đầu: {initial_count:,}; geometry invalid: {len(initial_issues):,}")
 
+            working = source_data
+            count = removed = 0
+            if initial_issues:
+                update(0.08, "sửa geometry lỗi")
+                working, count, removed = fix_geojson(source_data)
+                step(f"Fix geometry: {count:,} Feature sửa; {removed:,} Feature loại theo cơ chế cũ")
+            else:
+                step("Geometry hợp lệ; không cần fix")
+            remaining = check_geojson(working)
+            result.update({"fixed_count": count, "removed_count": removed,
+                           "remaining_geometry": len(remaining)})
+            if remaining:
+                step(f"Còn {len(remaining):,} geometry invalid; bỏ qua scan Gap để tránh kết quả sai", "WARN")
+                result["error"] = "Còn geometry invalid sau bước fix"
+                result["status"] = "partial"
+                result["output_data"] = working
+                update(0.92, "xuất geometry đã fix một phần")
+            else:
+                update(0.15, "chuẩn bị scan Topology Gap")
+                def scan_progress(p, detail):
+                    update(0.15 + 0.60 * p, detail)
+                    if p in (0, 0.08, 0.17) or p >= 1.0 or (p > 0.17 and int(p*100) % 10 == 0):
+                        # avoid duplicate status lines for many close progress updates
+                        if not result["logs"] or result["logs"][-1] != detail:
+                            step(detail)
+                scan = topology_scan(working, progress_callback=scan_progress)
+                result["scan"] = scan
+                rows = scan["rows"]
+                seams = [r for r in rows if r["category"] == "between_features"]
+                eligible = [r for r in seams if r["area_m2"] <= gap_threshold and r["target_share"] >= min_share]
+                result["seam_count"] = len(seams)
+                result["eligible_count"] = len(eligible)
+                step(f"Scan xong: {len(rows):,} lỗ khép kín; {len(seams):,} Gap giữa Feature; {len(eligible):,} đủ điều kiện theo cấu hình")
+                if process_mode == "Kiểm tra + tự lấp Gap đủ điều kiện":
+                    step(f"Bắt đầu lấp Gap ≤ {gap_threshold:g} m²; tỷ lệ cạnh chung ≥ {min_share:.2f}")
+                    def fill_progress(p, detail):
+                        update(0.77 + 0.12 * p, detail)
+                    working, filled, area = fill_topology_gaps(
+                        working, scan, gap_threshold, min_share, progress_callback=fill_progress)
+                    result["filled_count"] = filled
+                    result["filled_area"] = area
+                    step(f"Đã lấp {filled:,} Gap; diện tích cộng thêm {area:,.4f} m²")
+                else:
+                    result["filled_count"] = 0
+                    result["filled_area"] = 0
+                    step("Chỉ SCAN: không thay đổi ranh giới vì chưa bật chế độ lấp")
+                update(0.91, "kiểm tra lại geometry")
+                last_issues = check_geojson(working)
+                if last_issues:
+                    raise ValueError(f"Output còn {len(last_issues)} geometry invalid")
+                step("Kiểm tra lại: 0 geometry invalid")
+                result["output_data"] = working
+                result["status"] = "success"
+
+            update(0.94, "chuẩn bị file xuất")
+            exp = cached_export(json.dumps(result["output_data"], ensure_ascii=False), display_name)
+            result["exports"] = exp
+            if exp["error"]:
+                step(f"Không xuất được SHP: {exp['error']}", "WARN")
+            else:
+                step("Xuất GeoJSON và Shapefile ZIP thành công")
+            step(f"Hoàn thành sau {time.perf_counter() - t0:.1f} giây", "DONE")
+        except Exception as exc:
+            result["status"] = "error"
+            result["error"] = str(exc)
+            step(f"Lỗi: {exc}", "ERROR")
+        update(1.0, "xong")
+    elapsed = time.perf_counter() - start_total
+    done = sum(r["status"] == "success" for r in st.session_state.run_results_v3.values())
+    write_log(f"KẾT THÚC: {done}/{len(input_datasets)} bộ thành công; tổng thời gian {elapsed:.1f} giây", "DONE")
+    st.session_state.last_logs_v3 = "\n".join(log_lines)
+    current_status.success(f"Đã xử lý xong {len(input_datasets)} bộ; thành công {done}/{len(input_datasets)}. Xem kết quả bên dưới.")
+
+if st.session_state.get("last_logs_v3"):
+    with st.expander("Nhật ký xử lý (log)", expanded=True):
+        st.code(st.session_state.last_logs_v3, language="text")
+        st.download_button("Tải log .txt", data=st.session_state.last_logs_v3.encode("utf-8-sig"),
+                           file_name="check_polygon_processing_log.txt", mime="text/plain")
+
+for display_name, _, file_key in input_datasets:
+    result = st.session_state.run_results_v3.get(file_key)
+    if not result:
+        continue
+    st.divider()
+    st.subheader(f"Kết quả: {display_name}")
+    if result["status"] == "error":
+        st.error(result.get("error", "Xử lý thất bại"))
+    elif result["status"] == "partial":
+        st.warning("Còn lỗi geometry, chưa chạy Scan Gap")
+    else:
+        st.success("Đã hoàn thành kiểm tra Geometry + Scan Topology Gap")
+    m1, m2, m3, m4 = st.columns(4)
+    m1.metric("Feature", f"{result.get('initial_count', 0):,}")
+    m2.metric("Geometry lỗi ban đầu", f"{len(result.get('initial_issues', [])):,}")
+    m3.metric("Gap giữa Feature", f"{result.get('seam_count', 0):,}")
+    m4.metric("Gap đã lấp", f"{result.get('filled_count', 0):,}")
     if "scan" in result:
         scan = result["scan"]
-        rows = scan["rows"]
-        seam = [r for r in rows if r["category"] == "between_features"]
-        eligible = [r for r in seam if 0 < r["area_m2"] <= gap_threshold and r["target_share"] >= min_share]
-        a, b, c, d = st.columns(4)
-        a.metric("Lo kin phat hien", f"{len(rows):,}")
-        b.metric("Gap giua Feature", f"{len(seam):,}")
-        c.metric("Gap du dieu kien lap", f"{len(eligible):,}")
-        d.metric("Tong dien tich ho", f"{sum(r['area_m2'] for r in rows):,.2f} m²")
-        st.caption("Gap phat hien = lo kin trong polygon union; khong bao gom cac khe thong ra ben ngoai hoac Gap ngoai ranh quy hoach. 'Gap giua Feature' can it nhat hai Feature co chung bien.")
-        st.download_button("Tai bao cao Gap CSV", data=gaps_csv(scan),
-                           file_name="topology_gaps_report.csv", mime="text/csv", key=f"csv_{file_key}")
-        st.download_button("Tai cac Gap de kiem tra tren ArcGIS (GeoJSON)",
-                           data=json.dumps(gaps_geojson(scan), ensure_ascii=False).encode("utf-8"),
-                           file_name="topology_gaps.geojson", mime="application/geo+json", key=f"gaps_{file_key}")
-        st.warning("Can xac nhan Gap la loi thuc su truoc khi lap. Cong cu KHONG tu lap cac lo nam trong 1 Feature, Gap lon hon nguong, hoac Gap khong du ty le canh chung.")
-        if st.button(f"3. Lap Gap <= {gap_threshold:g} m² va xuat ket qua - {display_name}",
-                     key=f"gapfix_{file_key}_{gap_threshold}_{min_share}"):
-            try:
-                with st.spinner("Dang lap cac Gap du dieu kien..."):
-                    out, count, area = fill_topology_gaps(working, scan, gap_threshold, min_share)
-                result["topology_data"] = out
-                result["topology_summary"] = (count, area)
-            except Exception as exc:
-                st.error(f"Lap Gap that bai: {exc}")
-
-    final_data = result.get("topology_data", result.get("data"))
-    if final_data is not None:
-        if "topology_summary" in result:
-            count, area = result["topology_summary"]
-            st.success(f"Da lap {count:,} Gap; tong dien tich bo sung {area:,.4f} m². Feature/thuoc tinh duoc giu nguyen.")
-        st.caption("Ket qua output: da xu ly geometry" + (" + topology Gap" if "topology_data" in result else ""))
-        # Build exports only when a result exists; cache per content identity in session.
-        output_sig = (id(final_data), len(final_data.get("features", [])))
-        if result.get("export_sig") != output_sig:
-            result["exports"] = export_files(final_data, display_name)
-            result["export_sig"] = output_sig
+        st.caption(f"Phát hiện {len(scan['rows']):,} lỗ khép kín, {result['eligible_count']:,} Gap đủ điều kiện lấp; "
+                   f"diện tích đã lấp {result['filled_area']:,.4f} m². Gap thông ra ngoài chưa được kiểm tra.")
+        st.download_button("Tải báo cáo Gap CSV", data=gaps_csv(scan),
+                           file_name="topology_gaps_report.csv", mime="text/csv", key=f"report_{file_key}")
+        st.download_button("Tải vị trí Gap GeoJSON", data=json.dumps(gaps_geojson(scan), ensure_ascii=False).encode("utf-8"),
+                           file_name="topology_gaps.geojson", mime="application/geo+json", key=f"gap_geo_{file_key}")
+    if "exports" in result:
         exp = result["exports"]
-        st.download_button("Tai GeoJSON da fix", data=exp["geo_bytes"],
-                           file_name=exp["geo_name"], mime="application/geo+json", key=f"outgeo_{file_key}")
+        st.download_button("Tải GeoJSON kết quả", data=exp["geo_bytes"],
+                           file_name=exp["geo_name"], mime="application/geo+json", key=f"geo_{file_key}")
         if exp["shp_bytes"] is not None:
-            st.download_button("Tai Shapefile ZIP da fix (dung cho ArcGIS)", data=exp["shp_bytes"],
-                               file_name=exp["shp_name"], mime="application/zip", key=f"outshp_{file_key}")
-        else:
-            st.warning(f"Khong xuat duoc SHP: {exp['error']}")
+            st.download_button("Tải Shapefile ZIP kết quả (ArcGIS)", data=exp["shp_bytes"],
+                               file_name=exp["shp_name"], mime="application/zip", key=f"shp_{file_key}")
+        elif exp["error"]:
+            st.warning(f"Không xuất được SHP: {exp['error']}")
 
-# Chay: streamlit run check_polygon_delop.py
+# Chạy: streamlit run check_polygon_delop.py

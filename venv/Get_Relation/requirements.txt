@@ -1,3 +1,4 @@
 streamlit>=1.30
 shapely>=2.0
-geopandas
+geopandas>=1.0
+pyogrio>=0.9

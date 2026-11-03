@@ -2,3 +2,4 @@ streamlit>=1.30
 shapely>=2.0
 geopandas>=1.0
 pyogrio>=0.9
+pyproj>=3.5

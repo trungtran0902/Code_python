@@ -1,17 +1,21 @@
+import csv
 import json
+import hashlib
 import os
 import tempfile
 import zipfile
-from io import BytesIO
+from io import BytesIO, StringIO
 
 import streamlit as st
-from shapely.geometry import GeometryCollection, MultiPolygon, Polygon, mapping, shape
-from shapely.ops import unary_union
+from shapely.geometry import GeometryCollection, MultiPolygon, Polygon, LineString, mapping, shape
+from shapely.ops import transform as geom_transform, unary_union
+from shapely.strtree import STRtree
+from pyproj import CRS, Transformer
 from shapely.validation import explain_validity, make_valid
 
 
 st.set_page_config(page_title="Check loi Polygon", page_icon=":jigsaw:", layout="wide")
-st.title("Check loi Polygon (Upload nhieu file GeoJSON)")
+st.title("Check loi Polygon + Topology Gap (GeoJSON / Shapefile ZIP)")
 
 
 def is_geometry_invalid(geometry):
@@ -225,97 +229,362 @@ def build_shapefile_zip(fixed_data, base_name):
         return zip_buffer.getvalue()
 
 
-uploaded_files = st.file_uploader(
-    "Upload nhieu file GeoJSON",
-    type=["geojson"],
-    accept_multiple_files=True,
-)
+def read_shapefiles_from_zip(zip_bytes, zip_filename):
+    """Load each SHP dataset in a ZIP as a GeoJSON FeatureCollection.
 
-if "fixed_results" not in st.session_state:
-    st.session_state.fixed_results = {}
+    Only files belonging to an SHP dataset are extracted, without honoring
+    archive directory paths (prevents path traversal). Coordinates are
+    transformed to WGS84 for correct GeoJSON output.
+    """
+    try:
+        import geopandas as gpd
+    except ModuleNotFoundError as exc:
+        raise ModuleNotFoundError(
+            "Can cai dat geopandas de doc bo Shapefile ZIP."
+        ) from exc
 
-if uploaded_files:
-    st.info(f"Tim thay {len(uploaded_files)} file GeoJSON")
+    results = []
+    with zipfile.ZipFile(BytesIO(zip_bytes), "r") as archive:
+        members = [entry for entry in archive.infolist() if not entry.is_dir()]
+        shp_members = [entry for entry in members if entry.filename.lower().endswith(".shp")]
+        if not shp_members:
+            raise ValueError("ZIP khong chua file .shp.")
 
-    for uploaded_file in uploaded_files:
-        st.markdown("---")
-        st.subheader(f"File: {uploaded_file.name}")
-        file_key = f"{uploaded_file.name}_{uploaded_file.size}"
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            for index, shp_member in enumerate(shp_members):
+                base = os.path.splitext(shp_member.filename)[0]
+                sidecars = [entry for entry in members if os.path.splitext(entry.filename)[0].lower() == base.lower()]
+                extensions = {os.path.splitext(entry.filename)[1].lower() for entry in sidecars}
+                if not {".shp", ".shx", ".dbf"}.issubset(extensions):
+                    raise ValueError(f"Bo SHP '{base}' thieu .shp, .shx hoac .dbf.")
 
+                shp_dir = os.path.join(tmp_dir, f"shp_{index}")
+                os.makedirs(shp_dir, exist_ok=True)
+                safe_base = "input"
+                for entry in sidecars:
+                    ext = os.path.splitext(entry.filename)[1].lower()
+                    if ext not in {".shp", ".shx", ".dbf", ".prj", ".cpg"}:
+                        continue
+                    dest = os.path.join(shp_dir, safe_base + ext)
+                    with archive.open(entry) as source, open(dest, "wb") as target:
+                        import shutil
+                        shutil.copyfileobj(source, target)
+
+                gdf = gpd.read_file(os.path.join(shp_dir, safe_base + ".shp"))
+                if gdf.crs is not None:
+                    gdf = gdf.to_crs("EPSG:4326")
+                else:
+                    # As before, missing CRS is treated as WGS84 for export.
+                    gdf = gdf.set_crs("EPSG:4326", allow_override=True)
+                geojson_data = json.loads(gdf.to_json())
+                display_name = os.path.splitext(zip_filename)[0] + " / " + base + ".shp"
+                results.append((display_name, geojson_data))
+
+    return results
+
+
+# -----------------------------------------------------------------------------
+# Topology: detect enclosed uncovered areas in the polygon union.
+# IMPORTANT: these are *candidate gaps*, not all ArcGIS Must Not Have Gaps errors.
+# Open-to-exterior slivers require an authoritative coverage boundary to detect.
+# -----------------------------------------------------------------------------
+
+def local_metric_crs(data):
+    """Choose a local UTM CRS from feature bounds; areas use square metres."""
+    import geopandas as gpd
+    geoms = [shape(f["geometry"]) for f in data.get("features", [])
+             if f.get("geometry") and f["geometry"].get("type") in ("Polygon", "MultiPolygon")]
+    if not geoms:
+        raise ValueError("Khong co Polygon/MultiPolygon de kiem tra topology.")
+    bounds = gpd.GeoSeries(geoms, crs="EPSG:4326").total_bounds
+    lon = (bounds[0] + bounds[2]) / 2
+    lat = (bounds[1] + bounds[3]) / 2
+    if not (-180 <= lon <= 180 and -80 <= lat <= 84):
+        raise ValueError("Toa do nam ngoai pham vi UTM; kiem tra lai CRS dau vao.")
+    zone = max(1, min(60, int((lon + 180) // 6) + 1))
+    return CRS.from_epsg((32600 if lat >= 0 else 32700) + zone)
+
+
+def collect_projected(data):
+    crs = local_metric_crs(data)
+    forward = Transformer.from_crs("EPSG:4326", crs, always_xy=True).transform
+    inverse = Transformer.from_crs(crs, "EPSG:4326", always_xy=True).transform
+    indices, geoms = [], []
+    for i, f in enumerate(data.get("features", [])):
+        gj = f.get("geometry")
+        if not gj or gj.get("type") not in ("Polygon", "MultiPolygon"):
+            continue
+        g = shape(gj)
+        if not g.is_valid:
+            raise ValueError(f"Feature {i} chua hop le. Hay fix geometry truoc khi scan Gap.")
+        if not g.is_empty:
+            indices.append(i)
+            geoms.append(geom_transform(forward, g))
+    if not geoms:
+        raise ValueError("Khong co feature de kiem tra.")
+    return indices, geoms, inverse, crs.to_string()
+
+
+def topology_scan(data, max_report=200000):
+    """Find enclosed holes in the union. Return projected geometries for repair."""
+    indices, geometries, inverse, metric_crs = collect_projected(data)
+    merged = unary_union(geometries)
+    dissolved_parts = ([merged] if isinstance(merged, Polygon) else
+                       list(merged.geoms) if isinstance(merged, MultiPolygon) else [])
+    holes = [Polygon(ring) for poly in dissolved_parts for ring in poly.interiors]
+    if len(holes) > max_report:
+        raise ValueError(f"Co hon {max_report:,} lo hong; du lieu qua lon de tao report tren Streamlit.")
+    # Index short boundary pieces rather than intersecting huge whole-feature
+    # boundaries for every tiny gap (much faster on detailed SHP inputs).
+    edge_segments = []
+    segment_owners = []
+    for feature_idx, geom in zip(indices, geometries):
+        polys = [geom] if isinstance(geom, Polygon) else list(geom.geoms)
+        for poly in polys:
+            for ring in [poly.exterior, *poly.interiors]:
+                coords = list(ring.coords)
+                for pos in range(0, len(coords) - 1, 96):
+                    part = coords[pos:min(pos + 97, len(coords))]
+                    if len(part) >= 2:
+                        edge_segments.append(LineString(part))
+                        segment_owners.append(feature_idx)
+    tree = STRtree(edge_segments)
+    rows, records = [], []
+    for gap_num, hole in enumerate(holes, 1):
+        if hole.is_empty or hole.area <= 0:
+            continue
+        neighbor_lengths = {}
+        # Look up short boundary segments, then aggregate their intersection
+        # lengths by feature. Large holes are reported but never auto-filled.
+        if hole.area <= 10.0:
+            hb = hole.boundary
+            for j in tree.query(hole):
+                k = int(j)
+                length = hb.intersection(edge_segments[k]).length
+                if length > 0.00001:
+                    owner = segment_owners[k]
+                    neighbor_lengths[owner] = neighbor_lengths.get(owner, 0.0) + length
+        lengths = list(neighbor_lengths.items())
+        lengths.sort(key=lambda pair: (-pair[1], pair[0]))
+        seam = len(lengths) >= 2
+        best = lengths[0][0] if lengths else None
+        total_len = sum(v for _, v in lengths)
+        share = lengths[0][1] / total_len if total_len > 0 else 0.0
+        category = ("large_hole_not_auto_fix" if hole.area > 10.0 else
+                    "between_features" if seam else "single_feature_hole_or_unknown")
+        rows.append({
+            "gap_id": gap_num, "area_m2": round(hole.area, 6),
+            "category": category, "neighbors": len(lengths),
+            "target_feature_index": best if best is not None else "",
+            "target_share": round(share, 6), "status": "candidate",
+        })
+        records.append((hole, lengths))
+    return {"rows": rows, "records": records, "indices": indices,
+            "geometries": geometries, "inverse": inverse,
+            "crs": metric_crs, "feature_count": len(indices)}
+
+
+def fill_topology_gaps(data, scan, threshold_m2, min_share=0.5):
+    """Batch merge eligible enclosed seam gaps into their best adjacent feature.
+
+    Batch union once per affected feature to avoid extremely slow repeated unions
+    against very detailed geometry. Feature count/attributes/order are preserved.
+    """
+    fixed = json.loads(json.dumps(data))
+    inverse = Transformer.from_crs(scan["crs"], "EPSG:4326", always_xy=True).transform
+    geometries = dict(zip(scan["indices"], scan["geometries"]))
+    groups = {}
+    statuses = ["kept"] * len(scan["rows"])
+    for n, (row, (hole, lengths)) in enumerate(zip(scan["rows"], scan["records"])):
+        if (row["category"] != "between_features" or
+                not (0 < hole.area <= threshold_m2) or not lengths):
+            continue
+        if row["target_share"] < min_share:
+            statuses[n] = "skipped_ambiguous_neighbor"
+            continue
+        target = lengths[0][0]
+        groups.setdefault(target, []).append((n, hole))
+
+    filled_area = 0.0
+    for target, members in groups.items():
         try:
-            data = json.load(uploaded_file)
-            issues = check_geojson(data)
+            old = geometries[target]
+            new = unary_union([old] + [g for _, g in members])
+            expected = sum(g.area for _, g in members)
+            if (new.is_valid and isinstance(new, (Polygon, MultiPolygon)) and
+                    abs(new.area - old.area - expected) <= max(0.01, expected * 0.001)):
+                geometries[target] = new
+                fixed["features"][target]["geometry"] = mapping(geom_transform(inverse, new))
+                filled_area += expected
+                for n, _ in members:
+                    statuses[n] = "filled"
+            else:
+                for n, _ in members:
+                    statuses[n] = "skipped_validation"
+        except Exception:
+            for n, _ in members:
+                statuses[n] = "skipped_error"
+    if check_geojson(fixed):
+        raise ValueError("Sau khi lap Gap geometry invalid; output bi huy.")
+    for row, status in zip(scan["rows"], statuses):
+        row["status"] = status
+    return fixed, statuses.count("filled"), filled_area
 
-            if not issues:
-                st.success("Khong phat hien loi")
-                continue
 
-            st.error(f"Co {len(issues)} feature bi loi")
-            with st.expander(f"Xem chi tiet {len(issues)} loi", expanded=False):
-                for idx, gtype, reason in issues:
-                    st.write(f"- Feature {idx} ({gtype}): {reason}")
+def gaps_geojson(scan, only_unfilled=False):
+    inv = scan["inverse"]
+    features = []
+    for row, (hole, _) in zip(scan["rows"], scan["records"]):
+        if only_unfilled and row["status"] == "filled":
+            continue
+        features.append({"type": "Feature", "geometry": mapping(geom_transform(inv, hole)),
+                         "properties": dict(row)})
+    return {"type": "FeatureCollection", "features": features}
 
-            if st.button(f"Fix geometry - {uploaded_file.name}", key=f"fix_{uploaded_file.name}"):
-                fixed_data, fixed_count, removed_count = fix_geojson(data)
-                remaining_issues = check_geojson(fixed_data)
-                fixed_content = json.dumps(fixed_data, ensure_ascii=False, indent=2)
-                fixed_name = uploaded_file.name.replace(".geojson", "_fixed.geojson")
 
-                shapefile_zip = None
-                shapefile_error = None
-                try:
-                    shapefile_zip = build_shapefile_zip(fixed_data, fixed_name)
-                except Exception as export_error:
-                    shapefile_error = str(export_error)
+def gaps_csv(scan):
+    buf = StringIO()
+    columns = ["gap_id", "area_m2", "category", "neighbors", "target_feature_index", "target_share", "status"]
+    writer = csv.DictWriter(buf, fieldnames=columns)
+    writer.writeheader()
+    writer.writerows(scan["rows"])
+    return buf.getvalue().encode("utf-8-sig")
 
-                st.session_state.fixed_results[file_key] = {
-                    "fixed_data": fixed_data,
-                    "fixed_count": fixed_count,
-                    "removed_count": removed_count,
-                    "remaining_issue_count": len(remaining_issues),
-                    "fixed_content": fixed_content,
-                    "fixed_name": fixed_name,
-                    "shapefile_zip": shapefile_zip,
-                    "shapefile_error": shapefile_error,
-                }
 
-            result = st.session_state.fixed_results.get(file_key)
-            if result:
-                if result["fixed_count"] == 0:
-                    st.warning("Khong fix duoc geometry nao")
-                else:
-                    st.success(f"Da fix {result['fixed_count']} feature")
+def export_files(data, display_name):
+    base = os.path.splitext(os.path.basename(display_name))[0]
+    geo_name = f"{base}_fixed.geojson"
+    geo = json.dumps(data, ensure_ascii=False).encode("utf-8")
+    shp, error = None, None
+    try:
+        shp = build_shapefile_zip(data, geo_name)
+    except Exception as exc:
+        error = str(exc)
+    return {"geo_name": geo_name, "geo_bytes": geo, "shp_bytes": shp,
+            "shp_name": f"{base}_fixed_shapefile.zip", "error": error}
 
-                if result["removed_count"] > 0:
-                    st.info(
-                        f"Da loai {result['removed_count']} feature khong con geometry polygon sau khi fix."
-                    )
 
-                if result["remaining_issue_count"] > 0:
-                    st.warning(f"Con lai {result['remaining_issue_count']} feature chua fix duoc")
-                else:
-                    st.success("File tai xuong chi giu geometry Polygon/MultiPolygon hop le")
+st.caption("Kiem tra geometry tung Feature va Gap topology nam kin ben trong vung phu. Gap mo ra bien ngoai can ranh tham chieu de phat hien.")
+with st.expander("Cau hinh Topology Gap", expanded=True):
+    st.info("Che do mac dinh chi SCAN, khong tu y sua ranh. Don vi dien tich: m² (UTM dia phuong).")
+    gap_threshold = st.selectbox("Chi lap Gap co dien tich khong vuot qua", [0.1, 1.0, 5.0, 10.0], index=1, format_func=lambda v: f"{v:g} m²")
+    min_share = st.slider("Ty le canh chung toi thieu cua Feature duoc nhan Gap", 0.5, 1.0, 0.5, 0.05,
+                          help="Chi lap vao Feature tiep giap co do dai canh chung lon nhat, va dat ty le nay.")
 
-                st.download_button(
-                    label=f"Tai file da fix - {uploaded_file.name}",
-                    data=result["fixed_content"].encode("utf-8"),
-                    file_name=result["fixed_name"],
-                    mime="application/geo+json",
-                    key=f"download_{uploaded_file.name}",
-                )
+uploaded_files = st.file_uploader("Upload nhieu file GeoJSON", type=["geojson"], accept_multiple_files=True)
+uploaded_shapefile_zips = st.file_uploader(
+    "Hoac upload Shapefile ZIP (.shp + .shx + .dbf, khuyen nghi co .prj)",
+    type=["zip"], accept_multiple_files=True)
 
-                if result["shapefile_zip"] is not None:
-                    zip_name = uploaded_file.name.replace(".geojson", "_fixed_shapefile.zip")
-                    st.download_button(
-                        label=f"Tai shapefile zip - {uploaded_file.name}",
-                        data=result["shapefile_zip"],
-                        file_name=zip_name,
-                        mime="application/zip",
-                        key=f"download_shp_{uploaded_file.name}",
-                    )
-                elif result["shapefile_error"]:
-                    st.warning(f"Khong xuat duoc shapefile zip: {result['shapefile_error']}")
-        except Exception as e:
-            st.error(f"Khong doc duoc file: {e}")
+if "results_v2" not in st.session_state:
+    st.session_state.results_v2 = {}
 
-# === dung lenh "streamlit run check_polygon_delop.py" chay trong terminal ==
+input_datasets = []
+for uploaded_file in uploaded_files:
+    try:
+        raw = uploaded_file.getvalue()
+        data = json.loads(raw)
+        checksum = hashlib.sha256(raw).hexdigest()[:16]
+        input_datasets.append((uploaded_file.name, data, f"geo_{checksum}"))
+    except Exception as error:
+        st.error(f"Khong doc duoc GeoJSON {uploaded_file.name}: {error}")
+
+for uploaded_zip in uploaded_shapefile_zips:
+    try:
+        raw = uploaded_zip.getvalue()
+        checksum = hashlib.sha256(raw).hexdigest()[:16]
+        for name, data in read_shapefiles_from_zip(raw, uploaded_zip.name):
+            input_datasets.append((name, data, f"shp_{checksum}_{name}"))
+    except Exception as error:
+        st.error(f"Khong doc duoc ZIP {uploaded_zip.name}: {error}")
+
+if input_datasets:
+    st.info(f"Tim thay {len(input_datasets)} bo du lieu Polygon")
+
+for display_name, source_data, file_key in input_datasets:
+    st.divider()
+    st.subheader(f"File: {display_name}")
+    if file_key not in st.session_state.results_v2:
+        st.session_state.results_v2[file_key] = {}
+    result = st.session_state.results_v2[file_key]
+    initial_issues = check_geojson(source_data)
+    st.write(f"So Feature ban dau: **{len(source_data.get('features', []))}**; Geometry invalid: **{len(initial_issues)}**")
+    if initial_issues:
+        with st.expander(f"Xem chi tiet {len(initial_issues)} loi geometry"):
+            for idx, typ, msg in initial_issues[:300]:
+                st.write(f"- Feature {idx} ({typ}): {msg}")
+            if len(initial_issues) > 300:
+                st.caption("Chi hien thi 300 loi dau.")
+    else:
+        st.success("Geometry: khong phat hien feature invalid. Chua co nghia topology khong Gap.")
+
+    if st.button(f"1. Fix geometry (co che cu) - {display_name}", key=f"fix_{file_key}"):
+        fixed, count, removed = fix_geojson(source_data)
+        remaining = check_geojson(fixed)
+        result.clear()
+        result.update({"data": fixed, "fixed_count": count, "removed_count": removed,
+                       "remaining": len(remaining)})
+    if "data" in result:
+        st.write(f"Da fix **{result['fixed_count']}** feature; da loai **{result['removed_count']}** (theo logic cu); con **{result['remaining']}** loi geometry.")
+
+    working = result.get("data", source_data)
+    working_issues = check_geojson(working)
+    if st.button(f"2. Scan Topology Gap - {display_name}", key=f"scan_{file_key}",
+                 disabled=bool(working_issues)):
+        try:
+            with st.spinner("Dang tinh union va quet cac vung trong khep kin..."):
+                scan = topology_scan(working)
+            result["scan"] = scan
+            result.pop("topology_data", None)
+            result.pop("topology_summary", None)
+        except Exception as exc:
+            st.error(f"Scan Gap that bai: {exc}")
+
+    if "scan" in result:
+        scan = result["scan"]
+        rows = scan["rows"]
+        seam = [r for r in rows if r["category"] == "between_features"]
+        eligible = [r for r in seam if 0 < r["area_m2"] <= gap_threshold and r["target_share"] >= min_share]
+        a, b, c, d = st.columns(4)
+        a.metric("Lo kin phat hien", f"{len(rows):,}")
+        b.metric("Gap giua Feature", f"{len(seam):,}")
+        c.metric("Gap du dieu kien lap", f"{len(eligible):,}")
+        d.metric("Tong dien tich ho", f"{sum(r['area_m2'] for r in rows):,.2f} m²")
+        st.caption("Gap phat hien = lo kin trong polygon union; khong bao gom cac khe thong ra ben ngoai hoac Gap ngoai ranh quy hoach. 'Gap giua Feature' can it nhat hai Feature co chung bien.")
+        st.download_button("Tai bao cao Gap CSV", data=gaps_csv(scan),
+                           file_name="topology_gaps_report.csv", mime="text/csv", key=f"csv_{file_key}")
+        st.download_button("Tai cac Gap de kiem tra tren ArcGIS (GeoJSON)",
+                           data=json.dumps(gaps_geojson(scan), ensure_ascii=False).encode("utf-8"),
+                           file_name="topology_gaps.geojson", mime="application/geo+json", key=f"gaps_{file_key}")
+        st.warning("Can xac nhan Gap la loi thuc su truoc khi lap. Cong cu KHONG tu lap cac lo nam trong 1 Feature, Gap lon hon nguong, hoac Gap khong du ty le canh chung.")
+        if st.button(f"3. Lap Gap <= {gap_threshold:g} m² va xuat ket qua - {display_name}",
+                     key=f"gapfix_{file_key}_{gap_threshold}_{min_share}"):
+            try:
+                with st.spinner("Dang lap cac Gap du dieu kien..."):
+                    out, count, area = fill_topology_gaps(working, scan, gap_threshold, min_share)
+                result["topology_data"] = out
+                result["topology_summary"] = (count, area)
+            except Exception as exc:
+                st.error(f"Lap Gap that bai: {exc}")
+
+    final_data = result.get("topology_data", result.get("data"))
+    if final_data is not None:
+        if "topology_summary" in result:
+            count, area = result["topology_summary"]
+            st.success(f"Da lap {count:,} Gap; tong dien tich bo sung {area:,.4f} m². Feature/thuoc tinh duoc giu nguyen.")
+        st.caption("Ket qua output: da xu ly geometry" + (" + topology Gap" if "topology_data" in result else ""))
+        # Build exports only when a result exists; cache per content identity in session.
+        output_sig = (id(final_data), len(final_data.get("features", [])))
+        if result.get("export_sig") != output_sig:
+            result["exports"] = export_files(final_data, display_name)
+            result["export_sig"] = output_sig
+        exp = result["exports"]
+        st.download_button("Tai GeoJSON da fix", data=exp["geo_bytes"],
+                           file_name=exp["geo_name"], mime="application/geo+json", key=f"outgeo_{file_key}")
+        if exp["shp_bytes"] is not None:
+            st.download_button("Tai Shapefile ZIP da fix (dung cho ArcGIS)", data=exp["shp_bytes"],
+                               file_name=exp["shp_name"], mime="application/zip", key=f"outshp_{file_key}")
+        else:
+            st.warning(f"Khong xuat duoc SHP: {exp['error']}")
+
+# Chay: streamlit run check_polygon_delop.py
